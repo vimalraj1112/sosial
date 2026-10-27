@@ -181,11 +181,19 @@ scripts/                asset generators and headless QA
 Delivery order:
 
 1. **Resend** if `RESEND_API_KEY`, `ENQUIRY_TO_EMAIL` and `ENQUIRY_FROM_EMAIL` are set.
-2. **Webhook** if `ENQUIRY_WEBHOOK_URL` is set (JSON POST).
-3. **Local file sink** unless `ENQUIRY_FILE_SINK=off` — writes to `.data/enquiries/`.
-4. Otherwise **503** with a message telling the visitor to email directly.
+2. **Gmail/SMTP** if `SMTP_USER` and `SMTP_PASS` are set. Gmail defaults to `smtp.gmail.com:465`; other SMTP hosts can be set with `SMTP_HOST`, `SMTP_PORT` and `SMTP_SECURE`.
+3. **Webhook** if `ENQUIRY_WEBHOOK_URL` is set (JSON POST).
+4. **Local file sink** in development, or in production only when `ENQUIRY_FILE_SINK=on` — writes to `.data/enquiries/`.
+5. Otherwise **503** with a message telling the visitor to email directly.
 
-For production, configure Resend or a webhook. Serverless filesystems are ephemeral, so the file sink is for local preview only. The in-memory rate limiter is per instance; move it to Redis or the form provider for multi-region traffic.
+### Gmail SMTP setup
+
+1. Turn on 2-Step Verification for `sosial.solutions@gmail.com`.
+2. Create a Google **App password** (Google Account → Security → App passwords).
+3. Copy `.env.example` to `.env.local`, set `SMTP_USER=sosial.solutions@gmail.com`, and paste the app password into `SMTP_PASS`. Spaces in the app password are fine.
+4. Keep `ENQUIRY_TO_EMAIL` and `ENQUIRY_FROM_EMAIL` pointed at the same mailbox, then restart the app.
+
+The app password is a secret. `.env.local` is ignored by Git; add the same variables in the hosting provider's environment settings for production. If Gmail blocks server delivery, switch to Resend or a webhook. Serverless filesystems are ephemeral, so the file sink is for local preview only. The in-memory rate limiter is per instance; move it to Redis or the form provider for multi-region traffic. The idempotency key is recorded only after a delivery channel succeeds, so a retry after a failure is allowed through.
 
 ---
 

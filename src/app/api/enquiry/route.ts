@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
+import nodemailer from "nodemailer";
 import { enquirySchema } from "@/lib/validation";
 import { brand } from "@/data/brand";
 
@@ -29,16 +30,25 @@ function rateLimited(key: string) {
 
 /** Simple duplicate guard for retries with the same key. */
 const seenKeys = new Map<string, number>();
-function duplicate(key: string | undefined) {
+
+function seenRecently(key: string | undefined) {
   if (!key) return false;
   const now = Date.now();
-  if (seenKeys.size > 300) {
-    for (const [k, stamp] of seenKeys) if (now - stamp > 30 * 60 * 1000) seenKeys.delete(k);
+  for (const [k, stamp] of seenKeys) {
+    if (now - stamp > 30 * 60 * 1000) seenKeys.delete(k);
   }
-  const existing = seenKeys.get(key);
-  if (existing && now - existing < 30 * 60 * 1000) return true;
+  return seenKeys.has(key);
+}
+
+function remember(key: string | undefined) {
+  if (!key) return;
+  const now = Date.now();
+  if (seenKeys.size > 300) {
+    for (const [k, stamp] of seenKeys) {
+      if (now - stamp > 30 * 60 * 1000) seenKeys.delete(k);
+    }
+  }
   seenKeys.set(key, now);
-  return false;
 }
 
 async function deliver(payload: {
@@ -49,7 +59,7 @@ async function deliver(payload: {
   service: string;
   budget?: string;
   message: string;
-}): Promise<"email" | "webhook" | "file" | "none"> {
+}): Promise<"email" | "smtp" | "webhook" | "file" | "none"> {
   const text = [
     `New SOSIAL enquiry`,
     ``,
@@ -90,6 +100,37 @@ async function deliver(payload: {
     return "email";
   }
 
+  // Gmail SMTP (or any SMTP provider) is the quickest production path when
+  // the studio already has a mailbox and a Google app password.
+  const smtpUser = process.env.SMTP_USER;
+  const smtpPass = process.env.SMTP_PASS;
+  if (smtpUser && smtpPass) {
+    const host = process.env.SMTP_HOST || "smtp.gmail.com";
+    const port = Number(process.env.SMTP_PORT || 465);
+    const secure = process.env.SMTP_SECURE
+      ? process.env.SMTP_SECURE === "true"
+      : port === 465;
+    const password = host.includes("gmail.com") ? smtpPass.replace(/\s+/g, "") : smtpPass;
+    const transporter = nodemailer.createTransport({
+      host,
+      port,
+      secure,
+      auth: { user: smtpUser, pass: password },
+      connectionTimeout: 10_000,
+      greetingTimeout: 10_000,
+      socketTimeout: 20_000,
+    });
+
+    await transporter.sendMail({
+      from: from || `SOSIAL <${smtpUser}>`,
+      to: to || brand.email,
+      replyTo: payload.email,
+      subject: `SOSIAL enquiry: ${payload.name} — ${payload.service}`,
+      text,
+    });
+    return "smtp";
+  }
+
   const webhook = process.env.ENQUIRY_WEBHOOK_URL;
   if (webhook) {
     const response = await fetch(webhook, {
@@ -104,8 +145,12 @@ async function deliver(payload: {
   }
 
   // Local preview sink. This genuinely stores the enquiry on disk, so the
-  // visitor is not told "sent" when nothing happened.
-  if (process.env.ENQUIRY_FILE_SINK !== "off") {
+  // visitor is not told "sent" when nothing happened. It is development-only
+  // by default; production must opt in explicitly.
+  const fileSinkEnabled =
+    process.env.ENQUIRY_FILE_SINK === "on" ||
+    (process.env.NODE_ENV !== "production" && process.env.ENQUIRY_FILE_SINK !== "off");
+  if (fileSinkEnabled) {
     const dir = path.join(process.cwd(), ".data", "enquiries");
     await mkdir(dir, { recursive: true });
     const file = path.join(dir, `${Date.now()}-${Math.random().toString(36).slice(2, 8)}.json`);
@@ -148,7 +193,7 @@ export async function POST(request: Request) {
 
   const raw = body as Record<string, unknown>;
   const idempotencyKey = typeof raw.idempotencyKey === "string" ? raw.idempotencyKey : undefined;
-  if (duplicate(idempotencyKey)) {
+  if (seenRecently(idempotencyKey)) {
     return NextResponse.json({ ok: true, delivered: "duplicate" });
   }
 
@@ -193,6 +238,7 @@ export async function POST(request: Request) {
       );
     }
 
+    remember(idempotencyKey);
     console.info(`[enquiry] delivered=${channel} service=${values.service}`);
     return NextResponse.json({ ok: true, delivered: channel });
   } catch (error) {
