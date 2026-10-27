@@ -428,7 +428,7 @@ export function Header() {
                   onClick={() => setMobileOpen(false)}
                   className="flex h-14 items-center justify-between rounded-full border-2 border-ink bg-coral px-6 text-[0.88rem] font-semibold text-white shadow-[3px_3px_0_0_var(--color-paper)] transition-[transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:shadow-[4px_4px_0_0_var(--color-paper)]"
                 >
-                  Start a project
+                  Start a conversation
                   <ArrowUpRight aria-hidden="true" className="h-4 w-4" strokeWidth={2} />
                 </Link>
                 <div className="grid grid-cols-2 gap-3">

@@ -18,7 +18,7 @@ export function PortfolioCta({
   eyebrow = "Next project",
   title,
   description,
-  buttonLabel = "Start a Project",
+  buttonLabel = "Start a conversation",
 }: PortfolioCtaProps) {
   return (
     <section className="relative overflow-hidden border-t border-paper/10 bg-night text-paper">

@@ -93,7 +93,7 @@ export const navigation: NavItem[] = [
         description: "Local SEO and Google Business Profile",
       },
       {
-        label: "Brand & Marketing Production",
+        label: "Branding & Marketing Production",
         href: "/services/brand-production",
         description: "End-to-end branding and marketing shoots",
       },
@@ -120,7 +120,7 @@ export const footerLinks = {
     { label: "Paid Advertising", href: "/services/performance-marketing" },
     { label: "Branding & Creative Strategy", href: "/services/branding" },
     { label: "Website Development", href: "/services/web-design" },
-    { label: "Video Production", href: "/services/brand-production" },
+    { label: "Branding & Marketing Production", href: "/services/brand-production" },
     { label: "All services", href: "/services" },
   ],
   company: [

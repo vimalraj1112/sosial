@@ -6,7 +6,7 @@ import { FinalCta } from "@/components/layout/FinalCta";
 /**
  * The closing CTA belongs directly before the footer on marketing pages.
  * The contact page already ends with a working enquiry form, and portfolio
- * routes use their own closing statement, so repeating "Start a Project"
+ * routes use their own closing statement, so repeating "Start a conversation"
  * there would create a second, redundant CTA.
  */
 export function FooterCta() {

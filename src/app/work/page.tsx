@@ -87,7 +87,7 @@ export default function WorkPage() {
           </>
         }
         description="Let's turn your next big idea into a digital experience that moves your business forward."
-        buttonLabel="Start a Project"
+        buttonLabel="Start a conversation"
       />
     </>
   );

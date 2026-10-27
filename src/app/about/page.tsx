@@ -68,7 +68,7 @@ export default function AboutPage() {
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <ButtonLink href="/contact" variant="primaryOnDark" arrow>
-                  Start a Project
+                  Start a conversation
                 </ButtonLink>
                 <ButtonLink href="/services" variant="light">
                   Explore Services

@@ -48,7 +48,7 @@ export default function TestimonialsPage() {
             </div>
             <div className="lg:col-span-4 lg:justify-self-end">
               <ButtonLink href="/contact" variant="primaryOnDark" arrow>
-                Start a Project
+                Start a conversation
               </ButtonLink>
             </div>
           </div>

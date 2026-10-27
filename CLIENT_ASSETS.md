@@ -30,7 +30,7 @@ The following details are now live in `src/data/brand.ts`:
 
 **Still needed:**
 
-- [ ] Confirm the enquiry recipient inbox (the public form currently uses the configured Resend/webhook/file-sink adapter)
+- [ ] Confirm the enquiry recipient inbox (the public form currently uses the configured Resend, Gmail/SMTP, webhook or file-sink adapter)
 - [ ] Confirm the “from” address for Resend or the production email provider
 - [ ] Working hours and timezone, if they should be published
 - [ ] A reply-time promise, only if the team can keep it
@@ -154,6 +154,6 @@ If any of these can be substantiated, send the evidence and we will add them pro
 | Service artwork | Generated SVG compositions |
 | Legal | Interim privacy and terms copy |
 | Social | LinkedIn and YouTube muted until URLs are supplied |
-| Email delivery | Resend/webhook only when production env vars are configured; local file sink for preview |
+| Email delivery | Resend, Gmail/SMTP or webhook when production env vars are configured; local file sink for preview |
 
 Every placeholder is labelled in the interface. Nothing has been attributed to a real client, person or result that has not been supplied and approved.

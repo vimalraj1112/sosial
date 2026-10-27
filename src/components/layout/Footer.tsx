@@ -52,7 +52,7 @@ export function Footer() {
                 <Logo className="h-9" label="" variant="reversed" sizes="138px" />
               </Link>
               <p className="mt-6 max-w-sm font-display text-[1.15rem] font-semibold leading-snug tracking-[-0.025em] text-paper/85 sm:text-[1.3rem]">
-                Building meaningful digital experiences that help brands grow.
+                Marketing, creative and production, working as one.
               </p>
 
               <div className="mt-7 flex items-center gap-2" aria-label="Social profiles">

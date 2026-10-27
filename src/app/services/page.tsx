@@ -52,7 +52,7 @@ export default function ServicesPage() {
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <ButtonLink href="/contact" variant="primaryOnDark" arrow>
-                  Start a Project
+                  Start a conversation
                 </ButtonLink>
                 <ButtonLink href="/work" variant="light">
                   See Selected Work
@@ -247,7 +247,7 @@ export default function ServicesPage() {
           </div>
           <div className="lg:col-span-4 lg:justify-self-end">
             <ButtonLink href="/contact" variant="outline" arrow>
-              Talk Through Your Brief
+              Share your brief
             </ButtonLink>
           </div>
         </div>

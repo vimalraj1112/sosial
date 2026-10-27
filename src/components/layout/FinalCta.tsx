@@ -46,7 +46,7 @@ export function FinalCta() {
 
         <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <ButtonLink href="/contact" variant="primaryOnDark" size="lg" arrow>
-            Start a Project
+            Start a conversation
           </ButtonLink>
           <a
             href={whatsappHref}

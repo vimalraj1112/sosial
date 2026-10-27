@@ -76,7 +76,7 @@ export function IntroSection() {
                 />
                 <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between gap-4 rounded-full border border-paper/25 bg-night/85 px-4 py-2.5 text-paper backdrop-blur-sm">
                   <p className="text-[0.64rem] font-semibold uppercase tracking-[0.12em] text-paper/75">
-                    Independent · Two divisions
+                    One brand · Two divisions
                   </p>
                   <p className="text-[0.6rem] font-semibold tracking-[0.1em] text-paper/45">SOSIAL / BENGALURU</p>
                 </div>

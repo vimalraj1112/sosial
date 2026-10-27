@@ -82,7 +82,7 @@ export function WorkBrowser({ projects }: { projects: Project[] }) {
           <Reveal delay={0.12} className="h-full lg:col-span-2">
             <Link
               href="/contact"
-              aria-label="Start a project with SOSIAL"
+              aria-label="Start a conversation with SOSIAL"
               className="group relative flex h-full min-h-[16rem] flex-col justify-between overflow-hidden rounded-[1.4rem] border border-coral bg-coral p-6 text-white transition-colors duration-500 hover:bg-violet-deep"
             >
               <div
@@ -109,7 +109,7 @@ export function WorkBrowser({ projects }: { projects: Project[] }) {
                   <span className="serif-accent text-paper/80">yours.</span>
                 </h3>
                 <span className="mt-5 inline-flex items-center gap-2 text-[0.78rem] font-semibold text-white">
-                  Start a project
+                  Start a conversation
                   <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">
                     &rarr;
                   </span>

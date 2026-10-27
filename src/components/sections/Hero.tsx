@@ -71,7 +71,7 @@ export function Hero() {
               className="mt-6 max-w-lg text-[1rem] leading-relaxed text-paper/70 sm:text-[1.08rem]"
             >
               Sosial brings digital marketing, creative content and production together, so your
-              message, your visuals and your channels work as one. One team from strategy to
+              message, your visuals and your channels work as one. One direction from strategy to
               delivery.
             </motion.p>
 
@@ -82,7 +82,7 @@ export function Hero() {
               className="mt-8 flex flex-wrap items-center gap-3"
             >
               <ButtonLink href="#enquiry" variant="primary" size="lg" arrow>
-                Start a project
+                Start a conversation
               </ButtonLink>
               <ButtonLink href="/work" variant="light" size="lg">
                 See our work

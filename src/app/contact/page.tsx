@@ -14,7 +14,7 @@ const nextSteps = [
 ];
 
 export const metadata: Metadata = buildMetadata({
-  title: "Contact — Start a project",
+  title: "Contact — Start a conversation",
   description:
     "Tell Sosial what you are trying to change. A short note about the business, the goal and any timing is enough to start a useful conversation.",
   path: "/contact",
