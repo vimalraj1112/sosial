@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000" role="img">
+  <defs><filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.55"/></feComponentTransfer>
+    </filter></defs>
+  <rect width="1600" height="1000" fill="#14141C"/>
+       <rect x="96" y="100" width="240" height="820" rx="10" fill="#F6F5F9" opacity="0.04"/>
+       <circle cx="216" cy="170" r="28.799999999999997" fill="#8221FC"/>
+       <rect x="136" y="260" width="160" height="12" rx="6" fill="#F6F5F9" opacity="0.25"/><rect x="136" y="320" width="160" height="12" rx="6" fill="#F6F5F9" opacity="0.75"/><rect x="136" y="380" width="160" height="12" rx="6" fill="#F6F5F9" opacity="0.25"/><rect x="136" y="439.99999999999994" width="160" height="12" rx="6" fill="#F6F5F9" opacity="0.25"/><rect x="136" y="500" width="160" height="12" rx="6" fill="#F6F5F9" opacity="0.25"/><rect x="136" y="560" width="160" height="12" rx="6" fill="#F6F5F9" opacity="0.25"/>
+       <g>
+        <rect x="368" y="160" width="354.6666666666667" height="170" rx="8" fill="#F6F5F9" opacity="0.055" stroke="#F6F5F9" stroke-opacity="0.12"/>
+        <rect x="396.8" y="200" width="99.30666666666669" height="12" fill="#F6F5F9" opacity="0.5"/>
+        <rect x="396.8" y="240" width="163.14666666666668" height="30" fill="#F6F5F9" opacity="0.9"/>
+        <path d="M396.8 300 l 28.373333333333335 -12 l 28.373333333333335 20 l 35.46666666666667 -30 l 35.46666666666667 10" fill="none" stroke="#F6F5F9" stroke-opacity="0.85" stroke-width="2"/>
+      </g><g>
+        <rect x="746.6666666666667" y="160" width="354.6666666666667" height="170" rx="8" fill="#F6F5F9" opacity="0.055" stroke="#F6F5F9" stroke-opacity="0.12"/>
+        <rect x="775.4666666666667" y="200" width="99.30666666666669" height="12" fill="#F6F5F9" opacity="0.5"/>
+        <rect x="775.4666666666667" y="240" width="163.14666666666668" height="30" fill="#F6F5F9" opacity="0.9"/>
+        <path d="M775.4666666666667 300 l 28.373333333333335 -12 l 28.373333333333335 20 l 35.46666666666667 -30 l 35.46666666666667 10" fill="none" stroke="#8221FC" stroke-opacity="0.85" stroke-width="2"/>
+      </g><g>
+        <rect x="1125.3333333333335" y="160" width="354.6666666666667" height="170" rx="8" fill="#F6F5F9" opacity="0.055" stroke="#F6F5F9" stroke-opacity="0.12"/>
+        <rect x="1154.1333333333334" y="200" width="99.30666666666669" height="12" fill="#F6F5F9" opacity="0.5"/>
+        <rect x="1154.1333333333334" y="240" width="163.14666666666668" height="30" fill="#F6F5F9" opacity="0.9"/>
+        <path d="M1154.1333333333334 300 l 28.373333333333335 -12 l 28.373333333333335 20 l 35.46666666666667 -30 l 35.46666666666667 10" fill="none" stroke="#F6F5F9" stroke-opacity="0.85" stroke-width="2"/>
+      </g>
+       <rect x="368" y="380" width="522.5600000000001" height="360" rx="10" fill="#F6F5F9" opacity="0.04" stroke="#F6F5F9" stroke-opacity="0.1"/>
+       <rect x="416" y="720" width="18.176000000000002" height="60" rx="2" fill="#F6F5F9" opacity="0.45"/><rect x="447.808" y="636" width="18.176000000000002" height="144.00000000000003" rx="2" fill="#F6F5F9" opacity="0.45"/><rect x="479.616" y="672" width="18.176000000000002" height="108" rx="2" fill="#F6F5F9" opacity="0.45"/><rect x="511.424" y="708" width="18.176000000000002" height="72" rx="2" fill="#F6F5F9" opacity="0.45"/><rect x="543.232" y="624" width="18.176000000000002" height="156" rx="2" fill="#F6F5F9" opacity="0.45"/><rect x="575.04" y="660" width="18.176000000000002" height="120" rx="2" fill="#F6F5F9" opacity="0.45"/><rect x="606.848" y="696" width="18.176000000000002" height="83.99999999999999" rx="2" fill="#F6F5F9" opacity="0.45"/><rect x="638.656" y="612" width="18.176000000000002" height="167.99999999999997" rx="2" fill="#8221FC" opacity="1"/><rect x="670.4639999999999" y="648" width="18.176000000000002" height="132" rx="2" fill="#F6F5F9" opacity="0.45"/><rect x="702.2719999999999" y="684" width="18.176000000000002" height="96" rx="2" fill="#F6F5F9" opacity="0.45"/><rect x="734.0799999999999" y="720" width="18.176000000000002" height="60" rx="2" fill="#F6F5F9" opacity="0.45"/>
+       <rect x="936" y="380" width="568" height="360" rx="10" fill="#F6F5F9" opacity="0.04" stroke="#F6F5F9" stroke-opacity="0.1"/>
+       <path d="M 1200 350 L 1215.904 372.29405301257304 L 1231.808 389.1922576021502 L 1247.712 396.8902759958872 L 1263.616 394.29737413368565 L 1279.52 363.3581347218316 L 1295.424 348.4789007049863 L 1311.328 335.22812020271914 L 1327.232 328.69392741386696 L 1343.136 331.98339257093625 L 1359.04 325.3060886050363 L 1374.944 345.9122774095213 L 1390.848 368.90394772296827 L 1406.752 388.6794882326494 L 1422.656 400.585888185695 L 1438.56 382.2911473583769 L 1454.464 374.47210175121165 L 1470.368 360.61479016363364 L 1486.272 345.9862437178638 L 1502.176 336.08096999475504 L 1518.08 315.00034277072535 L 1533.984 324.2428979019772 L 1549.888 342.262338741289 L 1565.792 364.9236178121888 L 1581.696 386.72257301475287 L 1597.6 382.40938549830196 L 1613.504 388.5370187496115 L 1629.408 384.47792530744346 L 1645.312 372.60914248609953 L 1661.216 357.611182947403" fill="none" stroke="#8221FC" stroke-width="4" stroke-linecap="round"/>
+       <path d="M 1200 350 L 1215.904 372.29405301257304 L 1231.808 389.1922576021502 L 1247.712 396.8902759958872 L 1263.616 394.29737413368565 L 1279.52 363.3581347218316 L 1295.424 348.4789007049863 L 1311.328 335.22812020271914 L 1327.232 328.69392741386696 L 1343.136 331.98339257093625 L 1359.04 325.3060886050363 L 1374.944 345.9122774095213 L 1390.848 368.90394772296827 L 1406.752 388.6794882326494 L 1422.656 400.585888185695 L 1438.56 382.2911473583769 L 1454.464 374.47210175121165 L 1470.368 360.61479016363364 L 1486.272 345.9862437178638 L 1502.176 336.08096999475504 L 1518.08 315.00034277072535 L 1533.984 324.2428979019772 L 1549.888 342.262338741289 L 1565.792 364.9236178121888 L 1581.696 386.72257301475287 L 1597.6 382.40938549830196 L 1613.504 388.5370187496115 L 1629.408 384.47792530744346 L 1645.312 372.60914248609953 L 1661.216 357.611182947403 L 1488 740 L 958.72 740 Z" fill="#8221FC" opacity="0.12"/>
+       <rect x="368" y="790" width="1136" height="100" rx="8" fill="#F6F5F9" opacity="0.03"/>
+       <rect x="400" y="815" width="39.760000000000005" height="50" fill="#F6F5F9" opacity="0.12"/><rect x="456.8" y="815" width="39.760000000000005" height="50" fill="#F6F5F9" opacity="0.16"/><rect x="513.6" y="815" width="39.760000000000005" height="50" fill="#F6F5F9" opacity="0.2"/><rect x="570.4" y="815" width="39.760000000000005" height="50" fill="#F6F5F9" opacity="0.24"/><rect x="627.2" y="815" width="39.760000000000005" height="50" fill="#F6F5F9" opacity="0.28"/>
+       <g fill="none" stroke="#F6F5F9" stroke-opacity="0.28" stroke-width="1.2">
+      <rect x="35" y="35" width="1530" height="930"/>
+      <path d="M35 53 V35 H53"/>
+      <path d="M1547 35 H1565 V53"/>
+      <path d="M1565 947 V965 H1547"/>
+      <path d="M53 965 H35 V947"/>
+    </g>
+    <text x="67" y="71" fill="#F6F5F9" opacity="0.6" font-family="Arial, Helvetica, sans-serif" font-size="16" letter-spacing="6">SOSIAL / ANALYTICS</text>
+  <rect width="1600" height="1000" filter="url(#grain)" opacity="0.07" style="mix-blend-mode:overlay"/>
+</svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" role="img">
+  <defs><filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.55"/></feComponentTransfer>
+    </filter></defs>
+  <rect width="1200" height="900" fill="#F6F5F9"/>
+       <g stroke="#14141C" stroke-opacity="0.05" stroke-width="1"><line x1="150" y1="0" x2="150" y2="900"/><line x1="300" y1="0" x2="300" y2="900"/><line x1="450" y1="0" x2="450" y2="900"/><line x1="600" y1="0" x2="600" y2="900"/><line x1="750" y1="0" x2="750" y2="900"/><line x1="900" y1="0" x2="900" y2="900"/><line x1="1050" y1="0" x2="1050" y2="900"/><line x1="0" y1="150" x2="1200" y2="150"/><line x1="0" y1="300" x2="1200" y2="300"/><line x1="0" y1="450" x2="1200" y2="450"/><line x1="0" y1="600" x2="1200" y2="600"/><line x1="0" y1="750" x2="1200" y2="750"/></g>
+       <rect x="744" y="0" width="456" height="900" fill="#14141C" opacity="0.055"/>
+       <circle cx="983.9999999999999" cy="162" r="72" fill="#B58CFD"/>
+       <path d="M0 306 C 264 216.00000000000003, 408.00000000000006 396.00000000000006, 660 306 S 1032 216.00000000000003, 1200 333" fill="none" stroke="#B58CFD" stroke-opacity="0.95" stroke-width="49.5" stroke-linecap="round"/><path d="M0 450 C 264 342, 408.00000000000006 558, 660 450 S 1032 342, 1200 482.40000000000003" fill="none" stroke="#14141C" stroke-opacity="0.9" stroke-width="76.5" stroke-linecap="round"/><path d="M0 594 C 264 513, 408.00000000000006 675, 660 594 S 1032 513, 1200 618.3000000000001" fill="none" stroke="#B58CFD" stroke-opacity="0.75" stroke-width="103.49999999999999" stroke-linecap="round"/><path d="M0 720 C 264 657, 408.00000000000006 783.0000000000001, 660 720 S 1032 657, 1200 738.9000000000001" fill="none" stroke="#14141C" stroke-opacity="0.55" stroke-width="130.5" stroke-linecap="round"/>
+       <g fill="none" stroke="#14141C" stroke-opacity="0.28" stroke-width="1.2">
+      <rect x="32" y="32" width="1136" height="836"/>
+      <path d="M32 48 V32 H48"/>
+      <path d="M1152 32 H1168 V48"/>
+      <path d="M1168 852 V868 H1152"/>
+      <path d="M48 868 H32 V852"/>
+    </g>
+    <text x="62" y="66" fill="#14141C" opacity="0.6" font-family="Arial, Helvetica, sans-serif" font-size="14" letter-spacing="5">INSIGHT / CREATIVE</text>
+       <text transform="translate(1140 846) rotate(-90)" text-anchor="end" fill="#14141C" opacity="0.55" font-family="Arial, Helvetica, sans-serif" font-size="13" letter-spacing="3.12">BRAND SYSTEMS</text>
+  <rect width="1200" height="900" filter="url(#grain)" opacity="0.07" style="mix-blend-mode:overlay"/>
+</svg>

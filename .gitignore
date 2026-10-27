@@ -1,0 +1,18 @@
+node_modules
+.next
+out
+build
+dist
+.env
+.env.local
+.env*.local
+.data
+*.tsbuildinfo
+next-env.d.ts
+.DS_Store
+Thumbs.db
+
+# Source brand documents and design references stay local.
+Sosial - Brand Kit and Brand Guidelines v2.pdf
+Sosial Brand Identity Design.pdf
+Sosial interactive homepage concept.html

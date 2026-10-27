@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" width="1600" height="1200" role="img">
+  <defs><filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.55"/></feComponentTransfer>
+    </filter></defs>
+  <defs>
+      <radialGradient id="kiteGlow" cx="50%" cy="0%" r="75%">
+        <stop offset="0%" stop-color="#8221FC" stop-opacity="0.12"/>
+        <stop offset="60%" stop-color="#8221FC" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+    <rect width="1600" height="1200" fill="#1C1C26"/>
+    <g stroke="#F6F5F9" stroke-opacity="0.04" stroke-width="1"><line x1="133.33333333333334" y1="0" x2="133.33333333333334" y2="1200"/><line x1="266.6666666666667" y1="0" x2="266.6666666666667" y2="1200"/><line x1="400" y1="0" x2="400" y2="1200"/><line x1="533.3333333333334" y1="0" x2="533.3333333333334" y2="1200"/><line x1="666.6666666666667" y1="0" x2="666.6666666666667" y2="1200"/><line x1="800" y1="0" x2="800" y2="1200"/><line x1="933.3333333333334" y1="0" x2="933.3333333333334" y2="1200"/><line x1="1066.6666666666667" y1="0" x2="1066.6666666666667" y2="1200"/><line x1="1200" y1="0" x2="1200" y2="1200"/><line x1="1333.3333333333335" y1="0" x2="1333.3333333333335" y2="1200"/><line x1="1466.6666666666667" y1="0" x2="1466.6666666666667" y2="1200"/><line x1="0" y1="133.33333333333334" x2="1600" y2="133.33333333333334"/><line x1="0" y1="266.6666666666667" x2="1600" y2="266.6666666666667"/><line x1="0" y1="400" x2="1600" y2="400"/><line x1="0" y1="533.3333333333334" x2="1600" y2="533.3333333333334"/><line x1="0" y1="666.6666666666667" x2="1600" y2="666.6666666666667"/><line x1="0" y1="800" x2="1600" y2="800"/><line x1="0" y1="933.3333333333334" x2="1600" y2="933.3333333333334"/><line x1="0" y1="1066.6666666666667" x2="1600" y2="1066.6666666666667"/></g>
+    <g>
+    <rect x="106" y="170" width="1408" height="952" rx="18" fill="#14141C" opacity="0.16"/>
+    <rect x="96" y="156" width="1408" height="952" rx="18" fill="#14141C" stroke="#14141C" stroke-opacity="0.18"/>
+    <path d="M96 174 Q96 156 114 156 H1486 Q1504 156 1504 174 V210 H96 Z" fill="#1C1C26"/>
+    <circle cx="120" cy="183" r="5" fill="#8221FC"/>
+    <circle cx="138" cy="183" r="5" fill="#F6F5F9" opacity="0.22"/>
+    <circle cx="156" cy="183" r="5" fill="#F6F5F9" opacity="0.22"/>
+    <rect x="190" y="171" width="591.36" height="24" rx="12" fill="#14141C" opacity="0.7"/>
+    <text x="204" y="188" fill="#14141C" opacity="0.42" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" letter-spacing="0.6" text-anchor="start">kiteandco.studio</text>
+    <g>
+    <rect x="96" y="156" width="1408" height="952" fill="#14141C"/>
+    <rect x="96" y="156" width="1408" height="952" fill="url(#kiteGlow)" opacity="0.8"/>
+    <text x="150" y="260" fill="#F6F5F9" opacity="1" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" letter-spacing="2.4" text-anchor="start">KITE & CO.</text>
+    <text x="836" y="258" fill="#F6F5F9" opacity="0.45" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="400" letter-spacing="1.4" text-anchor="start">SERVICES</text>
+    <text x="946" y="258" fill="#F6F5F9" opacity="0.45" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="400" letter-spacing="1.4" text-anchor="start">WORK</text>
+    <text x="1026" y="258" fill="#F6F5F9" opacity="0.45" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="400" letter-spacing="1.4" text-anchor="start">INSIGHTS</text>
+    <rect x="1196" y="230" width="230" height="50" rx="25" fill="#8221FC"/>
+    <text x="1311" y="261" fill="#14141C" opacity="1" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" letter-spacing="1.2" text-anchor="middle">BOOK AN INTRO</text>
+    <line x1="150" y1="296" x2="1450" y2="296" stroke="#F6F5F9" stroke-opacity="0.12" stroke-width="1"/>
+    <text x="150" y="426" fill="#F6F5F9" opacity="1" font-family="Arial, Helvetica, sans-serif" font-size="98" font-weight="700" letter-spacing="-2.5" text-anchor="start">MAKE</text>
+    <text x="150" y="522" fill="#F6F5F9" opacity="1" font-family="Arial, Helvetica, sans-serif" font-size="98" font-weight="700" letter-spacing="-2.5" text-anchor="start">COMPLEXITY</text>
+    <text x="150" y="618" fill="#8221FC" opacity="1" font-family="Arial, Helvetica, sans-serif" font-size="98" font-weight="700" letter-spacing="-2.5" text-anchor="start">FEEL SIMPLE.</text>
+    <text x="150" y="680" fill="#F6F5F9" opacity="0.48" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="400" letter-spacing="0" text-anchor="start">Strategy, design and search for consultancies that have outgrown their website.</text>
+    <rect x="150" y="716" width="184" height="48" rx="24" fill="#F6F5F9"/>
+    <text x="242" y="746" fill="#14141C" opacity="1" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="700" letter-spacing="1.3" text-anchor="middle">SEE THE WORK</text>
+    <line x1="150" y1="818" x2="1450" y2="818" stroke="#F6F5F9" stroke-opacity="0.12" stroke-width="1"/>
+    <g transform="translate(150 864)">
+      <g transform="translate(0 0)">
+        <rect width="260" height="152" rx="12" fill="#F6F5F9" opacity="0.045" stroke="#F6F5F9" stroke-opacity="0.1"/>
+        <text x="22" y="32" fill="#8221FC" opacity="0.9" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="400" letter-spacing="1.2" text-anchor="start">01</text>
+        <text x="22" y="76" fill="#F6F5F9" opacity="1" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" letter-spacing="0" text-anchor="start">BRAND</text>
+        <rect x="22" y="100" width="129.20000000000002" height="3" rx="1.5" fill="#F6F5F9" opacity="0.2"/><rect x="22" y="115" width="161.50000000000003" height="3" rx="1.5" fill="#F6F5F9" opacity="0.188"/>
+        <text x="22" y="136" fill="#F6F5F9" opacity="0.45" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="400" letter-spacing="1.2" text-anchor="start">EXPLORE ↗</text>
+      </g><g transform="translate(300 0)">
+        <rect width="260" height="152" rx="12" fill="#F6F5F9" opacity="0.045" stroke="#F6F5F9" stroke-opacity="0.1"/>
+        <text x="22" y="32" fill="#8221FC" opacity="0.9" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="400" letter-spacing="1.2" text-anchor="start">02</text>
+        <text x="22" y="76" fill="#F6F5F9" opacity="1" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" letter-spacing="0" text-anchor="start">WEB</text>
+        <rect x="22" y="100" width="129.20000000000002" height="3" rx="1.5" fill="#F6F5F9" opacity="0.2"/><rect x="22" y="115" width="161.50000000000003" height="3" rx="1.5" fill="#F6F5F9" opacity="0.188"/>
+        <text x="22" y="136" fill="#F6F5F9" opacity="0.45" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="400" letter-spacing="1.2" text-anchor="start">EXPLORE ↗</text>
+      </g><g transform="translate(600 0)">
+        <rect width="260" height="152" rx="12" fill="#F6F5F9" opacity="0.045" stroke="#F6F5F9" stroke-opacity="0.1"/>
+        <text x="22" y="32" fill="#8221FC" opacity="0.9" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="400" letter-spacing="1.2" text-anchor="start">03</text>
+        <text x="22" y="76" fill="#F6F5F9" opacity="1" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" letter-spacing="0" text-anchor="start">SEARCH</text>
+        <rect x="22" y="100" width="129.20000000000002" height="3" rx="1.5" fill="#F6F5F9" opacity="0.2"/><rect x="22" y="115" width="161.50000000000003" height="3" rx="1.5" fill="#F6F5F9" opacity="0.188"/>
+        <text x="22" y="136" fill="#F6F5F9" opacity="0.45" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="400" letter-spacing="1.2" text-anchor="start">EXPLORE ↗</text>
+      </g>
+    </g>
+    <text x="1450" y="1056" fill="#F6F5F9" opacity="0.35" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" letter-spacing="1.2" text-anchor="end">01 / 04</text>
+  </g>
+  </g>
+    <text x="96" y="108" fill="#F6F5F9" opacity="0.45" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" letter-spacing="2.4" text-anchor="start">KITE & CO. / HOMEPAGE</text>
+    <text x="1504" y="108" fill="#F6F5F9" opacity="0.32" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" letter-spacing="1.8" text-anchor="end">CONCEPT / WEB 01</text>
+    <text x="96" y="1168" fill="#14141C" opacity="1" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" letter-spacing="0" text-anchor="start">The offer is clear before the first call.</text>
+    <g fill="none" stroke="#F6F5F9" stroke-opacity="0.24" stroke-width="1.2">
+      <rect x="42" y="42" width="1516" height="1116"/>
+      <path d="M42 64 V42 H64"/>
+      <path d="M1536 42 H1558 V64"/>
+      <path d="M1558 1136 V1158 H1536"/>
+      <path d="M64 1158 H42 V1136"/>
+    </g>
+    <text x="78" y="82" fill="#F6F5F9" opacity="0.5" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" letter-spacing="5" text-anchor="start">CONCEPT / KITE / HOMEPAGE</text>
+    <text transform="translate(1526 1128) rotate(-90)" text-anchor="end" fill="#F6F5F9" opacity="0.42" font-family="Arial, Helvetica, sans-serif" font-size="16" letter-spacing="3.52">SERVICE-LED WEBSITE</text>
+  <rect width="1600" height="1200" filter="url(#grain)" opacity="0.06" style="mix-blend-mode:overlay"/>
+</svg>

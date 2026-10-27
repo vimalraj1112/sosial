@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" width="1600" height="1200" role="img">
+  <defs><filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.55"/></feComponentTransfer>
+    </filter></defs>
+  <rect width="1600" height="1200" fill="#EFE6FE"/>
+     <g stroke="#14141C" stroke-opacity="0.035" stroke-width="1"><line x1="133.33333333333334" y1="0" x2="133.33333333333334" y2="1200"/><line x1="266.6666666666667" y1="0" x2="266.6666666666667" y2="1200"/><line x1="400" y1="0" x2="400" y2="1200"/><line x1="533.3333333333334" y1="0" x2="533.3333333333334" y2="1200"/><line x1="666.6666666666667" y1="0" x2="666.6666666666667" y2="1200"/><line x1="800" y1="0" x2="800" y2="1200"/><line x1="933.3333333333334" y1="0" x2="933.3333333333334" y2="1200"/><line x1="1066.6666666666667" y1="0" x2="1066.6666666666667" y2="1200"/><line x1="1200" y1="0" x2="1200" y2="1200"/><line x1="1333.3333333333335" y1="0" x2="1333.3333333333335" y2="1200"/><line x1="1466.6666666666667" y1="0" x2="1466.6666666666667" y2="1200"/><line x1="0" y1="133.33333333333334" x2="1600" y2="133.33333333333334"/><line x1="0" y1="266.6666666666667" x2="1600" y2="266.6666666666667"/><line x1="0" y1="400" x2="1600" y2="400"/><line x1="0" y1="533.3333333333334" x2="1600" y2="533.3333333333334"/><line x1="0" y1="666.6666666666667" x2="1600" y2="666.6666666666667"/><line x1="0" y1="800" x2="1600" y2="800"/><line x1="0" y1="933.3333333333334" x2="1600" y2="933.3333333333334"/><line x1="0" y1="1066.6666666666667" x2="1600" y2="1066.6666666666667"/></g>
+     <rect x="0" y="0" width="1600" height="212" fill="#F6F5F9" opacity="0.72"/>
+     <circle cx="142" cy="112" r="48" fill="#14141C"/>
+     <text x="142" y="122" fill="#8221FC" opacity="1" font-family="Arial, Helvetica, sans-serif" font-size="44" font-weight="700" letter-spacing="0" text-anchor="middle">H</text>
+     <text x="216" y="92" fill="#14141C" opacity="1" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700" letter-spacing="1.6" text-anchor="start">HALCYON / SKIN</text>
+     <text x="216" y="122" fill="#14141C" opacity="0.5" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" letter-spacing="0" text-anchor="start">Clinical, not cold.</text>
+     <text x="216" y="150" fill="#14141C" opacity="0.35" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" letter-spacing="1.6" text-anchor="start">FEED SYSTEM / CONCEPT</text>
+     <rect x="1220" y="78" width="210" height="52" rx="26" fill="#8221FC"/>
+     <text x="1325" y="111" fill="#14141C" opacity="1" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="700" letter-spacing="1.5" text-anchor="middle">FOLLOW THE WORK</text>
+     <text x="1230" y="44" fill="#14141C" opacity="0.38" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="400" letter-spacing="2.2" text-anchor="start">01 / SOCIAL</text>
+     <g>
+        <rect x="152" y="306" width="312" height="312" fill="#F6F5F9"/>
+        <circle cx="308" cy="443.28" r="68.64" fill="none" stroke="#14141C" stroke-width="2" opacity="0.55"/><circle cx="308" cy="443.28" r="31.200000000000003" fill="#8221FC"/>
+        <text x="172" y="336" fill="#14141C" opacity="0.58" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="400" letter-spacing="1.5" text-anchor="start">01 / BARRIER</text>
+        <text x="172" y="596" fill="#14141C" opacity="0.4" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="400" letter-spacing="1.2" text-anchor="start">HALCYON / SKIN</text>
+      </g><g>
+        <rect x="482" y="306" width="312" height="312" fill="#14141C"/>
+        <path d="M516 526 C 582 346, 672 592, 760 406" fill="none" stroke="#F6F5F9" stroke-opacity="0.55" stroke-width="2"/><path d="M516 556 C 592 406, 692 616, 760 456" fill="none" stroke="#B58CFD" stroke-opacity="0.9" stroke-width="7"/>
+        <text x="502" y="336" fill="#F6F5F9" opacity="0.58" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="400" letter-spacing="1.5" text-anchor="start">02 / TEXTURE</text>
+        <text x="502" y="596" fill="#F6F5F9" opacity="0.4" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="400" letter-spacing="1.2" text-anchor="start">HALCYON / SKIN</text>
+      </g><g>
+        <rect x="812" y="306" width="312" height="312" fill="#8221FC"/>
+        <rect x="898" y="382" width="140" height="160" fill="none" stroke="#F6F5F9" stroke-opacity="0.4"/><circle cx="968" cy="462" r="46.8" fill="#B58CFD"/>
+        <text x="832" y="336" fill="#F6F5F9" opacity="0.58" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="400" letter-spacing="1.5" text-anchor="start">03 / RENEWAL</text>
+        <text x="832" y="596" fill="#F6F5F9" opacity="0.4" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="400" letter-spacing="1.2" text-anchor="start">HALCYON / SKIN</text>
+      </g><g>
+        <rect x="152" y="636" width="312" height="312" fill="#EFE6FE"/>
+        <path d="M198 854 Q 308 694 418 854" fill="none" stroke="#14141C" stroke-opacity="0.42" stroke-width="1.5"/><path d="M244 854 Q 308 752 372 854" fill="none" stroke="#8221FC" stroke-opacity="0.75" stroke-width="1.5"/>
+        <text x="172" y="666" fill="#14141C" opacity="0.58" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="400" letter-spacing="1.5" text-anchor="start">04 / SPF / 01</text>
+        <text x="172" y="926" fill="#14141C" opacity="0.4" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="400" letter-spacing="1.2" text-anchor="start">HALCYON / SKIN</text>
+      </g><g>
+        <rect x="482" y="636" width="312" height="312" fill="#B58CFD"/>
+        <circle cx="638" cy="773.28" r="68.64" fill="none" stroke="#F6F5F9" stroke-width="2" opacity="0.55"/><circle cx="638" cy="773.28" r="31.200000000000003" fill="#B58CFD"/>
+        <text x="502" y="666" fill="#F6F5F9" opacity="0.58" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="400" letter-spacing="1.5" text-anchor="start">05 / WATER</text>
+        <text x="502" y="926" fill="#F6F5F9" opacity="0.4" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="400" letter-spacing="1.2" text-anchor="start">HALCYON / SKIN</text>
+      </g><g>
+        <rect x="812" y="636" width="312" height="312" fill="#F6F5F9"/>
+        <path d="M846 856 C 912 676, 1002 922, 1090 736" fill="none" stroke="#14141C" stroke-opacity="0.55" stroke-width="2"/><path d="M846 886 C 922 736, 1022 946, 1090 786" fill="none" stroke="#8221FC" stroke-opacity="0.9" stroke-width="7"/>
+        <text x="832" y="666" fill="#14141C" opacity="0.58" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="400" letter-spacing="1.5" text-anchor="start">06 / PROOF</text>
+        <text x="832" y="926" fill="#14141C" opacity="0.4" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="400" letter-spacing="1.2" text-anchor="start">HALCYON / SKIN</text>
+      </g><g>
+        <rect x="152" y="966" width="312" height="312" fill="#14141C"/>
+        <rect x="238" y="1042" width="140" height="160" fill="none" stroke="#F6F5F9" stroke-opacity="0.4"/><circle cx="308" cy="1122" r="46.8" fill="#B58CFD"/>
+        <text x="172" y="996" fill="#F6F5F9" opacity="0.58" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="400" letter-spacing="1.5" text-anchor="start">07 / NIGHT</text>
+        <text x="172" y="1256" fill="#F6F5F9" opacity="0.4" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="400" letter-spacing="1.2" text-anchor="start">HALCYON / SKIN</text>
+      </g><g>
+        <rect x="482" y="966" width="312" height="312" fill="#B58CFD"/>
+        <path d="M528 1184 Q 638 1024 748 1184" fill="none" stroke="#F6F5F9" stroke-opacity="0.42" stroke-width="1.5"/><path d="M574 1184 Q 638 1082 702 1184" fill="none" stroke="#B58CFD" stroke-opacity="0.75" stroke-width="1.5"/>
+        <text x="502" y="996" fill="#F6F5F9" opacity="0.58" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="400" letter-spacing="1.5" text-anchor="start">08 / LIGHT</text>
+        <text x="502" y="1256" fill="#F6F5F9" opacity="0.4" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="400" letter-spacing="1.2" text-anchor="start">HALCYON / SKIN</text>
+      </g><g>
+        <rect x="812" y="966" width="312" height="312" fill="#EFE6FE"/>
+        <circle cx="968" cy="1103.28" r="68.64" fill="none" stroke="#14141C" stroke-width="2" opacity="0.55"/><circle cx="968" cy="1103.28" r="31.200000000000003" fill="#8221FC"/>
+        <text x="832" y="996" fill="#14141C" opacity="0.58" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="400" letter-spacing="1.5" text-anchor="start">09 / RITUAL</text>
+        <text x="832" y="1256" fill="#14141C" opacity="0.4" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="400" letter-spacing="1.2" text-anchor="start">HALCYON / SKIN</text>
+      </g>
+     <line x1="152" y1="1052" x2="1448" y2="1052" stroke="#14141C" stroke-opacity="0.2" stroke-width="1"/>
+     <text x="152" y="1094" fill="#14141C" opacity="1" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="700" letter-spacing="0" text-anchor="start">One ingredient. One claim. One proof point.</text>
+     <text x="152" y="1126" fill="#14141C" opacity="0.48" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" letter-spacing="0" text-anchor="start">A repeatable feed system that teaches before it sells.</text>
+     <g fill="none" stroke="#14141C" stroke-opacity="0.24" stroke-width="1.2">
+      <rect x="42" y="42" width="1516" height="1116"/>
+      <path d="M42 64 V42 H64"/>
+      <path d="M1536 42 H1558 V64"/>
+      <path d="M1558 1136 V1158 H1536"/>
+      <path d="M64 1158 H42 V1136"/>
+    </g>
+    <text x="78" y="82" fill="#14141C" opacity="0.5" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" letter-spacing="5" text-anchor="start">CONCEPT / HALCYON / FEED 01</text>
+     <text transform="translate(1526 1128) rotate(-90)" text-anchor="end" fill="#14141C" opacity="0.42" font-family="Arial, Helvetica, sans-serif" font-size="16" letter-spacing="3.52">SOCIAL CONTENT SYSTEM</text>
+  <rect width="1600" height="1200" filter="url(#grain)" opacity="0.06" style="mix-blend-mode:overlay"/>
+</svg>

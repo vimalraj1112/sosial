@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" width="1600" height="1200" role="img">
+  <defs><filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.55"/></feComponentTransfer>
+    </filter></defs>
+  <rect width="1600" height="1200" fill="#F6F5F9"/>
+     <g stroke="#14141C" stroke-opacity="0.035" stroke-width="1"><line x1="133.33333333333334" y1="0" x2="133.33333333333334" y2="1200"/><line x1="266.6666666666667" y1="0" x2="266.6666666666667" y2="1200"/><line x1="400" y1="0" x2="400" y2="1200"/><line x1="533.3333333333334" y1="0" x2="533.3333333333334" y2="1200"/><line x1="666.6666666666667" y1="0" x2="666.6666666666667" y2="1200"/><line x1="800" y1="0" x2="800" y2="1200"/><line x1="933.3333333333334" y1="0" x2="933.3333333333334" y2="1200"/><line x1="1066.6666666666667" y1="0" x2="1066.6666666666667" y2="1200"/><line x1="1200" y1="0" x2="1200" y2="1200"/><line x1="1333.3333333333335" y1="0" x2="1333.3333333333335" y2="1200"/><line x1="1466.6666666666667" y1="0" x2="1466.6666666666667" y2="1200"/><line x1="0" y1="133.33333333333334" x2="1600" y2="133.33333333333334"/><line x1="0" y1="266.6666666666667" x2="1600" y2="266.6666666666667"/><line x1="0" y1="400" x2="1600" y2="400"/><line x1="0" y1="533.3333333333334" x2="1600" y2="533.3333333333334"/><line x1="0" y1="666.6666666666667" x2="1600" y2="666.6666666666667"/><line x1="0" y1="800" x2="1600" y2="800"/><line x1="0" y1="933.3333333333334" x2="1600" y2="933.3333333333334"/><line x1="0" y1="1066.6666666666667" x2="1600" y2="1066.6666666666667"/></g>
+     <circle cx="1320" cy="1000" r="240" fill="#B58CFD" opacity="0.06"/>
+     <text x="122" y="104" fill="#14141C" opacity="0.45" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" letter-spacing="2.2" text-anchor="start">TESSELLATE / RESPONSIVE SYSTEM</text>
+     <text x="1478" y="104" fill="#14141C" opacity="0.35" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" letter-spacing="1.7" text-anchor="end">CONCEPT / WEB 02</text>
+     <g transform="translate(122 196) rotate(-2 180 380)">
+    <rect x="8" y="12" width="360" height="748" rx="38" fill="#14141C" opacity="0.16"/>
+    <rect width="360" height="748" rx="34" fill="#1C1C26" stroke="#14141C" stroke-opacity="0.2"/>
+    <rect x="14" y="14" width="332" height="720" rx="24" fill="#14141C"/>
+    <rect x="132" y="26" width="96" height="18" rx="9" fill="#F6F5F9" opacity="0.2"/>
+    <text x="40" y="92" fill="#F6F5F9" opacity="1" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" letter-spacing="1.6" text-anchor="start">TESS</text>
+    <text x="288" y="92" fill="#F6F5F9" opacity="0.5" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="400" letter-spacing="1.2" text-anchor="end">MENU</text>
+    <text x="40" y="184" fill="#F6F5F9" opacity="1" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="700" letter-spacing="-0.6" text-anchor="start">A PRACTICE</text>
+    <text x="40" y="228" fill="#F6F5F9" opacity="1" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="700" letter-spacing="-0.6" text-anchor="start">OF QUIET</text>
+    <text x="40" y="272" fill="#8221FC" opacity="1" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="700" letter-spacing="-0.6" text-anchor="start">STRUCTURES.</text>
+    <rect x="40" y="324" width="280" height="222" fill="#DED8EA"/>
+    <rect x="70" y="362" width="112" height="150" fill="#14141C" opacity="0.9"/>
+    <rect x="194" y="422" width="96" height="90" fill="#8221FC"/>
+    <text x="40" y="586" fill="#F6F5F9" opacity="0.4" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="400" letter-spacing="1.2" text-anchor="start">HOUSE / 04</text>
+    <line x1="40" y1="614" x2="320" y2="614" stroke="#F6F5F9" stroke-opacity="0.14" stroke-width="1"/>
+    <text x="40" y="652" fill="#F6F5F9" opacity="0.45" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="400" letter-spacing="1.4" text-anchor="start">SELECTED PROJECTS</text>
+    <rect x="40" y="676" width="176.8" height="3" rx="1.5" fill="#F6F5F9" opacity="0.2"/><rect x="40" y="692" width="221.00000000000003" height="3" rx="1.5" fill="#F6F5F9" opacity="0.188"/><rect x="40" y="708" width="187.20000000000002" height="3" rx="1.5" fill="#F6F5F9" opacity="0.17600000000000002"/>
+  </g>
+     <g transform="translate(560 248) rotate(2 180 380)">
+    <rect x="8" y="12" width="360" height="748" rx="38" fill="#14141C" opacity="0.16"/>
+    <rect width="360" height="748" rx="34" fill="#F6F5F9" stroke="#14141C" stroke-opacity="0.2"/>
+    <rect x="14" y="14" width="332" height="720" rx="24" fill="#F6F5F9"/>
+    <rect x="132" y="26" width="96" height="18" rx="9" fill="#14141C" opacity="0.12"/>
+    <text x="40" y="94" fill="#14141C" opacity="0.45" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" letter-spacing="1.4" text-anchor="start">TESS / PROJECT</text>
+    <text x="40" y="170" fill="#14141C" opacity="1" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="700" letter-spacing="-0.5" text-anchor="start">PAVILION</text>
+    <text x="40" y="216" fill="#B58CFD" opacity="1" font-family="Arial, Helvetica, sans-serif" font-size="40" font-weight="700" letter-spacing="-0.5" text-anchor="start">IN THE PINES</text>
+    <rect x="40" y="268" width="280" height="252" fill="#EFE6FE"/>
+    <path d="M70 500 V352 Q180 282 290 352 V500 Z" fill="#14141C" opacity="0.92"/>
+    <circle cx="180" cy="390" r="36" fill="#F6F5F9"/>
+    <rect x="40" y="570" width="190.4" height="3" rx="1.5" fill="#14141C" opacity="0.3"/><rect x="40" y="587" width="238.00000000000003" height="3" rx="1.5" fill="#14141C" opacity="0.288"/><rect x="40" y="604" width="201.60000000000002" height="3" rx="1.5" fill="#14141C" opacity="0.27599999999999997"/>
+    <line x1="40" y1="646" x2="320" y2="646" stroke="#14141C" stroke-opacity="0.16" stroke-width="1"/>
+    <text x="40" y="688" fill="#14141C" opacity="0.4" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="400" letter-spacing="1.4" text-anchor="start">NEXT / COMPETITION</text>
+    <text x="40" y="716" fill="#14141C" opacity="1" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" letter-spacing="0" text-anchor="start">A courtyard with no centre.</text>
+  </g>
+     <g transform="translate(1030 236)">
+    <rect x="10" y="14" width="448" height="670" rx="22" fill="#14141C" opacity="0.14"/>
+    <rect width="448" height="670" rx="20" fill="#EFE6FE" stroke="#14141C" stroke-opacity="0.16"/>
+    <rect x="18" y="18" width="412" height="634" fill="#F6F5F9"/>
+    <text x="42" y="70" fill="#14141C" opacity="1" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700" letter-spacing="1.8" text-anchor="start">TESSELLATE</text>
+    <text x="300" y="70" fill="#14141C" opacity="0.42" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="400" letter-spacing="1.2" text-anchor="start">WORK / STUDIO</text>
+    <line x1="42" y1="96" x2="406" y2="96" stroke="#14141C" stroke-opacity="0.16" stroke-width="1"/>
+    <text x="42" y="168" fill="#14141C" opacity="1" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="700" letter-spacing="0" text-anchor="start">THE WORK</text>
+    <text x="42" y="210" fill="#8221FC" opacity="1" font-family="Arial, Helvetica, sans-serif" font-size="38" font-weight="700" letter-spacing="0" text-anchor="start">IS THE ARGUMENT.</text>
+    <rect x="42" y="252" width="172" height="226" fill="#EFE6FE"/>
+    <path d="M64 454 V330 Q128 274 192 330 V454 Z" fill="#14141C" opacity="0.9"/>
+    <rect x="232" y="252" width="174" height="108" fill="#B58CFD" opacity="0.8"/>
+    <rect x="232" y="378" width="174" height="100" fill="#DED8EA"/>
+    <circle cx="319" cy="428" r="28" fill="#8221FC"/>
+    <rect x="42" y="516" width="231.20000000000002" height="3" rx="1.5" fill="#14141C" opacity="0.26"/><rect x="42" y="534" width="289.00000000000006" height="3" rx="1.5" fill="#14141C" opacity="0.248"/><rect x="42" y="552" width="244.80000000000004" height="3" rx="1.5" fill="#14141C" opacity="0.23600000000000002"/><rect x="42" y="570" width="302.6" height="3" rx="1.5" fill="#14141C" opacity="0.224"/>
+    <line x1="42" y1="600" x2="406" y2="600" stroke="#14141C" stroke-opacity="0.16" stroke-width="1"/>
+    <text x="42" y="630" fill="#14141C" opacity="0.35" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="400" letter-spacing="1.2" text-anchor="start">SELECTED / 06</text>
+  </g>
+     <text x="122" y="1058" fill="#14141C" opacity="1" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700" letter-spacing="0" text-anchor="start">Same discipline, every screen.</text>
+     <text x="122" y="1094" fill="#14141C" opacity="0.48" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="400" letter-spacing="0" text-anchor="start">Project templates that stay calm as the viewport changes.</text>
+     <g fill="none" stroke="#14141C" stroke-opacity="0.24" stroke-width="1.2">
+      <rect x="42" y="42" width="1516" height="1116"/>
+      <path d="M42 64 V42 H64"/>
+      <path d="M1536 42 H1558 V64"/>
+      <path d="M1558 1136 V1158 H1536"/>
+      <path d="M64 1158 H42 V1136"/>
+    </g>
+    <text x="78" y="82" fill="#14141C" opacity="0.5" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" letter-spacing="5" text-anchor="start">CONCEPT / TESSELLATE / RESPONSIVE</text>
+     <text transform="translate(1526 1128) rotate(-90)" text-anchor="end" fill="#14141C" opacity="0.42" font-family="Arial, Helvetica, sans-serif" font-size="16" letter-spacing="3.52">MOBILE / TABLET / DESKTOP</text>
+  <rect width="1600" height="1200" filter="url(#grain)" opacity="0.06" style="mix-blend-mode:overlay"/>
+</svg>

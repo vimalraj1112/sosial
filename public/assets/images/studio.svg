@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1500" width="1200" height="1500" role="img">
+  <defs><filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.55"/></feComponentTransfer>
+    </filter></defs>
+  <rect width="1200" height="1500" fill="#F6F5F9"/>
+       <g transform="translate(1200 0) scale(-1 1)"><rect x="0" y="0" width="552" height="1500" fill="#14141C" opacity="0.055"/>
+       <circle cx="864" cy="570" r="348" fill="#14141C"/>
+       <circle cx="864" cy="570" r="240" fill="#F6F5F9"/>
+       <circle cx="864" cy="570" r="132" fill="#8221FC"/>
+       <path d="M120 240 H 480" stroke="#8221FC" stroke-width="18"/>
+       <rect x="120" y="990" width="360" height="12" fill="#14141C" opacity="0.45"/><rect x="120" y="1038" width="468" height="12" fill="#14141C" opacity="0.41000000000000003"/><rect x="120" y="1086" width="576" height="12" fill="#14141C" opacity="0.37"/><rect x="120" y="1134" width="360" height="12" fill="#14141C" opacity="0.33"/><rect x="120" y="1182" width="468" height="12" fill="#14141C" opacity="0.29000000000000004"/><rect x="120" y="1230" width="576" height="12" fill="#14141C" opacity="0.25"/><rect x="120" y="1278.0000000000002" width="360" height="12" fill="#14141C" opacity="0.21000000000000002"/></g>
+       
+       <g fill="none" stroke="#14141C" stroke-opacity="0.28" stroke-width="1.2">
+      <rect x="42" y="42" width="1116" height="1416"/>
+      <path d="M42 64 V42 H64"/>
+      <path d="M1136 42 H1158 V64"/>
+      <path d="M1158 1436 V1458 H1136"/>
+      <path d="M64 1458 H42 V1436"/>
+    </g>
+    <text x="78" y="82" fill="#14141C" opacity="0.6" font-family="Arial, Helvetica, sans-serif" font-size="19" letter-spacing="7">SOSIAL / STUDIO</text>
+  <rect width="1200" height="1500" filter="url(#grain)" opacity="0.07" style="mix-blend-mode:overlay"/>
+</svg>

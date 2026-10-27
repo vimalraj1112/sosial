@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1500" width="1200" height="1500" role="img">
+  <defs><filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.55"/></feComponentTransfer>
+    </filter></defs>
+  <rect width="1200" height="1500" fill="#EFE6FE"/>
+       <rect x="0" y="1080" width="1200" height="420.00000000000006" fill="#14141C" opacity="0.06"/>
+       <circle cx="600" cy="690" r="120" fill="none" stroke="#14141C" stroke-opacity="0.22"/><circle cx="600" cy="690" r="240" fill="none" stroke="#14141C" stroke-opacity="0.22"/><circle cx="600" cy="690" r="360" fill="none" stroke="#14141C" stroke-opacity="0.22"/><circle cx="600" cy="690" r="480" fill="none" stroke="#14141C" stroke-opacity="0.22"/><line x1="600" y1="690" x2="1080" y2="690" stroke="#14141C" stroke-opacity="0.08"/><line x1="600" y1="690" x2="1015.6921938165306" y2="930" stroke="#14141C" stroke-opacity="0.08"/><line x1="600" y1="690" x2="840" y2="1105.6921938165306" stroke="#14141C" stroke-opacity="0.08"/><line x1="600" y1="690" x2="600" y2="1170" stroke="#14141C" stroke-opacity="0.08"/><line x1="600" y1="690" x2="360.0000000000001" y2="1105.6921938165306" stroke="#14141C" stroke-opacity="0.08"/><line x1="600" y1="690" x2="184.30780618346944" y2="930" stroke="#14141C" stroke-opacity="0.08"/><line x1="600" y1="690" x2="120" y2="690.0000000000001" stroke="#14141C" stroke-opacity="0.08"/><line x1="600" y1="690" x2="184.3078061834695" y2="449.99999999999994" stroke="#14141C" stroke-opacity="0.08"/><line x1="600" y1="690" x2="359.9999999999998" y2="274.30780618346955" stroke="#14141C" stroke-opacity="0.08"/><line x1="600" y1="690" x2="599.9999999999999" y2="210" stroke="#14141C" stroke-opacity="0.08"/><line x1="600" y1="690" x2="840" y2="274.3078061834695" stroke="#14141C" stroke-opacity="0.08"/><line x1="600" y1="690" x2="1015.6921938165304" y2="449.9999999999998" stroke="#14141C" stroke-opacity="0.08"/>
+       <circle cx="801.6" cy="546" r="24" fill="#8221FC"/>
+       <circle cx="336" cy="882" r="13.44" fill="#14141C"/>
+       <circle cx="686.4" cy="920.4" r="9.6" fill="#8221FC"/>
+       <path d="M600 690 L 801.6 546" stroke="#8221FC" stroke-width="2"/>
+       <path d="M600 690 L 336 882" stroke="#14141C" stroke-opacity="0.35" stroke-width="1.5"/>
+       <circle cx="600" cy="690" r="26.4" fill="#14141C"/>
+       <g fill="none" stroke="#14141C" stroke-opacity="0.28" stroke-width="1.2">
+      <rect x="42" y="42" width="1116" height="1416"/>
+      <path d="M42 64 V42 H64"/>
+      <path d="M1136 42 H1158 V64"/>
+      <path d="M1158 1436 V1458 H1136"/>
+      <path d="M64 1458 H42 V1436"/>
+    </g>
+    <text x="78" y="82" fill="#14141C" opacity="0.6" font-family="Arial, Helvetica, sans-serif" font-size="19" letter-spacing="7">SOSIAL / STUDIO</text>
+  <rect width="1200" height="1500" filter="url(#grain)" opacity="0.07" style="mix-blend-mode:overlay"/>
+</svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000" role="img">
+  <defs><filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.55"/></feComponentTransfer>
+    </filter></defs>
+  <rect width="1600" height="1000" fill="#1C1C26"/>
+       <g stroke="#F6F5F9" stroke-opacity="0.04" stroke-width="1"><line x1="160" y1="0" x2="160" y2="1000"/><line x1="320" y1="0" x2="320" y2="1000"/><line x1="480" y1="0" x2="480" y2="1000"/><line x1="640" y1="0" x2="640" y2="1000"/><line x1="800" y1="0" x2="800" y2="1000"/><line x1="960" y1="0" x2="960" y2="1000"/><line x1="1120" y1="0" x2="1120" y2="1000"/><line x1="1280" y1="0" x2="1280" y2="1000"/><line x1="1440" y1="0" x2="1440" y2="1000"/><line x1="0" y1="166.66666666666666" x2="1600" y2="166.66666666666666"/><line x1="0" y1="333.3333333333333" x2="1600" y2="333.3333333333333"/><line x1="0" y1="500" x2="1600" y2="500"/><line x1="0" y1="666.6666666666666" x2="1600" y2="666.6666666666666"/><line x1="0" y1="833.3333333333333" x2="1600" y2="833.3333333333333"/></g>
+       <rect x="128" y="120" width="1344" height="760" rx="14" fill="#F6F5F9"/>
+       <rect x="128" y="120" width="1344" height="53.2" rx="14" fill="#DED8EA"/>
+       <circle cx="168.32" cy="146.6" r="9.120000000000001" fill="#8221FC"/>
+       <circle cx="201.92000000000002" cy="146.6" r="9.120000000000001" fill="#14141C" opacity="0.25"/>
+       <circle cx="235.51999999999998" cy="146.6" r="9.120000000000001" fill="#14141C" opacity="0.25"/>
+       <rect x="181.76" y="241.60000000000002" width="188.16000000000003" height="15.200000000000001" fill="#14141C"/>
+       <rect x="1068.8" y="237.8" width="107.52" height="15.200000000000001" fill="#14141C" opacity="0.35"/>
+       <rect x="1256.96" y="234" width="134.4" height="26.6" rx="10" fill="#8221FC"/>
+       <rect x="181.76" y="332.8" width="618.24" height="76" fill="#14141C"/>
+       <rect x="181.76" y="424" width="537.6" height="76" fill="#14141C"/>
+       <rect x="181.76" y="538" width="349.44" height="9.120000000000001" fill="#14141C" opacity="0.35"/>
+       <rect x="181.76" y="568.4" width="295.68" height="9.120000000000001" fill="#14141C" opacity="0.2"/>
+       <rect x="181.76" y="629.2" width="161.28" height="38" rx="24" fill="#14141C"/>
+       <rect x="907.52" y="317.6" width="483.84" height="349.6" rx="10" fill="#B58CFD" opacity="0.85"/>
+       <circle cx="1149.44" cy="454.4" r="76" fill="#F6F5F9" opacity="0.9"/>
+       <circle cx="1149.44" cy="454.4" r="34.199999999999996" fill="#8221FC"/>
+       <path d="M907.52 667.1999999999999 H 1391.36" stroke="#F6F5F9" stroke-opacity="0.4"/>
+       <g fill="none" stroke="#F6F5F9" stroke-opacity="0.28" stroke-width="1.2">
+      <rect x="35" y="35" width="1530" height="930"/>
+      <path d="M35 53 V35 H53"/>
+      <path d="M1547 35 H1565 V53"/>
+      <path d="M1565 947 V965 H1547"/>
+      <path d="M53 965 H35 V947"/>
+    </g>
+    <text x="67" y="71" fill="#F6F5F9" opacity="0.6" font-family="Arial, Helvetica, sans-serif" font-size="16" letter-spacing="6">SOSIAL / WEB</text>
+  <rect width="1600" height="1000" filter="url(#grain)" opacity="0.07" style="mix-blend-mode:overlay"/>
+</svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" role="img">
+  <defs><filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.55"/></feComponentTransfer>
+    </filter></defs>
+  <rect width="1920" height="1080" fill="#14141C"/>
+       <g stroke="#F6F5F9" stroke-opacity="0.06" stroke-width="1"><line x1="160" y1="0" x2="160" y2="1080"/><line x1="320" y1="0" x2="320" y2="1080"/><line x1="480" y1="0" x2="480" y2="1080"/><line x1="640" y1="0" x2="640" y2="1080"/><line x1="800" y1="0" x2="800" y2="1080"/><line x1="960" y1="0" x2="960" y2="1080"/><line x1="1120" y1="0" x2="1120" y2="1080"/><line x1="1280" y1="0" x2="1280" y2="1080"/><line x1="1440" y1="0" x2="1440" y2="1080"/><line x1="1600" y1="0" x2="1600" y2="1080"/><line x1="1760" y1="0" x2="1760" y2="1080"/><line x1="0" y1="154.28571428571428" x2="1920" y2="154.28571428571428"/><line x1="0" y1="308.57142857142856" x2="1920" y2="308.57142857142856"/><line x1="0" y1="462.85714285714283" x2="1920" y2="462.85714285714283"/><line x1="0" y1="617.1428571428571" x2="1920" y2="617.1428571428571"/><line x1="0" y1="771.4285714285713" x2="1920" y2="771.4285714285713"/><line x1="0" y1="925.7142857142857" x2="1920" y2="925.7142857142857"/></g>
+       <circle cx="345.59999999999997" cy="172.8" r="183.60000000000002" fill="#F6F5F9" opacity="0.06"/>
+       <circle cx="1459.2" cy="345.6" r="561.6" fill="none" stroke="#F6F5F9" stroke-opacity="0.1" stroke-width="1.3"/><circle cx="1459.2" cy="345.6" r="488.592" fill="none" stroke="#F6F5F9" stroke-opacity="0.14500000000000002" stroke-width="1.3"/><circle cx="1459.2" cy="345.6" r="415.584" fill="none" stroke="#F6F5F9" stroke-opacity="0.19" stroke-width="1.3"/><circle cx="1459.2" cy="345.6" r="342.576" fill="none" stroke="#F6F5F9" stroke-opacity="0.23500000000000001" stroke-width="1.3"/>
+       <circle cx="1459.2" cy="345.6" r="190.94400000000002" fill="none" stroke="#8221FC" stroke-width="17.28" stroke-dasharray="28.080000000000002 50.544" transform="rotate(-24 1459.2 345.6)"/>
+       <circle cx="1459.2" cy="345.6" r="59.4" fill="#8221FC"/>
+       <path d="M0 885.5999999999999 C 576 712.8000000000001, 960 1058.4, 1920 799.2" fill="none" stroke="#F6F5F9" stroke-opacity="0.35" stroke-width="1.4"/>
+       <path d="M0 961.2 C 537.6 810, 1190.4 1101.6, 1920 896.4" fill="none" stroke="#F6F5F9" stroke-opacity="0.16" stroke-width="1.2"/>
+       <g fill="none" stroke="#F6F5F9" stroke-opacity="0.28" stroke-width="1.2">
+      <rect x="38" y="38" width="1844" height="1004"/>
+      <path d="M38 57 V38 H57"/>
+      <path d="M1863 38 H1882 V57"/>
+      <path d="M1882 1023 V1042 H1863"/>
+      <path d="M57 1042 H38 V1023"/>
+    </g>
+    <text x="71" y="75" fill="#F6F5F9" opacity="0.6" font-family="Arial, Helvetica, sans-serif" font-size="17" letter-spacing="6">SOSIAL / SHOWREEL 2026</text>
+       <text transform="translate(1824 1015) rotate(-90)" text-anchor="end" fill="#F6F5F9" opacity="0.55" font-family="Arial, Helvetica, sans-serif" font-size="15" letter-spacing="3.5999999999999996">CREATIVE STUDIO</text>
+  <rect width="1920" height="1080" filter="url(#grain)" opacity="0.07" style="mix-blend-mode:overlay"/>
+</svg>

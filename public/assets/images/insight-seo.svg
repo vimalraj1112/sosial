@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" role="img">
+  <defs><filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.55"/></feComponentTransfer>
+    </filter></defs>
+  <rect width="1200" height="900" fill="#14141C"/>
+       <rect x="72" y="90" width="180" height="738" rx="10" fill="#F6F5F9" opacity="0.04"/>
+       <circle cx="162" cy="153" r="21.599999999999998" fill="#8221FC"/>
+       <rect x="102" y="234" width="120" height="10.8" rx="6" fill="#F6F5F9" opacity="0.25"/><rect x="102" y="288" width="120" height="10.8" rx="6" fill="#F6F5F9" opacity="0.75"/><rect x="102" y="342" width="120" height="10.8" rx="6" fill="#F6F5F9" opacity="0.25"/><rect x="102" y="396" width="120" height="10.8" rx="6" fill="#F6F5F9" opacity="0.25"/><rect x="102" y="450" width="120" height="10.8" rx="6" fill="#F6F5F9" opacity="0.25"/><rect x="102" y="503.99999999999994" width="120" height="10.8" rx="6" fill="#F6F5F9" opacity="0.25"/>
+       <g>
+        <rect x="276" y="144" width="266" height="153" rx="8" fill="#F6F5F9" opacity="0.055" stroke="#F6F5F9" stroke-opacity="0.12"/>
+        <rect x="297.6" y="180" width="74.48" height="10.8" fill="#F6F5F9" opacity="0.5"/>
+        <rect x="297.6" y="216" width="122.36" height="27" fill="#F6F5F9" opacity="0.9"/>
+        <path d="M297.6 270 l 21.28 -10.8 l 21.28 18 l 26.6 -27 l 26.6 9" fill="none" stroke="#F6F5F9" stroke-opacity="0.85" stroke-width="2"/>
+      </g><g>
+        <rect x="560" y="144" width="266" height="153" rx="8" fill="#F6F5F9" opacity="0.055" stroke="#F6F5F9" stroke-opacity="0.12"/>
+        <rect x="581.6" y="180" width="74.48" height="10.8" fill="#F6F5F9" opacity="0.5"/>
+        <rect x="581.6" y="216" width="122.36" height="27" fill="#F6F5F9" opacity="0.9"/>
+        <path d="M581.6 270 l 21.28 -10.8 l 21.28 18 l 26.6 -27 l 26.6 9" fill="none" stroke="#8221FC" stroke-opacity="0.85" stroke-width="2"/>
+      </g><g>
+        <rect x="844" y="144" width="266" height="153" rx="8" fill="#F6F5F9" opacity="0.055" stroke="#F6F5F9" stroke-opacity="0.12"/>
+        <rect x="865.6" y="180" width="74.48" height="10.8" fill="#F6F5F9" opacity="0.5"/>
+        <rect x="865.6" y="216" width="122.36" height="27" fill="#F6F5F9" opacity="0.9"/>
+        <path d="M865.6 270 l 21.28 -10.8 l 21.28 18 l 26.6 -27 l 26.6 9" fill="none" stroke="#F6F5F9" stroke-opacity="0.85" stroke-width="2"/>
+      </g>
+       <rect x="276" y="342" width="391.92" height="324" rx="10" fill="#F6F5F9" opacity="0.04" stroke="#F6F5F9" stroke-opacity="0.1"/>
+       <rect x="312" y="648" width="13.632" height="54" rx="2" fill="#F6F5F9" opacity="0.45"/><rect x="335.856" y="572.4" width="13.632" height="129.60000000000002" rx="2" fill="#F6F5F9" opacity="0.45"/><rect x="359.712" y="604.8" width="13.632" height="97.2" rx="2" fill="#F6F5F9" opacity="0.45"/><rect x="383.568" y="637.2" width="13.632" height="64.8" rx="2" fill="#F6F5F9" opacity="0.45"/><rect x="407.424" y="561.6" width="13.632" height="140.4" rx="2" fill="#F6F5F9" opacity="0.45"/><rect x="431.28" y="594" width="13.632" height="108" rx="2" fill="#F6F5F9" opacity="0.45"/><rect x="455.136" y="626.4" width="13.632" height="75.6" rx="2" fill="#F6F5F9" opacity="0.45"/><rect x="478.992" y="550.8" width="13.632" height="151.2" rx="2" fill="#8221FC" opacity="1"/><rect x="502.848" y="583.2" width="13.632" height="118.80000000000001" rx="2" fill="#F6F5F9" opacity="0.45"/><rect x="526.704" y="615.6" width="13.632" height="86.4" rx="2" fill="#F6F5F9" opacity="0.45"/><rect x="550.56" y="648" width="13.632" height="54" rx="2" fill="#F6F5F9" opacity="0.45"/>
+       <rect x="702" y="342" width="426" height="324" rx="10" fill="#F6F5F9" opacity="0.04" stroke="#F6F5F9" stroke-opacity="0.1"/>
+       <path d="M 900 315 L 911.928 335.0646477113158 L 923.856 350.2730318419352 L 935.784 357.20124839629847 L 947.712 354.8676367203171 L 959.64 327.0223212496484 L 971.568 313.63101063448767 L 983.496 301.7053081824472 L 995.424 295.82453467248024 L 1007.352 298.78505331384264 L 1019.28 292.7754797445327 L 1031.208 311.3210496685692 L 1043.136 332.0135529506714 L 1055.064 349.81153940938447 L 1066.992 360.52729936712547 L 1078.92 344.0620326225392 L 1090.848 337.0248915760905 L 1102.776 324.5533111472703 L 1114.704 311.3876193460774 L 1126.632 302.47287299527954 L 1138.56 283.5003084936528 L 1150.488 291.8186081117795 L 1162.416 308.0361048671601 L 1174.344 328.4312560309699 L 1186.272 348.05031571327754 L 1198.2 344.1684469484718 L 1210.1280000000002 349.68331687465036 L 1222.056 346.0301327766991 L 1233.984 335.3482282374896 L 1245.912 321.8500646526627" fill="none" stroke="#8221FC" stroke-width="3.6" stroke-linecap="round"/>
+       <path d="M 900 315 L 911.928 335.0646477113158 L 923.856 350.2730318419352 L 935.784 357.20124839629847 L 947.712 354.8676367203171 L 959.64 327.0223212496484 L 971.568 313.63101063448767 L 983.496 301.7053081824472 L 995.424 295.82453467248024 L 1007.352 298.78505331384264 L 1019.28 292.7754797445327 L 1031.208 311.3210496685692 L 1043.136 332.0135529506714 L 1055.064 349.81153940938447 L 1066.992 360.52729936712547 L 1078.92 344.0620326225392 L 1090.848 337.0248915760905 L 1102.776 324.5533111472703 L 1114.704 311.3876193460774 L 1126.632 302.47287299527954 L 1138.56 283.5003084936528 L 1150.488 291.8186081117795 L 1162.416 308.0361048671601 L 1174.344 328.4312560309699 L 1186.272 348.05031571327754 L 1198.2 344.1684469484718 L 1210.1280000000002 349.68331687465036 L 1222.056 346.0301327766991 L 1233.984 335.3482282374896 L 1245.912 321.8500646526627 L 1116 666 L 719.04 666 Z" fill="#8221FC" opacity="0.12"/>
+       <rect x="276" y="711" width="852" height="90" rx="8" fill="#F6F5F9" opacity="0.03"/>
+       <rect x="300" y="733.5" width="29.820000000000004" height="45" fill="#F6F5F9" opacity="0.12"/><rect x="342.6" y="733.5" width="29.820000000000004" height="45" fill="#F6F5F9" opacity="0.16"/><rect x="385.2" y="733.5" width="29.820000000000004" height="45" fill="#F6F5F9" opacity="0.2"/><rect x="427.8" y="733.5" width="29.820000000000004" height="45" fill="#F6F5F9" opacity="0.24"/><rect x="470.4" y="733.5" width="29.820000000000004" height="45" fill="#F6F5F9" opacity="0.28"/>
+       <g fill="none" stroke="#F6F5F9" stroke-opacity="0.28" stroke-width="1.2">
+      <rect x="32" y="32" width="1136" height="836"/>
+      <path d="M32 48 V32 H48"/>
+      <path d="M1152 32 H1168 V48"/>
+      <path d="M1168 852 V868 H1152"/>
+      <path d="M48 868 H32 V852"/>
+    </g>
+    <text x="62" y="66" fill="#F6F5F9" opacity="0.6" font-family="Arial, Helvetica, sans-serif" font-size="14" letter-spacing="5">INSIGHT / SEARCH</text>
+  <rect width="1200" height="900" filter="url(#grain)" opacity="0.07" style="mix-blend-mode:overlay"/>
+</svg>

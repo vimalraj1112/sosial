@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" width="1600" height="1200" role="img">
+  <defs><filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.55"/></feComponentTransfer>
+    </filter></defs>
+  <rect width="1600" height="1200" fill="#F6F5F9"/>
+       <g stroke="#14141C" stroke-opacity="0.05" stroke-width="1"><line x1="200" y1="0" x2="200" y2="1200"/><line x1="400" y1="0" x2="400" y2="1200"/><line x1="600" y1="0" x2="600" y2="1200"/><line x1="800" y1="0" x2="800" y2="1200"/><line x1="1000" y1="0" x2="1000" y2="1200"/><line x1="1200" y1="0" x2="1200" y2="1200"/><line x1="1400" y1="0" x2="1400" y2="1200"/><line x1="0" y1="200" x2="1600" y2="200"/><line x1="0" y1="400" x2="1600" y2="400"/><line x1="0" y1="600" x2="1600" y2="600"/><line x1="0" y1="800" x2="1600" y2="800"/><line x1="0" y1="1000" x2="1600" y2="1000"/></g>
+       <rect x="992" y="0" width="608" height="1200" fill="#14141C" opacity="0.055"/>
+       <circle cx="1312" cy="216" r="96" fill="#8221FC"/>
+       <path d="M0 408.00000000000006 C 352 288, 544 528.0000000000001, 880.0000000000001 408.00000000000006 S 1376 288, 1600 444" fill="none" stroke="#8221FC" stroke-opacity="0.95" stroke-width="66" stroke-linecap="round"/><path d="M0 600 C 352 456, 544 744, 880.0000000000001 600 S 1376 456, 1600 643.2" fill="none" stroke="#14141C" stroke-opacity="0.9" stroke-width="101.99999999999999" stroke-linecap="round"/><path d="M0 792 C 352 684.0000000000001, 544 900, 880.0000000000001 792 S 1376 684.0000000000001, 1600 824.4000000000001" fill="none" stroke="#B58CFD" stroke-opacity="0.75" stroke-width="138" stroke-linecap="round"/><path d="M0 960 C 352 876, 544 1044.0000000000002, 880.0000000000001 960 S 1376 876, 1600 985.2" fill="none" stroke="#14141C" stroke-opacity="0.55" stroke-width="174" stroke-linecap="round"/>
+       <g fill="none" stroke="#14141C" stroke-opacity="0.28" stroke-width="1.2">
+      <rect x="42" y="42" width="1516" height="1116"/>
+      <path d="M42 64 V42 H64"/>
+      <path d="M1536 42 H1558 V64"/>
+      <path d="M1558 1136 V1158 H1536"/>
+      <path d="M64 1158 H42 V1136"/>
+    </g>
+    <text x="78" y="82" fill="#14141C" opacity="0.6" font-family="Arial, Helvetica, sans-serif" font-size="19" letter-spacing="7">CONCEPT / NORTHWIND</text>
+       <text transform="translate(1520 1128) rotate(-90)" text-anchor="end" fill="#14141C" opacity="0.55" font-family="Arial, Helvetica, sans-serif" font-size="17" letter-spacing="4.08">BRAND SYSTEMS</text>
+  <rect width="1600" height="1200" filter="url(#grain)" opacity="0.07" style="mix-blend-mode:overlay"/>
+</svg>

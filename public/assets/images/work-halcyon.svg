@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1500" width="1200" height="1500" role="img">
+  <defs><filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.55"/></feComponentTransfer>
+    </filter></defs>
+  <rect width="1200" height="1500" fill="#1C1C26"/>
+       <g stroke="#F6F5F9" stroke-opacity="0.05" stroke-width="1"><line x1="120" y1="0" x2="120" y2="1500"/><line x1="240" y1="0" x2="240" y2="1500"/><line x1="360" y1="0" x2="360" y2="1500"/><line x1="480" y1="0" x2="480" y2="1500"/><line x1="600" y1="0" x2="600" y2="1500"/><line x1="720" y1="0" x2="720" y2="1500"/><line x1="840" y1="0" x2="840" y2="1500"/><line x1="960" y1="0" x2="960" y2="1500"/><line x1="1080" y1="0" x2="1080" y2="1500"/><line x1="0" y1="115.38461538461539" x2="1200" y2="115.38461538461539"/><line x1="0" y1="230.76923076923077" x2="1200" y2="230.76923076923077"/><line x1="0" y1="346.1538461538462" x2="1200" y2="346.1538461538462"/><line x1="0" y1="461.53846153846155" x2="1200" y2="461.53846153846155"/><line x1="0" y1="576.9230769230769" x2="1200" y2="576.9230769230769"/><line x1="0" y1="692.3076923076924" x2="1200" y2="692.3076923076924"/><line x1="0" y1="807.6923076923077" x2="1200" y2="807.6923076923077"/><line x1="0" y1="923.0769230769231" x2="1200" y2="923.0769230769231"/><line x1="0" y1="1038.4615384615386" x2="1200" y2="1038.4615384615386"/><line x1="0" y1="1153.8461538461538" x2="1200" y2="1153.8461538461538"/><line x1="0" y1="1269.2307692307693" x2="1200" y2="1269.2307692307693"/><line x1="0" y1="1384.6153846153848" x2="1200" y2="1384.6153846153848"/></g>
+       <rect x="96" y="150" width="360" height="510.00000000000006" fill="#F6F5F9" opacity="0.9"/>
+       <circle cx="72" cy="1290" r="264" fill="#8221FC" opacity="0.9"/>
+       <circle cx="1080" cy="180" r="156" fill="none" stroke="#F6F5F9" stroke-width="1.4" stroke-opacity="0.5"/>
+       <path d="M 72 720 a 528 528 0 0 1 1056 0" fill="none" stroke="#F6F5F9" stroke-opacity="0.32" stroke-width="1.6" transform="rotate(0 600 720)"/><path d="M 161.76 720 a 469.92 469.92 0 0 1 939.84 0" fill="none" stroke="#F6F5F9" stroke-opacity="0.32" stroke-width="1.6" transform="rotate(14 600 720)"/><path d="M 251.51999999999998 720 a 411.84000000000003 411.84000000000003 0 0 1 823.6800000000001 0" fill="none" stroke="#8221FC" stroke-opacity="0.95" stroke-width="14.4" transform="rotate(28 600 720)"/><path d="M 341.28 720 a 353.76 353.76 0 0 1 707.52 0" fill="none" stroke="#F6F5F9" stroke-opacity="0.32" stroke-width="1.6" transform="rotate(42 600 720)"/><path d="M 431.03999999999996 720 a 295.68 295.68 0 0 1 591.36 0" fill="none" stroke="#F6F5F9" stroke-opacity="0.32" stroke-width="1.6" transform="rotate(56 600 720)"/>
+       <g fill="none" stroke="#F6F5F9" stroke-opacity="0.28" stroke-width="1.2">
+      <rect x="42" y="42" width="1116" height="1416"/>
+      <path d="M42 64 V42 H64"/>
+      <path d="M1136 42 H1158 V64"/>
+      <path d="M1158 1436 V1458 H1136"/>
+      <path d="M64 1458 H42 V1436"/>
+    </g>
+    <text x="78" y="82" fill="#F6F5F9" opacity="0.6" font-family="Arial, Helvetica, sans-serif" font-size="19" letter-spacing="7">CONCEPT / HALCYON</text>
+  <rect width="1200" height="1500" filter="url(#grain)" opacity="0.07" style="mix-blend-mode:overlay"/>
+</svg>

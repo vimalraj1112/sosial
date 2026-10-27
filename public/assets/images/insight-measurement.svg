@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" role="img">
+  <defs><filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.55"/></feComponentTransfer>
+    </filter></defs>
+  <rect width="1200" height="900" fill="#F6F5F9"/>
+       <rect x="0" y="648" width="1200" height="252.00000000000003" fill="#14141C" opacity="0.06"/>
+       <circle cx="600" cy="414" r="90" fill="none" stroke="#14141C" stroke-opacity="0.22"/><circle cx="600" cy="414" r="180" fill="none" stroke="#14141C" stroke-opacity="0.22"/><circle cx="600" cy="414" r="270" fill="none" stroke="#14141C" stroke-opacity="0.22"/><circle cx="600" cy="414" r="360" fill="none" stroke="#14141C" stroke-opacity="0.22"/><line x1="600" y1="414" x2="960" y2="414" stroke="#14141C" stroke-opacity="0.08"/><line x1="600" y1="414" x2="911.7691453623979" y2="594" stroke="#14141C" stroke-opacity="0.08"/><line x1="600" y1="414" x2="780" y2="725.7691453623979" stroke="#14141C" stroke-opacity="0.08"/><line x1="600" y1="414" x2="600" y2="774" stroke="#14141C" stroke-opacity="0.08"/><line x1="600" y1="414" x2="420.0000000000001" y2="725.7691453623979" stroke="#14141C" stroke-opacity="0.08"/><line x1="600" y1="414" x2="288.2308546376021" y2="594" stroke="#14141C" stroke-opacity="0.08"/><line x1="600" y1="414" x2="240" y2="414.00000000000006" stroke="#14141C" stroke-opacity="0.08"/><line x1="600" y1="414" x2="288.2308546376021" y2="233.99999999999997" stroke="#14141C" stroke-opacity="0.08"/><line x1="600" y1="414" x2="419.99999999999983" y2="102.23085463760214" stroke="#14141C" stroke-opacity="0.08"/><line x1="600" y1="414" x2="599.9999999999999" y2="54" stroke="#14141C" stroke-opacity="0.08"/><line x1="600" y1="414" x2="780" y2="102.23085463760208" stroke="#14141C" stroke-opacity="0.08"/><line x1="600" y1="414" x2="911.7691453623978" y2="233.99999999999983" stroke="#14141C" stroke-opacity="0.08"/>
+       <circle cx="751.2" cy="306" r="18" fill="#B58CFD"/>
+       <circle cx="402" cy="558" r="10.08" fill="#14141C"/>
+       <circle cx="664.8" cy="586.8" r="7.2" fill="#B58CFD"/>
+       <path d="M600 414 L 751.2 306" stroke="#B58CFD" stroke-width="2"/>
+       <path d="M600 414 L 402 558" stroke="#14141C" stroke-opacity="0.35" stroke-width="1.5"/>
+       <circle cx="600" cy="414" r="19.8" fill="#14141C"/>
+       <g fill="none" stroke="#14141C" stroke-opacity="0.28" stroke-width="1.2">
+      <rect x="32" y="32" width="1136" height="836"/>
+      <path d="M32 48 V32 H48"/>
+      <path d="M1152 32 H1168 V48"/>
+      <path d="M1168 852 V868 H1152"/>
+      <path d="M48 868 H32 V852"/>
+    </g>
+    <text x="62" y="66" fill="#14141C" opacity="0.6" font-family="Arial, Helvetica, sans-serif" font-size="14" letter-spacing="5">INSIGHT / DATA</text>
+  <rect width="1200" height="900" filter="url(#grain)" opacity="0.07" style="mix-blend-mode:overlay"/>
+</svg>

@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1200" width="1600" height="1200" role="img">
+  <defs><filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.55"/></feComponentTransfer>
+    </filter></defs>
+  <rect width="1600" height="1200" fill="#F6F5F9"/>
+     <g stroke="#14141C" stroke-opacity="0.04" stroke-width="1"><line x1="133.33333333333334" y1="0" x2="133.33333333333334" y2="1200"/><line x1="266.6666666666667" y1="0" x2="266.6666666666667" y2="1200"/><line x1="400" y1="0" x2="400" y2="1200"/><line x1="533.3333333333334" y1="0" x2="533.3333333333334" y2="1200"/><line x1="666.6666666666667" y1="0" x2="666.6666666666667" y2="1200"/><line x1="800" y1="0" x2="800" y2="1200"/><line x1="933.3333333333334" y1="0" x2="933.3333333333334" y2="1200"/><line x1="1066.6666666666667" y1="0" x2="1066.6666666666667" y2="1200"/><line x1="1200" y1="0" x2="1200" y2="1200"/><line x1="1333.3333333333335" y1="0" x2="1333.3333333333335" y2="1200"/><line x1="1466.6666666666667" y1="0" x2="1466.6666666666667" y2="1200"/><line x1="0" y1="133.33333333333334" x2="1600" y2="133.33333333333334"/><line x1="0" y1="266.6666666666667" x2="1600" y2="266.6666666666667"/><line x1="0" y1="400" x2="1600" y2="400"/><line x1="0" y1="533.3333333333334" x2="1600" y2="533.3333333333334"/><line x1="0" y1="666.6666666666667" x2="1600" y2="666.6666666666667"/><line x1="0" y1="800" x2="1600" y2="800"/><line x1="0" y1="933.3333333333334" x2="1600" y2="933.3333333333334"/><line x1="0" y1="1066.6666666666667" x2="1600" y2="1066.6666666666667"/></g>
+     <circle cx="660" cy="574" r="386" fill="none" stroke="#14141C" stroke-opacity="0.08"/>
+     <circle cx="660" cy="574" r="286" fill="none" stroke="#14141C" stroke-opacity="0.08"/>
+     <circle cx="660" cy="574" r="186" fill="none" stroke="#14141C" stroke-opacity="0.08"/>
+     <g>
+        <line x1="660" y1="574" x2="330" y2="330" stroke="#14141C" stroke-opacity="0.22" stroke-width="1.2"/>
+        <circle cx="330" cy="330" r="7" fill="#14141C" opacity="0.9"/>
+        <text x="330" y="306" fill="#14141C" opacity="1" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" letter-spacing="1.2" text-anchor="middle">LIGHTING</text>
+        <text x="330" y="364" fill="#14141C" opacity="0.35" font-family="Arial, Helvetica, sans-serif" font-size="7" font-weight="400" letter-spacing="1.2" text-anchor="middle">CONTENT</text>
+      </g><g>
+        <line x1="660" y1="574" x2="900" y2="270" stroke="#14141C" stroke-opacity="0.22" stroke-width="1.2"/>
+        <circle cx="900" cy="270" r="7" fill="#14141C" opacity="0.9"/>
+        <text x="900" y="246" fill="#14141C" opacity="1" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" letter-spacing="1.2" text-anchor="middle">STORAGE</text>
+        <text x="900" y="304" fill="#14141C" opacity="0.35" font-family="Arial, Helvetica, sans-serif" font-size="7" font-weight="400" letter-spacing="1.2" text-anchor="middle">CONTENT</text>
+      </g><g>
+        <line x1="660" y1="574" x2="1120" y2="520" stroke="#14141C" stroke-opacity="0.22" stroke-width="1.2"/>
+        <circle cx="1120" cy="520" r="7" fill="#B58CFD" opacity="0.8"/>
+        <text x="1120" y="496" fill="#14141C" opacity="1" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" letter-spacing="1.2" text-anchor="middle">MATERIALS</text>
+        <text x="1120" y="554" fill="#14141C" opacity="0.35" font-family="Arial, Helvetica, sans-serif" font-size="7" font-weight="400" letter-spacing="1.2" text-anchor="middle">PRODUCT</text>
+      </g><g>
+        <line x1="660" y1="574" x2="1020" y2="800" stroke="#8221FC" stroke-opacity="0.22" stroke-width="1.2"/>
+        <circle cx="1020" cy="800" r="11" fill="#8221FC" opacity="0.9"/>
+        <text x="1020" y="776" fill="#14141C" opacity="1" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" letter-spacing="1.2" text-anchor="middle">SMALL SPACES</text>
+        <text x="1020" y="834" fill="#14141C" opacity="0.35" font-family="Arial, Helvetica, sans-serif" font-size="7" font-weight="400" letter-spacing="1.2" text-anchor="middle">DECISION</text>
+      </g><g>
+        <line x1="660" y1="574" x2="620" y2="900" stroke="#14141C" stroke-opacity="0.22" stroke-width="1.2"/>
+        <circle cx="620" cy="900" r="7" fill="#14141C" opacity="0.9"/>
+        <text x="620" y="876" fill="#14141C" opacity="1" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" letter-spacing="1.2" text-anchor="middle">COLOUR</text>
+        <text x="620" y="934" fill="#14141C" opacity="0.35" font-family="Arial, Helvetica, sans-serif" font-size="7" font-weight="400" letter-spacing="1.2" text-anchor="middle">CONTENT</text>
+      </g><g>
+        <line x1="660" y1="574" x2="288" y2="730" stroke="#14141C" stroke-opacity="0.22" stroke-width="1.2"/>
+        <circle cx="288" cy="730" r="7" fill="#B58CFD" opacity="0.8"/>
+        <text x="288" y="706" fill="#14141C" opacity="1" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" letter-spacing="1.2" text-anchor="middle">RUGS</text>
+        <text x="288" y="764" fill="#14141C" opacity="0.35" font-family="Arial, Helvetica, sans-serif" font-size="7" font-weight="400" letter-spacing="1.2" text-anchor="middle">PRODUCT</text>
+      </g><g>
+        <line x1="660" y1="574" x2="250" y2="520" stroke="#8221FC" stroke-opacity="0.22" stroke-width="1.2"/>
+        <circle cx="250" cy="520" r="11" fill="#8221FC" opacity="0.9"/>
+        <text x="250" y="496" fill="#14141C" opacity="1" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" letter-spacing="1.2" text-anchor="middle">RITUALS</text>
+        <text x="250" y="554" fill="#14141C" opacity="0.35" font-family="Arial, Helvetica, sans-serif" font-size="7" font-weight="400" letter-spacing="1.2" text-anchor="middle">DECISION</text>
+      </g>
+     <rect x="500" y="508" width="320" height="132" rx="16" fill="#14141C"/>
+     <text x="660" y="556" fill="#F6F5F9" opacity="1" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" letter-spacing="-0.6" text-anchor="middle">FURNISHING</text>
+     <text x="660" y="590" fill="#8221FC" opacity="1" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" letter-spacing="-0.6" text-anchor="middle">A HOME</text>
+     <text x="660" y="620" fill="#F6F5F9" opacity="0.4" font-family="Arial, Helvetica, sans-serif" font-size="7" font-weight="400" letter-spacing="1.4" text-anchor="middle">THE DECISION MAP</text>
+     <text x="1160" y="108" fill="#14141C" opacity="1" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="1.4" text-anchor="start">VERDANT / SEARCH ARCHITECTURE</text>
+     <text x="1160" y="144" fill="#14141C" opacity="0.48" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" letter-spacing="0" text-anchor="start">A topic system built around moments of decision,</text>
+     <text x="1160" y="166" fill="#14141C" opacity="0.48" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" letter-spacing="0" text-anchor="start">not a list of product categories.</text>
+     <line x1="1160" y1="222" x2="1452" y2="222" stroke="#14141C" stroke-opacity="0.2" stroke-width="1"/>
+     <g transform="translate(1160 258)">
+       <g transform="translate(0 0)">
+         <circle cx="6" cy="-5" r="5" fill="#8221FC"/>
+         <text x="24" y="0" fill="#14141C" opacity="0.5" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="400" letter-spacing="1.2" text-anchor="start">DECISION</text>
+       </g><g transform="translate(0 34)">
+         <circle cx="6" cy="-5" r="5" fill="#14141C"/>
+         <text x="24" y="0" fill="#14141C" opacity="0.5" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="400" letter-spacing="1.2" text-anchor="start">CONTENT</text>
+       </g><g transform="translate(0 68)">
+         <circle cx="6" cy="-5" r="5" fill="#B58CFD"/>
+         <text x="24" y="0" fill="#14141C" opacity="0.5" font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="400" letter-spacing="1.2" text-anchor="start">PRODUCT</text>
+       </g>
+     </g>
+     <text x="1160" y="410" fill="#8221FC" opacity="1" font-family="Arial, Helvetica, sans-serif" font-size="82" font-weight="700" letter-spacing="-2" text-anchor="start">06</text>
+     <text x="1160" y="448" fill="#14141C" opacity="0.4" font-family="Arial, Helvetica, sans-serif" font-size="10" font-weight="400" letter-spacing="2" text-anchor="start">CLUSTERS</text>
+     <text x="1160" y="508" fill="#14141C" opacity="1" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="0" text-anchor="start">No ranking claims.</text>
+     <text x="1160" y="538" fill="#14141C" opacity="0.45" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" letter-spacing="0" text-anchor="start">A structure for useful content,</text>
+     <text x="1160" y="560" fill="#14141C" opacity="0.45" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" letter-spacing="0" text-anchor="start">not a promise of performance.</text>
+     <text x="1160" y="680" fill="#14141C" opacity="0.3" font-family="Arial, Helvetica, sans-serif" font-size="8" font-weight="400" letter-spacing="1.4" text-anchor="start">SEARCH / CONTENT / COMMERCE</text>
+     <text x="96" y="1100" fill="#14141C" opacity="1" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" letter-spacing="0" text-anchor="start">Be present before the product decision.</text>
+     <text x="96" y="1134" fill="#14141C" opacity="0.45" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="400" letter-spacing="0" text-anchor="start">A useful map of the questions people ask on the way to a room they love.</text>
+     <g fill="none" stroke="#14141C" stroke-opacity="0.24" stroke-width="1.2">
+      <rect x="42" y="42" width="1516" height="1116"/>
+      <path d="M42 64 V42 H64"/>
+      <path d="M1536 42 H1558 V64"/>
+      <path d="M1558 1136 V1158 H1536"/>
+      <path d="M64 1158 H42 V1136"/>
+    </g>
+    <text x="78" y="82" fill="#14141C" opacity="0.5" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="400" letter-spacing="5" text-anchor="start">CONCEPT / VERDANT / CLUSTERS</text>
+     <text transform="translate(1526 1128) rotate(-90)" text-anchor="end" fill="#14141C" opacity="0.42" font-family="Arial, Helvetica, sans-serif" font-size="16" letter-spacing="3.52">SEO / EDITORIAL / COMMERCE</text>
+  <rect width="1600" height="1200" filter="url(#grain)" opacity="0.06" style="mix-blend-mode:overlay"/>
+</svg>

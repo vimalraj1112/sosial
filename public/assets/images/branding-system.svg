@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1500" width="1200" height="1500" role="img">
+  <defs><filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.55"/></feComponentTransfer>
+    </filter></defs>
+  <rect width="1200" height="1500" fill="#F6F5F9"/>
+       <g stroke="#14141C" stroke-opacity="0.05" stroke-width="1"><line x1="150" y1="0" x2="150" y2="1500"/><line x1="300" y1="0" x2="300" y2="1500"/><line x1="450" y1="0" x2="450" y2="1500"/><line x1="600" y1="0" x2="600" y2="1500"/><line x1="750" y1="0" x2="750" y2="1500"/><line x1="900" y1="0" x2="900" y2="1500"/><line x1="1050" y1="0" x2="1050" y2="1500"/><line x1="0" y1="150" x2="1200" y2="150"/><line x1="0" y1="300" x2="1200" y2="300"/><line x1="0" y1="450" x2="1200" y2="450"/><line x1="0" y1="600" x2="1200" y2="600"/><line x1="0" y1="750" x2="1200" y2="750"/><line x1="0" y1="900" x2="1200" y2="900"/><line x1="0" y1="1050" x2="1200" y2="1050"/><line x1="0" y1="1200" x2="1200" y2="1200"/><line x1="0" y1="1350" x2="1200" y2="1350"/></g>
+       <rect x="744" y="0" width="456" height="1500" fill="#14141C" opacity="0.055"/>
+       <circle cx="983.9999999999999" cy="270" r="96" fill="#8221FC"/>
+       <path d="M0 510.00000000000006 C 264 360, 408.00000000000006 660.0000000000001, 660 510.00000000000006 S 1032 360, 1200 555" fill="none" stroke="#8221FC" stroke-opacity="0.95" stroke-width="66" stroke-linecap="round"/><path d="M0 750 C 264 570, 408.00000000000006 930, 660 750 S 1032 570, 1200 804" fill="none" stroke="#14141C" stroke-opacity="0.9" stroke-width="101.99999999999999" stroke-linecap="round"/><path d="M0 990 C 264 855.0000000000001, 408.00000000000006 1125, 660 990 S 1032 855.0000000000001, 1200 1030.5" fill="none" stroke="#B58CFD" stroke-opacity="0.75" stroke-width="138" stroke-linecap="round"/><path d="M0 1200 C 264 1095, 408.00000000000006 1305.0000000000002, 660 1200 S 1032 1095, 1200 1231.5" fill="none" stroke="#14141C" stroke-opacity="0.55" stroke-width="174" stroke-linecap="round"/>
+       <g fill="none" stroke="#14141C" stroke-opacity="0.28" stroke-width="1.2">
+      <rect x="42" y="42" width="1116" height="1416"/>
+      <path d="M42 64 V42 H64"/>
+      <path d="M1136 42 H1158 V64"/>
+      <path d="M1158 1436 V1458 H1136"/>
+      <path d="M64 1458 H42 V1436"/>
+    </g>
+    <text x="78" y="82" fill="#14141C" opacity="0.6" font-family="Arial, Helvetica, sans-serif" font-size="19" letter-spacing="7">SOSIAL / BRANDING</text>
+       <text transform="translate(1140 1410) rotate(-90)" text-anchor="end" fill="#14141C" opacity="0.55" font-family="Arial, Helvetica, sans-serif" font-size="17" letter-spacing="4.08">BRAND SYSTEMS</text>
+  <rect width="1200" height="1500" filter="url(#grain)" opacity="0.07" style="mix-blend-mode:overlay"/>
+</svg>
