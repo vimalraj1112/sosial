@@ -36,6 +36,9 @@ const icons: Record<IconName, React.ComponentType<{ className?: string; strokeWi
   Sun,
 };
 
+const navLinkClass =
+  "relative inline-flex items-center gap-1.5 px-3.5 py-2 text-[1rem] font-medium tracking-[0.01em] transition-colors after:pointer-events-none after:absolute after:inset-x-3.5 after:bottom-1 after:h-px after:origin-left after:scale-x-0 after:bg-current after:transition-transform after:duration-300 after:ease-[var(--ease-brand)] after:content-[''] hover:after:scale-x-100 focus-visible:after:scale-x-100";
+
 export function Header() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
@@ -190,11 +193,11 @@ export function Header() {
                       aria-haspopup="true"
                       onClick={() => setServicesOpen((value) => !value)}
                       className={cn(
-                        "flex items-center gap-1.5 px-3.5 py-2 text-[1rem] font-medium tracking-[0.01em] transition-colors",
+                        navLinkClass,
                         active || servicesOpen
                           ? overHero
-                            ? "text-coral-soft"
-                            : "text-coral"
+                            ? "text-coral-soft after:scale-x-100"
+                            : "text-coral after:scale-x-100"
                           : overHero
                             ? "hover:text-coral-soft"
                             : "hover:text-coral",
@@ -271,26 +274,17 @@ export function Header() {
                   href={item.href}
                   aria-current={active ? "page" : undefined}
                   className={cn(
-                    "relative px-3.5 py-2 text-[1rem] font-medium tracking-[0.01em] transition-colors",
+                    navLinkClass,
                     active
                       ? overHero
-                        ? "text-coral-soft"
-                        : "text-coral"
+                        ? "text-coral-soft after:scale-x-100"
+                        : "text-coral after:scale-x-100"
                       : overHero
                         ? "hover:text-coral-soft"
                         : "hover:text-coral",
                   )}
                 >
                   {item.label}
-                  {active ? (
-                    <span
-                      aria-hidden="true"
-                      className={cn(
-                        "absolute -bottom-0.5 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full",
-                        overHero ? "bg-coral-soft" : "bg-coral",
-                      )}
-                    />
-                  ) : null}
                 </Link>
               );
             })}
