@@ -101,7 +101,7 @@ export function WorkPinned({ projects }: WorkPinnedProps) {
     >
       <div
         data-work-sticky
-        className="sticky top-0 flex h-[100svh] cursor-none flex-col overflow-hidden bg-night pt-[4.75rem] lg:pt-[5.25rem]"
+        className="sticky top-0 flex h-[100svh] cursor-none flex-col overflow-hidden bg-night pt-[4.75rem] [&_a]:cursor-none [&_button]:cursor-none lg:pt-[5.25rem]"
         onPointerMove={handlePointerMove}
         onPointerLeave={hideCursor}
         onPointerCancel={hideCursor}
