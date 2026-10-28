@@ -311,6 +311,7 @@ export const projects: Project[] = [
     imageAlt:
       "Editorial artwork with a large ink circle, text lines and a violet accent",
     aspect: "tall",
+    featured: true,
     projectType: "Editorial identity & publishing system",
     tags: ["Editorial identity", "Print & digital", "Publishing"],
     services: ["branding", "social-media", "brand-production"],
