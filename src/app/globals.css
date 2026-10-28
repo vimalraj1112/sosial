@@ -357,3 +357,12 @@
     mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
   }
 }
+
+/* The custom pointer is the only pointer on fine-pointer devices. Keeping this
+   outside the layers ensures interactive utilities cannot switch it back. */
+@media (any-pointer: fine) {
+  html.has-site-cursor,
+  html.has-site-cursor * {
+    cursor: none;
+  }
+}

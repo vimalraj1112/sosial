@@ -2,17 +2,10 @@
 
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import {
-  AnimatePresence,
-  motion,
-  useMotionValue,
-  useMotionValueEvent,
-  useScroll,
-} from "motion/react";
-import { useRef, useState, type PointerEvent as ReactPointerEvent } from "react";
+import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/react";
+import { useRef, useState } from "react";
 import { categoryLabels, type Project } from "@/data/work";
 import { Visual } from "@/components/ui/Visual";
-import { WorkCursor } from "@/components/work/WorkCursor";
 import { WorkIntro } from "@/components/work/WorkIntro";
 import { cn } from "@/lib/utils";
 
@@ -37,10 +30,6 @@ export function WorkPinned({ projects }: WorkPinnedProps) {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const activeIndexRef = useRef(0);
-  const [cursorVisible, setCursorVisible] = useState(false);
-  const cursorVisibleRef = useRef(false);
-  const cursorX = useMotionValue(-100);
-  const cursorY = useMotionValue(-100);
 
   const { scrollYProgress } = useScroll({
     target: wrapperRef,
@@ -72,24 +61,6 @@ export function WorkPinned({ projects }: WorkPinnedProps) {
     window.scrollTo({ top: target, behavior: "smooth" });
   };
 
-  const handlePointerMove = (event: ReactPointerEvent<HTMLDivElement>) => {
-    if (event.pointerType !== "mouse") return;
-
-    cursorX.set(event.clientX - 2);
-    cursorY.set(event.clientY - 1);
-
-    if (!cursorVisibleRef.current) {
-      cursorVisibleRef.current = true;
-      setCursorVisible(true);
-    }
-  };
-
-  const hideCursor = () => {
-    if (!cursorVisibleRef.current) return;
-    cursorVisibleRef.current = false;
-    setCursorVisible(false);
-  };
-
   if (!active) return null;
 
   return (
@@ -101,10 +72,7 @@ export function WorkPinned({ projects }: WorkPinnedProps) {
     >
       <div
         data-work-sticky
-        className="sticky top-0 flex h-[100svh] cursor-none flex-col overflow-hidden bg-night pt-[4.75rem] [&_a]:cursor-none [&_button]:cursor-none lg:pt-[5.25rem]"
-        onPointerMove={handlePointerMove}
-        onPointerLeave={hideCursor}
-        onPointerCancel={hideCursor}
+        className="sticky top-0 flex h-[100svh] flex-col overflow-hidden bg-night pt-[4.75rem] lg:pt-[5.25rem]"
       >
         <div
           aria-hidden="true"
@@ -339,8 +307,6 @@ export function WorkPinned({ projects }: WorkPinnedProps) {
             </div>
           </div>
         </div>
-
-        <WorkCursor x={cursorX} y={cursorY} visible={cursorVisible} />
       </div>
     </div>
   );

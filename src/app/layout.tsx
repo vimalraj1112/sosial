@@ -8,6 +8,7 @@ import { Footer } from "@/components/layout/Footer";
 import { FooterCta } from "@/components/layout/FooterCta";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
 import { SplashIntro } from "@/components/layout/SplashIntro";
+import { SiteCursor } from "@/components/ui/SiteCursor";
 
 const bodyFont = Inter({
   subsets: ["latin"],
@@ -141,6 +142,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <FooterCta />
           <Footer />
         </div>
+
+        <SiteCursor />
 
         <script
           type="application/ld+json"

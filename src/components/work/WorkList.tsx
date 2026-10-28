@@ -30,6 +30,7 @@ export function WorkList({ projects, allProjectsCount, className }: WorkListProp
                 project={project}
                 total={projects.length}
                 priority={index === 0}
+                parallax={false}
               />
             </Reveal>
           ))}

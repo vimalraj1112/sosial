@@ -10,6 +10,7 @@ type ProjectCardProps = {
   total: number;
   variant?: "grid" | "wide";
   priority?: boolean;
+  parallax?: boolean;
   className?: string;
 };
 
@@ -23,9 +24,28 @@ export function ProjectCard({
   total,
   variant = "grid",
   priority = false,
+  parallax = true,
   className,
 }: ProjectCardProps) {
   const wide = variant === "wide";
+
+  const media = (
+    <Visual
+      src={project.image}
+      alt={project.imageAlt}
+      className="h-full w-full bg-night-soft"
+      imgClassName={cn(
+        "transition-transform duration-[1100ms] ease-[var(--ease-brand)]",
+        parallax ? "group-hover:scale-[1.045]" : "group-hover:scale-[1.018]",
+      )}
+      sizes={
+        wide
+          ? "(min-width: 1024px) 1200px, 100vw"
+          : "(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+      }
+      priority={priority}
+    />
+  );
 
   return (
     <Link
@@ -50,20 +70,11 @@ export function ProjectCard({
             wide ? "aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9]" : "aspect-[4/3]",
           )}
         >
-          <ParallaxMedia strength={wide ? 4 : 5}>
-            <Visual
-              src={project.image}
-              alt={project.imageAlt}
-              className="h-full w-full bg-night-soft"
-              imgClassName="transition-transform duration-[1100ms] ease-[var(--ease-brand)] group-hover:scale-[1.045]"
-              sizes={
-                wide
-                  ? "(min-width: 1024px) 1200px, 100vw"
-                  : "(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-              }
-              priority={priority}
-            />
-          </ParallaxMedia>
+          {parallax ? (
+            <ParallaxMedia strength={wide ? 4 : 5}>{media}</ParallaxMedia>
+          ) : (
+            media
+          )}
 
           <div
             aria-hidden="true"
