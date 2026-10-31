@@ -18,13 +18,13 @@ type WorkPinnedProps = {
 };
 
 /**
- * Desktop/tablet selected-work viewer.
+ * Wide-desktop selected-work viewer.
  *
  * The outer element is one viewport tall per project; the inner element sticks
  * while the active project changes. This mirrors the reference's
  * scroll-controlled case-study presentation without intercepting the wheel or
- * touch scrolling. Mobile and reduced-motion visitors get the stacked list in
- * WorkShowcase instead.
+ * touch scrolling. Tablet, mobile and reduced-motion visitors get the stacked
+ * 16:9 case-study list in WorkShowcase instead.
  */
 export function WorkPinned({ projects }: WorkPinnedProps) {
   const wrapperRef = useRef<HTMLDivElement | null>(null);
@@ -64,8 +64,8 @@ export function WorkPinned({ projects }: WorkPinnedProps) {
   if (!active) return null;
 
   return (
-    <div className="hidden md:block">
-      <div className="container-x pb-10 pt-24 sm:pt-28 lg:pt-28">
+    <div className="hidden xl:block">
+      <div className="container-x pb-10 pt-24 sm:pt-28 lg:pt-28 xl:max-w-none xl:pl-[9.5rem] xl:pr-[13.25rem]">
         <WorkIntro total={projects.length} plain showCta={false} />
       </div>
 
@@ -88,7 +88,7 @@ export function WorkPinned({ projects }: WorkPinnedProps) {
             className="pointer-events-none absolute -right-40 top-1/4 h-[34rem] w-[34rem] rounded-full bg-coral/10 blur-[140px]"
           />
 
-          <div className="container-x relative flex min-h-0 flex-1 flex-col pb-4 pt-2 lg:pb-5 lg:pt-2">
+          <div className="container-x relative flex min-h-0 flex-1 flex-col pb-4 pt-2 lg:pb-5 lg:pt-2 xl:max-w-none xl:pb-0 xl:pl-[3rem] xl:pr-[7.8125rem] xl:pt-0">
             <WorkIntro total={projects.length} current={activeIndex} bare />
 
             <p className="sr-only" aria-live="polite" aria-atomic="true">
@@ -96,10 +96,10 @@ export function WorkPinned({ projects }: WorkPinnedProps) {
               {categoryLabels[active.category]}
             </p>
 
-            <div className="mt-3 flex min-h-0 flex-1 gap-3 lg:mt-4 lg:gap-5">
+            <div className="mt-3 flex min-h-0 flex-1 gap-3 lg:mt-4 lg:gap-5 xl:mt-[calc(1.5rem_+_(100vw_-_80rem)_*_0.025)] xl:gap-6">
               <div
                 role="group"
-                className="hidden w-8 shrink-0 flex-col justify-center gap-2.5 xl:flex"
+                className="hidden w-8 shrink-0 flex-col justify-center gap-2.5 xl:flex xl:w-[80px]"
                 aria-label="Project index"
               >
                 {projects.map((project, index) => {
@@ -157,14 +157,14 @@ export function WorkPinned({ projects }: WorkPinnedProps) {
                       className="shrink-0"
                     >
                       <div className="flex items-end justify-between gap-4 pb-2.5">
-                        <div className="min-w-0">
+                        <div className="flex min-w-0 flex-wrap items-baseline gap-x-4 gap-y-1">
                           <h3
                             data-work-title
-                            className="font-display text-[clamp(1.6rem,2.7vw,2.6rem)] font-semibold leading-[1.02] tracking-[-0.04em] text-paper transition-colors duration-500 group-hover:text-coral-soft"
+                            className="font-display text-[clamp(2.4rem,5vw,4.5rem)] font-semibold leading-[1.02] tracking-[-0.04em] text-paper transition-colors duration-500 group-hover:text-coral-soft"
                           >
                             {active.name}
                           </h3>
-                          <p className="mt-1 text-[0.6rem] font-semibold uppercase tracking-[0.16em] text-coral-soft/90">
+                          <p className="font-display text-[clamp(1.15rem,2.4vw,2.4rem)] font-semibold leading-none tracking-[-0.03em] text-paper/35">
                             {categoryLabels[active.category]}
                           </p>
                         </div>
@@ -215,36 +215,14 @@ export function WorkPinned({ projects }: WorkPinnedProps) {
                             alt={active.imageAlt}
                             className="h-full w-full bg-night-soft"
                             imgClassName="transition-[transform,filter] duration-[1200ms] ease-[var(--ease-brand)] group-hover/image:scale-[1.018] group-hover/image:brightness-105"
-                            sizes="(min-width: 1280px) 70vw, (min-width: 768px) 90vw, 100vw"
+                            sizes="(min-width: 1280px) 76vw, 100vw"
                             priority={activeIndex === 0}
-                          />
-
-                          <span
-                            aria-hidden="true"
-                            className="pointer-events-none absolute inset-0 bg-gradient-to-t from-night/80 via-night/10 to-night/0"
                           />
 
                           <span className="absolute right-4 top-4 inline-flex shrink-0 items-center rounded-full border border-paper/15 bg-night/60 px-2.5 py-1 font-mono text-[0.58rem] tracking-[0.14em] text-paper/75 backdrop-blur-sm sm:right-5 sm:top-5">
                             {active.number}
                             <span className="text-paper/35"> / {pad(projects.length)}</span>
                           </span>
-
-                          <span className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-5 p-4 text-paper sm:p-5">
-                            <span className="line-clamp-2 max-w-2xl text-[0.78rem] leading-relaxed text-paper/70 sm:text-[0.84rem]">
-                              {active.summary}
-                            </span>
-                            <span
-                              aria-hidden="true"
-                              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-paper/30 bg-night/35 text-paper backdrop-blur-sm transition-[transform,background-color,border-color,color] duration-500 ease-[var(--ease-brand)] group-hover/image:-translate-y-1 group-hover/image:translate-x-1 group-hover/image:border-coral group-hover/image:bg-coral group-hover/image:text-white"
-                            >
-                              <ArrowUpRight className="h-4 w-4" strokeWidth={1.8} />
-                            </span>
-                          </span>
-
-                          <span
-                            aria-hidden="true"
-                            className="absolute inset-x-0 bottom-0 h-px origin-left scale-x-0 bg-coral transition-transform duration-700 ease-[var(--ease-brand)] group-hover/image:scale-x-100"
-                          />
                         </Link>
                       </motion.div>
                     </div>
@@ -254,7 +232,7 @@ export function WorkPinned({ projects }: WorkPinnedProps) {
 
               <div
                 role="group"
-                className="hidden w-[100px] shrink-0 flex-col justify-center gap-2 xl:flex"
+                className="hidden w-[100px] shrink-0 flex-col justify-center gap-2 xl:flex xl:w-[62px]"
                 aria-label="Project thumbnails"
               >
                 {projects.map((project, index) => {
@@ -278,7 +256,7 @@ export function WorkPinned({ projects }: WorkPinnedProps) {
                       <Visual
                         src={project.image}
                         alt=""
-                        className="aspect-[4/3] w-full rounded-[0.35rem] bg-night-soft"
+                        className="aspect-[4/3] w-full rounded-[0.35rem] bg-night-soft xl:aspect-[31/20]"
                         imgClassName="object-cover"
                       />
                       <span className="absolute inset-x-1 bottom-1 rounded bg-night/75 px-1 py-0.5 text-left font-mono text-[0.48rem] tracking-[0.1em] text-paper/70 backdrop-blur-sm">
@@ -287,28 +265,6 @@ export function WorkPinned({ projects }: WorkPinnedProps) {
                     </button>
                   );
                 })}
-              </div>
-            </div>
-
-            <div className="mt-2.5 flex items-center justify-between gap-4 border-t border-paper/10 pt-2.5">
-              <p className="hidden text-[0.54rem] font-medium uppercase tracking-[0.12em] text-paper/30 sm:block">
-                Concept projects / no client results claimed
-              </p>
-              <div className="flex items-center gap-4">
-                <span className="hidden text-[0.54rem] font-medium uppercase tracking-[0.12em] text-paper/30 xl:inline">
-                  Scroll to explore
-                </span>
-                <Link
-                  href="/work"
-                  className="group inline-flex items-center gap-1.5 text-[0.64rem] font-semibold uppercase tracking-[0.14em] text-paper/55 transition-colors hover:text-coral-soft lg:hidden"
-                >
-                  View All Case Studies
-                  <ArrowUpRight
-                    aria-hidden="true"
-                    className="h-3.5 w-3.5 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                    strokeWidth={1.8}
-                  />
-                </Link>
               </div>
             </div>
           </div>

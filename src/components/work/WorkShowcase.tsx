@@ -14,8 +14,8 @@ type WorkShowcaseProps = {
 /**
  * Selected work has two honest presentations:
  *
- * - a pinned, scroll-controlled viewer on larger screens;
- * - a natural, stacked list on small screens and for reduced-motion visitors.
+ * - a pinned, scroll-controlled viewer on wide desktop screens;
+ * - a natural, 16:9 case-study list on tablet, mobile and for reduced-motion visitors.
  *
  * Keeping both in one section means the desktop experience can be cinematic
  * without making the projects difficult to reach on a phone or with motion
@@ -48,7 +48,7 @@ export function WorkShowcase({ projects, allProjectsCount }: WorkShowcaseProps) 
           <WorkList
             projects={projects}
             allProjectsCount={allProjectsCount}
-            className="md:hidden"
+            className="xl:hidden"
           />
           <WorkPinned projects={projects} />
         </>
