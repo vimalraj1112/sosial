@@ -24,7 +24,7 @@ export function WorkList({ projects, allProjectsCount, className }: WorkListProp
       <div className="container-x pb-16 pt-24 sm:px-6 sm:pb-20 sm:pt-28 lg:px-6 lg:pb-24 lg:pt-28">
         <WorkIntro total={projects.length} />
 
-        <div className="mt-10 grid gap-10 xl:grid-cols-2">
+        <div className="mt-10 grid gap-10 min-[1100px]:grid-cols-2">
           {projects.map((project, index) => (
             <Reveal key={project.slug} delay={Math.min(index * 0.07, 0.2)} className="h-full">
               <CaseStudyCard

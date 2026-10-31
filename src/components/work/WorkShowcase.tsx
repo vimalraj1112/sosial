@@ -48,7 +48,7 @@ export function WorkShowcase({ projects, allProjectsCount }: WorkShowcaseProps) 
           <WorkList
             projects={projects}
             allProjectsCount={allProjectsCount}
-            className="xl:hidden"
+            className="min-[1100px]:hidden"
           />
           <WorkPinned projects={projects} />
         </>

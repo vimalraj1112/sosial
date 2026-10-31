@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
@@ -64,8 +64,8 @@ export function WorkPinned({ projects }: WorkPinnedProps) {
   if (!active) return null;
 
   return (
-    <div className="hidden xl:block">
-      <div className="container-x pb-10 pt-24 sm:pt-28 lg:pt-28 xl:max-w-none xl:pl-[9.5rem] xl:pr-[13.25rem]">
+    <div className="hidden min-[1100px]:block">
+      <div className="container-x pb-10 pt-24 sm:pt-28 lg:pt-28 min-[1100px]:max-w-none min-[1100px]:pl-[9.5rem] min-[1100px]:pr-[13.25rem]">
         <WorkIntro total={projects.length} plain showCta={false} />
       </div>
 
@@ -88,7 +88,7 @@ export function WorkPinned({ projects }: WorkPinnedProps) {
             className="pointer-events-none absolute -right-40 top-1/4 h-[34rem] w-[34rem] rounded-full bg-coral/10 blur-[140px]"
           />
 
-          <div className="container-x relative flex min-h-0 flex-1 flex-col pb-4 pt-2 lg:pb-5 lg:pt-2 xl:max-w-none xl:pb-0 xl:pl-[3rem] xl:pr-[7.8125rem] xl:pt-0">
+          <div className="container-x relative flex min-h-0 flex-1 flex-col pb-4 pt-2 min-[1100px]:max-w-none min-[1100px]:pb-0 min-[1100px]:pl-[3rem] min-[1100px]:pr-[7.875rem] min-[1100px]:pt-0">
             <WorkIntro total={projects.length} current={activeIndex} bare />
 
             <p className="sr-only" aria-live="polite" aria-atomic="true">
@@ -96,10 +96,10 @@ export function WorkPinned({ projects }: WorkPinnedProps) {
               {categoryLabels[active.category]}
             </p>
 
-            <div className="mt-3 flex min-h-0 flex-1 gap-3 lg:mt-4 lg:gap-5 xl:mt-[calc(1.5rem_+_(100vw_-_80rem)_*_0.025)] xl:gap-6">
+            <div className="mt-3 flex min-h-0 flex-1 gap-3 min-[1100px]:mt-[calc(1.5rem_+_(100vw_-_80rem)_*_0.025)] min-[1100px]:gap-6">
               <div
                 role="group"
-                className="hidden w-8 shrink-0 flex-col justify-center gap-2.5 xl:flex xl:w-[80px]"
+                className="hidden w-8 shrink-0 flex-col justify-center gap-2.5 min-[1100px]:flex min-[1100px]:w-[80px]"
                 aria-label="Project index"
               >
                 {projects.map((project, index) => {
@@ -215,7 +215,7 @@ export function WorkPinned({ projects }: WorkPinnedProps) {
                             alt={active.imageAlt}
                             className="h-full w-full bg-night-soft"
                             imgClassName="transition-[transform,filter] duration-[1200ms] ease-[var(--ease-brand)] group-hover/image:scale-[1.018] group-hover/image:brightness-105"
-                            sizes="(min-width: 1280px) 76vw, 100vw"
+                            sizes="(min-width: 1100px) 76vw, 100vw"
                             priority={activeIndex === 0}
                           />
 
@@ -232,7 +232,7 @@ export function WorkPinned({ projects }: WorkPinnedProps) {
 
               <div
                 role="group"
-                className="hidden w-[100px] shrink-0 flex-col justify-center gap-2 xl:flex xl:w-[62px]"
+                className="hidden w-[100px] shrink-0 flex-col justify-center gap-2 min-[1100px]:flex min-[1100px]:w-[62px]"
                 aria-label="Project thumbnails"
               >
                 {projects.map((project, index) => {
@@ -256,7 +256,7 @@ export function WorkPinned({ projects }: WorkPinnedProps) {
                       <Visual
                         src={project.image}
                         alt=""
-                        className="aspect-[4/3] w-full rounded-[0.35rem] bg-night-soft xl:aspect-[31/20]"
+                        className="aspect-[4/3] w-full rounded-[0.35rem] bg-night-soft min-[1100px]:aspect-[31/20]"
                         imgClassName="object-cover"
                       />
                       <span className="absolute inset-x-1 bottom-1 rounded bg-night/75 px-1 py-0.5 text-left font-mono text-[0.48rem] tracking-[0.1em] text-paper/70 backdrop-blur-sm">
