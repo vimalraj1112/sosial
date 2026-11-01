@@ -11,6 +11,7 @@ import {
 } from "@/data/brand";
 import { Logo } from "@/components/brand/Logo";
 import { ReplayIntroLink } from "@/components/layout/SplashIntro";
+import { LocalTimeStrip } from "@/components/layout/LocalTimeStrip";
 
 const year = new Date().getFullYear();
 
@@ -165,6 +166,8 @@ export function Footer() {
               </div>
             </div>
           </div>
+
+          <LocalTimeStrip />
 
           <div className="flex flex-col gap-4 pt-6 text-[0.72rem] text-paper/40 sm:flex-row sm:items-center sm:justify-between">
             <p>
