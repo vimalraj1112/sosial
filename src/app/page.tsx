@@ -15,6 +15,7 @@ import { ProcessSection } from "@/components/sections/ProcessSection";
 import { TeamStrip } from "@/components/sections/TeamStrip";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { InsightsSection } from "@/components/sections/InsightsSection";
+import { BookingSection } from "@/components/sections/BookingSection";
 import { FaqSection } from "@/components/sections/FaqSection";
 import { FinalEnquiry } from "@/components/sections/FinalEnquiry";
 
@@ -43,6 +44,7 @@ export default function HomePage() {
       <TeamStrip />
       <TestimonialsSection />
       <InsightsSection />
+      <BookingSection />
       <FaqSection />
       <FinalEnquiry />
     </>

@@ -48,4 +48,34 @@ export const enquirySchema = z.object({
 
 export type EnquiryValues = z.infer<typeof enquirySchema>;
 
+/** A calendar slot request is delivered through the same enquiry pipeline. */
+export const bookingRequestSchema = z.object({
+  name: z
+    .string()
+    .trim()
+    .min(2, { message: "Please enter your name." })
+    .max(80, { message: "That name is a little too long." }),
+  email: z
+    .email({ message: "Please enter a valid email address." })
+    .max(160, { message: "That email is a little too long." }),
+  phone: z
+    .string()
+    .trim()
+    .max(32, { message: "That phone number is a little too long." })
+    .optional()
+    .or(z.literal("")),
+  note: z
+    .string()
+    .trim()
+    .max(600, { message: "Please keep this under 600 characters." })
+    .optional()
+    .or(z.literal("")),
+  consent: z.boolean().refine((value) => value === true, {
+    message: "Please accept the privacy notice to continue.",
+  }),
+  website: z.string().max(0).optional().or(z.literal("")),
+});
+
+export type BookingRequestValues = z.infer<typeof bookingRequestSchema>;
+
 export const serviceInterestOptions = serviceOptions;
