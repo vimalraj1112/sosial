@@ -4,6 +4,8 @@ import { Hero } from "@/components/sections/Hero";
 import { PlatformStrip } from "@/components/sections/PlatformStrip";
 import { IntroSection } from "@/components/sections/IntroSection";
 import { ServicesGrid } from "@/components/sections/ServicesGrid";
+import { HowItStarts } from "@/components/sections/HowItStarts";
+import { WhatWeMake } from "@/components/sections/WhatWeMake";
 import { MidCta } from "@/components/sections/MidCta";
 import { WaysOfWorking } from "@/components/sections/WaysOfWorking";
 import { EngagementModels } from "@/components/sections/EngagementModels";
@@ -33,6 +35,8 @@ export default function HomePage() {
       <PlatformStrip />
       <IntroSection />
       <ServicesGrid />
+      <HowItStarts />
+      <WhatWeMake />
       <MidCta />
       <WaysOfWorking />
       <EngagementModels />
