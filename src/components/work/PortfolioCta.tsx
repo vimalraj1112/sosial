@@ -41,11 +41,11 @@ export function PortfolioCta({
             <SectionLabel index="—" tone="light">
               {eyebrow}
             </SectionLabel>
-            <h2 className="display mt-6 max-w-4xl text-[clamp(2.5rem,6vw,5.4rem)] leading-[0.92]">
+            <h2 data-reveal="rise" className="display mt-6 max-w-4xl text-[clamp(2.5rem,6vw,5.4rem)] leading-[0.92]">
               {title}
             </h2>
           </div>
-          <div className="lg:col-span-4 lg:pb-1">
+          <div data-reveal="up" className="lg:col-span-4 lg:pb-1">
             <p className="max-w-sm text-[0.95rem] leading-relaxed text-paper/55">{description}</p>
             <ButtonLink
               href="/contact"

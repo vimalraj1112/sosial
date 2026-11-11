@@ -16,6 +16,7 @@ import { HeroBackdrop } from "@/components/media/HeroBackdrop";
 import { ParallaxMedia } from "@/components/work/ParallaxMedia";
 import { PortfolioCta } from "@/components/work/PortfolioCta";
 import { ProjectCard } from "@/components/work/ProjectCard";
+import { CountUp } from "@/components/motion/CountUp";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Visual } from "@/components/ui/Visual";
@@ -62,9 +63,9 @@ function ResultGrid({ results }: { results: ProjectResult[] }) {
   return (
     <div className="mt-6 grid gap-3 sm:grid-cols-3">
       {results.map((result) => (
-        <div key={result.label} className="rounded-card border border-ink/12 bg-card p-4">
+        <div key={result.label} data-reveal="scale" className="rounded-card border border-ink/12 bg-card p-4">
           <p className="font-display text-2xl font-semibold tracking-[-0.04em] text-coral">
-            {result.value}
+            <CountUp value={result.value} />
           </p>
           <p className="mt-1 text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-ink/45">
             {result.label}
@@ -205,11 +206,13 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
         <div className="container-x relative pb-14 pt-10 sm:pb-20">
           <div className="relative overflow-hidden rounded-card border border-paper/20 shadow-[8px_8px_0_0_var(--color-coral)]">
+            {/* The frame keeps its shadow; only the artwork inside is uncovered. */}
             <ParallaxMedia
               strength={4}
               className="aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9]"
             >
               <Visual
+                reveal="mask-up"
                 src={project.image}
                 alt={project.imageAlt}
                 className="h-full w-full bg-night-soft"
@@ -278,33 +281,34 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           <div className="min-w-0 lg:col-span-8">
             <section id="objective" className="scroll-mt-28">
               <SectionLabel index="01">Objective</SectionLabel>
-              <h2 className="display mt-5 max-w-2xl text-[clamp(1.9rem,3.4vw,2.9rem)]">
+              <h2 data-reveal="rise" className="display mt-5 max-w-2xl text-[clamp(1.9rem,3.4vw,2.9rem)]">
                 The job to be done.
               </h2>
-              <p className="mt-5 max-w-2xl text-[1rem] leading-relaxed text-ink/68">
+              <p data-reveal="up" className="mt-5 max-w-2xl text-[1rem] leading-relaxed text-ink/68">
                 {project.objective}
               </p>
             </section>
 
             <section id="context" className="mt-14 scroll-mt-28 border-t border-ink/12 pt-10">
               <SectionLabel index="02">The context</SectionLabel>
-              <h2 className="display mt-5 max-w-2xl text-[clamp(1.9rem,3.4vw,2.9rem)]">
+              <h2 data-reveal="rise" className="display mt-5 max-w-2xl text-[clamp(1.9rem,3.4vw,2.9rem)]">
                 The problem behind the brief.
               </h2>
-              <p className="mt-5 max-w-2xl text-[1rem] leading-relaxed text-ink/68">
+              <p data-reveal="up" className="mt-5 max-w-2xl text-[1rem] leading-relaxed text-ink/68">
                 {project.challenge}
               </p>
             </section>
 
             <section id="approach" className="mt-14 scroll-mt-28 border-t border-ink/12 pt-10">
               <SectionLabel index="03">Approach</SectionLabel>
-              <h2 className="display mt-5 max-w-2xl text-[clamp(1.9rem,3.4vw,2.9rem)]">
+              <h2 data-reveal="rise" className="display mt-5 max-w-2xl text-[clamp(1.9rem,3.4vw,2.9rem)]">
                 How we would solve it.
               </h2>
               <div className="mt-8 space-y-3">
                 {project.approach.map((step, stepIndex) => (
                   <div
                     key={step.title}
+                    data-reveal="right"
                     className="grid gap-4 rounded-card border border-ink/12 bg-card p-5 shadow-[2px_2px_0_0_rgba(20,20,28,0.12)] sm:grid-cols-[auto_1fr] sm:p-6"
                   >
                     <span className="flex h-10 w-10 items-center justify-center rounded-full border border-ink/15 bg-paper font-mono text-[0.68rem] text-coral">
@@ -323,13 +327,13 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
             <section id="deliverables" className="mt-14 scroll-mt-28 border-t border-ink/12 pt-10">
               <SectionLabel index="04">Deliverables</SectionLabel>
-              <h2 className="display mt-5 max-w-2xl text-[clamp(1.9rem,3.4vw,2.9rem)]">
+              <h2 data-reveal="rise" className="display mt-5 max-w-2xl text-[clamp(1.9rem,3.4vw,2.9rem)]">
                 What the engagement includes.
               </h2>
               <ul className="mt-8 grid gap-2.5 sm:grid-cols-2">
                 {project.deliverables.map((item) => (
-                  <li
-                    key={item}
+                  <li key={item}
+                    data-reveal="left"
                     className="flex items-start gap-3 rounded-xl border border-ink/10 bg-card px-4 py-3 text-[0.86rem] leading-relaxed text-ink/68"
                   >
                     <Check
@@ -345,15 +349,16 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
             <section id="gallery" className="mt-14 scroll-mt-28 border-t border-ink/12 pt-10">
               <SectionLabel index="05">Gallery</SectionLabel>
-              <h2 className="display mt-5 max-w-2xl text-[clamp(1.9rem,3.4vw,2.9rem)]">
+              <h2 data-reveal="rise" className="display mt-5 max-w-2xl text-[clamp(1.9rem,3.4vw,2.9rem)]">
                 The work, in detail.
               </h2>
               <div className="mt-8 grid gap-5 sm:grid-cols-2">
                 {project.gallery.map((item, itemIndex) => (
-                  <Reveal key={item.src} delay={itemIndex * 0.05} className="h-full">
+                  <Reveal key={item.src} className="h-full">
                     <figure className="h-full overflow-hidden rounded-card border-2 border-ink bg-card shadow-hard-xs">
                       <div className="relative">
                         <Visual
+                          reveal={itemIndex % 2 === 0 ? "mask-left" : "mask-right"}
                           src={item.src}
                           alt={item.alt}
                           className="aspect-[4/3] w-full"
@@ -374,14 +379,14 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
 
             <section id="results" className="mt-14 scroll-mt-28 border-t border-ink/12 pt-10">
               <SectionLabel index="06">Results</SectionLabel>
-              <h2 className="display mt-5 max-w-2xl text-[clamp(1.9rem,3.4vw,2.9rem)]">
+              <h2 data-reveal="rise" className="display mt-5 max-w-2xl text-[clamp(1.9rem,3.4vw,2.9rem)]">
                 What we can claim.
               </h2>
 
               {project.verifiedResults && project.verifiedResults.length > 0 ? (
                 <ResultGrid results={project.verifiedResults} />
               ) : (
-                <div className="mt-6 rounded-card border-2 border-ink bg-card p-5 shadow-hard-xs sm:p-6">
+                <div data-reveal="up" className="mt-6 rounded-card border-2 border-ink bg-card p-5 shadow-hard-xs sm:p-6">
                   <div className="flex items-start gap-3">
                     <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-ink/15 bg-paper text-coral">
                       <Info aria-hidden="true" className="h-4 w-4" strokeWidth={2} />
@@ -405,6 +410,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
             </section>
 
             <nav
+              data-reveal="fade"
               aria-label="Project navigation"
               className={cn(
                 "mt-14 flex flex-col gap-4 border-t border-ink/12 pt-6 sm:flex-row sm:items-end sm:justify-between",
@@ -448,11 +454,12 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               <SectionLabel index="—" tone="light">
                 More concepts
               </SectionLabel>
-              <h2 className="display mt-5 max-w-xl text-[clamp(2rem,4.4vw,3.6rem)]">
+              <h2 data-reveal="rise" className="display mt-5 max-w-xl text-[clamp(2rem,4.4vw,3.6rem)]">
                 Keep <span className="serif-accent text-coral-soft">looking</span>.
               </h2>
             </div>
             <Link
+              data-reveal="right"
               href="/work"
               className="group inline-flex items-center gap-2 text-[0.8rem] font-semibold text-paper/65 transition-colors hover:text-coral-soft"
             >
@@ -466,10 +473,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           </div>
 
           <div className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {related.map((item, itemIndex) => (
-              <Reveal key={item.slug} delay={itemIndex * 0.06} className="h-full">
-                <ProjectCard project={item} total={projects.length} />
-              </Reveal>
+            {related.map((item) => (
+              <ProjectCard key={item.slug} project={item} total={projects.length} />
             ))}
           </div>
         </div>

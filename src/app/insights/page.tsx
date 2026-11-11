@@ -7,7 +7,10 @@ import { ArticleCard } from "@/components/insights/ArticleCard";
 import { ButtonLink } from "@/components/ui/Button";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Visual } from "@/components/ui/Visual";
+import { Typewriter, type TypewriterPart } from "@/components/ui/Typewriter";
 import { HeroBackdrop } from "@/components/media/HeroBackdrop";
+import { reveal } from "@/components/ui/Reveal";
+import { CountUp } from "@/components/motion/CountUp";
 
 export const metadata: Metadata = buildMetadata({
   title: "Insights — Notes on marketing, creative and production",
@@ -15,6 +18,14 @@ export const metadata: Metadata = buildMetadata({
     "Practical notes from Sosial on attention, brand, search, performance, content and production. Written for people who have to make the work happen.",
   path: "/insights",
 });
+
+const headline: TypewriterPart[][] = [
+  [
+    { text: "Thinking we would " },
+    { text: "defend", className: "serif-accent text-coral-soft" },
+    { text: " in a meeting." },
+  ],
+];
 
 export default function InsightsPage() {
   const featured = featuredArticles[0] ?? articles[0];
@@ -33,8 +44,7 @@ export default function InsightsPage() {
           <div className="mt-8 grid gap-10 lg:grid-cols-12 lg:items-end lg:gap-16">
             <div className="lg:col-span-8">
               <h1 className="display max-w-4xl text-[clamp(2.8rem,6.8vw,5.8rem)]">
-                Thinking we would{" "}
-                <span className="serif-accent text-coral-soft">defend</span> in a meeting.
+                <Typewriter lines={headline} speed={45} startDelay={140} trigger="mount" />
               </h1>
               <p className="mt-6 max-w-2xl text-[1rem] leading-relaxed text-paper/65 sm:text-[1.06rem]">
                 Notes on attention, brand, search, performance, content and production. Written for
@@ -45,7 +55,7 @@ export default function InsightsPage() {
               <div className="grid grid-cols-2 gap-6 border-t border-paper/15 pt-5 sm:max-w-xs">
                 <div>
                   <p className="font-display text-3xl font-semibold tracking-[-0.04em] text-coral-soft">
-                    {String(articles.length).padStart(2, "0")}
+                    <CountUp value={String(articles.length).padStart(2, "0")} />
                   </p>
                   <p className="mt-1 text-[0.6rem] font-semibold uppercase tracking-[0.12em] text-paper/40">
                     Notes
@@ -53,7 +63,7 @@ export default function InsightsPage() {
                 </div>
                 <div>
                   <p className="font-display text-3xl font-semibold tracking-[-0.04em] text-coral-soft">
-                    {String(articleCategories.length - 1).padStart(2, "0")}
+                    <CountUp value={String(articleCategories.length - 1).padStart(2, "0")} />
                   </p>
                   <p className="mt-1 text-[0.6rem] font-semibold uppercase tracking-[0.12em] text-paper/40">
                     Topics
@@ -67,7 +77,7 @@ export default function InsightsPage() {
 
       <section className="bg-paper py-20 sm:py-24 lg:py-28">
         <div className="container-x">
-          <div className="flex flex-wrap items-center gap-2 border-b border-ink/12 pb-5">
+          <div {...reveal("fade")} className="flex flex-wrap items-center gap-2 border-b border-ink/12 pb-5">
             <span className="mr-2 text-[0.62rem] font-semibold uppercase tracking-[0.12em] text-ink/40">
               Topics
             </span>
@@ -83,10 +93,11 @@ export default function InsightsPage() {
 
           {featured ? (
             <div className="mt-10 grid gap-8 lg:grid-cols-12 lg:items-center lg:gap-14">
-              <div className="lg:col-span-7">
+              <div {...reveal("left")} className="lg:col-span-7">
                 <Link href={`/insights/${featured.slug}`} className="group block">
                   <div className="media-frame shadow-hard-sm transition-[transform,box-shadow] duration-200 group-hover:-translate-y-1 group-hover:shadow-hard">
                     <Visual
+                      reveal="mask-left"
                       src={featured.image}
                       alt={featured.imageAlt}
                       className="aspect-[16/10] w-full"
@@ -97,7 +108,7 @@ export default function InsightsPage() {
                   </div>
                 </Link>
               </div>
-              <div className="lg:col-span-5">
+              <div {...reveal("right")} className="lg:col-span-5">
                 <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[0.62rem] font-semibold uppercase tracking-[0.12em] text-ink/45">
                   <span className="text-coral">{featured.category}</span>
                   <span aria-hidden="true" className="h-1 w-1 rounded-full bg-night/20" />
@@ -133,11 +144,11 @@ export default function InsightsPage() {
             <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
               <div>
                 <SectionLabel index="—">All notes</SectionLabel>
-                <h2 className="display mt-4 text-[clamp(1.8rem,3.6vw,2.8rem)]">
+                <h2 {...reveal("rise")} className="display mt-4 text-[clamp(1.8rem,3.6vw,2.8rem)]">
                   More from the studio.
                 </h2>
               </div>
-              <p className="max-w-xs text-[0.82rem] leading-relaxed text-ink/50">
+              <p {...reveal("up")} className="max-w-xs text-[0.82rem] leading-relaxed text-ink/50">
                 No newsletter, no content treadmill. Just the notes we would send to a client.
               </p>
             </div>
@@ -149,7 +160,7 @@ export default function InsightsPage() {
             </div>
           </div>
 
-          <div className="mt-12 flex flex-col gap-5 border-t border-ink/12 pt-6 sm:flex-row sm:items-center sm:justify-between">
+          <div {...reveal("up")} className="mt-12 flex flex-col gap-5 border-t border-ink/12 pt-6 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-[0.8rem] leading-relaxed text-ink/50">
               Have a question the notes do not answer? Ask it directly.
             </p>

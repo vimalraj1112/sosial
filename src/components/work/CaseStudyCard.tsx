@@ -23,7 +23,7 @@ export function CaseStudyCard({ project, total, priority = false }: CaseStudyCar
       className="group block h-full rounded-[1.25rem] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-coral"
     >
       <article className="flex h-full flex-col">
-        <div className="order-2 pb-4 sm:order-1 sm:pb-5">
+        <div data-reveal="up" className="order-2 pb-4 sm:order-1 sm:pb-5">
           <h3 className="font-display text-[clamp(1.8rem,4.6vw,3rem)] font-semibold leading-[1.02] tracking-[-0.04em] text-paper transition-colors duration-500 group-hover:text-coral-soft">
             {project.name}
           </h3>
@@ -32,7 +32,9 @@ export function CaseStudyCard({ project, total, priority = false }: CaseStudyCar
           </p>
         </div>
 
-        <div className="relative order-1 aspect-video overflow-hidden rounded-[1.25rem] border border-paper/15 bg-night-soft shadow-[0_30px_90px_-50px_rgb(0_0_0/0.9)] sm:order-2">
+        <div
+          data-reveal="mask-up"
+          className="relative order-1 aspect-video overflow-hidden rounded-[1.25rem] border border-paper/15 bg-night-soft shadow-[0_30px_90px_-50px_rgb(0_0_0/0.9)] sm:order-2">
           <Visual
             src={project.image}
             alt={project.imageAlt}
@@ -57,7 +59,7 @@ export function CaseStudyCard({ project, total, priority = false }: CaseStudyCar
           </span>
         </div>
 
-        <ul className="order-3 mt-4 flex flex-wrap gap-1.5" aria-label="Project tags">
+        <ul data-reveal="fade" className="order-3 mt-4 flex flex-wrap gap-1.5" aria-label="Project tags">
           {project.tags.map((tag) => (
             <li
               key={tag}

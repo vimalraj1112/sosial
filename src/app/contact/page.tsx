@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowUpRight, Check, Mail, MessageCircle, Phone } from "lucide-react";
+import { ArrowUpRight, Check, Mail, Phone } from "lucide-react";
 import { brand, mailHref, telHref, whatsappHref } from "@/data/brand";
 import { buildMetadata } from "@/lib/seo";
 import { EnquiryForm } from "@/components/forms/EnquiryForm";
 import { HeroBackdrop } from "@/components/media/HeroBackdrop";
 import { SectionLabel } from "@/components/ui/SectionLabel";
+import { reveal } from "@/components/ui/Reveal";
+import { WhatsAppIcon } from "@/components/brand/WhatsAppIcon";
 
 const nextSteps = [
   "We read your note and reply with a clear next step.",
@@ -41,19 +43,19 @@ export default function ContactPage() {
               required, no obligation, no sales sequence.
             </p>
 
-            <p className="mt-9 text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-paper/35">
+            <p {...reveal("fade")} className="mt-9 text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-paper/35">
               What happens next
             </p>
             <ul className="mt-4 space-y-3">
               {nextSteps.map((step) => (
-                <li key={step} className="flex gap-3 text-[0.87rem] leading-relaxed text-paper/65">
+                <li key={step} {...reveal("left")} className="flex gap-3 text-[0.87rem] leading-relaxed text-paper/65">
                   <Check aria-hidden="true" className="mt-1 h-4 w-4 shrink-0 text-coral-soft" strokeWidth={2.2} />
                   {step}
                 </li>
               ))}
             </ul>
 
-            <div className="mt-10 border-t border-paper/12 pt-6">
+            <div {...reveal("up")} className="mt-10 border-t border-paper/12 pt-6">
               <p className="text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-paper/35">
                 Direct lines
               </p>
@@ -72,7 +74,7 @@ export default function ContactPage() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2.5 text-paper/70 transition-colors hover:text-coral-soft"
                 >
-                  <MessageCircle aria-hidden="true" className="h-4 w-4" strokeWidth={1.8} />
+                  <WhatsAppIcon className="h-4 w-4" />
                   Message on WhatsApp
                   <ArrowUpRight aria-hidden="true" className="h-3.5 w-3.5" strokeWidth={1.8} />
                 </a>
@@ -84,7 +86,7 @@ export default function ContactPage() {
           </div>
 
           <div className="lg:col-span-7">
-            <div className="rounded-card border-2 border-ink bg-card p-5 text-ink shadow-[8px_8px_0_0_var(--color-coral)] sm:p-8">
+            <div {...reveal("right")} className="rounded-card border-2 border-ink bg-card p-5 text-ink shadow-[8px_8px_0_0_var(--color-coral)] sm:p-8">
               <div className="flex flex-wrap items-end justify-between gap-3 border-b border-ink/12 pb-5">
                 <div>
                   <h2 className="font-display text-[1.5rem] font-semibold tracking-[-0.03em]">

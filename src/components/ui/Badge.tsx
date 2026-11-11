@@ -4,13 +4,15 @@ export function Badge({
   children,
   tone = "dark",
   className,
+  ...rest
 }: {
   children: React.ReactNode;
   tone?: "dark" | "light" | "coral";
   className?: string;
-}) {
+} & Omit<React.HTMLAttributes<HTMLSpanElement>, "children" | "className">) {
   return (
     <span
+      {...rest}
       className={cn(
         "inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-[0.6rem] font-semibold uppercase tracking-[0.1em]",
         tone === "dark" && "border-ink/25 bg-night/[0.04] text-ink/70",

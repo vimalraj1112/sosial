@@ -99,6 +99,7 @@ export function WorkPinned({ projects }: WorkPinnedProps) {
             <div className="mt-3 flex min-h-0 flex-1 gap-3 min-[1100px]:mt-[calc(1.5rem_+_(100vw_-_80rem)_*_0.025)] min-[1100px]:gap-6">
               <div
                 role="group"
+                data-reveal="left"
                 className="hidden w-8 shrink-0 flex-col justify-center gap-2.5 min-[1100px]:flex min-[1100px]:w-[80px]"
                 aria-label="Project index"
               >
@@ -138,7 +139,7 @@ export function WorkPinned({ projects }: WorkPinnedProps) {
                 })}
               </div>
 
-              <div className="relative min-h-0 min-w-0 flex-1">
+              <div data-reveal="mask-up" className="relative min-h-0 min-w-0 flex-1">
                 <AnimatePresence mode="wait" initial={false}>
                   <motion.div
                     key={active.slug}
@@ -232,6 +233,7 @@ export function WorkPinned({ projects }: WorkPinnedProps) {
 
               <div
                 role="group"
+                data-reveal="right"
                 className="hidden w-[100px] shrink-0 flex-col justify-center gap-2 min-[1100px]:flex min-[1100px]:w-[62px]"
                 aria-label="Project thumbnails"
               >

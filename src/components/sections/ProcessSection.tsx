@@ -1,6 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { processSteps } from "@/data/faqs";
-import { Reveal } from "@/components/ui/Reveal";
+import { Reveal, reveal } from "@/components/ui/Reveal";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Accordion } from "@/components/ui/Accordion";
 
@@ -17,18 +17,19 @@ export function ProcessSection() {
           <div className="lg:col-span-5">
             <div className="lg:sticky lg:top-28">
               <SectionLabel index="09">The process</SectionLabel>
-              <h2 className="display mt-5 text-[clamp(2rem,3.8vw,3.1rem)]">
+              <h2 {...reveal("rise")} className="display mt-5 text-[clamp(2rem,3.8vw,3.1rem)]">
                 A process that removes{" "}
                 <span className="serif-accent text-coral">surprises</span>.
               </h2>
-              <p className="mt-5 max-w-md text-[0.95rem] leading-relaxed text-ink/65">
+              <p {...reveal("up")} className="mt-5 max-w-md text-[0.95rem] leading-relaxed text-ink/65">
                 Four phases, each with a clear output and a decision point. You always know what is
                 happening, what is next and what we need from you.
               </p>
-              <p className="mt-6 text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-ink/45">
+              <p {...reveal("fade")} className="mt-6 text-[0.72rem] font-semibold uppercase tracking-[0.14em] text-ink/45">
                 Typical timeline: agreed per project
               </p>
               <a
+                {...reveal("up")}
                 href="#contact"
                 className="group mt-8 flex max-w-md items-center justify-between gap-4 rounded-2xl border-2 border-ink bg-card p-5 shadow-hard-xs transition-[transform,box-shadow] duration-200 hover:-translate-y-1 hover:shadow-hard-sm"
               >
@@ -52,6 +53,7 @@ export function ProcessSection() {
               {processSteps.map((step) => (
                 <div
                   key={step.number}
+                  {...reveal("scale")}
                   className="rounded-2xl border-2 border-ink bg-card p-4 shadow-hard-xs transition-[transform,box-shadow] duration-200 hover:-translate-y-1 hover:shadow-hard-sm sm:p-5"
                 >
                   <p className="text-[0.65rem] font-semibold tracking-[0.14em] text-coral">{step.number}</p>

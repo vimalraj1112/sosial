@@ -12,6 +12,7 @@ import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Visual } from "@/components/ui/Visual";
 import { HeroBackdrop } from "@/components/media/HeroBackdrop";
 import { ProjectCard } from "@/components/work/ProjectCard";
+import { reveal } from "@/components/ui/Reveal";
 import { ServiceIcon } from "@/components/services/ServiceIcon";
 
 type ServicePageProps = {
@@ -140,6 +141,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
             <div className="lg:col-span-5">
               <div className="rounded-card border border-paper/20 shadow-[7px_7px_0_0_var(--color-coral)]">
                 <Visual
+                  reveal="mask-up"
                   src={service.image}
                   alt={service.imageAlt}
                   className="aspect-[4/3] w-full rounded-[1.1rem]"
@@ -213,17 +215,18 @@ export default async function ServicePage({ params }: ServicePageProps) {
           <div className="min-w-0 lg:col-span-8">
             <section id="problem" className="scroll-mt-28">
               <SectionLabel index="01">The problem</SectionLabel>
-              <h2 className="display mt-5 max-w-2xl text-[clamp(1.9rem,3.6vw,3rem)]">
+              <h2 {...reveal("rise")} className="display mt-5 max-w-2xl text-[clamp(1.9rem,3.6vw,3rem)]">
                 Where the work usually{" "}
                 <span className="serif-accent text-coral">breaks</span>.
               </h2>
-              <p className="mt-5 max-w-2xl text-[1rem] leading-relaxed text-ink/68">
+              <p {...reveal("up")} className="mt-5 max-w-2xl text-[1rem] leading-relaxed text-ink/68">
                 {service.problem}
               </p>
               <ul className="mt-8 grid gap-2.5 sm:grid-cols-3">
                 {service.problemPoints.map((point, index) => (
                   <li
                     key={point}
+                    {...reveal("up")}
                     className="rounded-xl border border-ink/12 bg-card p-4 text-[0.84rem] leading-relaxed text-ink/65"
                   >
                     <span className="mb-3 flex h-7 w-7 items-center justify-center rounded-full border border-ink/15 font-mono text-[0.6rem] text-coral">
@@ -237,7 +240,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
             <section id="approach" className="mt-14 scroll-mt-28 border-t border-ink/12 pt-10">
               <SectionLabel index="02">Approach</SectionLabel>
-              <h2 className="display mt-5 max-w-2xl text-[clamp(1.9rem,3.6vw,3rem)]">
+              <h2 {...reveal("rise")} className="display mt-5 max-w-2xl text-[clamp(1.9rem,3.6vw,3rem)]">
                 How we would{" "}
                 <span className="serif-accent text-coral">approach it</span>.
               </h2>
@@ -245,6 +248,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                 {service.approach.map((step, index) => (
                   <div
                     key={step.title}
+                    {...reveal("right")}
                     className="grid gap-4 rounded-card border border-ink/12 bg-card p-5 shadow-[2px_2px_0_0_rgba(20,20,28,0.12)] sm:grid-cols-[auto_1fr] sm:p-6"
                   >
                     <span className="flex h-10 w-10 items-center justify-center rounded-full border border-ink/15 bg-paper font-mono text-[0.68rem] text-coral">
@@ -265,7 +269,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
             <section id="deliverables" className="mt-14 scroll-mt-28 border-t border-ink/12 pt-10">
               <SectionLabel index="03">Deliverables</SectionLabel>
-              <h2 className="display mt-5 max-w-2xl text-[clamp(1.9rem,3.6vw,3rem)]">
+              <h2 {...reveal("rise")} className="display mt-5 max-w-2xl text-[clamp(1.9rem,3.6vw,3rem)]">
                 What the scope can{" "}
                 <span className="serif-accent text-coral">include</span>.
               </h2>
@@ -273,6 +277,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                 {service.deliverables.map((item) => (
                   <li
                     key={item}
+                    {...reveal("left")}
                     className="flex items-start gap-3 rounded-xl border border-ink/10 bg-card px-4 py-3 text-[0.86rem] leading-relaxed text-ink/68"
                   >
                     <Check aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0 text-coral" strokeWidth={2.2} />
@@ -280,7 +285,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                   </li>
                 ))}
               </ul>
-              <p className="mt-4 max-w-2xl text-[0.76rem] leading-relaxed text-ink/45">
+              <p {...reveal("fade")} className="mt-4 max-w-2xl text-[0.76rem] leading-relaxed text-ink/45">
                 Final deliverables, number of rounds and timing are confirmed in the written scope.
                 Not every bullet is included in every engagement.
               </p>
@@ -288,11 +293,11 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
             <section id="faqs" className="mt-14 scroll-mt-28 border-t border-ink/12 pt-10">
               <SectionLabel index="04">Questions</SectionLabel>
-              <h2 className="display mt-5 max-w-2xl text-[clamp(1.9rem,3.6vw,3rem)]">
+              <h2 {...reveal("rise")} className="display mt-5 max-w-2xl text-[clamp(1.9rem,3.6vw,3rem)]">
                 Worth asking before you{" "}
                 <span className="serif-accent text-coral">commit</span>.
               </h2>
-              <div className="mt-8 rounded-card border-2 border-ink bg-card px-5 py-2 shadow-hard-xs sm:px-7">
+              <div {...reveal("up")} className="mt-8 rounded-card border-2 border-ink bg-card px-5 py-2 shadow-hard-xs sm:px-7">
                 <Accordion items={service.faqs} defaultOpen={0} />
               </div>
             </section>
@@ -309,14 +314,16 @@ export default async function ServicePage({ params }: ServicePageProps) {
                 <SectionLabel index="—" tone="light">
                   Related concepts
                 </SectionLabel>
-                <h2 className="display mt-5 max-w-2xl text-[clamp(2rem,4.2vw,3.4rem)]">
+                <h2 {...reveal("rise")} className="display mt-5 max-w-2xl text-[clamp(2rem,4.2vw,3.4rem)]">
                   How this thinking shows up in the{" "}
                   <span className="serif-accent text-coral-soft">work</span>.
                 </h2>
               </div>
-              <ButtonLink href="/work" variant="light" size="sm" arrow>
-                View All Work
-              </ButtonLink>
+              <div {...reveal("right")}>
+                <ButtonLink href="/work" variant="light" size="sm" arrow>
+                  View All Work
+                </ButtonLink>
+              </div>
             </div>
 
             <div className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -324,7 +331,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
                 <ProjectCard key={project.slug} project={project} total={relatedProjects.length} />
               ))}
             </div>
-            <p className="mt-5 text-[0.7rem] uppercase tracking-[0.12em] text-paper/35">
+            <p {...reveal("fade")} className="mt-5 text-[0.7rem] uppercase tracking-[0.12em] text-paper/35">
               Illustrative concepts only. No client names or performance results are claimed.
             </p>
           </div>
@@ -337,12 +344,13 @@ export default async function ServicePage({ params }: ServicePageProps) {
             <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
               <div>
                 <SectionLabel index="—">Same division</SectionLabel>
-                <h2 className="display mt-5 max-w-xl text-[clamp(1.8rem,3.6vw,2.8rem)]">
+                <h2 {...reveal("rise")} className="display mt-5 max-w-xl text-[clamp(1.8rem,3.6vw,2.8rem)]">
                   Services that often work{" "}
                   <span className="serif-accent text-coral">together</span>.
                 </h2>
               </div>
               <Link
+                {...reveal("right")}
                 href="/services"
                 className="group inline-flex items-center gap-2 text-[0.8rem] font-semibold text-ink/65 transition-colors hover:text-coral"
               >
@@ -359,6 +367,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
               {otherServices.map((item) => (
                 <Link
                   key={item.slug}
+                  {...reveal("up")}
                   href={`/services/${item.slug}`}
                   className="group flex h-full flex-col justify-between gap-6 rounded-card border-2 border-ink bg-card p-5 text-ink shadow-hard-xs transition-[transform,box-shadow] duration-200 hover:-translate-y-1 hover:shadow-hard"
                 >

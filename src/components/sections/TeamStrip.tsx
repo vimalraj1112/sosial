@@ -1,4 +1,4 @@
-import { Reveal } from "@/components/ui/Reveal";
+import { Reveal, reveal } from "@/components/ui/Reveal";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Visual } from "@/components/ui/Visual";
 import { ButtonLink } from "@/components/ui/Button";
@@ -17,12 +17,12 @@ export function TeamStrip() {
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
             <SectionLabel index="10">The team</SectionLabel>
-            <h2 className="display mt-5 max-w-xl text-[clamp(1.9rem,3.7vw,2.9rem)]">
+            <h2 {...reveal("rise")} className="display mt-5 max-w-xl text-[clamp(1.9rem,3.7vw,2.9rem)]">
               The disciplines behind{" "}
               <span className="serif-accent text-coral">the work</span>.
             </h2>
           </div>
-          <div className="max-w-sm">
+          <div {...reveal("up")} className="max-w-sm">
             <p className="text-[0.85rem] leading-relaxed text-ink/55">
               Four disciplines, one integrated team. Named profiles, biographies and photography are
               pending approval.
@@ -34,10 +34,11 @@ export function TeamStrip() {
         </div>
 
         <div className="mt-10 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
-          {roles.map((person, index) => (
-            <Reveal key={person.role} delay={index * 0.05} className="h-full">
+          {roles.map((person) => (
+            <Reveal key={person.role} className="h-full">
               <div className="group flex h-full flex-col rounded-card border-2 border-ink bg-card p-3 shadow-hard-xs transition-[transform,box-shadow] duration-200 hover:-translate-y-1 hover:shadow-hard">
                 <Visual
+                  reveal="mask-up"
                   src={person.image}
                   alt={`Placeholder portrait for the ${person.role} role`}
                   className="aspect-square w-full rounded-xl"

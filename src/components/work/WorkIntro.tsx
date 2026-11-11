@@ -74,6 +74,7 @@ export function WorkIntro({
       )}
     >
       <h2
+        data-reveal="rise"
         className={cn(
           "display max-w-3xl text-paper",
           compact
@@ -92,7 +93,7 @@ export function WorkIntro({
         </p>
       ) : null}
 
-      <div className={cn("max-w-md", compact && "hidden lg:block")}>
+      <div data-reveal="up" className={cn("max-w-md", compact && "hidden lg:block")}>
         <p className="text-[0.82rem] leading-relaxed text-paper/55 lg:text-[0.88rem]">
           A selection of creative work, digital experiences, and campaigns designed to help
           brands stand out.

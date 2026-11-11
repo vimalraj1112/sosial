@@ -151,6 +151,7 @@ export default async function InsightPage({ params }: InsightPageProps) {
             <div className="lg:col-span-4">
               <div className="rounded-card border border-paper/20 shadow-[6px_6px_0_0_var(--color-coral)]">
                 <Visual
+                  reveal="mask-up"
                   src={article.image}
                   alt={article.imageAlt}
                   className="aspect-[4/3] w-full rounded-[1.1rem]"
@@ -211,7 +212,7 @@ export default async function InsightPage({ params }: InsightPageProps) {
               ))}
             </article>
 
-            <div className="mt-12 flex flex-col gap-4 border-t border-ink/12 pt-6 sm:flex-row sm:items-center sm:justify-between">
+            <div data-reveal="fade" className="mt-12 flex flex-col gap-4 border-t border-ink/12 pt-6 sm:flex-row sm:items-center sm:justify-between">
               <Link
                 href="/insights"
                 className="group inline-flex items-center gap-2 text-[0.8rem] font-semibold text-ink/60 transition-colors hover:text-coral"
@@ -236,12 +237,13 @@ export default async function InsightPage({ params }: InsightPageProps) {
           <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
             <div>
               <SectionLabel index="—">Keep reading</SectionLabel>
-              <h2 className="display mt-5 max-w-xl text-[clamp(1.9rem,3.8vw,3rem)]">
+              <h2 data-reveal="rise" className="display mt-5 max-w-xl text-[clamp(1.9rem,3.8vw,3rem)]">
                 More notes from the{" "}
                 <span className="serif-accent text-coral">studio</span>.
               </h2>
             </div>
             <Link
+              data-reveal="right"
               href="/insights"
               className="group inline-flex items-center gap-2 text-[0.8rem] font-semibold text-ink/65 transition-colors hover:text-coral"
             >

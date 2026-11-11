@@ -15,6 +15,7 @@ export function ArticleCard({
 }) {
   return (
     <Link
+      data-reveal="up"
       href={`/insights/${article.slug}`}
       className={cn(
         "group flex h-full flex-col rounded-card border-2 border-ink bg-card p-4 text-ink shadow-hard-xs transition-[transform,box-shadow] duration-200 hover:-translate-y-1 hover:shadow-hard",
@@ -22,6 +23,7 @@ export function ArticleCard({
       )}
     >
       <Visual
+        reveal="mask-up"
         src={article.image}
         alt={article.imageAlt}
         className="aspect-[4/3] w-full rounded-xl"

@@ -4,7 +4,7 @@ export type ProjectCategory =
   | "Social"
   | "Web"
   | "Content"
-  | "SEO";
+  | "Podcast";
 
 export type ProjectGalleryItem = {
   src: string;
@@ -50,7 +50,7 @@ export const categoryLabels: Record<ProjectCategory, string> = {
   Social: "Social Media",
   Performance: "Performance Marketing",
   Content: "Content & Creative",
-  SEO: "SEO & Growth",
+  Podcast: "Podcast & Growth",
 };
 
 export const categoryOrder: ProjectCategory[] = [
@@ -59,7 +59,7 @@ export const categoryOrder: ProjectCategory[] = [
   "Social",
   "Performance",
   "Content",
-  "SEO",
+  "Podcast",
 ];
 
 const conceptNote =
@@ -361,7 +361,7 @@ export const projects: Project[] = [
     number: "06",
     name: "Kite & Co.",
     category: "Web",
-    discipline: "Website, SEO foundations, content",
+    discipline: "Website, Podcast foundations, content",
     year: "2026",
     summary:
       "A consultancy with a referral-only pipeline. A new site built to make the expertise findable and the offer easy to buy.",
@@ -371,7 +371,7 @@ export const projects: Project[] = [
     aspect: "wide",
     featured: true,
     projectType: "Website & search foundation",
-    tags: ["Web design", "SEO foundations", "Content"],
+    tags: ["Web design", "Podcast foundations", "Content"],
     services: ["web-design", "local-visibility", "brand-production"],
     objective:
       "Turn expertise into findable pages and a clear offer, so growth does not depend entirely on word of mouth.",
@@ -396,7 +396,7 @@ export const projects: Project[] = [
       "Service and insight page templates",
       "Design system and build",
       "CMS and editorial workflow",
-      "On-page SEO foundations",
+      "On-page Podcast foundations",
       "Analytics and enquiry tracking",
     ],
     gallery: [
@@ -418,8 +418,8 @@ export const projects: Project[] = [
     slug: "verdant",
     number: "07",
     name: "Verdant Home",
-    category: "SEO",
-    discipline: "SEO, content strategy, editorial",
+    category: "Podcast",
+    discipline: "Podcast, content strategy, editorial",
     year: "2026",
     summary:
       "A homeware retailer with thousands of products and no content strategy. We built a topic system around how people actually furnish a home.",
@@ -428,7 +428,7 @@ export const projects: Project[] = [
       "Radar-style illustration with connected points on a cloud background",
     aspect: "wide",
     projectType: "Search & content program",
-    tags: ["Technical SEO", "Content strategy", "Analytics"],
+    tags: ["Technical Podcast", "Content strategy", "Analytics"],
     services: ["local-visibility", "branding", "web-design"],
     objective:
       "Build a search and content system around real decorating decisions, connect it to commerce, and fix the technical foundations underneath it.",
@@ -449,7 +449,7 @@ export const projects: Project[] = [
       },
     ],
     deliverables: [
-      "Technical SEO remediation plan",
+      "Technical Podcast remediation plan",
       "Topic clusters and internal linking map",
       "Editorial briefs and production",
       "Category page optimisation",

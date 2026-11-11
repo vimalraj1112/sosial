@@ -1,6 +1,6 @@
 import { Quote } from "lucide-react";
 import { testimonials, testimonialDisclaimer } from "@/data/testimonials";
-import { Reveal } from "@/components/ui/Reveal";
+import { Reveal, reveal } from "@/components/ui/Reveal";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { ButtonLink } from "@/components/ui/Button";
 
@@ -14,19 +14,21 @@ export function TestimonialsSection() {
             <SectionLabel index="11" tone="light">
               In their words
             </SectionLabel>
-            <h2 className="display mt-5 max-w-2xl text-[clamp(1.9rem,3.8vw,3.1rem)]">
+            <h2 {...reveal("rise")} className="display mt-5 max-w-2xl text-[clamp(1.9rem,3.8vw,3.1rem)]">
               What it feels like to{" "}
               <span className="serif-accent text-coral-soft">work with us</span>.
             </h2>
           </div>
-          <ButtonLink href="/testimonials" variant="light" size="sm" arrow>
-            All testimonials
-          </ButtonLink>
+          <div {...reveal("right")}>
+            <ButtonLink href="/testimonials" variant="light" size="sm" arrow>
+              All testimonials
+            </ButtonLink>
+          </div>
         </div>
 
         <div className="mt-10 grid gap-5 md:grid-cols-3">
-          {testimonials.map((item, index) => (
-            <Reveal key={item.image} delay={index * 0.06} className="h-full">
+          {testimonials.map((item) => (
+            <Reveal key={item.image} className="h-full">
               <figure className="flex h-full flex-col justify-between gap-8 rounded-card border-2 border-ink bg-card p-6 text-ink shadow-[5px_5px_0_0_var(--color-coral)] sm:p-7">
                 <Quote aria-hidden="true" className="h-7 w-7 text-coral" strokeWidth={1.8} />
                 <blockquote className="text-[1rem] font-medium leading-relaxed text-ink/80">
@@ -47,7 +49,7 @@ export function TestimonialsSection() {
           ))}
         </div>
 
-        <p className="mt-6 max-w-3xl text-[0.78rem] leading-relaxed text-paper/55">
+        <p {...reveal("fade")} className="mt-6 max-w-3xl text-[0.78rem] leading-relaxed text-paper/55">
           {testimonialDisclaimer}
         </p>
       </div>

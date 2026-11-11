@@ -57,6 +57,7 @@ export function ProjectCard({
       )}
     >
       <article
+        data-reveal="mask-up"
         className={cn(
           "relative h-full overflow-hidden rounded-[1.4rem] border border-paper/14 bg-night-soft/50",
           "transition-[border-color,background-color] duration-500 ease-[var(--ease-brand)]",
@@ -95,6 +96,7 @@ export function ProjectCard({
           </div>
 
           <div
+            data-reveal-child
             className={cn(
               "absolute inset-x-0 bottom-0 p-5 text-paper sm:p-6",
               wide && "sm:p-8 lg:p-9",

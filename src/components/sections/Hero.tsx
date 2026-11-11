@@ -6,10 +6,15 @@ import { brand, whatsappHref } from "@/data/brand";
 import { EnquiryForm } from "@/components/forms/EnquiryForm";
 import { HeroBackdrop } from "@/components/media/HeroBackdrop";
 import { ButtonLink } from "@/components/ui/Button";
+import { Typewriter, type TypewriterPart } from "@/components/ui/Typewriter";
 import { EASE } from "@/lib/motion";
-import { cn } from "@/lib/utils";
+import { CountUp } from "@/components/motion/CountUp";
 
-const lines = ["Attention is", "earned,", "not bought."];
+const headline: TypewriterPart[][] = [
+  [{ text: "Attention is" }],
+  [{ text: "earned,", className: "serif-accent pr-2 text-coral-soft" }],
+  [{ text: "not bought." }],
+];
 
 const indicators = [
   { value: "08", label: "Integrated services" },
@@ -43,25 +48,7 @@ export function Hero() {
             </motion.div>
 
             <h1 className="display display-heavy mt-7 text-[clamp(2.9rem,7.2vw,5.5rem)]">
-              {lines.map((line, index) => (
-                <span key={line} className="block overflow-hidden pb-[0.04em]">
-                  <motion.span
-                    className={cn(
-                      "block",
-                      index === 1 && "serif-accent pr-2 text-coral-soft",
-                    )}
-                    initial={{ y: "112%" }}
-                    animate={{ y: "0%" }}
-                    transition={{
-                      duration: reduced ? 0 : 0.95,
-                      delay: reduced ? 0 : 0.2 + index * 0.1,
-                      ease: EASE,
-                    }}
-                  >
-                    {line}
-                  </motion.span>
-                </span>
-              ))}
+              <Typewriter lines={headline} speed={45} startDelay={140} trigger="mount" />
             </h1>
 
             <motion.p
@@ -97,7 +84,7 @@ export function Hero() {
             >
               {indicators.map((item) => (
                 <div key={item.label} className="px-4 py-4 first:pl-0 last:pr-0">
-                  <p className="font-display text-2xl font-semibold tracking-[-0.03em] sm:text-3xl">{item.value}</p>
+                  <p className="font-display text-2xl font-semibold tracking-[-0.03em] sm:text-3xl"><CountUp value={item.value} /></p>
                   <p className="mt-1 text-[0.68rem] leading-snug text-paper/50">{item.label}</p>
                 </div>
               ))}
@@ -105,11 +92,11 @@ export function Hero() {
 
             <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2 text-[0.75rem] text-paper/55">
               <span className="inline-flex items-center gap-2">
-                <Check aria-hidden="true" className="h-3.5 w-3.5 text-coral-soft" strokeWidth={2} />
+                <Check aria-hidden="true" className="h-3.5 w-3.5 text-spark" strokeWidth={2} />
                 Scope agreed in writing
               </span>
               <span className="inline-flex items-center gap-2">
-                <Check aria-hidden="true" className="h-3.5 w-3.5 text-coral-soft" strokeWidth={2} />
+                <Check aria-hidden="true" className="h-3.5 w-3.5 text-spark" strokeWidth={2} />
                 Clear deliverables and timelines
               </span>
               <a

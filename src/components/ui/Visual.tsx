@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { reveal as revealProps, type RevealVariant } from "@/components/ui/Reveal";
 
 type VisualProps = {
   src: string;
@@ -8,6 +9,8 @@ type VisualProps = {
   imgClassName?: string;
   priority?: boolean;
   sizes?: string;
+  /** Optional scroll reveal for the frame, usually a mask variant. */
+  reveal?: RevealVariant;
 };
 
 /**
@@ -15,11 +18,14 @@ type VisualProps = {
  * would add no value), and switches to next/image automatically for real
  * raster photography dropped in later.
  */
-export function Visual({ src, alt, className, imgClassName, priority = false, sizes }: VisualProps) {
+export function Visual({ src, alt, className, imgClassName, priority = false, sizes, reveal }: VisualProps) {
   const isVector = src.endsWith(".svg");
 
   return (
-    <div className={cn("relative overflow-hidden bg-paper-deep", className)}>
+    <div
+      className={cn("relative overflow-hidden bg-paper-deep", className)}
+      {...(reveal ? revealProps(reveal) : {})}
+    >
       {isVector ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img

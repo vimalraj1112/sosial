@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { articles, formatDate } from "@/data/insights";
-import { Reveal } from "@/components/ui/Reveal";
+import { Reveal, reveal } from "@/components/ui/Reveal";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Visual } from "@/components/ui/Visual";
 import { ButtonLink } from "@/components/ui/Button";
@@ -15,24 +15,27 @@ export function InsightsSection() {
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
             <SectionLabel index="12">Insights</SectionLabel>
-            <h2 className="display mt-5 max-w-xl text-[clamp(1.9rem,3.7vw,2.9rem)]">
+            <h2 {...reveal("rise")} className="display mt-5 max-w-xl text-[clamp(1.9rem,3.7vw,2.9rem)]">
               Thinking we would{" "}
               <span className="serif-accent text-coral">defend</span> in a meeting.
             </h2>
           </div>
-          <ButtonLink href="/insights" variant="outline" size="sm" arrow>
-            All insights
-          </ButtonLink>
+          <div {...reveal("right")}>
+            <ButtonLink href="/insights" variant="outline" size="sm" arrow>
+              All insights
+            </ButtonLink>
+          </div>
         </div>
 
         <div className="mt-10 grid gap-8 md:grid-cols-3">
-          {latest.map((article, index) => (
-            <Reveal key={article.slug} as="article" delay={index * 0.06} className="h-full">
+          {latest.map((article) => (
+            <Reveal key={article.slug} as="article" className="h-full">
               <Link
                 href={`/insights/${article.slug}`}
                 className="group flex h-full flex-col rounded-card border-2 border-ink bg-card p-4 shadow-hard-xs transition-[transform,box-shadow] duration-200 hover:-translate-y-1 hover:shadow-hard"
               >
                 <Visual
+                  reveal="mask-up"
                   src={article.image}
                   alt={article.imageAlt}
                   className="aspect-[4/3] w-full rounded-xl"

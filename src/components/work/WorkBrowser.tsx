@@ -72,14 +72,12 @@ export function WorkBrowser({ projects }: { projects: Project[] }) {
       </div>
 
       <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
-        {filtered.map((project, index) => (
-          <Reveal key={project.slug} delay={Math.min(index * 0.04, 0.2)} className="h-full">
-            <ProjectCard project={project} total={projects.length} />
-          </Reveal>
+        {filtered.map((project) => (
+          <ProjectCard key={project.slug} project={project} total={projects.length} />
         ))}
 
         {active === "all" ? (
-          <Reveal delay={0.12} className="h-full lg:col-span-2">
+          <Reveal variant="scale" className="h-full lg:col-span-2">
             <Link
               href="/contact"
               aria-label="Start a conversation with SOSIAL"
@@ -120,7 +118,7 @@ export function WorkBrowser({ projects }: { projects: Project[] }) {
         ) : null}
       </div>
 
-      <div className="mt-8 flex flex-col gap-3 border-t border-paper/10 pt-5 sm:flex-row sm:items-center sm:justify-between">
+      <div data-reveal="fade" className="mt-8 flex flex-col gap-3 border-t border-paper/10 pt-5 sm:flex-row sm:items-center sm:justify-between">
         <p className="max-w-2xl text-[0.72rem] leading-relaxed text-paper/40">
           Every project shown is an illustrative concept, not a client engagement. We publish results
           only when a client has approved the numbers.

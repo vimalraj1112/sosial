@@ -11,7 +11,7 @@ import {
   TrendingUp,
 } from "lucide-react";
 import { services, type IconName } from "@/data/services";
-import { Reveal } from "@/components/ui/Reveal";
+import { Reveal, reveal } from "@/components/ui/Reveal";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { ButtonLink } from "@/components/ui/Button";
 
@@ -36,12 +36,12 @@ export function ServicesGrid() {
             <SectionLabel index="02" tone="light">
               Capabilities
             </SectionLabel>
-            <h2 className="display mt-5 max-w-2xl text-[clamp(2.1rem,4.4vw,3.6rem)]">
+            <h2 {...reveal("rise")} className="display mt-5 max-w-2xl text-[clamp(2.1rem,4.4vw,3.6rem)]">
               Everything you need to be{" "}
-              <span className="serif-accent text-coral-soft">noticed</span>, and chosen.
+              <span className="serif-accent text-spark">noticed</span>, and chosen.
             </h2>
           </div>
-          <div className="max-w-xs">
+          <div {...reveal("up")} className="max-w-xs">
             <p className="text-[0.95rem] leading-relaxed text-paper/65">
               Eight services across two divisions, designed to work as one system rather than
               separate suppliers.
@@ -56,7 +56,7 @@ export function ServicesGrid() {
           {services.map((service, index) => {
             const Icon = icons[service.icon];
             return (
-              <Reveal key={service.slug} as="article" delay={index * 0.04}>
+              <Reveal key={service.slug} as="article" variant="scale">
                 <Link
                   id={`service-${service.slug}`}
                   href={`/services/${service.slug}`}
@@ -92,7 +92,7 @@ export function ServicesGrid() {
           })}
         </div>
 
-        <p className="mt-5 text-[0.75rem] text-paper/50">
+        <p {...reveal("fade")} className="mt-5 text-[0.75rem] text-paper/50">
           Not sure which you need? That is what the first conversation is for.
         </p>
       </div>

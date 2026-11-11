@@ -9,6 +9,7 @@ import { FooterCta } from "@/components/layout/FooterCta";
 import { SmoothScroll } from "@/components/layout/SmoothScroll";
 import { SplashIntro } from "@/components/layout/SplashIntro";
 import { SiteCursor } from "@/components/ui/SiteCursor";
+import { RevealController } from "@/components/motion/RevealController";
 
 const bodyFont = Inter({
   subsets: ["latin"],
@@ -144,6 +145,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </div>
 
         <SiteCursor />
+        <RevealController />
 
         <script
           type="application/ld+json"

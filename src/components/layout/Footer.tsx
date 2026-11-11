@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
 import {
   brand,
   footerLinks,
@@ -12,11 +12,14 @@ import {
 import { Logo } from "@/components/brand/Logo";
 import { ReplayIntroLink } from "@/components/layout/SplashIntro";
 import { LocalTimeStrip } from "@/components/layout/LocalTimeStrip";
+import { WhatsAppIcon } from "@/components/brand/WhatsAppIcon";
 
 const year = new Date().getFullYear();
 
 /** Small, original glyphs so social profiles stay recognisable without a brand-icon dependency. */
 function SocialGlyph({ name, className }: { name: SocialProfile["icon"]; className?: string }) {
+  if (name === "whatsapp") return <WhatsAppIcon className={className} />;
+  if (name === "email") return <Mail className={className} strokeWidth={1.8} aria-hidden="true" />;
   if (name === "instagram") {
     return (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className={className} aria-hidden="true">
@@ -48,7 +51,7 @@ export function Footer() {
 
         <div className="container-x relative py-14 sm:py-16">
           <div className="grid gap-12 border-b border-paper/12 pb-12 lg:grid-cols-[1.05fr_1.95fr] lg:gap-20">
-            <div>
+            <div data-reveal="up">
               <Link href="/" aria-label="SOSIAL home" className="inline-flex text-paper">
                 <Logo className="h-9" label="" variant="reversed" sizes="138px" />
               </Link>
@@ -62,9 +65,10 @@ export function Footer() {
                     <a
                       key={profile.label}
                       href={profile.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={`SOSIAL on ${profile.label}`}
+                      {...(profile.href.startsWith("http")
+                        ? { target: "_blank", rel: "noopener noreferrer" }
+                        : {})}
+                      aria-label={profile.icon === "email" ? `Email SOSIAL at ${brand.email}` : `SOSIAL on ${profile.label}`}
                       className="flex h-10 w-10 items-center justify-center rounded-full border border-paper/25 text-paper/75 transition-colors hover:border-coral hover:bg-coral hover:text-white"
                     >
                       <SocialGlyph name={profile.icon} className="h-4 w-4" />
@@ -82,12 +86,12 @@ export function Footer() {
                 })}
               </div>
               <p className="mt-3 text-[0.66rem] leading-relaxed text-paper/30">
-                Instagram is live. LinkedIn and YouTube will be added when confirmed.
+                Instagram, WhatsApp and email are live. LinkedIn and YouTube will be added when confirmed.
               </p>
             </div>
 
             <div className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3 lg:gap-x-10">
-              <div>
+              <div data-reveal="up">
                 <p className="text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-paper/35">
                   Services
                 </p>
@@ -96,7 +100,7 @@ export function Footer() {
                     <li key={link.href}>
                       <Link
                         href={link.href}
-                        className="text-[0.83rem] leading-snug text-paper/65 transition-colors hover:text-coral-soft"
+                        className="text-[0.83rem] leading-snug text-paper/65 transition-colors hover:text-spark"
                       >
                         {link.label}
                       </Link>
@@ -105,7 +109,7 @@ export function Footer() {
                 </ul>
               </div>
 
-              <div>
+              <div data-reveal="up">
                 <p className="text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-paper/35">
                   Company
                 </p>
@@ -114,7 +118,7 @@ export function Footer() {
                     <li key={link.href}>
                       <Link
                         href={link.href}
-                        className="text-[0.83rem] leading-snug text-paper/65 transition-colors hover:text-coral-soft"
+                        className="text-[0.83rem] leading-snug text-paper/65 transition-colors hover:text-spark"
                       >
                         {link.label}
                       </Link>
@@ -123,7 +127,7 @@ export function Footer() {
                 </ul>
               </div>
 
-              <div className="col-span-2 sm:col-span-1">
+              <div data-reveal="up" className="col-span-2 sm:col-span-1">
                 <p className="text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-paper/35">
                   Contact
                 </p>
@@ -131,7 +135,7 @@ export function Footer() {
                   <li>
                     <a
                       href={mailHref}
-                      className="inline-flex items-center gap-2 break-all text-paper/65 transition-colors hover:text-coral-soft"
+                      className="inline-flex items-center gap-2 break-all text-paper/65 transition-colors hover:text-spark"
                     >
                       <Mail aria-hidden="true" className="h-3.5 w-3.5 shrink-0" strokeWidth={1.7} />
                       {brand.email}
@@ -140,7 +144,7 @@ export function Footer() {
                   <li>
                     <a
                       href={telHref}
-                      className="inline-flex items-center gap-2 text-paper/65 transition-colors hover:text-coral-soft"
+                      className="inline-flex items-center gap-2 text-paper/65 transition-colors hover:text-spark"
                     >
                       <Phone aria-hidden="true" className="h-3.5 w-3.5 shrink-0" strokeWidth={1.7} />
                       {brand.phoneLabel}
@@ -151,9 +155,9 @@ export function Footer() {
                       href={whatsappHref}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-paper/65 transition-colors hover:text-coral-soft"
+                      className="inline-flex items-center gap-2 text-paper/65 transition-colors hover:text-spark"
                     >
-                      <MessageCircle aria-hidden="true" className="h-3.5 w-3.5 shrink-0" strokeWidth={1.7} />
+                      <WhatsAppIcon className="h-3.5 w-3.5 shrink-0" />
                       WhatsApp
                       <ArrowUpRight aria-hidden="true" className="h-3 w-3" strokeWidth={1.8} />
                     </a>
@@ -169,17 +173,17 @@ export function Footer() {
 
           <LocalTimeStrip />
 
-          <div className="flex flex-col gap-4 pt-6 text-[0.72rem] text-paper/40 sm:flex-row sm:items-center sm:justify-between">
+          <div data-reveal="fade" className="flex flex-col gap-4 pt-6 text-[0.72rem] text-paper/40 sm:flex-row sm:items-center sm:justify-between">
             <p>
               &copy; {year} {brand.legalName}. All rights reserved.
             </p>
             <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
               {footerLinks.legal.map((link) => (
-                <Link key={link.href} href={link.href} className="transition-colors hover:text-coral-soft">
+                <Link key={link.href} href={link.href} className="transition-colors hover:text-spark">
                   {link.label}
                 </Link>
               ))}
-              <ReplayIntroLink className="transition-colors hover:text-coral-soft" />
+              <ReplayIntroLink className="transition-colors hover:text-spark" />
             </div>
           </div>
       </div>

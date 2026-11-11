@@ -5,14 +5,18 @@ export function SectionLabel({
   children,
   tone = "dark",
   className,
+  reveal = true,
 }: {
   index: string;
   children: React.ReactNode;
   tone?: "dark" | "light";
   className?: string;
+  /** Eyebrow labels slide in on scroll unless switched off. */
+  reveal?: boolean;
 }) {
   return (
     <div
+      data-reveal={reveal ? "left" : undefined}
       className={cn(
         "flex items-center gap-3",
         tone === "light" ? "text-paper/65" : "text-ink/60",

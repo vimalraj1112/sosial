@@ -7,6 +7,8 @@ import { ButtonLink } from "@/components/ui/Button";
 import { HeroBackdrop } from "@/components/media/HeroBackdrop";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 
+import { reveal } from "@/components/ui/Reveal";
+
 export const metadata: Metadata = buildMetadata({
   title: "Testimonials — Client feedback, with permission",
   description:
@@ -46,7 +48,7 @@ export default function TestimonialsPage() {
                 The cards below are layout samples while approved client quotes are collected.
               </p>
             </div>
-            <div className="lg:col-span-4 lg:justify-self-end">
+            <div {...reveal("right")} className="lg:col-span-4 lg:justify-self-end">
               <ButtonLink href="/contact" variant="primaryOnDark" arrow>
                 Start a conversation
               </ButtonLink>
@@ -60,12 +62,12 @@ export default function TestimonialsPage() {
           <div className="flex flex-col gap-4 border-b border-ink/12 pb-6 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <SectionLabel index="01">Sample layouts</SectionLabel>
-              <h2 className="display mt-4 max-w-xl text-[clamp(1.9rem,3.8vw,3rem)]">
+              <h2 {...reveal("rise")} className="display mt-4 max-w-xl text-[clamp(1.9rem,3.8vw,3rem)]">
                 What a testimonial will{" "}
                 <span className="serif-accent text-coral">look like</span>.
               </h2>
             </div>
-            <p className="max-w-xs text-[0.8rem] leading-relaxed text-ink/50">
+            <p {...reveal("up")} className="max-w-xs text-[0.8rem] leading-relaxed text-ink/50">
               Quotes, names and companies below are placeholders. They are not real endorsements.
             </p>
           </div>
@@ -74,6 +76,7 @@ export default function TestimonialsPage() {
             {testimonials.map((item) => (
               <figure
                 key={item.image}
+                {...reveal("up")}
                 className="flex h-full flex-col justify-between gap-8 rounded-card border-2 border-ink bg-card p-6 text-ink shadow-[5px_5px_0_0_var(--color-coral)] sm:p-7"
               >
                 <Quote aria-hidden="true" className="h-7 w-7 text-coral" strokeWidth={1.8} />
@@ -94,7 +97,7 @@ export default function TestimonialsPage() {
             ))}
           </div>
 
-          <p className="mt-6 max-w-3xl text-[0.78rem] leading-relaxed text-ink/50">
+          <p {...reveal("fade")} className="mt-6 max-w-3xl text-[0.78rem] leading-relaxed text-ink/50">
             {testimonialDisclaimer}
           </p>
         </div>
@@ -104,11 +107,11 @@ export default function TestimonialsPage() {
         <div className="container-x grid gap-10 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
             <SectionLabel index="02">Publishing rules</SectionLabel>
-            <h2 className="display mt-5 max-w-md text-[clamp(1.9rem,3.8vw,3rem)]">
+            <h2 {...reveal("rise")} className="display mt-5 max-w-md text-[clamp(1.9rem,3.8vw,3rem)]">
               Permission before{" "}
               <span className="serif-accent text-coral">publication</span>.
             </h2>
-            <p className="mt-5 max-w-md text-[0.94rem] leading-relaxed text-ink/65">
+            <p {...reveal("up")} className="mt-5 max-w-md text-[0.94rem] leading-relaxed text-ink/65">
               A testimonial is evidence, not decoration. We would rather publish three useful,
               approved quotes than a wall of anonymous praise.
             </p>
@@ -119,6 +122,7 @@ export default function TestimonialsPage() {
               {publishingRules.map((rule, index) => (
                 <div
                   key={rule}
+                  {...reveal("right")}
                   className="flex items-start gap-4 rounded-card border-2 border-ink bg-card p-5 shadow-hard-xs sm:p-6"
                 >
                   <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-ink/15 bg-paper font-mono text-[0.62rem] text-coral">
@@ -132,7 +136,7 @@ export default function TestimonialsPage() {
               ))}
             </div>
 
-            <div className="mt-5 rounded-2xl border border-ink/15 bg-card p-5">
+            <div {...reveal("scale")} className="mt-5 rounded-2xl border border-ink/15 bg-card p-5">
               <p className="text-[0.7rem] font-semibold uppercase tracking-[0.12em] text-ink/40">
                 For current clients
               </p>

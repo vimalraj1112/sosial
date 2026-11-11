@@ -12,7 +12,6 @@ import {
   MonitorSmartphone,
   PenTool,
   Phone,
-  MessageCircle,
   Sun,
   TrendingUp,
   X,
@@ -21,6 +20,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { announcement, brand, mailHref, navigation, telHref, whatsappHref } from "@/data/brand";
+import { WhatsAppIcon } from "@/components/brand/WhatsAppIcon";
 import { services, type IconName } from "@/data/services";
 import { Logo } from "@/components/brand/Logo";
 import { cn } from "@/lib/utils";
@@ -311,7 +311,7 @@ export function Header() {
                 overHero ? "border-paper/30 text-paper hover:border-paper hover:bg-paper hover:text-ink" : "border-ink/20 text-ink hover:border-ink hover:bg-night hover:text-paper",
               )}
             >
-              <MessageCircle aria-hidden="true" className="h-4 w-4" strokeWidth={1.8} />
+              <WhatsAppIcon className="h-[1.05rem] w-[1.05rem]" />
             </a>
             <Link
               href="/contact"
@@ -439,7 +439,7 @@ export function Header() {
                     rel="noopener noreferrer"
                     className="flex h-12 items-center justify-center gap-2 rounded-full border-2 border-paper/25 text-[0.82rem] font-medium text-paper/85 transition-colors hover:border-paper"
                   >
-                    <MessageCircle aria-hidden="true" className="h-4 w-4" strokeWidth={1.8} />
+                    <WhatsAppIcon className="h-4 w-4" />
                     WhatsApp
                   </a>
                 </div>

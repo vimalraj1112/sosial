@@ -90,7 +90,7 @@ export const navigation: NavItem[] = [
       {
         label: "Local Digital Visibility",
         href: "/services/local-visibility",
-        description: "Local SEO and Google Business Profile",
+        description: "Local Podcast and Google Business Profile",
       },
       {
         label: "Branding & Marketing Production",
@@ -144,11 +144,13 @@ export const footerLinks = {
 export type SocialProfile = {
   label: string;
   href: string;
-  icon: "instagram" | "linkedin" | "youtube";
+  icon: "instagram" | "whatsapp" | "email" | "linkedin" | "youtube";
 };
 
 export const socialProfiles: SocialProfile[] = [
   { label: "Instagram", href: "https://www.instagram.com/so.sial25/", icon: "instagram" },
+  { label: "WhatsApp", href: whatsappHref, icon: "whatsapp" },
+  { label: "Email", href: mailHref, icon: "email" },
   { label: "LinkedIn", href: "", icon: "linkedin" },
   { label: "YouTube", href: "", icon: "youtube" },
 ];

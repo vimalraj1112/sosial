@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowUpRight, Check } from "lucide-react";
 import { media } from "@/data/media";
-import { Reveal } from "@/components/ui/Reveal";
+import { Reveal, reveal } from "@/components/ui/Reveal";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Visual } from "@/components/ui/Visual";
 import { ButtonLink } from "@/components/ui/Button";
@@ -20,13 +20,11 @@ export function IntroSection() {
 
         <div className="mt-8 grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-7">
+            <h2 {...reveal("rise")} className="display max-w-2xl text-[clamp(2.1rem,4.4vw,3.6rem)]">
+              One studio for the whole story,{" "}
+              <span className="serif-accent text-coral">all of it connected.</span>
+            </h2>
             <Reveal>
-              <h2 className="display max-w-2xl text-[clamp(2.1rem,4.4vw,3.6rem)]">
-                One studio for the whole story,{" "}
-                <span className="serif-accent text-coral">all of it connected.</span>
-              </h2>
-            </Reveal>
-            <Reveal delay={0.08}>
               <p className="mt-7 max-w-xl text-[1.02rem] leading-relaxed text-ink/70">
                 Sosial is a digital marketing and creative brand from Bengaluru. We bring digital
                 marketing, creative content and production together, so every message, visual and
@@ -40,14 +38,14 @@ export function IntroSection() {
 
             <ul className="mt-9 space-y-4 border-t border-ink/12 pt-7">
               {principles.map((item) => (
-                <li key={item} className="flex gap-3 text-[0.92rem] leading-relaxed text-ink/75">
+                <li key={item} {...reveal("left")} className="flex gap-3 text-[0.92rem] leading-relaxed text-ink/75">
                   <Check aria-hidden="true" className="mt-1 h-4 w-4 shrink-0 text-coral" strokeWidth={2} />
                   {item}
                 </li>
               ))}
             </ul>
 
-            <div className="mt-9 flex flex-wrap gap-3">
+            <div {...reveal("up")} className="mt-9 flex flex-wrap gap-3">
               <ButtonLink href="/about" variant="outline" arrow>
                 About SOSIAL
               </ButtonLink>
@@ -66,9 +64,10 @@ export function IntroSection() {
           </div>
 
           <div className="lg:col-span-5">
-            <Reveal delay={0.1}>
+            <Reveal variant="right">
               <div className="media-frame relative shadow-hard-sm">
                 <Visual
+                  reveal="mask-up"
                   src={media.studio.src}
                   alt={media.studio.alt}
                   className="aspect-[4/5] w-full"

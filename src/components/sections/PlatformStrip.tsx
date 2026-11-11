@@ -21,7 +21,9 @@ export function PlatformStrip() {
         <SectionLabel index="—" className="shrink-0 whitespace-nowrap">
           Platforms we work in
         </SectionLabel>
-        <Marquee items={platforms} className="w-full" />
+        <div data-reveal="fade" className="min-w-0">
+          <Marquee items={platforms} className="w-full" />
+        </div>
       </div>
     </section>
   );

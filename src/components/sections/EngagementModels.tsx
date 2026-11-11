@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { Reveal } from "@/components/ui/Reveal";
+import { Reveal, reveal } from "@/components/ui/Reveal";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 
 const models = [
@@ -34,12 +34,12 @@ export function EngagementModels() {
         <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <div>
             <SectionLabel index="04">Ways to work together</SectionLabel>
-            <h2 className="display mt-5 max-w-xl text-[clamp(2rem,3.8vw,3.1rem)]">
+            <h2 {...reveal("rise")} className="display mt-5 max-w-xl text-[clamp(2rem,3.8vw,3.1rem)]">
               Three ways in, one{" "}
               <span className="serif-accent text-coral">standard</span> of work.
             </h2>
           </div>
-          <p className="max-w-sm text-[0.9rem] leading-relaxed text-ink/55">
+          <p {...reveal("up")} className="max-w-sm text-[0.9rem] leading-relaxed text-ink/55">
             Every engagement starts with a short discovery conversation. Fees are scoped and agreed in
             writing before any work begins.
           </p>
@@ -47,7 +47,7 @@ export function EngagementModels() {
 
         <div className="mt-11 grid gap-4 md:grid-cols-3">
           {models.map((model, index) => (
-            <Reveal key={model.name} delay={index * 0.06}>
+            <Reveal key={model.name}>
               <div
                 className={
                   model.accent
@@ -66,7 +66,7 @@ export function EngagementModels() {
                     0{index + 1}
                   </span>
                   {model.accent ? (
-                    <span className="rounded-full border border-ink bg-coral px-2.5 py-1 text-[0.55rem] font-bold uppercase tracking-[0.1em] text-white">
+                    <span className="rounded-full border border-ink bg-spark px-2.5 py-1 text-[0.55rem] font-bold uppercase tracking-[0.1em] text-night">
                       Most common
                     </span>
                   ) : null}
@@ -107,7 +107,7 @@ export function EngagementModels() {
           ))}
         </div>
 
-        <p className="mt-5 text-[0.7rem] leading-relaxed text-ink/40">
+        <p {...reveal("fade")} className="mt-5 text-[0.7rem] leading-relaxed text-ink/40">
           No published package prices: scope drives cost. Ask for a written proposal with a defined
           scope, fee and a clear list of deliverables.
         </p>

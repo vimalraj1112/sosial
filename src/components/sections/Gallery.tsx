@@ -3,6 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import { categoryLabels, projectBySlug } from "@/data/work";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Visual } from "@/components/ui/Visual";
+import { reveal } from "@/components/ui/Reveal";
 
 const galleryPicks = [
   { slug: "northwind", index: 0 },
@@ -26,18 +27,18 @@ export function Gallery() {
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <SectionLabel index="06">Visual gallery</SectionLabel>
-            <h2 className="display mt-5 max-w-xl text-[clamp(1.9rem,3.6vw,2.9rem)]">
+            <h2 {...reveal("rise")} className="display mt-5 max-w-xl text-[clamp(1.9rem,3.6vw,2.9rem)]">
               The work, up close.
             </h2>
           </div>
-          <p className="max-w-xs text-[0.85rem] leading-relaxed text-ink/55">
+          <p {...reveal("up")} className="max-w-xs text-[0.85rem] leading-relaxed text-ink/55">
             Identity boards, campaign systems and digital design from the concept portfolio. Every
             visual is an original, illustrative mockup.
           </p>
         </div>
       </div>
 
-      <div className="no-scrollbar mt-9 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-6 scroll-pl-5 sm:px-8 sm:scroll-pl-8 lg:px-12 lg:scroll-pl-12">
+      <div {...reveal("right")} className="no-scrollbar mt-9 flex snap-x snap-mandatory gap-5 overflow-x-auto px-5 pb-6 scroll-pl-5 sm:px-8 sm:scroll-pl-8 lg:px-12 lg:scroll-pl-12">
         {items.map(({ project, visual }) => (
           <Link
             key={project.slug}
@@ -76,7 +77,7 @@ export function Gallery() {
         ))}
       </div>
 
-      <div className="container-x mt-4 flex items-center gap-2 text-[0.68rem] uppercase tracking-[0.14em] text-ink/35">
+      <div {...reveal("fade")} className="container-x mt-4 flex items-center gap-2 text-[0.68rem] uppercase tracking-[0.14em] text-ink/35">
         <span aria-hidden="true">←</span>
         Drag or scroll to explore
         <span aria-hidden="true">→</span>

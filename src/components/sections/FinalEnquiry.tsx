@@ -1,8 +1,10 @@
 import Link from "next/link";
-import { ArrowUpRight, Check, Mail, MessageCircle, Phone } from "lucide-react";
+import { ArrowUpRight, Check, Mail, Phone } from "lucide-react";
 import { brand, mailHref, telHref, whatsappHref } from "@/data/brand";
 import { EnquiryForm } from "@/components/forms/EnquiryForm";
 import { SectionLabel } from "@/components/ui/SectionLabel";
+import { reveal } from "@/components/ui/Reveal";
+import { WhatsAppIcon } from "@/components/brand/WhatsAppIcon";
 
 const nextSteps = [
   "We read your note and reply with a clear next step.",
@@ -18,28 +20,28 @@ export function FinalEnquiry() {
           <SectionLabel index="14" tone="light">
             Start here
           </SectionLabel>
-          <h2 className="display mt-5 text-[clamp(2.2rem,4.6vw,3.8rem)]">
+          <h2 {...reveal("rise")} className="display mt-5 text-[clamp(2.2rem,4.6vw,3.8rem)]">
             Tell us what you want to{" "}
             <span className="serif-accent">change</span>.
           </h2>
-          <p className="mt-6 max-w-md text-[0.98rem] leading-relaxed text-white/80">
+          <p {...reveal("up")} className="mt-6 max-w-md text-[0.98rem] leading-relaxed text-white/80">
             A short note about the business, the goal and any timing is enough to start. No brief
             required, no obligation, no sales sequence.
           </p>
 
-          <p className="mt-8 text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-white/60">
+          <p {...reveal("fade")} className="mt-8 text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-white/60">
             What happens next
           </p>
           <ul className="mt-3 space-y-3">
             {nextSteps.map((step) => (
-              <li key={step} className="flex gap-3 text-[0.9rem] leading-relaxed text-white/85">
+              <li key={step} {...reveal("left")} className="flex gap-3 text-[0.9rem] leading-relaxed text-white/85">
                 <Check aria-hidden="true" className="mt-1 h-4 w-4 shrink-0" strokeWidth={2.2} />
                 {step}
               </li>
             ))}
           </ul>
 
-          <div className="mt-9 border-t border-white/30 pt-6 lg:mt-auto">
+          <div {...reveal("up")} className="mt-9 border-t border-white/30 pt-6 lg:mt-auto">
             <p className="text-[0.64rem] font-semibold uppercase tracking-[0.14em] text-white/60">
               Direct lines
             </p>
@@ -64,7 +66,7 @@ export function FinalEnquiry() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 text-[0.95rem] transition-opacity hover:opacity-70"
               >
-                <MessageCircle aria-hidden="true" className="h-4 w-4" strokeWidth={1.8} />
+                <WhatsAppIcon className="h-4 w-4" />
                 Message on WhatsApp
                 <ArrowUpRight aria-hidden="true" className="h-3.5 w-3.5" strokeWidth={1.8} />
               </a>
@@ -77,7 +79,7 @@ export function FinalEnquiry() {
         </div>
 
         <div className="lg:col-span-7">
-          <div className="rounded-card border-2 border-ink bg-card p-6 text-ink shadow-[6px_6px_0_0_var(--color-ink)] sm:p-8">
+          <div {...reveal("right")} className="rounded-card border-2 border-ink bg-card p-6 text-ink shadow-[6px_6px_0_0_var(--color-ink)] sm:p-8">
             <div className="flex flex-wrap items-end justify-between gap-3 border-b border-ink/12 pb-5">
               <div>
                 <h3 className="font-display text-[1.5rem] font-semibold tracking-[-0.03em]">

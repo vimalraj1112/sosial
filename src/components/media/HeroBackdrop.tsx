@@ -9,7 +9,10 @@ export function HeroBackdrop({ className }: { className?: string }) {
   return (
     <div
       aria-hidden="true"
-      className={cn("pointer-events-none absolute inset-0 overflow-hidden", className)}
+      className={cn(
+        "pointer-events-none absolute inset-0 -z-10 overflow-hidden",
+        className,
+      )}
     >
       <ArrowField />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_34%,rgba(130,33,252,0.18),transparent_44%)]" />

@@ -1,7 +1,6 @@
 import type { Project } from "@/data/work";
 import { CaseStudyCard } from "@/components/work/CaseStudyCard";
 import { WorkIntro } from "@/components/work/WorkIntro";
-import { Reveal } from "@/components/ui/Reveal";
 import { cn } from "@/lib/utils";
 
 const pad = (value: number) => String(value).padStart(2, "0");
@@ -26,17 +25,16 @@ export function WorkList({ projects, allProjectsCount, className }: WorkListProp
 
         <div className="mt-10 grid gap-10 min-[1100px]:grid-cols-2">
           {projects.map((project, index) => (
-            <Reveal key={project.slug} delay={Math.min(index * 0.07, 0.2)} className="h-full">
-              <CaseStudyCard
-                project={project}
-                total={projects.length}
-                priority={index === 0}
-              />
-            </Reveal>
+            <CaseStudyCard
+              key={project.slug}
+              project={project}
+              total={projects.length}
+              priority={index === 0}
+            />
           ))}
         </div>
 
-        <div className="mt-8 border-t border-paper/12 pt-5">
+        <div data-reveal="fade" className="mt-8 border-t border-paper/12 pt-5">
           <p className="text-[0.66rem] uppercase tracking-[0.14em] text-paper/35">
             Showing {pad(projects.length)} of {pad(allProjectsCount)} concept projects
           </p>

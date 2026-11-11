@@ -1,10 +1,11 @@
 import Link from "next/link";
-import { ArrowUpRight, MessageCircle } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { faqs } from "@/data/faqs";
 import { brand, mailHref, whatsappHref } from "@/data/brand";
 import { Accordion } from "@/components/ui/Accordion";
-import { Reveal } from "@/components/ui/Reveal";
+import { Reveal, reveal } from "@/components/ui/Reveal";
 import { SectionLabel } from "@/components/ui/SectionLabel";
+import { WhatsAppIcon } from "@/components/brand/WhatsAppIcon";
 
 export function FaqSection() {
   return (
@@ -13,15 +14,15 @@ export function FaqSection() {
         <div className="lg:col-span-5">
           <div className="lg:sticky lg:top-28">
             <SectionLabel index="13">Questions</SectionLabel>
-            <h2 className="display mt-5 text-[clamp(2rem,3.8vw,3.1rem)]">
+            <h2 {...reveal("rise")} className="display mt-5 text-[clamp(2rem,3.8vw,3.1rem)]">
               Things worth asking{" "}
               <span className="serif-accent text-coral">before</span> you hire anyone.
             </h2>
-            <p className="mt-5 max-w-sm text-[0.92rem] leading-relaxed text-ink/65">
+            <p {...reveal("up")} className="mt-5 max-w-sm text-[0.92rem] leading-relaxed text-ink/65">
               If your question is not here, ask it directly. We would rather have an honest
               conversation now than a difficult one later.
             </p>
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+            <div {...reveal("up")} className="mt-7 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/contact"
                 className="group inline-flex h-11 items-center justify-center gap-2 rounded-full border-2 border-ink bg-night px-5 text-[0.8rem] font-semibold text-paper shadow-hard-xs transition-[transform,box-shadow,background-color,color] duration-200 hover:-translate-x-0.5 hover:-translate-y-0.5 hover:bg-coral hover:text-white hover:shadow-hard-sm active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
@@ -39,12 +40,12 @@ export function FaqSection() {
                 rel="noopener noreferrer"
                 className="inline-flex h-11 items-center justify-center gap-2 rounded-full border-2 border-ink/20 bg-card px-5 text-[0.8rem] font-semibold text-ink transition-[transform,box-shadow,border-color] duration-200 hover:-translate-x-0.5 hover:-translate-y-0.5 hover:border-ink hover:shadow-hard-xs active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
               >
-                <MessageCircle aria-hidden="true" className="h-4 w-4" strokeWidth={2} />
+                <WhatsAppIcon className="h-4 w-4" />
                 WhatsApp
               </a>
             </div>
 
-            <div className="mt-8 max-w-sm rounded-2xl border-2 border-ink bg-card p-5 shadow-hard-xs">
+            <div {...reveal("scale")} className="mt-8 max-w-sm rounded-2xl border-2 border-ink bg-card p-5 shadow-hard-xs">
               <p className="text-[0.64rem] font-semibold uppercase tracking-[0.14em] text-ink/45">
                 How we reply
               </p>
@@ -63,7 +64,7 @@ export function FaqSection() {
         </div>
 
         <div className="lg:col-span-7">
-          <Reveal>
+          <Reveal variant="right">
             <div className="rounded-card border-2 border-ink bg-card px-5 py-2 shadow-hard-xs sm:px-7">
               <Accordion items={faqs} defaultOpen={0} />
             </div>

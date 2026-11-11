@@ -1,6 +1,6 @@
 import { media } from "@/data/media";
 import { VideoShowcase } from "@/components/media/VideoShowcase";
-import { Reveal } from "@/components/ui/Reveal";
+import { Reveal, reveal } from "@/components/ui/Reveal";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 
 export function VideoSection() {
@@ -13,18 +13,18 @@ export function VideoSection() {
             <SectionLabel index="07" tone="light">
               Inside SOSIAL
             </SectionLabel>
-            <h2 className="display mt-5 max-w-2xl text-[clamp(1.9rem,3.8vw,3.1rem)]">
+            <h2 {...reveal("rise")} className="display mt-5 max-w-2xl text-[clamp(1.9rem,3.8vw,3.1rem)]">
               How the work comes{" "}
               <span className="serif-accent text-coral-soft">together</span>.
             </h2>
           </div>
-          <p className="max-w-sm text-[0.9rem] leading-relaxed text-paper/55 lg:col-span-4">
+          <p {...reveal("up")} className="max-w-sm text-[0.9rem] leading-relaxed text-paper/55 lg:col-span-4">
             A short film on the studio, the process and the thinking behind a campaign. Final footage
             will replace this placeholder reel before launch.
           </p>
         </div>
 
-        <Reveal className="mt-9">
+        <Reveal className="mt-9" variant="mask-up">
           <VideoShowcase
             poster="/assets/images/hero-frame.svg"
             src={media.hero.video}
@@ -34,7 +34,7 @@ export function VideoSection() {
           />
         </Reveal>
 
-        <div className="mt-4 flex flex-wrap items-center justify-between gap-3 text-[0.68rem] uppercase tracking-[0.14em] text-paper/35">
+        <div {...reveal("fade")} className="mt-4 flex flex-wrap items-center justify-between gap-3 text-[0.68rem] uppercase tracking-[0.14em] text-paper/35">
           <span>Showreel · placeholder footage</span>
           <span>No audio autoplay · keyboard accessible</span>
         </div>

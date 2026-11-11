@@ -4,7 +4,9 @@ import { buildMetadata } from "@/lib/seo";
 import { HeroBackdrop } from "@/components/media/HeroBackdrop";
 import { PortfolioCta } from "@/components/work/PortfolioCta";
 import { WorkBrowser } from "@/components/work/WorkBrowser";
+import { CountUp } from "@/components/motion/CountUp";
 import { SectionLabel } from "@/components/ui/SectionLabel";
+import { Typewriter, type TypewriterPart } from "@/components/ui/Typewriter";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = buildMetadata({
@@ -13,6 +15,13 @@ export const metadata: Metadata = buildMetadata({
     "Explore SOSIAL's concept portfolio: brand identities, websites, social systems, performance thinking and search programmes. Every project is an illustrative concept; no client results are claimed.",
   path: "/work",
 });
+
+const headline: TypewriterPart[][] = [
+  [
+    { text: "Our " },
+    { text: "Work", className: "serif-accent text-coral-soft" },
+  ],
+];
 
 export default function WorkPage() {
   return (
@@ -28,7 +37,7 @@ export default function WorkPage() {
           <div className="mt-6 grid gap-7 lg:grid-cols-12 lg:items-end lg:gap-10">
             <div className="lg:col-span-8">
               <h1 className="display text-[clamp(3.9rem,10vw,8.6rem)] leading-[0.84]">
-                Our <span className="serif-accent text-coral-soft">Work</span>
+                <Typewriter lines={headline} speed={45} startDelay={140} trigger="mount" />
               </h1>
               <p className="mt-5 max-w-2xl text-[0.98rem] leading-relaxed text-paper/65 sm:text-[1.04rem]">
                 Creative campaigns, digital experiences, and strategic work built to help brands
@@ -46,6 +55,7 @@ export default function WorkPage() {
               {workStats.map((stat, index) => (
                 <div
                   key={stat.label}
+                  data-reveal="blur"
                   className={cn(
                     "flex min-w-0 flex-col",
                     index > 0 && "border-l border-paper/12 pl-3 sm:pl-7",
@@ -55,7 +65,7 @@ export default function WorkPage() {
                     {stat.label}
                   </dt>
                   <dd className="order-1 font-display text-[clamp(1.8rem,3.5vw,2.9rem)] font-semibold leading-none tracking-[-0.045em] text-coral-soft">
-                    {stat.value}
+                    <CountUp value={stat.value} />
                   </dd>
                 </div>
               ))}
@@ -66,7 +76,7 @@ export default function WorkPage() {
 
       <section className="bg-night pb-20 text-paper sm:pb-24 lg:pb-28">
         <div className="container-x">
-          <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
+          <div data-reveal="fade" className="mb-4 flex flex-wrap items-end justify-between gap-3">
             <p className="text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-paper/40">
               Browse case studies
             </p>

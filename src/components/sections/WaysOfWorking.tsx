@@ -1,5 +1,5 @@
 import { media } from "@/data/media";
-import { Reveal } from "@/components/ui/Reveal";
+import { Reveal, reveal } from "@/components/ui/Reveal";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Visual } from "@/components/ui/Visual";
 import { ButtonLink } from "@/components/ui/Button";
@@ -35,22 +35,23 @@ export function WaysOfWorking() {
           <div className="lg:col-span-5">
             <div className="lg:sticky lg:top-28">
               <SectionLabel index="03">How we work</SectionLabel>
-              <h2 className="display mt-5 text-[clamp(2rem,3.8vw,3.1rem)]">
+              <h2 {...reveal("rise")} className="display mt-5 text-[clamp(2rem,3.8vw,3.1rem)]">
                 Fewer promises. Clearer{" "}
                 <span className="serif-accent text-coral">work</span>.
               </h2>
-              <p className="mt-6 max-w-md text-[0.95rem] leading-relaxed text-ink/65">
+              <p {...reveal("up")} className="mt-6 max-w-md text-[0.95rem] leading-relaxed text-ink/65">
                 We keep the scope and the team visible. The people who plan the work stay close to
                 the work, and decisions are written down so nothing depends on memory.
               </p>
 
               <Visual
+                reveal="mask-left"
                 src={media.studio.src}
                 alt={media.studio.alt}
                 className="media-frame mt-8 hidden aspect-[16/10] w-full shadow-hard-sm lg:block"
                 sizes="(min-width: 1024px) 40vw, 100vw"
               />
-              <div className="mt-8 flex flex-wrap gap-3">
+              <div {...reveal("up")} className="mt-8 flex flex-wrap gap-3">
                 <ButtonLink href="/about" variant="dark" size="sm" arrow>
                   More about us
                 </ButtonLink>
@@ -63,8 +64,8 @@ export function WaysOfWorking() {
 
           <div className="lg:col-span-7">
             <div className="grid gap-3.5 sm:gap-4">
-              {commitments.map((item, index) => (
-                <Reveal key={item.number} delay={index * 0.05}>
+              {commitments.map((item) => (
+                <Reveal key={item.number} variant="right">
                   <div className="grid gap-4 rounded-card border-2 border-ink bg-card p-6 shadow-hard-xs transition-[transform,box-shadow] duration-200 hover:-translate-y-1 hover:shadow-hard-sm sm:grid-cols-[3.25rem_1fr] sm:gap-5 sm:p-7">
                     <span className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-ink bg-coral text-[0.66rem] font-bold tracking-[0.06em] text-white">
                       {item.number}
@@ -80,7 +81,7 @@ export function WaysOfWorking() {
               ))}
             </div>
 
-            <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3 text-[0.72rem] uppercase tracking-[0.12em] text-ink/45">
+            <div {...reveal("fade")} className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3 text-[0.72rem] uppercase tracking-[0.12em] text-ink/45">
               <span>Independent studio</span>
               <span className="h-1 w-1 rounded-full bg-coral" />
               <span>Scope agreed in writing</span>

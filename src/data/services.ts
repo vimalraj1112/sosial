@@ -283,7 +283,7 @@ export const services: Service[] = [
     shortName: "Local Visibility",
     tagline: "Be found by nearby customers.",
     summary:
-      "Local SEO fundamentals and Google Business Profile support for businesses that depend on local discovery.",
+      "Local Podcast fundamentals and Google Business Profile support for businesses that depend on local discovery.",
     division: "digital",
     icon: "MapPin",
     image: "/assets/images/seo-analytics.svg",
@@ -320,8 +320,8 @@ export const services: Service[] = [
     ],
     faqs: [
       {
-        q: "Do you provide advanced technical SEO?",
-        a: "Our local visibility work covers local SEO fundamentals, Google Business Profile support and relevant basic on-page recommendations. Complex technical SEO, large-scale link building and enterprise search programmes are outside this scope, and we will say so clearly.",
+        q: "Do you provide advanced technical Podcast?",
+        a: "Our local visibility work covers local Podcast fundamentals, Google Business Profile support and relevant basic on-page recommendations. Complex technical Podcast, large-scale link building and enterprise search programmes are outside this scope, and we will say so clearly.",
       },
       {
         q: "Do you guarantee rankings or map positions?",

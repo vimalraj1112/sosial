@@ -11,6 +11,7 @@ import {
   Film,
 } from "lucide-react";
 import { brand } from "@/data/brand";
+import { reveal } from "@/components/ui/Reveal";
 
 const items = [
   {
@@ -117,20 +118,21 @@ export function WhatWeMake() {
       <div className="container-x">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl">
-            <p className="eyebrow inline-flex items-center gap-2.5 text-coral">
+            <p {...reveal("left")} className="eyebrow inline-flex items-center gap-2.5 text-coral">
               <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-coral" />
               What we make
             </p>
-            <h2 className="display mt-5 text-[clamp(2.1rem,4.4vw,3.6rem)]">
+            <h2 {...reveal("rise")} className="display mt-5 text-[clamp(2.1rem,4.4vw,3.6rem)]">
               Things we can make <span className="serif-accent text-coral">for you.</span>
             </h2>
-            <p className="mt-5 max-w-lg text-[0.98rem] leading-relaxed text-ink/65">
+            <p {...reveal("up")} className="mt-5 max-w-lg text-[0.98rem] leading-relaxed text-ink/65">
               Tap any tile to start that conversation on WhatsApp, with the detail already written
               for you.
             </p>
           </div>
 
           <Link
+            {...reveal("right")}
             href="/services"
             className="group inline-flex shrink-0 items-center gap-2 text-[0.82rem] font-semibold text-ink/65 transition-colors hover:text-coral"
           >
@@ -144,7 +146,7 @@ export function WhatWeMake() {
         </div>
       </div>
 
-      <div className="mask-fade-x no-scrollbar mt-9 overflow-x-auto sm:mt-12">
+      <div {...reveal("right")} className="mask-fade-x no-scrollbar mt-9 overflow-x-auto sm:mt-12">
         <div className="marquee-track flex w-max [animation-duration:52s]">
           <ul className="flex shrink-0 gap-3.5 pr-3.5 sm:gap-4 sm:pr-4">
             {items.map((item) => (
@@ -160,7 +162,7 @@ export function WhatWeMake() {
       </div>
 
       <div className="container-x">
-        <div className="mt-8 flex flex-col gap-3 border-t border-ink/12 pt-6 text-[0.86rem] text-ink/60 sm:flex-row sm:items-center sm:justify-between">
+        <div {...reveal("fade")} className="mt-8 flex flex-col gap-3 border-t border-ink/12 pt-6 text-[0.86rem] text-ink/60 sm:flex-row sm:items-center sm:justify-between">
           <p>
             Want to see how we post? Follow{" "}
             <a

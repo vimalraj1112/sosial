@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowUpRight, Check } from "lucide-react";
 import { projectBySlug } from "@/data/work";
-import { Reveal } from "@/components/ui/Reveal";
+import { Reveal, reveal } from "@/components/ui/Reveal";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Visual } from "@/components/ui/Visual";
 import { Badge } from "@/components/ui/Badge";
@@ -23,19 +23,20 @@ export function SuccessStory() {
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <SectionLabel index="08">Concept story</SectionLabel>
-            <h2 className="display mt-5 max-w-xl text-[clamp(2rem,3.9vw,3.1rem)]">
+            <h2 {...reveal("rise")} className="display mt-5 max-w-xl text-[clamp(2rem,3.9vw,3.1rem)]">
               From generic traffic to a{" "}
               <span className="serif-accent text-coral">clear argument</span>.
             </h2>
           </div>
-          <Badge tone="coral" className="w-fit">Illustrative concept · no verified results</Badge>
+          <Badge tone="coral" className="w-fit" {...reveal("right")}>Illustrative concept · no verified results</Badge>
         </div>
 
         <div className="mt-10 grid gap-10 lg:grid-cols-12 lg:gap-14">
-          <Reveal className="lg:col-span-7">
+          <Reveal className="lg:col-span-7" variant="left">
             <Link href={`/work/${project.slug}`} className="group block">
               <div className="media-frame relative shadow-hard-sm transition-[transform,box-shadow] duration-200 group-hover:-translate-y-1 group-hover:shadow-hard">
                 <Visual
+                  reveal="mask-left"
                   src={project.image}
                   alt={project.imageAlt}
                   className="aspect-[4/3] w-full"
@@ -60,22 +61,25 @@ export function SuccessStory() {
           </Reveal>
 
           <div className="lg:col-span-5">
-            <Reveal delay={0.08}>
+            <Reveal>
               <p className="text-[0.68rem] uppercase tracking-[0.16em] text-ink/45">The problem</p>
               <p className="mt-3 text-[0.95rem] leading-relaxed text-ink/70">{project.objective}</p>
-
+            </Reveal>
+            <Reveal>
               <p className="mt-7 text-[0.68rem] uppercase tracking-[0.16em] text-ink/45">
                 What success would be measured on
               </p>
               <ul className="mt-3 space-y-3">
                 {measures.map((item) => (
-                  <li key={item} className="flex gap-3 text-[0.88rem] leading-relaxed text-ink/65">
+                  <li key={item} {...reveal("left")} className="flex gap-3 text-[0.88rem] leading-relaxed text-ink/65">
                     <Check aria-hidden="true" className="mt-1 h-4 w-4 shrink-0 text-coral" strokeWidth={2} />
                     {item}
                   </li>
                 ))}
               </ul>
 
+            </Reveal>
+            <Reveal variant="scale">
               <div className="mt-7 rounded-2xl border-2 border-ink bg-cream p-5 shadow-hard-xs">
                 <p className="text-[0.66rem] font-semibold uppercase tracking-[0.12em] text-ink/50">Results</p>
                 <p className="mt-2 text-[0.87rem] leading-relaxed text-ink/65">

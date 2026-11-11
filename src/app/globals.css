@@ -250,6 +250,21 @@
     background-size: 100% 1px;
   }
 
+  .caret-blink {
+    animation: caret-blink 1.05s steps(1, end) infinite;
+  }
+
+  @keyframes caret-blink {
+    0%,
+    45% {
+      opacity: 1;
+    }
+    55%,
+    100% {
+      opacity: 0;
+    }
+  }
+
   .marquee-track {
     animation: marquee 38s linear infinite;
   }
@@ -268,6 +283,10 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
+    .caret-blink {
+      animation: none;
+    }
+
     .marquee-track {
       animation: none;
     }
@@ -365,4 +384,135 @@
   html.has-site-cursor * {
     cursor: none;
   }
+}
+
+/* --- Scroll reveal system ------------------------------------------------
+   Driven by components/motion/RevealController. Content is hidden only once
+   the controller has armed <html>, so without JavaScript nothing is hidden.
+   Reveals animate the individual translate/scale properties and use a
+   backwards fill, so after a reveal finishes nothing is pinned and existing
+   hover transforms (card-lift, buttons, Tailwind hovers) keep working. */
+:root {
+  --reveal-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --reveal-mask-ease: cubic-bezier(0.65, 0, 0.15, 1);
+  --reveal-duration: 0.8s;
+  --reveal-distance: 30px;
+  --reveal-shift: 40px;
+  --reveal-shift-y: 0px;
+}
+
+@media (max-width: 1023px) {
+  :root {
+    --reveal-duration: 0.72s;
+    --reveal-distance: 24px;
+    --reveal-shift: 26px;
+  }
+}
+
+@media (max-width: 639px) {
+  :root {
+    --reveal-duration: 0.62s;
+    --reveal-distance: 18px;
+    /* On phones, sideways entrances become a light fade-up. */
+    --reveal-shift: 0px;
+    --reveal-shift-y: 14px;
+  }
+}
+
+html.reveal-armed [data-reveal]:not([data-revealed]) {
+  opacity: 0;
+}
+
+[data-revealed="in"] {
+  animation-name: reveal-up;
+  animation-duration: var(--reveal-duration);
+  animation-timing-function: var(--reveal-ease);
+  animation-delay: var(--reveal-delay, 0s);
+  animation-fill-mode: backwards;
+}
+
+[data-revealed="in"][data-reveal="fade"] { animation-name: reveal-fade; }
+[data-revealed="in"][data-reveal="left"] { animation-name: reveal-left; }
+[data-revealed="in"][data-reveal="right"] { animation-name: reveal-right; }
+[data-revealed="in"][data-reveal="scale"] { animation-name: reveal-scale; }
+[data-revealed="in"][data-reveal="blur"] { animation-name: reveal-blur; }
+[data-revealed="in"][data-reveal="rise"] {
+  animation-name: reveal-rise;
+  animation-duration: calc(var(--reveal-duration) * 1.15);
+}
+
+[data-revealed="in"]:is([data-reveal="mask-up"], [data-reveal="mask-left"], [data-reveal="mask-right"]) {
+  animation-duration: calc(var(--reveal-duration) * 1.35);
+  animation-timing-function: var(--reveal-mask-ease);
+}
+[data-revealed="in"][data-reveal="mask-up"] { animation-name: reveal-mask-up; }
+[data-revealed="in"][data-reveal="mask-left"] { animation-name: reveal-mask-left; }
+[data-revealed="in"][data-reveal="mask-right"] { animation-name: reveal-mask-right; }
+
+/* Content inside a revealing element can follow it without an observer of
+   its own (an element inside an animating clip-path never reports as
+   intersecting). Mark it data-reveal-child. */
+[data-revealed="in"] [data-reveal-child] {
+  animation: reveal-up var(--reveal-duration) var(--reveal-ease)
+    calc(var(--reveal-delay, 0s) + 0.35s) backwards;
+}
+
+/* Media inside a mask settles from a slight zoom while it is uncovered. */
+[data-revealed="in"][data-reveal^="mask"] :is(img, video) {
+  animation: reveal-media-zoom calc(var(--reveal-duration) * 1.9) var(--reveal-ease)
+    var(--reveal-delay, 0s) backwards;
+}
+
+@keyframes reveal-up {
+  from { opacity: 0; translate: 0 var(--reveal-distance); }
+}
+@keyframes reveal-fade {
+  from { opacity: 0; }
+}
+@keyframes reveal-left {
+  from { opacity: 0; translate: calc(var(--reveal-shift) * -1) var(--reveal-shift-y); }
+}
+@keyframes reveal-right {
+  from { opacity: 0; translate: var(--reveal-shift) var(--reveal-shift-y); }
+}
+@keyframes reveal-scale {
+  from { opacity: 0; scale: 0.94; translate: 0 calc(var(--reveal-distance) * 0.5); }
+}
+@keyframes reveal-blur {
+  from { opacity: 0; translate: 0 var(--reveal-distance); filter: blur(10px); }
+}
+@keyframes reveal-rise {
+  from { opacity: 0; translate: 0 0.5em; clip-path: inset(100% -0.2em -0.35em -0.2em); }
+  40% { opacity: 1; }
+  to { clip-path: inset(-0.3em -0.2em -0.35em -0.2em); }
+}
+@keyframes reveal-mask-up {
+  from { clip-path: inset(100% 0 0 0); }
+  to { clip-path: inset(0 0 0 0); }
+}
+@keyframes reveal-mask-left {
+  from { clip-path: inset(0 100% 0 0); }
+  to { clip-path: inset(0 0 0 0); }
+}
+@keyframes reveal-mask-right {
+  from { clip-path: inset(0 0 0 100%); }
+  to { clip-path: inset(0 0 0 0); }
+}
+@keyframes reveal-media-zoom {
+  from { transform: scale(1.14); }
+}
+
+@media (max-width: 639px) {
+  /* Blur is costly on phones; use the plain rise instead. */
+  [data-revealed="in"][data-reveal="blur"] { animation-name: reveal-up; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.reveal-armed [data-reveal]:not([data-revealed]) { opacity: 1; }
+  [data-revealed],
+  [data-revealed] :is(img, video, [data-reveal-child]) { animation: none !important; }
+}
+
+@media print {
+  html.reveal-armed [data-reveal] { opacity: 1 !important; animation: none !important; }
 }

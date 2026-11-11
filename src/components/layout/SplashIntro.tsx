@@ -4,6 +4,7 @@ import Image from "next/image";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { intro } from "@/data/brand";
+import { markIntroComplete, markIntroPlaying } from "@/lib/intro-state";
 import { cn } from "@/lib/utils";
 
 type Phase = "idle" | "playing" | "done";
@@ -48,7 +49,15 @@ export function SplashIntro() {
     setPhase("done");
   }, []);
 
+  // The hero (and anything else that types) waits for this so it does not
+  // finish its animation behind the splash.
+  const announceIntroComplete = useCallback(() => {
+    markIntroComplete();
+    window.dispatchEvent(new Event("sosial:intro-complete"));
+  }, []);
+
   const start = useCallback(() => {
+    markIntroPlaying();
     setStep(0);
     setPhase("playing");
   }, []);
@@ -82,6 +91,9 @@ export function SplashIntro() {
     startedRef.current = true;
 
     if (!intro.enabled || hasStartedThisDocument) {
+      // No splash this time (route change or a disabled intro), so nothing is
+      // covering the page: typing can start straight away.
+      markIntroComplete();
       return;
     }
     hasStartedThisDocument = true;
@@ -92,6 +104,7 @@ export function SplashIntro() {
       // first visits still play the intro.
       if (params.get("intro") === "0") {
         window.history.replaceState(null, "", window.location.pathname);
+        markIntroComplete();
         return;
       }
       if (params.get("intro") === "1") {
@@ -159,7 +172,7 @@ export function SplashIntro() {
   const visible = phase !== "idle" && phase !== "done";
 
   return (
-    <AnimatePresence>
+    <AnimatePresence onExitComplete={announceIntroComplete}>
       {visible ? (
         <motion.div
           key="splash"

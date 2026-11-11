@@ -1,6 +1,8 @@
-import { ArrowUpRight, MessageCircle } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { whatsappHref } from "@/data/brand";
 import { ButtonLink } from "@/components/ui/Button";
+import { reveal } from "@/components/ui/Reveal";
+import { WhatsAppIcon } from "@/components/brand/WhatsAppIcon";
 
 export function FinalCta() {
   return (
@@ -26,25 +28,26 @@ export function FinalCta() {
       />
 
       <div className="container-x relative py-24 text-center sm:py-28 lg:py-36">
-        <p className="text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-coral-soft">
+        <p {...reveal("fade")} className="text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-spark">
           Your next big idea starts here
         </p>
 
         <h2
+          {...reveal("rise")}
           id="final-cta-heading"
           className="display mx-auto mt-6 max-w-5xl text-[clamp(3.1rem,8vw,7.4rem)] leading-[0.88]"
         >
           Let&rsquo;s Build <span className="serif-accent text-coral-soft">Together.</span>
         </h2>
 
-        <div aria-hidden="true" className="mx-auto mt-9 h-px w-24 bg-paper/20" />
+        <div {...reveal("scale")} aria-hidden="true" className="mx-auto mt-9 h-0.5 w-24 rounded-full bg-spark" />
 
-        <p className="mx-auto mt-8 max-w-xl text-[0.98rem] leading-relaxed text-paper/60 sm:text-[1.04rem]">
+        <p {...reveal("up")} className="mx-auto mt-8 max-w-xl text-[0.98rem] leading-relaxed text-paper/60 sm:text-[1.04rem]">
           Have a project in mind, or just want to talk through an idea? Tell us what you&rsquo;re
           trying to change&mdash;we&rsquo;ll tell you honestly whether we can help.
         </p>
 
-        <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <div {...reveal("up")} className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <ButtonLink href="/contact" variant="primaryOnDark" size="lg" arrow>
             Start a conversation
           </ButtonLink>
@@ -54,7 +57,7 @@ export function FinalCta() {
             rel="noopener noreferrer"
             className="group inline-flex h-[3.75rem] items-center justify-center gap-2 rounded-full border-2 border-paper/30 px-7 text-[0.94rem] font-semibold text-paper transition-[transform,background-color,color,border-color] duration-200 hover:-translate-y-0.5 hover:border-paper hover:bg-paper hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-coral"
           >
-            <MessageCircle aria-hidden="true" className="h-4 w-4" strokeWidth={1.8} />
+            <WhatsAppIcon className="h-4 w-4" />
             Chat on WhatsApp
             <ArrowUpRight
               aria-hidden="true"
@@ -64,7 +67,7 @@ export function FinalCta() {
           </a>
         </div>
 
-        <p className="mt-7 text-[0.72rem] uppercase tracking-[0.13em] text-paper/35">
+        <p {...reveal("fade")} className="mt-7 text-[0.72rem] uppercase tracking-[0.13em] text-paper/35">
           No pitch decks. No pressure. Just a useful conversation.
         </p>
       </div>
