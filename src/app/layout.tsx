@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
 import "lenis/dist/lenis.css";
 import "./globals.css";
-import { brand, siteUrl } from "@/data/brand";
+import { brand, siteUrl, socialProfiles } from "@/data/brand";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { FooterCta } from "@/components/layout/FooterCta";
@@ -103,7 +103,7 @@ const jsonLd = {
     addressCountry: "IN",
   },
   areaServed: "Bengaluru, India",
-  sameAs: ["https://www.instagram.com/so.sial25/"],
+  sameAs: socialProfiles.map((profile) => profile.href).filter((href) => href.startsWith("http") && !href.includes("wa.me")),
   knowsAbout: [
     "Social media marketing",
     "Paid advertising",

@@ -144,15 +144,17 @@ export const footerLinks = {
 export type SocialProfile = {
   label: string;
   href: string;
-  icon: "instagram" | "whatsapp" | "email" | "linkedin" | "youtube";
+  icon: "instagram" | "whatsapp" | "email" | "linkedin" | "facebook" | "x" | "youtube";
 };
 
 export const socialProfiles: SocialProfile[] = [
   { label: "Instagram", href: "https://www.instagram.com/so.sial25/", icon: "instagram" },
   { label: "WhatsApp", href: whatsappHref, icon: "whatsapp" },
   { label: "Email", href: mailHref, icon: "email" },
-  { label: "LinkedIn", href: "", icon: "linkedin" },
-  { label: "YouTube", href: "", icon: "youtube" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/sosial-production-5703b144b/", icon: "linkedin" },
+  { label: "Facebook", href: "https://www.facebook.com/Sosial.solutions/", icon: "facebook" },
+  { label: "X", href: "https://x.com/sosialsolution", icon: "x" },
+  { label: "YouTube", href: "https://www.youtube.com/channel/UCtayTd6E7P9ikoYxkSRH7pQ", icon: "youtube" },
 ];
 
 export const capabilities = [
