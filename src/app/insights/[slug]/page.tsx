@@ -9,6 +9,7 @@ import { ArticleCard } from "@/components/insights/ArticleCard";
 import { HeroBackdrop } from "@/components/media/HeroBackdrop";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Visual } from "@/components/ui/Visual";
+import { Typewriter } from "@/components/ui/Typewriter";
 
 type InsightPageProps = {
   params: Promise<{ slug: string }>;
@@ -138,7 +139,8 @@ export default async function InsightPage({ params }: InsightPageProps) {
               </div>
 
               <h1 className="display mt-5 max-w-4xl text-[clamp(2.5rem,5.6vw,4.8rem)]">
-                {article.title}
+                {/* Long titles type a little faster so the heading never drags. */}
+                <Typewriter lines={[[{ text: article.title }]]} speed={article.title.length > 40 ? 30 : 45} startDelay={140} trigger="mount" />
               </h1>
               <p className="mt-6 max-w-2xl text-[1rem] leading-relaxed text-paper/65 sm:text-[1.06rem]">
                 {article.excerpt}

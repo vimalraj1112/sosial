@@ -21,6 +21,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Visual } from "@/components/ui/Visual";
 import { cn } from "@/lib/utils";
+import { Typewriter } from "@/components/ui/Typewriter";
 
 type ProjectPageProps = {
   params: Promise<{ slug: string }>;
@@ -151,7 +152,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               </div>
 
               <h1 className="display mt-5 max-w-4xl text-[clamp(3.2rem,8.5vw,7rem)]">
-                {project.name}
+                <Typewriter lines={[[{ text: project.name }]]} speed={45} startDelay={140} trigger="mount" />
               </h1>
 
               <p className="mt-6 max-w-2xl text-[1rem] leading-relaxed text-paper/65 sm:text-[1.08rem]">

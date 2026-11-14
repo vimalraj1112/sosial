@@ -14,6 +14,7 @@ import { HeroBackdrop } from "@/components/media/HeroBackdrop";
 import { ProjectCard } from "@/components/work/ProjectCard";
 import { reveal } from "@/components/ui/Reveal";
 import { ServiceIcon } from "@/components/services/ServiceIcon";
+import { Typewriter } from "@/components/ui/Typewriter";
 
 type ServicePageProps = {
   params: Promise<{ slug: string }>;
@@ -119,7 +120,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
               </div>
 
               <h1 className="display mt-5 max-w-3xl text-[clamp(2.6rem,6.4vw,5.2rem)]">
-                {service.name}
+                <Typewriter lines={[[{ text: service.name }]]} speed={45} startDelay={140} trigger="mount" />
               </h1>
               <p className="mt-4 max-w-2xl font-display text-[1.15rem] font-medium leading-snug tracking-[-0.02em] text-coral-soft sm:text-[1.3rem]">
                 {service.tagline}

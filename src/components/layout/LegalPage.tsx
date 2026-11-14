@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { HeroBackdrop } from "@/components/media/HeroBackdrop";
 import { ButtonLink } from "@/components/ui/Button";
 import { SectionLabel } from "@/components/ui/SectionLabel";
+import { Typewriter } from "@/components/ui/Typewriter";
 
 type LegalSection = {
   heading: string;
@@ -28,7 +29,9 @@ export function LegalPage({ eyebrow, title, intro, updated, sections }: LegalPag
           </SectionLabel>
 
           <div className="mt-7 max-w-4xl">
-            <h1 className="display text-[clamp(2.5rem,5vw,4.2rem)]">{title}</h1>
+            <h1 className="display text-[clamp(2.5rem,5vw,4.2rem)]">
+              <Typewriter lines={[[{ text: title }]]} speed={45} startDelay={140} trigger="mount" />
+            </h1>
             <p className="mt-5 max-w-3xl text-[0.95rem] leading-relaxed text-paper/65">{intro}</p>
             <p className="mt-6 text-[0.68rem] font-semibold uppercase tracking-[0.13em] text-paper/35">
               Last updated: {updated}

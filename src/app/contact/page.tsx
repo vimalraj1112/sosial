@@ -8,6 +8,7 @@ import { HeroBackdrop } from "@/components/media/HeroBackdrop";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { reveal } from "@/components/ui/Reveal";
 import { WhatsAppIcon } from "@/components/brand/WhatsAppIcon";
+import { Typewriter } from "@/components/ui/Typewriter";
 
 const nextSteps = [
   "We read your note and reply with a clear next step.",
@@ -35,8 +36,12 @@ export default function ContactPage() {
         <div className="mt-8 grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
             <h1 className="display text-[clamp(2.7rem,5.7vw,4.9rem)]">
-              Tell us what you want to{" "}
-              <span className="serif-accent text-coral-soft">change</span>.
+              <Typewriter
+                lines={[[{ text: "Tell us what you want to " }, { text: "change", className: "serif-accent text-coral-soft" }, { text: "." }]]}
+                speed={45}
+                startDelay={140}
+                trigger="mount"
+              />
             </h1>
             <p className="mt-6 max-w-md text-[0.98rem] leading-relaxed text-paper/65">
               A short note about the business, the goal and any timing is enough to start. No brief

@@ -8,6 +8,7 @@ import { HeroBackdrop } from "@/components/media/HeroBackdrop";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 
 import { reveal } from "@/components/ui/Reveal";
+import { Typewriter } from "@/components/ui/Typewriter";
 
 export const metadata: Metadata = buildMetadata({
   title: "Testimonials — Client feedback, with permission",
@@ -40,8 +41,12 @@ export default function TestimonialsPage() {
           <div className="mt-8 grid gap-10 lg:grid-cols-12 lg:items-end lg:gap-16">
             <div className="lg:col-span-8">
               <h1 className="display max-w-4xl text-[clamp(2.8rem,6.8vw,5.8rem)]">
-                In their{" "}
-                <span className="serif-accent text-coral-soft">words</span>.
+                <Typewriter
+                  lines={[[{ text: "In their " }, { text: "words", className: "serif-accent text-coral-soft" }, { text: "." }]]}
+                  speed={45}
+                  startDelay={140}
+                  trigger="mount"
+                />
               </h1>
               <p className="mt-6 max-w-2xl text-[1rem] leading-relaxed text-paper/65 sm:text-[1.06rem]">
                 Real feedback, published with written permission and linked to the work it describes.
