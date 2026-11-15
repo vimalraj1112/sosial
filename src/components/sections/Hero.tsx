@@ -12,7 +12,7 @@ import { CountUp } from "@/components/motion/CountUp";
 
 const headline: TypewriterPart[][] = [
   [{ text: "Attention is" }],
-  [{ text: "earned,", className: "serif-accent pr-2 text-coral-soft" }],
+  [{ text: "earned,", className: "serif-accent pr-2 text-spark" }],
   [{ text: "not bought." }],
 ];
 

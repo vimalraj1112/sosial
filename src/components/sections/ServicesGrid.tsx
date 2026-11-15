@@ -63,8 +63,8 @@ export function ServicesGrid() {
                   className="group flex h-full scroll-mt-28 flex-col justify-between gap-8 rounded-card border-2 border-ink bg-card p-6 text-ink shadow-[4px_4px_0_0_var(--color-coral)] transition-[transform,box-shadow] duration-200 hover:-translate-y-1 hover:shadow-[7px_7px_0_0_var(--color-coral)] sm:p-7"
                 >
                   <div className="flex items-start justify-between gap-4">
-                    <span className="flex h-12 w-12 items-center justify-center rounded-xl border-2 border-ink/15 bg-paper">
-                      <Icon aria-hidden="true" className="h-[1.35rem] w-[1.35rem] text-coral" strokeWidth={1.8} />
+                    <span className="flex h-12 w-12 items-center justify-center rounded-xl border-2 border-ink bg-spark">
+                      <Icon aria-hidden="true" className="h-[1.35rem] w-[1.35rem] text-night" strokeWidth={1.9} />
                     </span>
                     <span className="text-[0.68rem] font-semibold tracking-[0.12em] text-ink/35">
                       0{index + 1}
