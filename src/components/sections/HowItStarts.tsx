@@ -2,7 +2,6 @@ import { ArrowUpRight } from "lucide-react";
 import { brand, whatsappHref } from "@/data/brand";
 import { Reveal, reveal } from "@/components/ui/Reveal";
 import { Conversation } from "@/components/sections/HowItStartsConversation";
-import { WhatsAppIcon } from "@/components/brand/WhatsAppIcon";
 
 const steps = [
   {
@@ -46,29 +45,7 @@ export function HowItStarts() {
           {/* Example conversation */}
           <Reveal className="lg:col-span-7" variant="left">
             <div className="overflow-hidden rounded-card border-2 border-ink bg-card shadow-hard-sm">
-              <div className="flex items-center justify-between gap-3 border-b border-ink/12 bg-paper px-5 py-3.5 sm:px-6">
-                <div className="flex items-center gap-3">
-                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-coral font-display text-[0.82rem] font-bold text-white">
-                    S
-                  </span>
-                  <div>
-                    <p className="font-display text-[0.9rem] font-semibold leading-tight tracking-[-0.01em]">
-                      Sosial
-                    </p>
-                    <p className="text-[0.66rem] font-medium leading-tight text-ink/50">
-                      A real person reads these
-                    </p>
-                  </div>
-                </div>
-                <span className="inline-flex items-center gap-1.5 text-[0.58rem] font-semibold uppercase tracking-[0.14em] text-ink/45">
-                  <WhatsAppIcon className="h-3 w-3" />
-                  WhatsApp
-                </span>
-              </div>
-
-              <div className="p-5 sm:p-6">
-                <Conversation />
-              </div>
+              <Conversation />
             </div>
           </Reveal>
 

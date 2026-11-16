@@ -1,140 +1,301 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { useReducedMotion } from "motion/react";
+import {
+  ArrowLeft,
+  Camera,
+  CheckCheck,
+  EllipsisVertical,
+  Mic,
+  Paperclip,
+  Phone,
+  SendHorizontal,
+  Smile,
+  Video,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
 
 type Message = {
-  from: "them" | "us";
+  /** "you" is the visitor (outgoing, right); "us" is Sosial (incoming, left). */
+  from: "you" | "us";
   text: string;
+  time: string;
 };
 
-// The example first conversation, typed out message by message.
 const conversation: Message[] = [
-  { from: "them", text: "Hey, I need a website and some Reels." },
-  { from: "us", text: "Nice. What’s the goal, and by when?" },
-  { from: "them", text: "More enquiries. Next month, ideally." },
-  { from: "us", text: "Got it. We’ll send a plan with the scope and timeline in writing." },
-  { from: "us", text: "You approve, we create, you review. Simple." },
+  { from: "you", text: "Hey, I need a website and some Reels.", time: "10:02" },
+  { from: "us", text: "Nice. What’s the goal, and by when?", time: "10:03" },
+  { from: "you", text: "More enquiries. Next month, ideally.", time: "10:04" },
+  { from: "us", text: "Got it. We’ll send a plan with the scope and timeline in writing.", time: "10:05" },
+  { from: "us", text: "You approve, we create, you review. Simple.", time: "10:05" },
 ];
 
-const SPEED = 12;
-const GAP_BEFORE_MESSAGE = 220;
-const PAUSE_AFTER_MESSAGE = 320;
+/** Milliseconds per character while the visitor's message is being typed. */
+const TYPE_SPEED = 32;
+const BEFORE_SEND = 280;
+const READ_DELAY = 650;
+const REPLY_TYPING = 1100;
+const BETWEEN = 450;
 
-function bubbleClass(from: Message["from"]) {
-  return cn(
-    "max-w-[86%] rounded-[18px] px-4 py-3 text-[0.86rem] leading-relaxed sm:max-w-[78%] sm:text-[0.9rem]",
-    from === "them"
-      ? "ml-auto rounded-br-[5px] bg-coral text-white shadow-[0_10px_24px_-16px_rgba(130,33,252,0.9)]"
-      : "mr-auto rounded-bl-[5px] border border-ink/12 bg-paper text-ink",
-  );
-}
+// WhatsApp's light theme, kept to the colours the real app uses for these parts.
+const wa = {
+  header: "bg-[#008069]",
+  wallpaper: "bg-[#EFEAE2]",
+  outgoing: "bg-[#D9FDD3]",
+  incoming: "bg-white",
+  text: "text-[#111B21]",
+  meta: "text-[#667781]",
+  read: "text-[#53BDEB]",
+  bar: "bg-[#F0F2F5]",
+  action: "bg-[#00A884]",
+};
 
-function Caret() {
+function Bubble({
+  message,
+  first,
+  read,
+}: {
+  message: Message;
+  /** First bubble in a run from the same sender carries the tail. */
+  first: boolean;
+  read: boolean;
+}) {
+  const out = message.from === "you";
   return (
-    <span
-      aria-hidden="true"
-      className="caret-blink ml-[0.08em] inline-block h-[0.9em] w-[0.06em] translate-y-[0.08em] bg-current align-baseline"
-    />
+    <div className={cn("flex", out ? "justify-end" : "justify-start", first ? "mt-2" : "mt-0.5")}>
+      <div
+        className={cn(
+          "relative max-w-[82%] rounded-[8px] px-2.5 pb-1.5 pt-1.5 shadow-[0_1px_0.5px_rgba(11,20,26,0.13)] sm:max-w-[72%]",
+          out ? wa.outgoing : wa.incoming,
+          first && (out ? "rounded-tr-none" : "rounded-tl-none"),
+        )}
+      >
+        {first ? (
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 8 13"
+            className={cn(
+              "absolute top-0 h-[13px] w-2",
+              out ? "-right-2 fill-[#D9FDD3]" : "-left-2 -scale-x-100 fill-white",
+            )}
+          >
+            <path d="M0 0h8L1.5 9.5C1 10.2 0 9.9 0 9V0Z" />
+          </svg>
+        ) : null}
+        <p className={cn("text-[0.86rem] leading-[1.35] sm:text-[0.9rem]", wa.text)}>
+          {message.text}
+          {/* Invisible spacer so the time never overlaps the last line. */}
+          <span aria-hidden="true" className="inline-block w-[4.2rem]" />
+        </p>
+        <span
+          className={cn(
+            "absolute bottom-1 right-2 inline-flex items-center gap-1 text-[0.66rem] leading-none",
+            wa.meta,
+          )}
+        >
+          {message.time}
+          {out ? (
+            <CheckCheck
+              aria-hidden="true"
+              className={cn("h-[0.95rem] w-[0.95rem] transition-colors duration-300", read ? wa.read : wa.meta)}
+              strokeWidth={2.2}
+            />
+          ) : null}
+        </span>
+      </div>
+    </div>
   );
 }
 
+function TypingBubble() {
+  return (
+    <div className="mt-2 flex justify-start">
+      <div className={cn("relative rounded-[8px] rounded-tl-none px-3.5 py-3 shadow-[0_1px_0.5px_rgba(11,20,26,0.13)]", wa.incoming)}>
+        <svg aria-hidden="true" viewBox="0 0 8 13" className="absolute -left-2 top-0 h-[13px] w-2 -scale-x-100 fill-white">
+          <path d="M0 0h8L1.5 9.5C1 10.2 0 9.9 0 9V0Z" />
+        </svg>
+        <span className="flex items-center gap-1">
+          {[0, 1, 2].map((dot) => (
+            <span
+              key={dot}
+              className="h-2 w-2 animate-bounce rounded-full bg-[#8696A0]"
+              style={{ animationDelay: `${dot * 140}ms`, animationDuration: "900ms" }}
+            />
+          ))}
+        </span>
+      </div>
+    </div>
+  );
+}
+
+/**
+ * The sample first chat, styled as a WhatsApp conversation. The visitor's
+ * messages type into the message bar and send; Sosial's replies show
+ * "typing…" first. It replays each time the chat scrolls back into view.
+ */
 export function Conversation() {
   const reduced = useReducedMotion();
   const ref = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
-  const [messageIndex, setMessageIndex] = useState(0);
-  const [typed, setTyped] = useState(0);
+  const [delivered, setDelivered] = useState(0);
+  const [readUpTo, setReadUpTo] = useState(0);
+  const [draft, setDraft] = useState("");
+  const [replying, setReplying] = useState(false);
 
   useEffect(() => {
     const node = ref.current;
     if (!node) return;
-
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setInView(true);
           return;
         }
-
-        // Reset on the way out so the conversation types again next time.
+        // Reset on the way out so the chat plays again next time.
         setInView(false);
-        setMessageIndex(0);
-        setTyped(0);
+        setDelivered(0);
+        setReadUpTo(0);
+        setDraft("");
+        setReplying(false);
       },
-      { threshold: 0.3 },
+      { threshold: 0.35 },
     );
-
     observer.observe(node);
     return () => observer.disconnect();
   }, []);
 
   useEffect(() => {
     if (!inView || reduced) return;
-    if (messageIndex >= conversation.length) return;
+    let cancelled = false;
+    const wait = (ms: number) => new Promise<void>((resolve) => setTimeout(resolve, ms));
 
-    const text = conversation[messageIndex].text;
+    (async () => {
+      await wait(400);
+      for (let i = 0; i < conversation.length && !cancelled; i++) {
+        const message = conversation[i];
+        if (message.from === "you") {
+          for (let c = 1; c <= message.text.length && !cancelled; c++) {
+            setDraft(message.text.slice(0, c));
+            await wait(TYPE_SPEED);
+          }
+          await wait(BEFORE_SEND);
+          if (cancelled) return;
+          setDraft("");
+          setDelivered(i + 1);
+          await wait(READ_DELAY);
+          if (cancelled) return;
+          setReadUpTo(i + 1);
+        } else {
+          setReplying(true);
+          await wait(REPLY_TYPING);
+          if (cancelled) return;
+          setReplying(false);
+          setDelivered(i + 1);
+          setReadUpTo(i + 1);
+        }
+        await wait(BETWEEN);
+      }
+    })();
 
-    if (typed >= text.length) {
-      const pause = setTimeout(() => {
-        setMessageIndex((index) => index + 1);
-        setTyped(0);
-      }, PAUSE_AFTER_MESSAGE);
-      return () => clearTimeout(pause);
-    }
+    return () => {
+      cancelled = true;
+    };
+  }, [inView, reduced]);
 
-    const timer = setTimeout(
-      () => setTyped((count) => count + 1),
-      typed === 0 ? GAP_BEFORE_MESSAGE : SPEED,
-    );
-    return () => clearTimeout(timer);
-  }, [inView, reduced, messageIndex, typed]);
+  const shown = reduced ? conversation.length : delivered;
+  const read = reduced ? conversation.length : readUpTo;
+  const status = replying ? "typing…" : "online";
 
-  // Reduced motion (or finished typing) shows everything immediately.
-  const activeIndex = reduced ? conversation.length : messageIndex;
-  const activeChars = reduced ? Number.MAX_SAFE_INTEGER : typed;
+  const renderMessages = (count: number, readCount: number) =>
+    conversation.slice(0, count).map((message, index) => (
+      <Bubble
+        key={message.text}
+        message={message}
+        first={index === 0 || conversation[index - 1].from !== message.from}
+        read={index < readCount}
+      />
+    ));
 
   return (
-    <div ref={ref} className="grid">
-      {/* Reserves the finished height so the card never grows while typing. */}
-      <ul
-        aria-hidden="true"
-        className="pointer-events-none flex select-none flex-col gap-2.5 opacity-0 [grid-area:1/1]"
+    <div ref={ref} className="flex flex-col">
+      {/* Header */}
+      <div className={cn("flex items-center gap-2.5 px-2.5 py-2 text-white sm:gap-3 sm:px-3.5", wa.header)}>
+        <ArrowLeft aria-hidden="true" className="h-5 w-5 shrink-0 opacity-95" strokeWidth={2} />
+        <span className="relative h-9 w-9 shrink-0 overflow-hidden rounded-full bg-white">
+          <Image src="/assets/brand/sosial-app-icon.png" alt="" fill sizes="36px" className="object-cover" />
+        </span>
+        <div className="min-w-0 flex-1 leading-tight">
+          <p className="truncate text-[0.95rem] font-medium">Sosial</p>
+          <p aria-live="off" className="truncate text-[0.72rem] text-white/80">
+            {status}
+          </p>
+        </div>
+        <div aria-hidden="true" className="flex items-center gap-4 pr-0.5 sm:gap-5">
+          <Video className="h-5 w-5" strokeWidth={1.9} />
+          <Phone className="h-[1.1rem] w-[1.1rem]" strokeWidth={1.9} />
+          <EllipsisVertical className="h-5 w-5" strokeWidth={1.9} />
+        </div>
+      </div>
+
+      {/* Chat wallpaper */}
+      <div
+        className={cn("relative px-3 pb-3 pt-2.5 sm:px-5", wa.wallpaper)}
+        style={{
+          backgroundImage:
+            "radial-gradient(rgba(84,101,111,0.07) 1.2px, transparent 1.3px), radial-gradient(rgba(84,101,111,0.05) 1px, transparent 1.1px)",
+          backgroundSize: "22px 22px, 22px 22px",
+          backgroundPosition: "0 0, 11px 11px",
+        }}
       >
-        {conversation.map((message) => (
-          <li key={message.text}>
-            <div className={bubbleClass(message.from)}>{message.text}</div>
-          </li>
-        ))}
-      </ul>
+        <div className="flex justify-center">
+          <span className="rounded-[7px] bg-white/95 px-2.5 py-1 text-[0.66rem] font-medium uppercase tracking-[0.04em] text-[#54656F] shadow-[0_1px_0.5px_rgba(11,20,26,0.13)]">
+            Today
+          </span>
+        </div>
 
-      <ul aria-hidden="true" className="flex flex-col gap-2.5 [grid-area:1/1]">
-        {conversation.map((message, index) => {
-          if (index > activeIndex) return null;
+        <div className="grid">
+          {/* Reserves the finished height so the card never grows while it plays. */}
+          <div aria-hidden="true" className="pointer-events-none invisible pb-1 [grid-area:1/1]">
+            {renderMessages(conversation.length, conversation.length)}
+            <div className="h-10" />
+          </div>
 
-          const text =
-            index < activeIndex ? message.text : message.text.slice(0, activeChars);
-          const isTyping = !reduced && index === messageIndex && messageIndex < conversation.length;
+          <div aria-hidden="true" className="pb-1 [grid-area:1/1]">
+            {renderMessages(shown, read)}
+            {replying ? <TypingBubble /> : null}
+          </div>
 
-          return (
-            <li key={message.text}>
-              <div className={bubbleClass(message.from)}>
-                {text}
-                {isTyping ? <Caret /> : null}
-              </div>
-            </li>
-          );
-        })}
-      </ul>
+          <ul className="sr-only [grid-area:1/1]">
+            {conversation.map((message) => (
+              <li key={message.text}>
+                {message.from === "you" ? "You:" : "Sosial:"} {message.text}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
 
-      <ul className="sr-only [grid-area:1/1]">
-        {conversation.map((message) => (
-          <li key={message.text}>
-            {message.from === "them" ? "You:" : "Sosial:"} {message.text}
-          </li>
-        ))}
-      </ul>
+      {/* Message bar */}
+      <div aria-hidden="true" className={cn("flex items-center gap-2 px-2 py-2 sm:px-3", wa.bar)}>
+        <div className="flex min-w-0 flex-1 items-center gap-2.5 rounded-full bg-white px-3 py-2 shadow-[0_1px_0.5px_rgba(11,20,26,0.08)]">
+          <Smile className="h-5 w-5 shrink-0 text-[#54656F]" strokeWidth={1.8} />
+          <span className={cn("min-w-0 flex-1 truncate text-[0.88rem]", draft ? wa.text : "text-[#8696A0]")}>
+            {draft || "Message"}
+            {draft ? <span className="caret-blink ml-px inline-block h-[1em] w-px translate-y-[0.15em] bg-[#00A884]" /> : null}
+          </span>
+          <Paperclip className="h-5 w-5 shrink-0 -rotate-45 text-[#54656F]" strokeWidth={1.8} />
+          {draft ? null : <Camera className="h-5 w-5 shrink-0 text-[#54656F]" strokeWidth={1.8} />}
+        </div>
+        <span className={cn("flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-white", wa.action)}>
+          {draft ? (
+            <SendHorizontal className="h-[1.1rem] w-[1.1rem]" strokeWidth={2} />
+          ) : (
+            <Mic className="h-5 w-5" strokeWidth={2} />
+          )}
+        </span>
+      </div>
     </div>
   );
 }
