@@ -18,7 +18,7 @@ export function BookingSection() {
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-grid-light opacity-25" />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-0 h-[30rem] w-[30rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-spark/10 blur-[110px] sm:h-[42rem] sm:w-[42rem]"
+        className="pointer-events-none absolute left-1/2 top-0 h-[30rem] w-[30rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-coral/10 blur-[110px] sm:h-[42rem] sm:w-[42rem]"
       />
 
       <div className="container-x relative">
@@ -59,8 +59,8 @@ export function BookingSection() {
         <div {...reveal("fade")} className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-paper/12 pt-6 text-[0.76rem] text-paper/40 sm:flex-row">
           <p className="flex items-center gap-2.5">
             <span aria-hidden="true" className="relative flex h-1.5 w-1.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-spark opacity-70 motion-reduce:hidden" />
-              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-spark" />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-coral-soft opacity-70 motion-reduce:hidden" />
+              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-coral-soft" />
             </span>
             {brand.location} <span className="text-paper/20">/</span> {booking.timezoneLabel}
           </p>

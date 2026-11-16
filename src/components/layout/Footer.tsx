@@ -111,7 +111,7 @@ export function Footer() {
                     <li key={link.href}>
                       <Link
                         href={link.href}
-                        className="text-[0.83rem] leading-snug text-paper/65 transition-colors hover:text-spark"
+                        className="text-[0.83rem] leading-snug text-paper/65 transition-colors hover:text-coral-soft"
                       >
                         {link.label}
                       </Link>
@@ -129,7 +129,7 @@ export function Footer() {
                     <li key={link.href}>
                       <Link
                         href={link.href}
-                        className="text-[0.83rem] leading-snug text-paper/65 transition-colors hover:text-spark"
+                        className="text-[0.83rem] leading-snug text-paper/65 transition-colors hover:text-coral-soft"
                       >
                         {link.label}
                       </Link>
@@ -146,7 +146,7 @@ export function Footer() {
                   <li>
                     <a
                       href={mailHref}
-                      className="inline-flex items-center gap-2 break-all text-paper/65 transition-colors hover:text-spark"
+                      className="inline-flex items-center gap-2 break-all text-paper/65 transition-colors hover:text-coral-soft"
                     >
                       <Mail aria-hidden="true" className="h-3.5 w-3.5 shrink-0" strokeWidth={1.7} />
                       {brand.email}
@@ -155,7 +155,7 @@ export function Footer() {
                   <li>
                     <a
                       href={telHref}
-                      className="inline-flex items-center gap-2 text-paper/65 transition-colors hover:text-spark"
+                      className="inline-flex items-center gap-2 text-paper/65 transition-colors hover:text-coral-soft"
                     >
                       <Phone aria-hidden="true" className="h-3.5 w-3.5 shrink-0" strokeWidth={1.7} />
                       {brand.phoneLabel}
@@ -166,7 +166,7 @@ export function Footer() {
                       href={whatsappHref}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-paper/65 transition-colors hover:text-spark"
+                      className="inline-flex items-center gap-2 text-paper/65 transition-colors hover:text-coral-soft"
                     >
                       <WhatsAppIcon className="h-3.5 w-3.5 shrink-0" />
                       WhatsApp
@@ -190,11 +190,11 @@ export function Footer() {
             </p>
             <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
               {footerLinks.legal.map((link) => (
-                <Link key={link.href} href={link.href} className="transition-colors hover:text-spark">
+                <Link key={link.href} href={link.href} className="transition-colors hover:text-coral-soft">
                   {link.label}
                 </Link>
               ))}
-              <ReplayIntroLink className="transition-colors hover:text-spark" />
+              <ReplayIntroLink className="transition-colors hover:text-coral-soft" />
             </div>
           </div>
       </div>

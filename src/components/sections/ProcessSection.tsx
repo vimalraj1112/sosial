@@ -56,7 +56,7 @@ export function ProcessSection() {
                   {...reveal("scale")}
                   className="rounded-2xl border-2 border-ink bg-card p-4 shadow-hard-xs transition-[transform,box-shadow] duration-200 hover:-translate-y-1 hover:shadow-hard-sm sm:p-5"
                 >
-                  <p className="inline-flex rounded-full border-2 border-ink bg-spark px-2 py-0.5 text-[0.62rem] font-bold tracking-[0.12em] text-night">{step.number}</p>
+                  <p className="text-[0.65rem] font-semibold tracking-[0.14em] text-coral">{step.number}</p>
                   <p className="mt-6 font-display text-[1.02rem] font-semibold leading-snug tracking-[-0.02em]">{step.title}</p>
                 </div>
               ))}

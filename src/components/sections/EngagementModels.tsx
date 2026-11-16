@@ -66,7 +66,7 @@ export function EngagementModels() {
                     0{index + 1}
                   </span>
                   {model.accent ? (
-                    <span className="rounded-full border border-ink bg-spark px-2.5 py-1 text-[0.55rem] font-bold uppercase tracking-[0.1em] text-night">
+                    <span className="rounded-full border border-ink bg-coral px-2.5 py-1 text-[0.55rem] font-bold uppercase tracking-[0.1em] text-white">
                       Most common
                     </span>
                   ) : null}

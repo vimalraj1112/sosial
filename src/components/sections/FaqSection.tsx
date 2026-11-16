@@ -13,7 +13,7 @@ export function FaqSection() {
       <div className="container-x grid gap-10 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-5">
           <div className="lg:sticky lg:top-28">
-            <SectionLabel index="13">Questions</SectionLabel>
+            <SectionLabel index="12">Questions</SectionLabel>
             <h2 {...reveal("rise")} className="display mt-5 text-[clamp(2rem,3.8vw,3.1rem)]">
               Things worth asking{" "}
               <span className="serif-accent text-coral">before</span> you hire anyone.

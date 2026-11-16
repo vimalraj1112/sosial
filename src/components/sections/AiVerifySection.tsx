@@ -97,7 +97,7 @@ export function AiVerifySection() {
                 rel="noopener noreferrer"
                 aria-label={`Ask ${item.name} about SOSIAL (opens in a new tab)`}
                 style={{ "--tint": item.tint } as React.CSSProperties}
-                className="group flex h-full flex-col rounded-card border-2 border-ink bg-card p-6 text-ink shadow-[5px_5px_0_0_var(--color-spark)] transition-[transform,box-shadow] duration-200 hover:-translate-y-1 hover:shadow-[7px_7px_0_0_var(--tint)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-coral sm:p-7"
+                className="group flex h-full flex-col rounded-card border-2 border-ink bg-card p-6 text-ink shadow-[5px_5px_0_0_var(--color-coral)] transition-[transform,box-shadow] duration-200 hover:-translate-y-1 hover:shadow-[7px_7px_0_0_var(--tint)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-coral sm:p-7"
               >
                 <div className="flex items-center justify-between gap-4">
                   <span

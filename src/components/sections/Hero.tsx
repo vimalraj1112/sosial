@@ -12,7 +12,7 @@ import { CountUp } from "@/components/motion/CountUp";
 
 const headline: TypewriterPart[][] = [
   [{ text: "Attention is" }],
-  [{ text: "earned,", className: "serif-accent pr-2 text-spark" }],
+  [{ text: "earned,", className: "serif-accent pr-2 text-coral-soft" }],
   [{ text: "not bought." }],
 ];
 
@@ -92,11 +92,11 @@ export function Hero() {
 
             <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2 text-[0.75rem] text-paper/55">
               <span className="inline-flex items-center gap-2">
-                <Check aria-hidden="true" className="h-3.5 w-3.5 text-spark" strokeWidth={2} />
+                <Check aria-hidden="true" className="h-3.5 w-3.5 text-coral-soft" strokeWidth={2} />
                 Scope agreed in writing
               </span>
               <span className="inline-flex items-center gap-2">
-                <Check aria-hidden="true" className="h-3.5 w-3.5 text-spark" strokeWidth={2} />
+                <Check aria-hidden="true" className="h-3.5 w-3.5 text-coral-soft" strokeWidth={2} />
                 Clear deliverables and timelines
               </span>
               <a

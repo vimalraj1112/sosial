@@ -14,7 +14,6 @@ import { Gallery } from "@/components/sections/Gallery";
 import { VideoSection } from "@/components/sections/VideoSection";
 import { SuccessStory } from "@/components/sections/SuccessStory";
 import { ProcessSection } from "@/components/sections/ProcessSection";
-import { TeamStrip } from "@/components/sections/TeamStrip";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { AiVerifySection } from "@/components/sections/AiVerifySection";
 import { InsightsSection } from "@/components/sections/InsightsSection";
@@ -46,7 +45,6 @@ export default function HomePage() {
       <VideoSection />
       <SuccessStory />
       <ProcessSection />
-      <TeamStrip />
       <TestimonialsSection />
       <AiVerifySection />
       <InsightsSection />

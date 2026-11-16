@@ -17,7 +17,7 @@ export function FinalEnquiry() {
     <section id="contact" className="bg-coral py-20 text-white sm:py-24 lg:py-28">
       <div className="container-x grid gap-12 lg:grid-cols-12 lg:gap-16">
         <div className="lg:col-span-5 lg:flex lg:flex-col">
-          <SectionLabel index="14" tone="light">
+          <SectionLabel index="13" tone="light">
             Start here
           </SectionLabel>
           <h2 {...reveal("rise")} className="display mt-5 text-[clamp(2.2rem,4.6vw,3.8rem)]">

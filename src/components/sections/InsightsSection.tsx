@@ -14,7 +14,7 @@ export function InsightsSection() {
       <div className="container-x">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
-            <SectionLabel index="12">Insights</SectionLabel>
+            <SectionLabel index="11">Insights</SectionLabel>
             <h2 {...reveal("rise")} className="display mt-5 max-w-xl text-[clamp(1.9rem,3.7vw,2.9rem)]">
               Thinking we would{" "}
               <span className="serif-accent text-coral">defend</span> in a meeting.

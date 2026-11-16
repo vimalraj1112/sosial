@@ -67,7 +67,7 @@ export function WaysOfWorking() {
               {commitments.map((item) => (
                 <Reveal key={item.number} variant="right">
                   <div className="grid gap-4 rounded-card border-2 border-ink bg-card p-6 shadow-hard-xs transition-[transform,box-shadow] duration-200 hover:-translate-y-1 hover:shadow-hard-sm sm:grid-cols-[3.25rem_1fr] sm:gap-5 sm:p-7">
-                    <span className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-ink bg-spark text-[0.66rem] font-bold tracking-[0.06em] text-night">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-ink bg-coral text-[0.66rem] font-bold tracking-[0.06em] text-white">
                       {item.number}
                     </span>
                     <div>

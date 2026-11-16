@@ -82,7 +82,7 @@ export default function TestimonialsPage() {
               <figure
                 key={item.image}
                 {...reveal("up")}
-                className="flex h-full flex-col justify-between gap-8 rounded-card border-2 border-ink bg-card p-6 text-ink shadow-[5px_5px_0_0_var(--color-spark)] sm:p-7"
+                className="flex h-full flex-col justify-between gap-8 rounded-card border-2 border-ink bg-card p-6 text-ink shadow-[5px_5px_0_0_var(--color-coral)] sm:p-7"
               >
                 <Quote aria-hidden="true" className="h-7 w-7 text-coral" strokeWidth={1.8} />
                 <blockquote className="text-[1rem] font-medium leading-relaxed text-ink/80">

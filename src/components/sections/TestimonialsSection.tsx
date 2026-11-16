@@ -11,7 +11,7 @@ export function TestimonialsSection() {
       <div className="container-x relative">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
-            <SectionLabel index="11" tone="light">
+            <SectionLabel index="10" tone="light">
               In their words
             </SectionLabel>
             <h2 {...reveal("rise")} className="display mt-5 max-w-2xl text-[clamp(1.9rem,3.8vw,3.1rem)]">
@@ -29,7 +29,7 @@ export function TestimonialsSection() {
         <div className="mt-10 grid gap-5 md:grid-cols-3">
           {testimonials.map((item) => (
             <Reveal key={item.image} className="h-full">
-              <figure className="flex h-full flex-col justify-between gap-8 rounded-card border-2 border-ink bg-card p-6 text-ink shadow-[5px_5px_0_0_var(--color-spark)] sm:p-7">
+              <figure className="flex h-full flex-col justify-between gap-8 rounded-card border-2 border-ink bg-card p-6 text-ink shadow-[5px_5px_0_0_var(--color-coral)] sm:p-7">
                 <Quote aria-hidden="true" className="h-7 w-7 text-coral" strokeWidth={1.8} />
                 <blockquote className="text-[1rem] font-medium leading-relaxed text-ink/80">
                   &ldquo;{item.quote}&rdquo;

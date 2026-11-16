@@ -28,7 +28,7 @@ export function FinalCta() {
       />
 
       <div className="container-x relative py-24 text-center sm:py-28 lg:py-36">
-        <p {...reveal("fade")} className="text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-spark">
+        <p {...reveal("fade")} className="text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-coral-soft">
           Your next big idea starts here
         </p>
 
@@ -40,7 +40,7 @@ export function FinalCta() {
           Let&rsquo;s Build <span className="serif-accent text-coral-soft">Together.</span>
         </h2>
 
-        <div {...reveal("scale")} aria-hidden="true" className="mx-auto mt-9 h-0.5 w-24 rounded-full bg-spark" />
+        <div {...reveal("scale")} aria-hidden="true" className="mx-auto mt-9 h-px w-24 bg-paper/20" />
 
         <p {...reveal("up")} className="mx-auto mt-8 max-w-xl text-[0.98rem] leading-relaxed text-paper/60 sm:text-[1.04rem]">
           Have a project in mind, or just want to talk through an idea? Tell us what you&rsquo;re
