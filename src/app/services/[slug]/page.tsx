@@ -74,12 +74,10 @@ export default async function ServicePage({ params }: ServicePageProps) {
       telephone: "+91 91104 80590",
       address: {
         "@type": "PostalAddress",
-        addressLocality: "Bengaluru",
-        addressRegion: "Karnataka",
         addressCountry: "IN",
       },
     },
-    areaServed: "Bengaluru, India",
+    areaServed: "India",
     category: division?.shortName ?? "Marketing services",
     // No offers, prices, ratings or performance claims: scope is agreed per project.
   };
@@ -150,9 +148,6 @@ export default async function ServicePage({ params }: ServicePageProps) {
                   priority
                 />
               </div>
-              <p className="mt-3 text-[0.7rem] leading-relaxed text-paper/35">
-                Illustrative artwork, not a client photograph. Project imagery is labelled separately.
-              </p>
             </div>
           </div>
         </div>

@@ -1,15 +1,6 @@
 import { z } from "zod";
 import { serviceOptions } from "@/data/services";
 
-export const budgetOptions = [
-  "Not defined yet",
-  "Under $5,000",
-  "$5,000 - $10,000",
-  "$10,000 - $25,000",
-  "$25,000 - $50,000",
-  "$50,000+",
-] as const;
-
 export const enquirySchema = z.object({
   name: z
     .string()
@@ -32,15 +23,11 @@ export const enquirySchema = z.object({
     .optional()
     .or(z.literal("")),
   service: z.string().min(1, { message: "Please choose a service." }),
-  budget: z.string().max(60).optional().or(z.literal("")),
   message: z
     .string()
     .trim()
     .min(20, { message: "Please tell us a little more (at least 20 characters)." })
     .max(4000, { message: "Please keep this under 4,000 characters." }),
-  consent: z.boolean().refine((value) => value === true, {
-    message: "Please accept the privacy notice to continue.",
-  }),
   // Spam protection: hidden field + time trap. Never shown to real visitors.
   website: z.string().max(0).optional().or(z.literal("")),
   startedAt: z.number().optional(),
@@ -70,9 +57,6 @@ export const bookingRequestSchema = z.object({
     .max(600, { message: "Please keep this under 600 characters." })
     .optional()
     .or(z.literal("")),
-  consent: z.boolean().refine((value) => value === true, {
-    message: "Please accept the privacy notice to continue.",
-  }),
   website: z.string().max(0).optional().or(z.literal("")),
 });
 

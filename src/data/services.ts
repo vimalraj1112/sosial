@@ -1,12 +1,12 @@
 export type IconName =
   | "MessagesSquare"
   | "TrendingUp"
-  | "PenTool"
+  | "UserRound"
   | "MonitorSmartphone"
-  | "MapPin"
-  | "Clapperboard"
-  | "Camera"
-  | "Sun";
+  | "Search"
+  | "Megaphone"
+  | "Video"
+  | "ChartColumn";
 
 export type ServiceDivision = "digital" | "production";
 
@@ -20,6 +20,8 @@ export type Service = {
   icon: IconName;
   image: string;
   imageAlt: string;
+  /** Photograph behind the homepage card. */
+  photo: string;
   problem: string;
   problemPoints: string[];
   approach: { title: string; body: string }[];
@@ -42,13 +44,15 @@ export const divisions: Division[] = [
     name: "Digital Marketing & Creative Growth",
     shortName: "Digital marketing",
     summary:
-      "Strategy, social media, advertising, branding, websites and local digital visibility — planned as one system.",
+      "Strategy, social media, advertising, personal branding, websites and research, planned as one system.",
     serviceSlugs: [
       "social-media",
       "performance-marketing",
       "branding",
       "web-design",
-      "local-visibility",
+      "google-ads",
+      "meta-ads",
+      "marketing-research",
     ],
   },
   {
@@ -56,12 +60,8 @@ export const divisions: Division[] = [
     name: "Video Production & Photography",
     shortName: "Production",
     summary:
-      "End-to-end branding and marketing shoots, indoors and outdoors, from planning to post-production.",
-    serviceSlugs: [
-      "brand-production",
-      "indoor-production",
-      "outdoor-production",
-    ],
+      "Video shoots and editing, from planning to the final cut.",
+    serviceSlugs: ["video-production"],
   },
 ];
 
@@ -78,6 +78,7 @@ export const services: Service[] = [
     image: "/assets/images/social-campaign.svg",
     imageAlt:
       "Abstract social media content cards in violet, ink and cloud tones",
+    photo: "/assets/images/services/social-media.jpg",
     problem:
       "Most brands post because they feel they should. Without a defined role for each channel, every post starts from a blank page and success gets measured by likes instead of whether the content is doing a job.",
     problemPoints: [
@@ -131,6 +132,7 @@ export const services: Service[] = [
     image: "/assets/images/work-orbit.svg",
     imageAlt:
       "Dark orbital artwork representing connected paid media channels",
+    photo: "/assets/images/services/paid-advertising-billboard.jpg",
     problem:
       "Paid media gets expensive when the objective is vague. Budgets drift towards broad audiences, creative is disconnected from the landing page, and reporting shows activity without explaining what to change.",
     problemPoints: [
@@ -174,53 +176,54 @@ export const services: Service[] = [
   },
   {
     slug: "branding",
-    name: "Branding & Creative Strategy",
-    shortName: "Branding & Creative",
-    tagline: "One clear idea, expressed consistently.",
+    name: "Personal Branding",
+    shortName: "Personal Branding",
+    tagline: "Be known for what you do best.",
     summary:
-      "Audience and competitor research, messaging, creative direction and the rules that keep a brand recognisable.",
+      "Positioning, content and a consistent look for founders, professionals and creators who want to be recognised in their field.",
     division: "digital",
-    icon: "PenTool",
+    icon: "UserRound",
     image: "/assets/images/branding-system.svg",
     imageAlt:
-      "Layered violet, ink and cloud wave bands representing a brand system",
+      "Layered violet, ink and cloud wave bands representing a personal brand system",
+    photo: "/assets/images/services/personal-branding.jpg",
     problem:
-      "A brand is not a logo. It is the cumulative impression of every message, image and interaction. When the idea is vague, the visual language drifts and every campaign has to start from zero.",
+      "People buy from people. Founders and professionals are often the best thing about their business, yet their online presence is quiet, inconsistent or says nothing about what they actually stand for.",
     problemPoints: [
-      "Messaging that sounds like every other business in the category",
-      "Assets made by different people with no shared rules",
-      "A visual identity that looks good once but does not hold together",
+      "A profile that does not say clearly what you do or who you help",
+      "Posting in bursts, with no consistent voice or look",
+      "Expertise that stays invisible outside your own network",
     ],
     approach: [
       {
-        title: "Research the business and the category",
-        body: "We look at the audience, the competition and the language already being used. The goal is to find a clear, defensible idea rather than a new slogan.",
+        title: "Find what you want to be known for",
+        body: "We look at your experience, your audience and the people already visible in your field, then agree a clear, honest positioning.",
       },
       {
-        title: "Define the message",
-        body: "One primary message and a small set of supporting messages, written so the team can repeat them without a slide deck.",
+        title: "Shape the voice and the look",
+        body: "Profiles, bio, photography and a simple visual style that feel like you, and stay consistent across LinkedIn, Instagram and your website.",
       },
       {
-        title: "Build the creative direction",
-        body: "Type, colour, layout, imagery and tone documented as a practical system. Distinctive at a glance, flexible enough for a post, a website and a shoot.",
+        title: "Show up consistently",
+        body: "A content plan built around your expertise, with formats you can sustain. We help write, shoot and edit so posting never starts from a blank page.",
       },
     ],
     deliverables: [
-      "Audience and competitor research",
-      "Positioning and messaging",
-      "Creative direction",
-      "Identity system support",
-      "Tone of voice guidance",
-      "Brand guidelines and templates",
+      "Personal positioning and story",
+      "Profile and bio optimisation",
+      "Personal brand photoshoot",
+      "Visual style and templates",
+      "Content plan and post writing",
+      "Monthly review and refinement",
     ],
     faqs: [
       {
-        q: "Do we need a full rebrand?",
-        a: "Not always. Sometimes the equity is in the name and the fix is in the system around it. We recommend the smallest change that solves the real problem.",
+        q: "Who is personal branding for?",
+        a: "Founders, doctors, consultants, coaches, creators and other professionals whose reputation drives their business.",
       },
       {
-        q: "Can you work with our existing brand?",
-        a: "Yes. We often extend a brand that is fundamentally sound but lacks consistency, templates or a distinctive digital expression.",
+        q: "Do I have to be on camera?",
+        a: "Not necessarily. We plan formats around what you are comfortable with, from written posts to photos to short videos.",
       },
     ],
     relatedWork: ["northwind", "fieldnote"],
@@ -236,6 +239,7 @@ export const services: Service[] = [
     icon: "MonitorSmartphone",
     image: "/assets/images/web-experience.svg",
     imageAlt: "Browser window illustration showing a clean website layout",
+    photo: "/assets/images/services/web-design.jpg",
     problem:
       "A website is often the hardest-working asset a business owns, and the least maintained. Beautiful redesigns fail when nobody thought about the journey, the content or what happens after launch.",
     problemPoints: [
@@ -278,213 +282,216 @@ export const services: Service[] = [
     relatedWork: ["tessellate", "kite"],
   },
   {
-    slug: "local-visibility",
-    name: "Local Digital Visibility",
-    shortName: "Local Visibility",
-    tagline: "Be found by nearby customers.",
+    slug: "google-ads",
+    name: "Google Ads",
+    shortName: "Google Ads",
+    tagline: "Show up when they are searching.",
     summary:
-      "Local Podcast fundamentals and Google Business Profile support for businesses that depend on local discovery.",
+      "Search, Performance Max and YouTube campaigns built around the terms your customers actually use, with tracking set up properly.",
     division: "digital",
-    icon: "MapPin",
+    icon: "Search",
     image: "/assets/images/seo-analytics.svg",
-    imageAlt:
-      "Analytics dashboard artwork representing local search visibility",
+    imageAlt: "Analytics dashboard artwork representing search advertising",
+    photo: "/assets/images/services/google-ads.jpg",
     problem:
-      "Local customers often decide before they call. An incomplete profile, inconsistent business details and basic on-page gaps can make a good business harder to find than a weaker competitor.",
+      "Google Ads rewards intent, but it punishes vague setups. Broad keywords, missing negatives and untracked conversions quietly spend the budget on clicks that were never going to become customers.",
     problemPoints: [
-      "Google Business Profile details that are incomplete or out of date",
-      "Inconsistent name, address and phone information across listings",
-      "Obvious on-page gaps that block local discovery",
+      "Budget spent on irrelevant searches and broad match terms",
+      "Conversions not tracked, so nobody knows what is working",
+      "Ads sending traffic to pages that do not answer the search",
     ],
     approach: [
       {
-        title: "Audit the local presence",
-        body: "We check the profile, the core business details, the site's local pages and the obvious gaps between them.",
+        title: "Start with search intent",
+        body: "We map the searches that signal a real need, group them into tight campaigns and exclude the terms that waste money.",
       },
       {
-        title: "Fix the fundamentals",
-        body: "We recommend and support the practical changes: profile information, categories, photos, basic on-page details and consistent citations.",
+        title: "Connect the ad to the page",
+        body: "Each campaign points to a page that answers the search clearly. Ad copy, extensions and landing page are written as one message.",
       },
       {
-        title: "Set a review rhythm",
-        body: "Local visibility is maintained, not switched on. We agree a simple monthly check so the profile and pages stay accurate.",
+        title: "Measure, then optimise",
+        body: "Conversion tracking is set up before launch. We review search terms, bids and budgets regularly and report in plain language.",
       },
     ],
     deliverables: [
-      "Local visibility audit",
-      "Google Business Profile support",
-      "Basic on-page recommendations",
-      "Local content guidance",
-      "Citation consistency checklist",
-      "Monthly local visibility review",
+      "Account audit or new account setup",
+      "Keyword and negative keyword research",
+      "Search, Performance Max and YouTube campaigns",
+      "Ad copy and extensions",
+      "Conversion tracking setup",
+      "Monthly performance report",
     ],
     faqs: [
       {
-        q: "Do you provide advanced technical Podcast?",
-        a: "Our local visibility work covers local Podcast fundamentals, Google Business Profile support and relevant basic on-page recommendations. Complex technical Podcast, large-scale link building and enterprise search programmes are outside this scope, and we will say so clearly.",
+        q: "Is the ad budget included in your fee?",
+        a: "No. Ad spend is paid directly to Google from your account. Our fee covers planning, setup, management and reporting, and both are agreed in writing.",
       },
       {
-        q: "Do you guarantee rankings or map positions?",
-        a: "No. Search and map results depend on factors outside our control. We do not guarantee rankings, map positions, traffic or enquiries.",
+        q: "Do you guarantee results?",
+        a: "No. We do not guarantee leads, sales or return on ad spend. We commit to a careful setup, clear reporting and honest recommendations.",
       },
     ],
-    relatedWork: ["kite", "verdant"],
+    relatedWork: ["orbit", "kite"],
   },
   {
-    slug: "brand-production",
-    name: "Branding & Marketing Production",
-    shortName: "Brand Production",
-    tagline: "Shoots planned around the marketing.",
+    slug: "meta-ads",
+    name: "Meta Ads",
+    shortName: "Meta Ads",
+    tagline: "Creative that stops the scroll.",
     summary:
-      "End-to-end branding and marketing shoots, from creative planning and production coordination to the final edit, indoors or outdoors.",
+      "Facebook and Instagram campaigns with thumb-stopping creative, clear audiences and a funnel that turns attention into enquiries.",
+    division: "digital",
+    icon: "Megaphone",
+    image: "/assets/images/content-system.svg",
+    imageAlt: "Abstract content cards representing social advertising",
+    photo: "/assets/images/services/meta-ads.jpg",
+    problem:
+      "On Meta, the creative is the targeting. Boosted posts and one tired ad running for months rarely reach the right people, and without a clear next step the attention never becomes a conversation.",
+    problemPoints: [
+      "Boosted posts instead of structured campaigns",
+      "Creative that fatigues within days, with nothing new to test",
+      "No pixel or conversion setup to learn from",
+    ],
+    approach: [
+      {
+        title: "Define the audience and offer",
+        body: "We agree who the campaign is for, what it offers and what action counts as success before a single ad is made.",
+      },
+      {
+        title: "Make creative worth watching",
+        body: "Reels, stories, carousels and statics produced in-house, with several angles to test so the campaign keeps learning.",
+      },
+      {
+        title: "Test, learn and scale",
+        body: "We read the results, retire what is not working, refresh creative before it fatigues and scale what earns its budget.",
+      },
+    ],
+    deliverables: [
+      "Audience and offer planning",
+      "Campaign and funnel structure",
+      "Ad creative: Reels, stories, carousels and statics",
+      "Pixel and Conversions API setup",
+      "Creative testing and refresh",
+      "Monthly performance report",
+    ],
+    faqs: [
+      {
+        q: "Do you make the ads as well as run them?",
+        a: "Yes. Strategy, creative production and campaign management sit under one roof, so the ads and the targeting are planned together.",
+      },
+      {
+        q: "Do you guarantee results?",
+        a: "No. We do not guarantee leads, sales or return on ad spend. We commit to considered creative, a careful setup and honest reporting.",
+      },
+    ],
+    relatedWork: ["halcyon", "orbit"],
+  },
+  {
+    slug: "video-production",
+    name: "Video Production & Editing",
+    shortName: "Video Production & Editing",
+    tagline: "From the shoot to the final cut.",
+    summary:
+      "Brand films, Reels, ads and product videos, planned, shot and edited for the platforms they will run on.",
     division: "production",
-    icon: "Clapperboard",
+    icon: "Video",
     image: "/assets/images/video-frame.svg",
     imageAlt: "Cinematic frame artwork with a violet orbital motif",
+    photo: "/assets/images/services/video-production.jpg",
     problem:
-      "A beautiful film can still be useless if it was never planned for the channels it needs to run on. Production disconnected from marketing produces footage nobody can place.",
+      "A beautiful film can still be useless if it was never planned for the channels it needs to run on. Footage shot without a plan, or edited without the platform in mind, ends up unused.",
     problemPoints: [
       "No clear idea or intended use before the shoot",
-      "One hero film instead of assets for each placement",
-      "Footage and photography delivered without a content plan",
+      "One long film instead of cuts for each placement",
+      "Editing that ignores captions, safe areas and the first three seconds",
     ],
     approach: [
       {
         title: "Plan from the brief",
-        body: "We start with the business objective, the audience and the places the work will appear. The creative treatment and shot list follow from that.",
+        body: "We start with the objective, the audience and where the video will appear. The idea, script and shot list follow from that.",
       },
       {
-        title: "Shoot for the formats you need",
-        body: "Coverage is planned around vertical, square, landscape and cutdown lengths. One well-planned shoot should produce a useful library, not a single film.",
+        title: "Shoot for every format",
+        body: "Coverage is planned for vertical, square and landscape, so one shoot produces a library of useful assets, not a single film.",
       },
       {
-        title: "Finish for the channel",
-        body: "Editing, colour, sound and captions are finished for the platforms in scope, with files named and exported for their intended use.",
+        title: "Edit for the channel",
+        body: "Editing, colour, sound, motion graphics and captions are finished for each platform, with files exported and named for their use.",
       },
     ],
     deliverables: [
-      "Creative treatment and direction",
-      "Shot list and storyboard",
-      "Production schedule and coordination",
+      "Concept, script and storyboard",
       "Shoot planning and on-set direction",
-      "Editing, colour and sound",
-      "Platform-ready cutdowns and formats",
+      "Brand films, Reels and ad videos",
+      "Editing, colour grading and sound",
+      "Motion graphics and captions",
+      "Platform-ready cutdowns",
     ],
     faqs: [
       {
-        q: "Do you handle full production?",
-        a: "We plan and lead the production within the agreed scope, coordinating the crew, equipment and locations the project needs. Those details are confirmed per project before work begins.",
+        q: "Can you edit footage we already have?",
+        a: "Yes. We can take existing footage and edit it into Reels, ads or a brand film, and advise on what extra coverage would help.",
       },
       {
-        q: "Does every project include every stage?",
-        a: "No. Some projects need only production support, some need a full shoot and edit. The scope, deliverables and number of shoot days are agreed in writing.",
+        q: "Does every project include a shoot?",
+        a: "No. Some projects are editing only, some need a full shoot and edit. The scope, deliverables and shoot days are agreed in writing.",
       },
     ],
     relatedWork: ["halcyon", "northwind", "fieldnote"],
   },
   {
-    slug: "indoor-production",
-    name: "Indoor Production",
-    shortName: "Indoor Production",
-    tagline: "Controlled light, clean detail.",
+    slug: "marketing-research",
+    name: "Marketing Research and Analytics",
+    shortName: "Marketing Research and Analytics",
+    tagline: "Decisions backed by data.",
     summary:
-      "Indoor video and photography for products, people and brand stories, in a studio or controlled location.",
-    division: "production",
-    icon: "Camera",
-    image: "/assets/images/studio.svg",
-    imageAlt: "Illustrative studio composition in cloud and ink tones",
+      "Audience, competitor and market research, plus analytics and reporting that show what is working and what to do next.",
+    division: "digital",
+    icon: "ChartColumn",
+    image: "/assets/images/insight-measurement.svg",
+    imageAlt: "Measurement artwork representing marketing analytics",
+    photo: "/assets/images/services/marketing-research.jpg",
     problem:
-      "Indoor work is unforgiving: colour shifts, reflections, background clutter and mixed light quickly make a product or a person look wrong. Without a shot plan, a controlled set still produces uncontrolled results.",
+      "Most marketing decisions are made on instinct, and most reports are a wall of numbers nobody acts on. Without research up front and clear measurement after, it is hard to know where to spend the next rupee.",
     problemPoints: [
-      "Product colour and texture that do not match the real item",
-      "Mixed light sources and distracting backgrounds",
-      "No plan for the angles, crops and details the marketing needs",
+      "Little understanding of the audience or competitors",
+      "Analytics installed but not configured to track what matters",
+      "Reports full of metrics with no clear recommendation",
     ],
     approach: [
       {
-        title: "Plan the shot list",
-        body: "We agree the product angles, people, details and crops before the shoot, based on how the images and footage will be used.",
+        title: "Research the market",
+        body: "We look at your audience, competitors and the language your customers use, so strategy starts from evidence rather than guesswork.",
       },
       {
-        title: "Control the light and set",
-        body: "Lighting, background and reflections are managed for consistency. Products are shown clearly and accurately, and people are photographed in calm, natural light.",
+        title: "Measure what matters",
+        body: "We set up analytics and conversion tracking around the actions that matter to the business, not vanity metrics.",
       },
       {
-        title: "Review on set, finish after",
-        body: "Framing and exposure are checked during the shoot. The selected images and edits are then finished consistently for the agreed channels.",
+        title: "Turn numbers into next steps",
+        body: "Reports are short and plain, and each one ends with clear recommendations for what to keep, change or stop.",
       },
     ],
     deliverables: [
-      "Indoor shoot plan and shot list",
-      "Studio or controlled-location coordination",
-      "Product photography",
-      "Indoor brand and people video",
-      "Consistent lighting and colour",
-      "Edited selects and agreed exports",
+      "Audience and customer research",
+      "Competitor and market analysis",
+      "Google Analytics 4 and tracking setup",
+      "Reporting dashboard",
+      "Campaign performance analysis",
+      "Monthly insights and recommendations",
     ],
     faqs: [
       {
-        q: "Do you provide the studio?",
-        a: "Studio or controlled-location access is confirmed per project and included in the agreed scope. If you already have a suitable space, we can plan around it.",
+        q: "Can you audit our existing analytics?",
+        a: "Yes. We can review what is being tracked today, fix the gaps and set up reporting that the team can actually use.",
       },
       {
-        q: "Can you shoot both products and people?",
-        a: "Yes. Product, people and brand-story content can be planned into one shoot, provided the shot list and schedule support it.",
+        q: "Do you need access to our accounts?",
+        a: "Usually read or analyst access to your analytics and ad accounts. Access is agreed up front and can be removed at any time.",
       },
     ],
-    relatedWork: ["halcyon", "northwind"],
-  },
-  {
-    slug: "outdoor-production",
-    name: "Outdoor Production",
-    shortName: "Outdoor Production",
-    tagline: "Real settings, planned properly.",
-    summary:
-      "On-location video and photography for branding and marketing, planned around light, weather, access and permissions.",
-    division: "production",
-    icon: "Sun",
-    image: "/assets/images/hero-visual.svg",
-    imageAlt: "Abstract aperture artwork representing an outdoor camera lens",
-    problem:
-      "Outdoor shoots depend on things that cannot be fully controlled: light, weather, access and busy backgrounds. A loose plan turns those variables into expensive compromises.",
-    problemPoints: [
-      "Light and weather changing faster than the schedule",
-      "Locations confirmed late or without the right permissions",
-      "Subjects lost against cluttered or inconsistent backgrounds",
-    ],
-    approach: [
-      {
-        title: "Scout and plan",
-        body: "We plan around the available light, the time of day, access and permissions, and agree a weather backup before the shoot.",
-      },
-      {
-        title: "Shoot with the setting, not against it",
-        body: "Natural light, movement and real settings are used deliberately. Subjects are kept distinct from busy backgrounds and coverage is planned for the edit.",
-      },
-      {
-        title: "Finish for the placement",
-        body: "Selected footage and images are graded and exported for the channels in scope, with captions and safe areas checked for each format.",
-      },
-    ],
-    deliverables: [
-      "Location and light plan",
-      "Permissions checklist",
-      "Outdoor video and photography",
-      "Natural-light direction",
-      "Edited selects and colour grade",
-      "Platform-ready cutdowns",
-    ],
-    faqs: [
-      {
-        q: "What happens if the weather changes?",
-        a: "We agree a backup plan before the shoot and flag risks early. If conditions make the agreed work impossible, we discuss the practical options rather than pretending the original plan is still viable.",
-      },
-      {
-        q: "Do you handle location permissions?",
-        a: "Permissions and access are confirmed before the shoot within the agreed scope. Any location fees or special requirements are agreed in writing.",
-      },
-    ],
-    relatedWork: ["kite", "verdant", "fieldnote"],
+    relatedWork: ["kite", "verdant"],
   },
 ];
 

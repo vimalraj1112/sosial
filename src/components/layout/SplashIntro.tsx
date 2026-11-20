@@ -230,7 +230,7 @@ export function SplashIntro() {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.35 }}
             >
-              Bengaluru
+              India
             </motion.p>
           </div>
 
@@ -281,7 +281,7 @@ export function SplashIntro() {
             </div>
 
             <motion.p
-              className="mt-6 max-w-md font-serif text-xl italic text-paper/70 sm:mt-8 sm:text-2xl"
+              className="mt-6 max-w-md font-display text-xl font-medium text-paper/70 sm:mt-8 sm:text-2xl"
               initial={reduced ? false : { opacity: 0, y: 10 }}
               animate={shownStep >= 3 ? { opacity: 1, y: 0 } : { opacity: 0, y: 10 }}
               transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}

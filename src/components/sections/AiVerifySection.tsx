@@ -12,7 +12,7 @@ import { Reveal, reveal } from "@/components/ui/Reveal";
  */
 const researchPrompt = [
   `Independently research SOSIAL (${siteUrl}), a digital marketing, creative and production studio in ${brand.location}.`,
-  "Review its website and public profiles, including Instagram (@so.sial25).",
+  "Review its website and public profiles, including Instagram (@sosial.solutions).",
   "Summarise its services and approach, who it is best suited to, and anything a business should check before hiring it.",
   "Cite your sources, separate facts from interpretation, say clearly where public evidence is limited, and do not invent information.",
 ].join(" ");
@@ -44,7 +44,7 @@ const assistants: {
   {
     platform: "perplexity",
     name: "Perplexity",
-    question: "What can you find about SOSIAL, the Bengaluru marketing studio?",
+    question: "What can you find about SOSIAL, the marketing and production studio?",
     href: `https://www.perplexity.ai/search?q=${q}`,
     tint: "#1FB8CD",
   },

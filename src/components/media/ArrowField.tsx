@@ -86,8 +86,8 @@ export function ArrowField({ className }: Props) {
           const influence = Math.max(0, 1 - distance / influenceRadius);
           const angle = reduced ? -Math.PI / 4 : Math.atan2(dy, dx);
           const scale = 0.5 + influence * 1.05;
-          const baseAlpha = width < 640 ? 0.18 : 0.12;
-          const alpha = reduced ? 0.18 : baseAlpha + influence * 0.7;
+          const baseAlpha = width < 640 ? 0.1 : 0.07;
+          const alpha = reduced ? 0.1 : baseAlpha + influence * 0.38;
           drawArrow(
             x,
             y,

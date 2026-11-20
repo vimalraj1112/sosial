@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
+import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "lenis/dist/lenis.css";
 import "./globals.css";
 import { brand, siteUrl, socialProfiles } from "@/data/brand";
@@ -23,16 +23,9 @@ const displayFont = Plus_Jakarta_Sans({
   display: "swap",
 });
 
-const editorialFont = Playfair_Display({
-  subsets: ["latin"],
-  style: ["normal", "italic"],
-  variable: "--font-playfair",
-  display: "swap",
-});
-
 const defaultTitle = "SOSIAL — Digital marketing, creative and production";
 const defaultDescription =
-  "Sosial is a digital marketing and creative brand in Bengaluru. Digital marketing, creative content and production, working as one.";
+  "SOSIAL is one creative partner for digital marketing, content and video production. Marketing with clarity. Creative with purpose. Execution you can count on.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -43,14 +36,15 @@ export const metadata: Metadata = {
   description: defaultDescription,
   applicationName: "SOSIAL",
   keywords: [
-    "digital marketing agency Bengaluru",
+    "digital marketing agency India",
     "social media marketing",
     "performance marketing",
-    "branding and creative strategy",
+    "personal branding",
     "website development",
-    "local digital visibility",
+    "Google Ads",
+    "Meta Ads",
     "video production",
-    "photography studio",
+    "video editing",
   ],
   alternates: { canonical: "/" },
   openGraph: {
@@ -98,22 +92,20 @@ const jsonLd = {
   image: `${siteUrl}/assets/brand/og.png`,
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Bengaluru",
-    addressRegion: "Karnataka",
     addressCountry: "IN",
   },
-  areaServed: "Bengaluru, India",
+  areaServed: "India",
   sameAs: socialProfiles.map((profile) => profile.href).filter((href) => href.startsWith("http") && !href.includes("wa.me")),
   knowsAbout: [
     "Social media marketing",
     "Paid advertising",
     "Performance marketing",
-    "Branding and creative strategy",
+    "Personal branding",
     "Website development",
-    "Local digital visibility",
-    "Branding and marketing production",
-    "Indoor production",
-    "Outdoor production",
+    "Google Ads",
+    "Meta Ads",
+    "Video production and editing",
+    "Marketing research and analytics",
   ],
 };
 
@@ -121,7 +113,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
-      className={`${bodyFont.variable} ${displayFont.variable} ${editorialFont.variable}`}
+      className={`${bodyFont.variable} ${displayFont.variable}`}
       data-scroll-behavior="smooth"
     >
       <body className="grain min-h-screen bg-paper text-ink antialiased">

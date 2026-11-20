@@ -57,7 +57,7 @@ export function PortfolioCta({
               {buttonLabel}
             </ButtonLink>
             <p className="mt-7 font-mono text-[0.58rem] uppercase tracking-[0.16em] text-paper/30">
-              Bengaluru · India
+              India
             </p>
           </div>
         </div>

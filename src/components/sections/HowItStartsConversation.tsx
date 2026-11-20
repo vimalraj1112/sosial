@@ -18,18 +18,25 @@ import {
 import { cn } from "@/lib/utils";
 
 type Message = {
-  /** "you" is the visitor (outgoing, right); "us" is Sosial (incoming, left). */
-  from: "you" | "us";
+  /** "us" is Sosial (outgoing, right); "client" is the business (incoming, left). */
+  from: "us" | "client";
   text: string;
   time: string;
 };
 
+/** A sample client. The chat is seen from Sosial's phone. */
+const client = {
+  name: "Rahul Mehta",
+  photo: "/assets/images/client-dp.jpg",
+};
+
 const conversation: Message[] = [
-  { from: "you", text: "Hey, I need a website and some Reels.", time: "10:02" },
-  { from: "us", text: "Nice. What’s the goal, and by when?", time: "10:03" },
-  { from: "you", text: "More enquiries. Next month, ideally.", time: "10:04" },
-  { from: "us", text: "Got it. We’ll send a plan with the scope and timeline in writing.", time: "10:05" },
-  { from: "us", text: "You approve, we create, you review. Simple.", time: "10:05" },
+  { from: "client", text: "Hello, I saw your work on Instagram.", time: "10:02" },
+  { from: "us", text: "Hello Rahul, thank you for reaching out. How can we help?", time: "10:02" },
+  { from: "client", text: "We need social media and a new website for our restaurant.", time: "10:04" },
+  { from: "us", text: "Happy to help. When would you like to launch?", time: "10:05" },
+  { from: "client", text: "In about a month.", time: "10:06" },
+  { from: "us", text: "Perfect. We’ll share a plan with scope, timeline and cost by tomorrow.", time: "10:07" },
 ];
 
 /** Milliseconds per character while the visitor's message is being typed. */
@@ -62,7 +69,7 @@ function Bubble({
   first: boolean;
   read: boolean;
 }) {
-  const out = message.from === "you";
+  const out = message.from === "us";
   return (
     <div className={cn("flex", out ? "justify-end" : "justify-start", first ? "mt-2" : "mt-0.5")}>
       <div
@@ -131,9 +138,9 @@ function TypingBubble() {
 }
 
 /**
- * The sample first chat, styled as a WhatsApp conversation. The visitor's
- * messages type into the message bar and send; Sosial's replies show
- * "typing…" first. It replays each time the chat scrolls back into view.
+ * A sample first chat with a client, styled as WhatsApp on Sosial's phone.
+ * Sosial's replies type into the message bar and send; the client's messages
+ * show "typing…" first. It replays each time the chat scrolls back into view.
  */
 export function Conversation() {
   const reduced = useReducedMotion();
@@ -175,7 +182,7 @@ export function Conversation() {
       await wait(400);
       for (let i = 0; i < conversation.length && !cancelled; i++) {
         const message = conversation[i];
-        if (message.from === "you") {
+        if (message.from === "us") {
           for (let c = 1; c <= message.text.length && !cancelled; c++) {
             setDraft(message.text.slice(0, c));
             await wait(TYPE_SPEED);
@@ -224,10 +231,10 @@ export function Conversation() {
       <div className={cn("flex items-center gap-2.5 px-2.5 py-2 text-white sm:gap-3 sm:px-3.5", wa.header)}>
         <ArrowLeft aria-hidden="true" className="h-5 w-5 shrink-0 opacity-95" strokeWidth={2} />
         <span className="relative h-9 w-9 shrink-0 overflow-hidden rounded-full bg-white">
-          <Image src="/assets/brand/sosial-app-icon.png" alt="" fill sizes="36px" className="object-cover" />
+          <Image src={client.photo} alt="" fill sizes="36px" className="object-cover" />
         </span>
         <div className="min-w-0 flex-1 leading-tight">
-          <p className="truncate text-[0.95rem] font-medium">Sosial</p>
+          <p className="truncate text-[0.95rem] font-medium">{client.name}</p>
           <p aria-live="off" className="truncate text-[0.72rem] text-white/80">
             {status}
           </p>
@@ -270,7 +277,7 @@ export function Conversation() {
           <ul className="sr-only [grid-area:1/1]">
             {conversation.map((message) => (
               <li key={message.text}>
-                {message.from === "you" ? "You:" : "Sosial:"} {message.text}
+                {message.from === "us" ? "Sosial:" : `${client.name}:`} {message.text}
               </li>
             ))}
           </ul>

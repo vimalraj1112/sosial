@@ -57,7 +57,7 @@ const items = [
     gradient: "bg-gradient-to-br from-[#8221FC] to-[#2A0F66]",
   },
   {
-    title: "Personal branding",
+    title: "Personal Branding",
     ask: "personal branding",
     icon: User,
     gradient: "bg-gradient-to-br from-[#373743] to-[#14141C]",
@@ -166,12 +166,12 @@ export function WhatWeMake() {
           <p>
             Want to see how we post? Follow{" "}
             <a
-              href="https://www.instagram.com/so.sial25/"
+              href="https://www.instagram.com/sosial.solutions/"
               target="_blank"
               rel="noopener noreferrer"
               className="font-semibold text-coral underline underline-offset-4 transition-colors hover:text-violet-deep"
             >
-              @so.sial25
+              @sosial.solutions
             </a>
             .
           </p>

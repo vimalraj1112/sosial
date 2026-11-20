@@ -15,12 +15,11 @@ export function FaqSection() {
           <div className="lg:sticky lg:top-28">
             <SectionLabel index="12">Questions</SectionLabel>
             <h2 {...reveal("rise")} className="display mt-5 text-[clamp(2rem,3.8vw,3.1rem)]">
-              Things worth asking{" "}
-              <span className="serif-accent text-coral">before</span> you hire anyone.
+              Questions clients{" "}
+              <span className="serif-accent text-coral">often</span> ask.
             </h2>
             <p {...reveal("up")} className="mt-5 max-w-sm text-[0.92rem] leading-relaxed text-ink/65">
-              If your question is not here, ask it directly. We would rather have an honest
-              conversation now than a difficult one later.
+              Cannot find your answer here? Message us directly and we will be happy to help.
             </p>
             <div {...reveal("up")} className="mt-7 flex flex-col gap-3 sm:flex-row">
               <Link

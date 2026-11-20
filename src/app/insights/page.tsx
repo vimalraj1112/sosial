@@ -10,7 +10,6 @@ import { Visual } from "@/components/ui/Visual";
 import { Typewriter, type TypewriterPart } from "@/components/ui/Typewriter";
 import { HeroBackdrop } from "@/components/media/HeroBackdrop";
 import { reveal } from "@/components/ui/Reveal";
-import { CountUp } from "@/components/motion/CountUp";
 
 export const metadata: Metadata = buildMetadata({
   title: "Insights — Notes on marketing, creative and production",
@@ -20,11 +19,8 @@ export const metadata: Metadata = buildMetadata({
 });
 
 const headline: TypewriterPart[][] = [
-  [
-    { text: "Thinking we would " },
-    { text: "defend", className: "serif-accent text-coral-soft" },
-    { text: " in a meeting." },
-  ],
+  [{ text: "Practical ideas to" }],
+  [{ text: "grow your brand.", className: "text-[#9C57FD]" }],
 ];
 
 export default function InsightsPage() {
@@ -36,41 +32,20 @@ export default function InsightsPage() {
       <section className="relative isolate overflow-hidden bg-night text-paper">
         <HeroBackdrop />
 
-        <div className="container-x relative py-16 sm:py-20 lg:py-24">
-          <SectionLabel index="—" tone="light">
-            Insights / Field notes
-          </SectionLabel>
-
-          <div className="mt-8 grid gap-10 lg:grid-cols-12 lg:items-end lg:gap-16">
-            <div className="lg:col-span-8">
-              <h1 className="display max-w-4xl text-[clamp(2.8rem,6.8vw,5.8rem)]">
-                <Typewriter lines={headline} speed={45} startDelay={140} trigger="mount" />
-              </h1>
-              <p className="mt-6 max-w-2xl text-[1rem] leading-relaxed text-paper/65 sm:text-[1.06rem]">
-                Notes on attention, brand, search, performance, content and production. Written for
-                people who have to make the work happen, not just approve it.
-              </p>
-            </div>
-            <div className="lg:col-span-4 lg:justify-self-end">
-              <div className="grid grid-cols-2 gap-6 border-t border-paper/15 pt-5 sm:max-w-xs">
-                <div>
-                  <p className="font-display text-3xl font-semibold tracking-[-0.04em] text-coral-soft">
-                    <CountUp value={String(articles.length).padStart(2, "0")} />
-                  </p>
-                  <p className="mt-1 text-[0.6rem] font-semibold uppercase tracking-[0.12em] text-paper/40">
-                    Notes
-                  </p>
-                </div>
-                <div>
-                  <p className="font-display text-3xl font-semibold tracking-[-0.04em] text-coral-soft">
-                    <CountUp value={String(articleCategories.length - 1).padStart(2, "0")} />
-                  </p>
-                  <p className="mt-1 text-[0.6rem] font-semibold uppercase tracking-[0.12em] text-paper/40">
-                    Topics
-                  </p>
-                </div>
-              </div>
-            </div>
+        <div className="container-x relative flex min-h-[70svh] flex-col items-center justify-center pb-16 pt-20 text-center sm:pt-24 lg:pb-20 lg:pt-28">
+          <h1 className="max-w-6xl font-display text-[clamp(2.3rem,6vw,5rem)] font-bold leading-[1.08] tracking-[-0.04em]">
+            <Typewriter lines={headline} speed={45} startDelay={140} trigger="mount" />
+          </h1>
+          <p className="mt-7 max-w-xl text-[1rem] leading-relaxed text-paper/65 sm:text-[1.1rem]">
+            Simple, useful notes on social media, ads, branding, SEO and video, written for business owners and marketing teams.
+          </p>
+          <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
+            <ButtonLink href="/contact" variant="primary" size="lg" arrow>
+              Start a conversation
+            </ButtonLink>
+            <ButtonLink href="/services" variant="light" size="lg">
+              Explore Services
+            </ButtonLink>
           </div>
         </div>
       </section>

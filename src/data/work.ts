@@ -4,7 +4,7 @@ export type ProjectCategory =
   | "Social"
   | "Web"
   | "Content"
-  | "Podcast";
+  | "SEO";
 
 export type ProjectGalleryItem = {
   src: string;
@@ -50,7 +50,7 @@ export const categoryLabels: Record<ProjectCategory, string> = {
   Social: "Social Media",
   Performance: "Performance Marketing",
   Content: "Content & Creative",
-  Podcast: "Podcast & Growth",
+  SEO: "SEO & Growth",
 };
 
 export const categoryOrder: ProjectCategory[] = [
@@ -59,7 +59,7 @@ export const categoryOrder: ProjectCategory[] = [
   "Social",
   "Performance",
   "Content",
-  "Podcast",
+  "SEO",
 ];
 
 const conceptNote =
@@ -140,7 +140,7 @@ export const projects: Project[] = [
     featured: true,
     projectType: "Social content system",
     tags: ["Social strategy", "Content system", "Community"],
-    services: ["social-media", "brand-production", "indoor-production"],
+    services: ["social-media", "video-production", "meta-ads"],
     objective:
       "Turn clinical credibility into a social language people want to spend time with, without overclaiming what the products can do.",
     challenge:
@@ -198,7 +198,7 @@ export const projects: Project[] = [
     featured: true,
     projectType: "Website experience",
     tags: ["UX architecture", "Web design", "Development"],
-    services: ["web-design", "branding", "brand-production"],
+    services: ["web-design", "branding", "video-production"],
     objective:
       "Put the architecture first, make the practice's point of view legible, and turn the website into a useful qualification tool rather than a digital brochure.",
     challenge:
@@ -314,7 +314,7 @@ export const projects: Project[] = [
     featured: true,
     projectType: "Editorial identity & publishing system",
     tags: ["Editorial identity", "Print & digital", "Publishing"],
-    services: ["branding", "social-media", "brand-production"],
+    services: ["branding", "social-media", "video-production"],
     objective:
       "Create an editorial identity and publishing system that can move from a long-form digital journal to print without losing intimacy or becoming precious.",
     challenge:
@@ -361,7 +361,7 @@ export const projects: Project[] = [
     number: "06",
     name: "Kite & Co.",
     category: "Web",
-    discipline: "Website, Podcast foundations, content",
+    discipline: "Website, SEO foundations, content",
     year: "2026",
     summary:
       "A consultancy with a referral-only pipeline. A new site built to make the expertise findable and the offer easy to buy.",
@@ -371,8 +371,8 @@ export const projects: Project[] = [
     aspect: "wide",
     featured: true,
     projectType: "Website & search foundation",
-    tags: ["Web design", "Podcast foundations", "Content"],
-    services: ["web-design", "local-visibility", "brand-production"],
+    tags: ["Web design", "SEO foundations", "Content"],
+    services: ["web-design", "google-ads", "video-production"],
     objective:
       "Turn expertise into findable pages and a clear offer, so growth does not depend entirely on word of mouth.",
     challenge:
@@ -396,7 +396,7 @@ export const projects: Project[] = [
       "Service and insight page templates",
       "Design system and build",
       "CMS and editorial workflow",
-      "On-page Podcast foundations",
+      "On-page SEO foundations",
       "Analytics and enquiry tracking",
     ],
     gallery: [
@@ -418,8 +418,8 @@ export const projects: Project[] = [
     slug: "verdant",
     number: "07",
     name: "Verdant Home",
-    category: "Podcast",
-    discipline: "Podcast, content strategy, editorial",
+    category: "SEO",
+    discipline: "SEO, content strategy, editorial",
     year: "2026",
     summary:
       "A homeware retailer with thousands of products and no content strategy. We built a topic system around how people actually furnish a home.",
@@ -428,8 +428,8 @@ export const projects: Project[] = [
       "Radar-style illustration with connected points on a cloud background",
     aspect: "wide",
     projectType: "Search & content program",
-    tags: ["Technical Podcast", "Content strategy", "Analytics"],
-    services: ["local-visibility", "branding", "web-design"],
+    tags: ["Technical SEO", "Content strategy", "Analytics"],
+    services: ["google-ads", "branding", "web-design"],
     objective:
       "Build a search and content system around real decorating decisions, connect it to commerce, and fix the technical foundations underneath it.",
     challenge:
@@ -449,7 +449,7 @@ export const projects: Project[] = [
       },
     ],
     deliverables: [
-      "Technical Podcast remediation plan",
+      "Technical SEO remediation plan",
       "Topic clusters and internal linking map",
       "Editorial briefs and production",
       "Category page optimisation",

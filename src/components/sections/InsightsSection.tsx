@@ -16,8 +16,8 @@ export function InsightsSection() {
           <div>
             <SectionLabel index="11">Insights</SectionLabel>
             <h2 {...reveal("rise")} className="display mt-5 max-w-xl text-[clamp(1.9rem,3.7vw,2.9rem)]">
-              Thinking we would{" "}
-              <span className="serif-accent text-coral">defend</span> in a meeting.
+              Practical ideas to{" "}
+              <span className="serif-accent text-coral">grow</span> your brand.
             </h2>
           </div>
           <div {...reveal("right")}>

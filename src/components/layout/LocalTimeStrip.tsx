@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-/** Sosial works out of Bengaluru, so the strip always reads Indian Standard Time. */
+/** Sosial works out of India, so the strip always reads Indian Standard Time. */
 const TIME_ZONE = "Asia/Kolkata";
 
 const formatDay = new Intl.DateTimeFormat("en-IN", { weekday: "long", timeZone: TIME_ZONE });
@@ -78,7 +78,7 @@ export function LocalTimeStrip() {
           <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-coral-soft" />
         </span>
         <p className="text-[0.62rem] font-semibold uppercase tracking-[0.16em] text-paper/40">
-          Bengaluru, India <span className="text-paper/25">/</span> IST
+          India <span className="text-paper/25">/</span> IST
         </p>
       </div>
 

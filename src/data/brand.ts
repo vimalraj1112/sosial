@@ -6,15 +6,18 @@
 export const brand = {
   name: "SOSIAL",
   legalName: "Sosial",
-  tagline: "Attention is earned, not bought.",
+  tagline: "Marketing with clarity. Creative with purpose. Execution you can count on.",
+  positioning: "One creative partner for digital marketing, content, and video production.",
   shortDescription:
-    "Sosial is a digital marketing and creative brand in Bengaluru. We bring digital marketing, creative content and production together, so your message, your visuals and your channels work as one.",
+    "SOSIAL is one creative partner for digital marketing, content and video production, helping businesses build their presence, communicate their value and connect with their audiences.",
   email: "sosial.solutions@gmail.com",
+  /** Inbox that receives website enquiries and booking requests. */
+  enquiryInbox: "sosialproductionsofficial@gmail.com",
   phoneLabel: "+91 91104 80590",
   phoneHref: "+919110480590",
   whatsappNumber: "919482861084",
   whatsappMessage: "Hi Sosial, I would like to talk about my marketing.",
-  location: "Bengaluru, India",
+  location: "India",
   responsePromise: "We aim to reply with a clear next step.",
 } as const;
 
@@ -28,6 +31,7 @@ export const whatsappHref = `https://wa.me/${brand.whatsappNumber}?text=${encode
 
 export const telHref = `tel:${brand.phoneHref}`;
 export const mailHref = `mailto:${brand.email}`;
+export const enquiryMailHref = `mailto:${brand.enquiryInbox}`;
 
 /** Splash intro — tagline and timings are configurable in one place. */
 export const intro = {
@@ -46,9 +50,9 @@ export const intro = {
 } as const;
 
 export const announcement = {
-  enabled: true,
-  label: "Bengaluru · Marketing & production",
-  shortLabel: "Bengaluru · Marketing",
+  enabled: false,
+  label: "Marketing & production",
+  shortLabel: "Marketing",
   message: "Two divisions, one direction.",
   cta: "Start a conversation",
   href: "/contact",
@@ -78,9 +82,9 @@ export const navigation: NavItem[] = [
         description: "Meta, Google and PPC campaigns",
       },
       {
-        label: "Branding & Creative Strategy",
+        label: "Personal Branding",
         href: "/services/branding",
-        description: "Messaging, direction and research",
+        description: "Positioning and content for founders",
       },
       {
         label: "Website Development",
@@ -88,24 +92,24 @@ export const navigation: NavItem[] = [
         description: "Business sites and landing pages",
       },
       {
-        label: "Local Digital Visibility",
-        href: "/services/local-visibility",
-        description: "Local Podcast and Google Business Profile",
+        label: "Google Ads",
+        href: "/services/google-ads",
+        description: "Search, Performance Max and YouTube",
       },
       {
-        label: "Branding & Marketing Production",
-        href: "/services/brand-production",
-        description: "End-to-end branding and marketing shoots",
+        label: "Meta Ads",
+        href: "/services/meta-ads",
+        description: "Facebook and Instagram campaigns",
       },
       {
-        label: "Indoor Production",
-        href: "/services/indoor-production",
-        description: "Studio and controlled-location work",
+        label: "Video Production & Editing",
+        href: "/services/video-production",
+        description: "Brand films, Reels and ads",
       },
       {
-        label: "Outdoor Production",
-        href: "/services/outdoor-production",
-        description: "On-location video and photography",
+        label: "Marketing Research and Analytics",
+        href: "/services/marketing-research",
+        description: "Research, tracking and reporting",
       },
     ],
   },
@@ -118,9 +122,9 @@ export const footerLinks = {
   services: [
     { label: "Social Media Marketing", href: "/services/social-media" },
     { label: "Paid Advertising", href: "/services/performance-marketing" },
-    { label: "Branding & Creative Strategy", href: "/services/branding" },
+    { label: "Personal Branding", href: "/services/branding" },
     { label: "Website Development", href: "/services/web-design" },
-    { label: "Branding & Marketing Production", href: "/services/brand-production" },
+    { label: "Video Production & Editing", href: "/services/video-production" },
     { label: "All services", href: "/services" },
   ],
   company: [
@@ -128,7 +132,6 @@ export const footerLinks = {
     { label: "Our Work", href: "/work" },
     { label: "Services", href: "/services" },
     { label: "Insights", href: "/insights" },
-    { label: "Testimonials", href: "/testimonials" },
     { label: "Contact", href: "/contact" },
   ],
   legal: [
@@ -148,7 +151,7 @@ export type SocialProfile = {
 };
 
 export const socialProfiles: SocialProfile[] = [
-  { label: "Instagram", href: "https://www.instagram.com/so.sial25/", icon: "instagram" },
+  { label: "Instagram", href: "https://www.instagram.com/sosial.solutions/", icon: "instagram" },
   { label: "WhatsApp", href: whatsappHref, icon: "whatsapp" },
   { label: "Email", href: mailHref, icon: "email" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/sosial-production-5703b144b/", icon: "linkedin" },
@@ -160,10 +163,11 @@ export const socialProfiles: SocialProfile[] = [
 export const capabilities = [
   "Social media",
   "Paid media",
-  "Brand strategy",
+  "Personal branding",
   "Websites",
-  "Local visibility",
-  "Brand production",
+  "Google Ads",
+  "Meta Ads",
+  "Research & analytics",
   "Photography",
   "Video",
   "Post-production",

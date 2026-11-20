@@ -35,7 +35,7 @@ export default function TestimonialsPage() {
             <SectionLabel index="—" tone="light">
               Testimonials / Client feedback
             </SectionLabel>
-            <Badge tone="light">Placeholder page</Badge>
+            <Badge tone="light">Coming soon</Badge>
           </div>
 
           <div className="mt-8 grid gap-10 lg:grid-cols-12 lg:items-end lg:gap-16">

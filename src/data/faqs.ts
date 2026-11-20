@@ -2,54 +2,54 @@ export type Faq = { q: string; a: string };
 
 export const faqs: Faq[] = [
   {
+    q: "What services do you offer?",
+    a: "Social media management, Google Ads, Meta Ads, personal branding, websites, video production and editing, and marketing research. You can choose one service or combine a few.",
+  },
+  {
     q: "What kind of businesses do you work with?",
-    a: "Businesses that need marketing, creative and production planned together: founders, marketing leads and in-house teams who want one clear direction across their channels. We work across B2B and consumer categories.",
+    a: "Startups, local businesses, growing brands and professionals across India who want to grow online. If we are not the right fit for you, we will tell you honestly.",
   },
   {
-    q: "Do you work on retainers or projects?",
-    a: "Both. Brand, website, campaign and production work can run as defined projects. Social media, paid media and ongoing content work best as a monthly retainer. The scope, deliverables and timeline are agreed in writing.",
+    q: "Do you work monthly or per project?",
+    a: "Both. Social media and ads usually run monthly. Websites, videos and branding are usually one-time projects. Everything is agreed in writing before we start.",
   },
   {
-    q: "Can you work with our existing team or agency?",
-    a: "Yes. We can act as the strategic, creative or production layer alongside internal specialists or another agency. We are clear about who owns what so the work does not fall between suppliers.",
-  },
-  {
-    q: "How quickly can we start?",
-    a: "It depends on the current schedule and the size of the engagement. A short conversation is the fastest way to find out. If we are not the right fit, we will say so.",
+    q: "How much does it cost?",
+    a: "It depends on what you need. After a short chat, we send a clear proposal with the scope, timeline and cost. No hidden charges.",
   },
   {
     q: "Do you guarantee results?",
-    a: "No. We do not guarantee leads, sales, revenue, engagement, rankings, map positions, ad performance or any other commercial outcome. We commit to the quality of the work, clear scope and honest reporting.",
+    a: "No honest agency can guarantee sales or followers. What we do promise is quality work, clear reporting and a plan that keeps improving.",
   },
   {
-    q: "What happens after we enquire?",
-    a: "We read your note and, if there is a fit, reply with a few clarifying questions or a short conversation. You then receive a written proposal covering scope, timeline, responsibilities and fees. There is no drip campaign and no obligation.",
+    q: "What happens after I contact you?",
+    a: "We understand your needs, ask a few questions and share a written plan with scope, timeline and cost. There is no obligation to go ahead.",
   },
 ];
 
 export const processSteps = [
   {
     number: "01",
-    title: "Brief",
-    body: "We start with the business, the audience and the job the work needs to do. Goals, constraints, channels and what has already been tried are agreed before anything is made.",
-    detail: "Discovery notes, objectives, scope and success measures",
+    title: "Understand",
+    body: "We learn about your business, your customers and your goals, and look at what has and has not worked before.",
+    detail: "Goals, audience, scope and how success will be measured",
   },
   {
     number: "02",
     title: "Plan",
-    body: "The idea becomes a practical plan: the message, the creative direction, the deliverables and the decisions that need to happen along the way.",
-    detail: "Strategy, creative direction, schedule and responsibilities",
+    body: "We turn that into a clear plan: what we will create, where it will run and when it will be ready.",
+    detail: "Strategy, content calendar, timeline and budget",
   },
   {
     number: "03",
-    title: "Make",
-    body: "Design, content, build or production happens in the open. Early reviews catch problems while they are still cheap to fix.",
-    detail: "Design, copy, development, content and production",
+    title: "Create",
+    body: "We design, shoot, write and build, sharing work early so your feedback is quick and easy.",
+    detail: "Content, videos, ads, website and campaigns",
   },
   {
     number: "04",
-    title: "Review",
-    body: "We check the work against the brief, agree final changes and hand over the files with the context needed to use them properly.",
-    detail: "Feedback, final files, handover and agreed reporting",
+    title: "Launch & improve",
+    body: "We go live, track the numbers and improve every month based on what we learn.",
+    detail: "Launch, monthly reports and ongoing improvements",
   },
 ];

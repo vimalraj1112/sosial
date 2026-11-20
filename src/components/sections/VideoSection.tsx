@@ -19,8 +19,7 @@ export function VideoSection() {
             </h2>
           </div>
           <p {...reveal("up")} className="max-w-sm text-[0.9rem] leading-relaxed text-paper/55 lg:col-span-4">
-            A short film on the studio, the process and the thinking behind a campaign. Final footage
-            will replace this placeholder reel before launch.
+            A short look at the studio, our process and the thinking behind a campaign.
           </p>
         </div>
 
@@ -35,7 +34,7 @@ export function VideoSection() {
         </Reveal>
 
         <div {...reveal("fade")} className="mt-4 flex flex-wrap items-center justify-between gap-3 text-[0.68rem] uppercase tracking-[0.14em] text-paper/35">
-          <span>Showreel · placeholder footage</span>
+          <span>Studio showreel</span>
           <span>No audio autoplay · keyboard accessible</span>
         </div>
       </div>

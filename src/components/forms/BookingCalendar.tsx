@@ -137,7 +137,6 @@ export function BookingCalendar() {
       email: "",
       phone: "",
       note: "",
-      consent: false,
       website: "",
     },
   });
@@ -198,9 +197,7 @@ export function BookingCalendar() {
           phone: values.phone ?? "",
           company: "",
           service: "Intro call",
-          budget: "",
           message,
-          consent: true,
           website: values.website ?? "",
           startedAt: started,
           idempotencyKey: key,
@@ -214,7 +211,7 @@ export function BookingCalendar() {
 
       if (!response.ok || !data?.ok) {
         setFailure(
-          data?.error ?? `We could not send your request. Please email ${brand.email} and we will book it there.`,
+          data?.error ?? `We could not send your request. Please email ${brand.enquiryInbox} and we will book it there.`,
         );
         return;
       }
@@ -224,7 +221,7 @@ export function BookingCalendar() {
       idempotencyKey.current = createKey();
     } catch {
       setFailure(
-        `Your request did not send, most likely a connection issue. Please try again or email ${brand.email}.`,
+        `Your request did not send, most likely a connection issue. Please try again or email ${brand.enquiryInbox}.`,
       );
     }
   };
@@ -493,7 +490,7 @@ export function BookingCalendar() {
                   id={id("name")}
                   type="text"
                   autoComplete="name"
-                  placeholder="Jordan Lee"
+                  placeholder="Rahul Sharma"
                   aria-invalid={Boolean(errors.name)}
                   className={inputOnDark}
                   {...register("name")}
@@ -545,10 +542,16 @@ export function BookingCalendar() {
             >
               <textarea
                 id={id("note")}
-                rows={3}
-                placeholder="The business, the goal, and any timing we should know about."
+                rows={1}
+                placeholder="Tell us about your business, your goal and your timeline."
                 aria-invalid={Boolean(errors.note)}
-                className={cn(inputOnDark, "resize-y")}
+                className={cn(inputOnDark, "block max-h-80 resize-none overflow-y-auto [field-sizing:content]")}
+                onInput={(event) => {
+                  // Starts one line tall and grows with what is typed.
+                  const box = event.currentTarget;
+                  box.style.height = "auto";
+                  box.style.height = `${box.scrollHeight}px`;
+                }}
                 {...register("note")}
               />
             </Field>
@@ -563,37 +566,6 @@ export function BookingCalendar() {
                 autoComplete="off"
                 {...register("website")}
               />
-            </div>
-
-            <div className="flex flex-col gap-1">
-              <label
-                htmlFor={id("consent")}
-                className="flex cursor-pointer items-start gap-3 text-[0.8rem] leading-relaxed text-paper/70"
-              >
-                <input
-                  id={id("consent")}
-                  type="checkbox"
-                  aria-invalid={Boolean(errors.consent)}
-                  className="mt-0.5 h-4 w-4 shrink-0 cursor-pointer accent-[var(--color-coral)]"
-                  {...register("consent")}
-                />
-                <span>
-                  I agree to SOSIAL using these details to arrange this call, as described in the{" "}
-                  <a href="/privacy" className="underline underline-offset-4 hover:text-coral-soft">
-                    privacy policy
-                  </a>
-                  .
-                </span>
-              </label>
-              <p
-                className={cn(
-                  "min-h-[1rem] text-[0.72rem]",
-                  errors.consent ? "text-coral-soft" : "text-transparent",
-                )}
-                aria-live="polite"
-              >
-                {errors.consent?.message ?? ""}
-              </p>
             </div>
 
             {failure ? (
@@ -636,11 +608,7 @@ export function BookingCalendar() {
             </div>
           </form>
         </div>
-      ) : (
-        <p className="mt-4 text-center text-[0.72rem] leading-relaxed text-paper/35">
-          Pick a day, then a time. All times are shown in {booking.timezoneLabel}.
-        </p>
-      )}
+      ) : null}
     </div>
   );
 }

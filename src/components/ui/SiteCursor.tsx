@@ -60,7 +60,7 @@ export function SiteCursor() {
     <motion.div
       aria-hidden="true"
       data-site-cursor
-      className="pointer-events-none fixed left-0 top-0 z-[120] mix-blend-difference"
+      className="pointer-events-none fixed left-0 top-0 z-[120] drop-shadow-[0_1px_2px_rgba(0,0,0,0.35)]"
       style={{ x, y }}
       initial={{ opacity: 0 }}
       animate={{ opacity: visible ? 1 : 0 }}
@@ -77,8 +77,8 @@ export function SiteCursor() {
         <path
           d="M1.5 1.5V21.5L6.6 16.4L10.9 25.1L14.4 23.5L10.2 14.9L17 14.9L1.5 1.5Z"
           fill="white"
-          stroke="white"
-          strokeWidth="1.1"
+          stroke="#111018"
+          strokeWidth="1.2"
           strokeLinejoin="round"
         />
       </svg>

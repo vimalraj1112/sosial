@@ -1,24 +1,24 @@
 import {
-  Camera,
-  Clapperboard,
-  MapPin,
+  ChartColumn,
+  Megaphone,
   MessagesSquare,
   MonitorSmartphone,
-  PenTool,
-  Sun,
+  Search,
   TrendingUp,
+  UserRound,
+  Video,
 } from "lucide-react";
 import type { IconName } from "@/data/services";
 
 const icons: Record<IconName, React.ComponentType<{ className?: string; strokeWidth?: number }>> = {
   MessagesSquare,
   TrendingUp,
-  PenTool,
+  UserRound,
   MonitorSmartphone,
-  MapPin,
-  Clapperboard,
-  Camera,
-  Sun,
+  Search,
+  Megaphone,
+  Video,
+  ChartColumn,
 };
 
 export function ServiceIcon({

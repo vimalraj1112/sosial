@@ -110,9 +110,6 @@ export function VideoShowcase({ poster, src, alt, label = "Play showreel", class
                   <source src={src} type="video/mp4" />
                 </video>
               )}
-              <p className="mt-4 text-center text-[0.7rem] uppercase tracking-[0.16em] text-paper/40">
-                Placeholder footage · final brand film pending
-              </p>
             </div>
           </motion.div>
         ) : null}

@@ -1,15 +1,24 @@
 import Link from "next/link";
-import { ArrowUpRight, Check } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { projectBySlug } from "@/data/work";
 import { Reveal, reveal } from "@/components/ui/Reveal";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Visual } from "@/components/ui/Visual";
 import { Badge } from "@/components/ui/Badge";
 
+const challenge =
+  "The business was paying for expensive Google ads, but most visitors left without enquiring. Costs kept rising while enquiries stayed flat.";
+
+const plan = [
+  "Target people already searching for the service",
+  "Match every ad to a landing page that answers their question",
+  "Track real enquiries, not just clicks",
+];
+
 const measures = [
-  "Qualified applications rather than raw form fills",
-  "Cost per qualified lead against an agreed target",
-  "Landing page clarity, tested one argument at a time",
+  "Quality enquiries, not just website visits",
+  "Cost per enquiry against an agreed target",
+  "Landing pages tested and improved step by step",
 ];
 
 export function SuccessStory() {
@@ -24,11 +33,11 @@ export function SuccessStory() {
           <div>
             <SectionLabel index="08">Concept story</SectionLabel>
             <h2 {...reveal("rise")} className="display mt-5 max-w-xl text-[clamp(2rem,3.9vw,3.1rem)]">
-              From generic traffic to a{" "}
-              <span className="serif-accent text-coral">clear argument</span>.
+              From wasted ad spend to{" "}
+              <span className="serif-accent text-coral">real enquiries</span>.
             </h2>
           </div>
-          <Badge tone="coral" className="w-fit" {...reveal("right")}>Illustrative concept · no verified results</Badge>
+          <Badge tone="coral" className="w-fit" {...reveal("right")}>Sample project · for illustration</Badge>
         </div>
 
         <div className="mt-10 grid gap-10 lg:grid-cols-12 lg:gap-14">
@@ -62,17 +71,28 @@ export function SuccessStory() {
 
           <div className="lg:col-span-5">
             <Reveal>
-              <p className="text-[0.68rem] uppercase tracking-[0.16em] text-ink/45">The problem</p>
-              <p className="mt-3 text-[0.95rem] leading-relaxed text-ink/70">{project.objective}</p>
+              <p className="text-[0.68rem] uppercase tracking-[0.16em] text-ink/45">The challenge</p>
+              <p className="mt-3 text-[0.95rem] leading-relaxed text-ink/70">{challenge}</p>
+            </Reveal>
+            <Reveal>
+              <p className="mt-7 text-[0.68rem] uppercase tracking-[0.16em] text-ink/45">Our plan</p>
+              <ul className="mt-3 space-y-3">
+                {plan.map((item) => (
+                  <li key={item} {...reveal("left")} className="flex gap-3 text-[0.88rem] leading-relaxed text-ink/65">
+                    <span aria-hidden="true" className="mt-[0.6em] h-1.5 w-1.5 shrink-0 rounded-full bg-coral" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </Reveal>
             <Reveal>
               <p className="mt-7 text-[0.68rem] uppercase tracking-[0.16em] text-ink/45">
-                What success would be measured on
+                How we measure success
               </p>
               <ul className="mt-3 space-y-3">
                 {measures.map((item) => (
                   <li key={item} {...reveal("left")} className="flex gap-3 text-[0.88rem] leading-relaxed text-ink/65">
-                    <Check aria-hidden="true" className="mt-1 h-4 w-4 shrink-0 text-coral" strokeWidth={2} />
+                    <span aria-hidden="true" className="mt-[0.6em] h-1.5 w-1.5 shrink-0 rounded-full bg-coral" />
                     {item}
                   </li>
                 ))}
@@ -81,11 +101,10 @@ export function SuccessStory() {
             </Reveal>
             <Reveal variant="scale">
               <div className="mt-7 rounded-2xl border-2 border-ink bg-cream p-5 shadow-hard-xs">
-                <p className="text-[0.66rem] font-semibold uppercase tracking-[0.12em] text-ink/50">Results</p>
+                <p className="text-[0.66rem] font-semibold uppercase tracking-[0.12em] text-ink/50">About results</p>
                 <p className="mt-2 text-[0.87rem] leading-relaxed text-ink/65">
-                  No performance data is published for this concept. On a real engagement, results
-                  would appear here only after the client has approved the figures and the measurement
-                  method.
+                  This sample shows how we approach a project. For client work, we only share results
+                  the client has approved.
                 </p>
               </div>
 
@@ -93,7 +112,7 @@ export function SuccessStory() {
                 href="/work"
                 className="group mt-7 inline-flex items-center gap-2 text-[0.82rem] font-medium text-ink transition-colors hover:text-coral"
               >
-                See all concept work
+                See more sample projects
                 <ArrowUpRight
                   aria-hidden="true"
                   className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"

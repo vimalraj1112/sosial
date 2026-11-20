@@ -1,14 +1,15 @@
+import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowUpRight,
-  Camera,
-  Clapperboard,
-  MapPin,
+  ChartColumn,
+  Megaphone,
   MessagesSquare,
   MonitorSmartphone,
-  PenTool,
-  Sun,
+  Search,
   TrendingUp,
+  UserRound,
+  Video,
 } from "lucide-react";
 import { services, type IconName } from "@/data/services";
 import { Reveal, reveal } from "@/components/ui/Reveal";
@@ -18,12 +19,12 @@ import { ButtonLink } from "@/components/ui/Button";
 const icons: Record<IconName, React.ComponentType<{ className?: string; strokeWidth?: number }>> = {
   MessagesSquare,
   TrendingUp,
-  PenTool,
+  UserRound,
   MonitorSmartphone,
-  MapPin,
-  Clapperboard,
-  Camera,
-  Sun,
+  Search,
+  Megaphone,
+  Video,
+  ChartColumn,
 };
 
 export function ServicesGrid() {
@@ -43,8 +44,8 @@ export function ServicesGrid() {
           </div>
           <div {...reveal("up")} className="max-w-xs">
             <p className="text-[0.95rem] leading-relaxed text-paper/65">
-              Eight services across two divisions, designed to work as one system rather than
-              separate suppliers.
+              Eight services that work together, so your brand speaks with one clear voice
+              everywhere.
             </p>
             <ButtonLink href="/services" variant="light" size="sm" className="mt-5" arrow>
               All services
@@ -60,13 +61,26 @@ export function ServicesGrid() {
                 <Link
                   id={`service-${service.slug}`}
                   href={`/services/${service.slug}`}
-                  className="group flex h-full scroll-mt-28 flex-col justify-between gap-8 rounded-card border-2 border-ink bg-card p-6 text-ink shadow-[4px_4px_0_0_var(--color-coral)] transition-[transform,box-shadow] duration-200 hover:-translate-y-1 hover:shadow-[7px_7px_0_0_var(--color-coral)] sm:p-7"
+                  className="group relative isolate flex h-full min-h-[21rem] scroll-mt-28 flex-col justify-between gap-8 overflow-hidden rounded-card border-2 border-ink bg-night p-6 text-paper shadow-[4px_4px_0_0_var(--color-coral)] transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[7px_7px_0_0_var(--color-coral)] sm:p-7"
                 >
+                  {/* Photo with a dark fade so the text reads on any image. */}
+                  <Image
+                    src={service.photo}
+                    alt=""
+                    fill
+                    sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                    className="-z-20 object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                  />
+                  <span
+                    aria-hidden="true"
+                    className="absolute inset-0 -z-10 bg-gradient-to-t from-night via-night/70 to-night/25"
+                  />
+
                   <div className="flex items-start justify-between gap-4">
-                    <span className="flex h-12 w-12 items-center justify-center rounded-xl border-2 border-ink/15 bg-paper">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-xl border-2 border-paper/30 bg-paper">
                       <Icon aria-hidden="true" className="h-[1.35rem] w-[1.35rem] text-coral" strokeWidth={1.8} />
                     </span>
-                    <span className="text-[0.68rem] font-semibold tracking-[0.12em] text-ink/35">
+                    <span className="text-[0.68rem] font-semibold tracking-[0.12em] text-paper/70">
                       0{index + 1}
                     </span>
                   </div>
@@ -74,10 +88,10 @@ export function ServicesGrid() {
                     <h3 className="text-[1.3rem] font-semibold leading-tight tracking-[-0.025em]">
                       {service.shortName}
                     </h3>
-                    <p className="mt-2 text-[0.87rem] leading-relaxed text-ink/60">
+                    <p className="mt-2 text-[0.87rem] leading-relaxed text-paper/80">
                       {service.tagline}
                     </p>
-                    <span className="mt-5 inline-flex items-center gap-1.5 text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-coral">
+                    <span className="mt-5 inline-flex items-center gap-1.5 text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-coral-soft">
                       Explore
                       <ArrowUpRight
                         aria-hidden="true"

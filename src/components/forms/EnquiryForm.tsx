@@ -2,10 +2,10 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Check, Loader2, ArrowUpRight } from "lucide-react";
-import { useEffect, useId, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState, type ChangeEvent } from "react";
 import { useForm } from "react-hook-form";
-import { brand, mailHref } from "@/data/brand";
-import { budgetOptions, enquirySchema, serviceInterestOptions, type EnquiryValues } from "@/lib/validation";
+import { brand, enquiryMailHref } from "@/data/brand";
+import { enquirySchema, serviceInterestOptions, type EnquiryValues } from "@/lib/validation";
 import { Field, inputBase, inputOnDark } from "@/components/ui/Field";
 import { cn } from "@/lib/utils";
 
@@ -49,9 +49,7 @@ export function EnquiryForm({ variant = "full", tone = "dark", className }: Prop
       phone: "",
       company: "",
       service: "",
-      budget: "",
       message: "",
-      consent: false,
       website: "",
     },
   });
@@ -59,6 +57,15 @@ export function EnquiryForm({ variant = "full", tone = "dark", className }: Prop
   const dark = tone === "dark";
   const inputClass = dark ? inputOnDark : inputBase;
   const id = (name: string) => `${uid}-${name}`;
+
+  // The message box starts one line tall and grows with what is typed.
+  const message = register("message");
+  const onMessageChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
+    const box = event.target;
+    box.style.height = "auto";
+    box.style.height = `${box.scrollHeight}px`;
+    return message.onChange(event);
+  };
 
   const onSubmit = async (values: EnquiryValues) => {
     setFailure(null);
@@ -86,7 +93,7 @@ export function EnquiryForm({ variant = "full", tone = "dark", className }: Prop
       if (!response.ok || !data?.ok) {
         setFailure(
           data?.error ??
-            `We could not send your enquiry. Please email us directly at ${brand.email}.`,
+            `We could not send your enquiry. Please email us directly at ${brand.enquiryInbox}.`,
         );
         return;
       }
@@ -96,7 +103,7 @@ export function EnquiryForm({ variant = "full", tone = "dark", className }: Prop
       idempotencyKey.current = createKey();
     } catch {
       setFailure(
-        `Your message did not send, most likely a connection issue. Please try again or email ${brand.email}.`,
+        `Your message did not send, most likely a connection issue. Please try again or email ${brand.enquiryInbox}.`,
       );
     }
   };
@@ -120,8 +127,8 @@ export function EnquiryForm({ variant = "full", tone = "dark", className }: Prop
         </h3>
         <p className={cn("max-w-md text-sm leading-relaxed", dark ? "text-paper/60" : "text-ink/65")}>
           {brand.responsePromise} If it is urgent, write to{" "}
-          <a href={mailHref} className="underline underline-offset-4">
-            {brand.email}
+          <a href={enquiryMailHref} className="underline underline-offset-4">
+            {brand.enquiryInbox}
           </a>
           .
         </p>
@@ -149,7 +156,7 @@ export function EnquiryForm({ variant = "full", tone = "dark", className }: Prop
             id={id("name")}
             type="text"
             autoComplete="name"
-            placeholder="Jordan Lee"
+            placeholder="Rahul Sharma"
             aria-invalid={Boolean(errors.name)}
             className={inputClass}
             {...register("name")}
@@ -212,7 +219,7 @@ export function EnquiryForm({ variant = "full", tone = "dark", className }: Prop
           htmlFor={id("service")}
           error={errors.service?.message}
           tone={dark ? "light" : "dark"}
-          className={variant === "compact" ? "sm:col-span-2" : undefined}
+          className="sm:col-span-2"
         >
           <select
             id={id("service")}
@@ -232,31 +239,6 @@ export function EnquiryForm({ variant = "full", tone = "dark", className }: Prop
           </select>
         </Field>
 
-        {variant === "full" ? (
-          <Field
-            label="Budget range"
-            htmlFor={id("budget")}
-            optional
-            error={errors.budget?.message}
-            tone={dark ? "light" : "dark"}
-          >
-            <select
-              id={id("budget")}
-              className={cn(inputClass, "appearance-none bg-[right_1rem_center] pr-10")}
-              defaultValue=""
-              {...register("budget")}
-            >
-              <option value="" className="text-ink">
-                Not specified
-              </option>
-              {budgetOptions.map((option) => (
-                <option key={option} value={option} className="text-ink">
-                  {option}
-                </option>
-              ))}
-            </select>
-          </Field>
-        ) : null}
       </div>
 
       <Field
@@ -267,11 +249,12 @@ export function EnquiryForm({ variant = "full", tone = "dark", className }: Prop
       >
         <textarea
           id={id("message")}
-          rows={variant === "compact" ? 3 : 5}
-          placeholder="A little context on the business, the goal and any timing."
+          rows={1}
+          placeholder="Tell us about your business, your goal and your timeline."
           aria-invalid={Boolean(errors.message)}
-          className={cn(inputClass, "resize-y")}
-          {...register("message")}
+          className={cn(inputClass, "block max-h-80 resize-none overflow-y-auto [field-sizing:content]")}
+          {...message}
+          onChange={onMessageChange}
         />
       </Field>
 
@@ -279,37 +262,6 @@ export function EnquiryForm({ variant = "full", tone = "dark", className }: Prop
       <div className="absolute left-[-9999px] top-auto h-px w-px overflow-hidden" aria-hidden="true">
         <label htmlFor={id("website")}>Website</label>
         <input id={id("website")} type="text" tabIndex={-1} autoComplete="off" {...register("website")} />
-      </div>
-
-      <div className="flex flex-col gap-1">
-        <label
-          htmlFor={id("consent")}
-          className={cn(
-            "flex cursor-pointer items-start gap-3 text-[0.8rem] leading-relaxed",
-            dark ? "text-paper/70" : "text-ink/70",
-          )}
-        >
-          <input
-            id={id("consent")}
-            type="checkbox"
-            aria-invalid={Boolean(errors.consent)}
-            className="mt-0.5 h-4 w-4 shrink-0 cursor-pointer accent-[var(--color-coral)]"
-            {...register("consent")}
-          />
-          <span>
-            I agree to SOSIAL using these details to reply to my enquiry, as described in the{" "}
-            <a href="/privacy" className="underline underline-offset-4 hover:text-coral">
-              privacy policy
-            </a>
-            .
-          </span>
-        </label>
-        <p
-          className={cn("min-h-[1rem] text-[0.72rem]", errors.consent ? "text-coral" : "text-transparent")}
-          aria-live="polite"
-        >
-          {errors.consent?.message ?? ""}
-        </p>
       </div>
 
       {failure ? (

@@ -25,7 +25,7 @@ The following details are now live in `src/data/brand.ts`:
 - Phone: `+91 91104 80590`
 - WhatsApp: `9482861084` (`https://wa.me/919482861084`)
 - Instagram: `@so.sial25`
-- Location: Bengaluru, India
+- Location: India
 - Site URL: `https://sosial.solutions`
 
 **Still needed:**

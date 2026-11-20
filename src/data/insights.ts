@@ -9,7 +9,7 @@ export type Article = {
   slug: string;
   title: string;
   excerpt: string;
-  category: "Strategy" | "Podcast" | "Performance" | "Branding" | "Video" | "Analytics";
+  category: "Strategy" | "SEO" | "Performance" | "Branding" | "Video" | "Analytics";
   date: string;
   readingTime: string;
   image: string;
@@ -87,10 +87,10 @@ export const articles: Article[] = [
   },
   {
     slug: "seo-is-a-product-problem",
-    title: "Podcast is a product problem, not a content problem",
+    title: "SEO is a product problem, not a content problem",
     excerpt:
       "Publishing more articles will not fix a site that is hard to crawl, slow to load and structured around internal departments instead of customer questions.",
-    category: "Podcast",
+    category: "SEO",
     date: "2026-08-27",
     readingTime: "5 min read",
     image: "/assets/images/insight-seo.svg",

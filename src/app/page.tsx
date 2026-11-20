@@ -8,13 +8,8 @@ import { HowItStarts } from "@/components/sections/HowItStarts";
 import { WhatWeMake } from "@/components/sections/WhatWeMake";
 import { MidCta } from "@/components/sections/MidCta";
 import { WaysOfWorking } from "@/components/sections/WaysOfWorking";
-import { EngagementModels } from "@/components/sections/EngagementModels";
-import { FeaturedWork } from "@/components/sections/FeaturedWork";
-import { Gallery } from "@/components/sections/Gallery";
 import { VideoSection } from "@/components/sections/VideoSection";
 import { SuccessStory } from "@/components/sections/SuccessStory";
-import { ProcessSection } from "@/components/sections/ProcessSection";
-import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { AiVerifySection } from "@/components/sections/AiVerifySection";
 import { InsightsSection } from "@/components/sections/InsightsSection";
 import { BookingSection } from "@/components/sections/BookingSection";
@@ -24,7 +19,7 @@ import { FinalEnquiry } from "@/components/sections/FinalEnquiry";
 export const metadata: Metadata = buildMetadata({
   title: "SOSIAL — Digital marketing, creative and production",
   description:
-    "Sosial is a digital marketing and creative brand in Bengaluru, bringing digital marketing, creative content and production together to work as one.",
+    "SOSIAL is one creative partner for digital marketing, content and video production. Marketing with clarity. Creative with purpose. Execution you can count on.",
   path: "/",
 });
 
@@ -39,17 +34,12 @@ export default function HomePage() {
       <WhatWeMake />
       <MidCta />
       <WaysOfWorking />
-      <EngagementModels />
-      <FeaturedWork />
-      <Gallery />
       <VideoSection />
       <SuccessStory />
-      <ProcessSection />
-      <TestimonialsSection />
       <AiVerifySection />
       <InsightsSection />
-      <BookingSection />
       <FaqSection />
+      <BookingSection />
       <FinalEnquiry />
     </>
   );

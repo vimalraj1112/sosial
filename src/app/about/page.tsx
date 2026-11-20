@@ -12,21 +12,17 @@ import { Visual } from "@/components/ui/Visual";
 import { Typewriter, type TypewriterPart } from "@/components/ui/Typewriter";
 import { HeroBackdrop } from "@/components/media/HeroBackdrop";
 import { reveal } from "@/components/ui/Reveal";
-import { CountUp } from "@/components/motion/CountUp";
 
 export const metadata: Metadata = buildMetadata({
-  title: "About — A marketing and creative brand in Bengaluru",
+  title: "About — A marketing and creative brand",
   description:
-    "Sosial brings digital marketing, branding, websites and visual production together. Based in Bengaluru, built around one clear direction from strategy to delivery.",
+    "Sosial brings digital marketing, branding, websites and visual production together, built around one clear direction from strategy to delivery.",
   path: "/about",
 });
 
 const headline: TypewriterPart[][] = [
-  [
-    { text: "A marketing and creative brand, built for the " },
-    { text: "whole story", className: "serif-accent text-coral-soft" },
-    { text: "." },
-  ],
+  [{ text: "One studio, built for" }],
+  [{ text: "the whole story.", className: "text-[#9C57FD]" }],
 ];
 
 const beliefs = [
@@ -60,60 +56,21 @@ export default function AboutPage() {
       <section className="relative isolate overflow-hidden bg-night text-paper">
         <HeroBackdrop />
 
-        <div className="container-x relative py-16 sm:py-20 lg:py-24">
-          <SectionLabel index="—" tone="light">
-            About / Sosial
-          </SectionLabel>
-
-          <div className="mt-8 grid gap-12 lg:grid-cols-12 lg:items-end lg:gap-16">
-            <div className="lg:col-span-8">
-              <h1 className="display max-w-5xl text-[clamp(2.7rem,6.5vw,5.5rem)]">
-                <Typewriter lines={headline} speed={45} startDelay={140} trigger="mount" />
-              </h1>
-              <p className="mt-6 max-w-2xl text-[1rem] leading-relaxed text-paper/65 sm:text-[1.06rem]">
-                Sosial brings digital marketing, creative content and production together, so your
-                message, your visuals and your channels work as one. Based in Bengaluru, with a clear
-                plan, careful work and honest communication from the first conversation to final
-                delivery.
-              </p>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <ButtonLink href="/contact" variant="primaryOnDark" arrow>
-                  Start a conversation
-                </ButtonLink>
-                <ButtonLink href="/services" variant="light">
-                  Explore Services
-                </ButtonLink>
-              </div>
-            </div>
-
-            <div className="lg:col-span-4">
-              <div {...reveal("right")} className="rounded-card border border-paper/20 bg-night-soft/80 p-5 shadow-[5px_5px_0_0_var(--color-coral)] sm:p-6">
-                <p className="text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-paper/40">
-                  The short version
-                </p>
-                <dl className="mt-5 space-y-4">
-                  <div className="flex items-end justify-between gap-4 border-b border-paper/12 pb-4">
-                    <dt className="text-[0.78rem] text-paper/55">Based in</dt>
-                    <dd className="text-[0.86rem] font-medium text-paper/85">{brand.location}</dd>
-                  </div>
-                  <div className="flex items-end justify-between gap-4 border-b border-paper/12 pb-4">
-                    <dt className="text-[0.78rem] text-paper/55">Divisions</dt>
-                    <dd className="text-[0.86rem] font-medium text-paper/85">
-                      <CountUp value="02" />
-                    </dd>
-                  </div>
-                  <div className="flex items-end justify-between gap-4">
-                    <dt className="text-[0.78rem] text-paper/55">Services</dt>
-                    <dd className="text-[0.86rem] font-medium text-paper/85">
-                      <CountUp value={String(services.length).padStart(2, "0")} />
-                    </dd>
-                  </div>
-                </dl>
-                <p className="mt-5 border-t border-paper/12 pt-4 text-[0.72rem] leading-relaxed text-paper/40">
-                  Marketing, creative and production, working as one.
-                </p>
-              </div>
-            </div>
+        <div className="container-x relative flex min-h-[70svh] flex-col items-center justify-center pb-16 pt-20 text-center sm:pt-24 lg:pb-20 lg:pt-28">
+          <h1 className="max-w-6xl font-display text-[clamp(2.3rem,6vw,5rem)] font-bold leading-[1.08] tracking-[-0.04em]">
+            <Typewriter lines={headline} speed={45} startDelay={140} trigger="mount" />
+          </h1>
+          <p className="mt-7 max-w-xl text-[1rem] leading-relaxed text-paper/65 sm:text-[1.1rem]">
+            {brand.positioning} Clear plans, careful work and honest communication from the first
+            chat to final delivery.
+          </p>
+          <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
+            <ButtonLink href="/contact" variant="primary" size="lg" arrow>
+              Start a conversation
+            </ButtonLink>
+            <ButtonLink href="/services" variant="light" size="lg">
+              Explore Services
+            </ButtonLink>
           </div>
         </div>
       </section>
@@ -261,12 +218,12 @@ export default function AboutPage() {
           <div className="mt-8 grid gap-10 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-5">
               <h2 {...reveal("rise")} className="display max-w-xl text-[clamp(2rem,4vw,3.2rem)]">
-                A process that removes{" "}
-                <span className="serif-accent text-coral">surprises</span>.
+                Four simple steps, from idea to{" "}
+                <span className="serif-accent text-coral">launch</span>.
               </h2>
               <p {...reveal("up")} className="mt-5 max-w-md text-[0.95rem] leading-relaxed text-ink/65">
-                Four phases, each with a clear output and a decision point. You always know what is
-                happening, what is next and what we need from you.
+                Each step has a clear outcome, so you always know where your project stands and
+                what we need from you.
               </p>
               <div className="media-frame mt-8 max-w-md shadow-hard-sm">
                 <Visual
@@ -324,10 +281,6 @@ export default function AboutPage() {
                 </li>
               ))}
             </ul>
-            <p {...reveal("fade")} className="mt-8 max-w-lg text-[0.78rem] leading-relaxed text-ink/45">
-              {brand.location}. Named team profiles, biographies and client logos will
-              be added when supplied and approved.
-            </p>
           </div>
 
           <div className="lg:col-span-6 lg:pl-8">

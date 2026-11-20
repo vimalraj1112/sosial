@@ -57,7 +57,6 @@ async function deliver(payload: {
   phone?: string;
   company?: string;
   service: string;
-  budget?: string;
   message: string;
 }): Promise<"email" | "smtp" | "webhook" | "file" | "none"> {
   const text = [
@@ -68,7 +67,6 @@ async function deliver(payload: {
     `Phone: ${payload.phone || "-"}`,
     `Company: ${payload.company || "-"}`,
     `Service: ${payload.service}`,
-    `Budget: ${payload.budget || "-"}`,
     ``,
     `Message:`,
     payload.message,
@@ -123,7 +121,7 @@ async function deliver(payload: {
 
     await transporter.sendMail({
       from: from || `SOSIAL <${smtpUser}>`,
-      to: to || brand.email,
+      to: to || brand.enquiryInbox,
       replyTo: payload.email,
       subject: `SOSIAL enquiry: ${payload.name} — ${payload.service}`,
       text,
@@ -223,7 +221,6 @@ export async function POST(request: Request) {
       phone: values.phone || undefined,
       company: values.company || undefined,
       service: values.service,
-      budget: values.budget || undefined,
       message: values.message,
     });
 
@@ -231,7 +228,7 @@ export async function POST(request: Request) {
       return NextResponse.json(
         {
           ok: false,
-          error: `Email delivery is not configured yet. Please write to ${brand.email} and we will reply directly.`,
+          error: `Email delivery is not configured yet. Please write to ${brand.enquiryInbox} and we will reply directly.`,
           code: "not-configured",
         },
         { status: 503 },
@@ -246,7 +243,7 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         ok: false,
-        error: `We could not deliver your enquiry. Please email ${brand.email} and we will pick it up there.`,
+        error: `We could not deliver your enquiry. Please email ${brand.enquiryInbox} and we will pick it up there.`,
         code: "delivery-failed",
       },
       { status: 502 },

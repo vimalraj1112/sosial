@@ -1,16 +1,7 @@
-import { Check, Clock, Mail } from "lucide-react";
 import { BookingCalendar } from "@/components/forms/BookingCalendar";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { booking } from "@/data/booking";
-import { brand, mailHref } from "@/data/brand";
 import { reveal } from "@/components/ui/Reveal";
-
-const assurances = [
-  { icon: Clock, label: booking.durationLabel + " intro call" },
-  { icon: Check, label: "No commitment required" },
-  { icon: Check, label: "A clear next step" },
-  { icon: Check, label: "Reply within one business day" },
-];
 
 export function BookingSection() {
   return (
@@ -41,40 +32,7 @@ export function BookingSection() {
           <BookingCalendar />
         </div>
 
-        <ul className="mt-6 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-4">
-          {assurances.map(({ icon: Icon, label }) => (
-            <li
-              key={label}
-              {...reveal("up")}
-              className="flex items-center gap-3 rounded-xl border border-paper/10 bg-paper/[0.03] px-4 py-3"
-            >
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-coral/15 text-coral-soft">
-                <Icon aria-hidden="true" className="h-4 w-4" strokeWidth={2} />
-              </span>
-              <span className="text-[0.8rem] font-medium leading-snug text-paper/75">{label}</span>
-            </li>
-          ))}
-        </ul>
 
-        <div {...reveal("fade")} className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-paper/12 pt-6 text-[0.76rem] text-paper/40 sm:flex-row">
-          <p className="flex items-center gap-2.5">
-            <span aria-hidden="true" className="relative flex h-1.5 w-1.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-coral-soft opacity-70 motion-reduce:hidden" />
-              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-coral-soft" />
-            </span>
-            {brand.location} <span className="text-paper/20">/</span> {booking.timezoneLabel}
-          </p>
-          <p className="flex items-center gap-1.5">
-            <Mail aria-hidden="true" className="h-3.5 w-3.5" strokeWidth={1.8} />
-            Prefer email?{" "}
-            <a
-              href={mailHref}
-              className="font-medium text-paper/70 underline underline-offset-4 transition-colors hover:text-coral-soft"
-            >
-              {brand.email}
-            </a>
-          </p>
-        </div>
       </div>
     </section>
   );

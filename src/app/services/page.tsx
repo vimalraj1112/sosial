@@ -17,7 +17,7 @@ import { CountUp } from "@/components/motion/CountUp";
 export const metadata: Metadata = buildMetadata({
   title: "Services — Digital marketing, creative and production",
   description:
-    "Eight services across two divisions: digital marketing and creative growth, plus video production and photography. Strategy, content, campaigns, websites and shoots, planned as one.",
+    "Eight services across two divisions: digital marketing and video production. Social media, Google and Meta ads, personal branding, websites, research and video, planned as one.",
   path: "/services",
 });
 
@@ -57,8 +57,8 @@ export default function ServicesPage() {
                 <Typewriter lines={headline} speed={45} startDelay={140} trigger="mount" />
               </h1>
               <p className="mt-6 max-w-2xl text-[1rem] leading-relaxed text-paper/65 sm:text-[1.06rem]">
-                Strategy, social media, advertising, branding, websites and local visibility sit
-                alongside video production, photography and post-production. You can start with one
+                Social media, Google and Meta ads, personal branding, websites and research sit
+                alongside video production and editing. You can start with one
                 service, but the work is planned to fit the whole brand.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
@@ -66,7 +66,7 @@ export default function ServicesPage() {
                   Start a conversation
                 </ButtonLink>
                 <ButtonLink href="/work" variant="light">
-                  See Selected Work
+                  See our work
                 </ButtonLink>
               </div>
 
@@ -92,7 +92,7 @@ export default function ServicesPage() {
                     <CountUp value="01" />
                   </p>
                   <p className="mt-1 text-[0.6rem] font-semibold uppercase leading-snug tracking-[0.12em] text-paper/40">
-                    Standard
+                    Point of contact
                   </p>
                 </div>
               </div>
@@ -113,7 +113,7 @@ export default function ServicesPage() {
                         {division.name}
                       </p>
                       <p className="mt-1 text-[0.78rem] leading-relaxed text-paper/50">
-                        {division.serviceSlugs.length} services
+                        {division.serviceSlugs.length} {division.serviceSlugs.length === 1 ? "service" : "services"}
                       </p>
                     </div>
                   ))}
@@ -172,9 +172,6 @@ export default function ServicesPage() {
                       sizes="(min-width: 1024px) 38vw, 100vw"
                     />
                   </div>
-                  <p {...reveal("fade")} className="mt-3 text-[0.72rem] leading-relaxed text-ink/45">
-                    Illustrative studio artwork. Client work will replace this asset.
-                  </p>
                 </div>
 
                 <div className="lg:col-span-7">
@@ -237,6 +234,34 @@ export default function ServicesPage() {
                     </Link>
                   </div>
 
+                  {division.id === "digital" ? (
+                    <Link
+                      {...reveal("up")}
+                      href="/contact"
+                      className="group mt-3 flex flex-wrap items-center justify-between gap-3 rounded-card border-2 border-ink/15 bg-card px-5 py-4 text-ink transition-colors hover:border-ink sm:px-6"
+                    >
+                      <span>
+                        <span className="block text-[0.6rem] font-semibold uppercase tracking-[0.14em] text-coral">
+                          Also available
+                        </span>
+                        <span className="mt-1 block font-display text-[1.05rem] font-semibold tracking-[-0.02em]">
+                          Branding
+                        </span>
+                        <span className="mt-0.5 block text-[0.82rem] leading-relaxed text-ink/60">
+                          Brand identity, logo and visual guidelines that keep your business recognisable.
+                        </span>
+                      </span>
+                      <span className="inline-flex items-center gap-1.5 text-[0.64rem] font-semibold uppercase tracking-[0.1em] text-coral">
+                        Ask us
+                        <ArrowUpRight
+                          aria-hidden="true"
+                          className="h-3.5 w-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                          strokeWidth={2}
+                        />
+                      </span>
+                    </Link>
+                  ) : null}
+
                   <div {...reveal("fade")} className="mt-5 flex items-start gap-2.5 border-t border-ink/12 pt-5 text-[0.78rem] leading-relaxed text-ink/50">
                     <Check aria-hidden="true" className="mt-0.5 h-4 w-4 shrink-0 text-coral" strokeWidth={2} />
                     Scope, deliverables, timeline and fees are agreed in writing before work begins.
@@ -256,9 +281,9 @@ export default function ServicesPage() {
               Most projects need more than one service.
             </h2>
             <p {...reveal("up")} className="mt-4 max-w-2xl text-[0.94rem] leading-relaxed text-ink/60">
-              A campaign may need the message, the content and the shoot. A new site may need the
-              brand, the build and the local pages. Tell us the outcome you need and we will recommend
-              the smallest useful combination, not the longest list.
+              A campaign may need the strategy, the content and the shoot. A new website may need the
+              branding, the build and the ads to drive traffic. Tell us your goal and we will recommend
+              the right mix, nothing more.
             </p>
           </div>
           <div {...reveal("right")} className="lg:col-span-4 lg:justify-self-end">

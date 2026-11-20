@@ -1,6 +1,6 @@
 # SOSIAL — website
 
-A premium marketing site for **SOSIAL**, a marketing and creative brand in Bengaluru. The build brings digital marketing, branding, websites and visual production together under two divisions:
+A premium marketing site for **SOSIAL**, a marketing and creative brand. The build brings digital marketing, branding, websites and visual production together under two divisions:
 
 - **Digital Marketing & Creative Growth**
 - **Video Production & Photography**
@@ -190,7 +190,7 @@ Delivery order:
 
 1. Turn on 2-Step Verification for `sosial.solutions@gmail.com`.
 2. Create a Google **App password** (Google Account → Security → App passwords).
-3. Copy `.env.example` to `.env.local`, set `SMTP_USER=sosial.solutions@gmail.com`, and paste the app password into `SMTP_PASS`. Spaces in the app password are fine.
+3. Copy `.env.example` to `.env.local`, set `SMTP_USER=sosialproductionsofficial@gmail.com`, and paste the app password into `SMTP_PASS`. Spaces in the app password are fine.
 4. Keep `ENQUIRY_TO_EMAIL` and `ENQUIRY_FROM_EMAIL` pointed at the same mailbox, then restart the app.
 
 The app password is a secret. `.env.local` is ignored by Git; add the same variables in the hosting provider's environment settings for production. If Gmail blocks server delivery, switch to Resend or a webhook. Serverless filesystems are ephemeral, so the file sink is for local preview only. The in-memory rate limiter is per instance; move it to Redis or the form provider for multi-region traffic. The idempotency key is recorded only after a delivery channel succeeds, so a retry after a failure is allowed through.

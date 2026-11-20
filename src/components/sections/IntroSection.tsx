@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight, Check } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { media } from "@/data/media";
 import { Reveal, reveal } from "@/components/ui/Reveal";
 import { SectionLabel } from "@/components/ui/SectionLabel";
@@ -25,21 +25,16 @@ export function IntroSection() {
               <span className="serif-accent text-coral">all of it connected.</span>
             </h2>
             <Reveal>
-              <p className="mt-7 max-w-xl text-[1.02rem] leading-relaxed text-ink/70">
-                Sosial is a digital marketing and creative brand from Bengaluru. We bring digital
-                marketing, creative content and production together, so every message, visual and
-                channel works as one.
-              </p>
-              <p className="mt-4 max-w-xl text-[1.02rem] leading-relaxed text-ink/70">
-                That means the promise, the visual language and the channel plan are decided in the
-                same room. The work stays connected from the first brief to the final file.
+              <p className="mt-7 max-w-xl text-[1.05rem] leading-relaxed text-ink/70">
+                A studio where strategy, creative and production work as one, from the
+                first brief to the final file.
               </p>
             </Reveal>
 
             <ul className="mt-9 space-y-4 border-t border-ink/12 pt-7">
               {principles.map((item) => (
                 <li key={item} {...reveal("left")} className="flex gap-3 text-[0.92rem] leading-relaxed text-ink/75">
-                  <Check aria-hidden="true" className="mt-1 h-4 w-4 shrink-0 text-coral" strokeWidth={2} />
+                  <span aria-hidden="true" className="mt-[0.6em] h-1.5 w-1.5 shrink-0 rounded-full bg-coral" />
                   {item}
                 </li>
               ))}
@@ -77,12 +72,9 @@ export function IntroSection() {
                   <p className="text-[0.64rem] font-semibold uppercase tracking-[0.12em] text-paper/75">
                     One brand · Two divisions
                   </p>
-                  <p className="text-[0.6rem] font-semibold tracking-[0.1em] text-paper/45">SOSIAL / BENGALURU</p>
+                  <p className="text-[0.6rem] font-semibold tracking-[0.1em] text-paper/45">SOSIAL / INDIA</p>
                 </div>
               </div>
-              <p className="mt-3 text-[0.75rem] leading-relaxed text-ink/55">
-                Placeholder studio artwork. Client photography will replace this asset.
-              </p>
             </Reveal>
           </div>
         </div>

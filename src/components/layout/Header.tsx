@@ -3,17 +3,17 @@
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import {
   ArrowUpRight,
-  Camera,
   ChevronDown,
-  Clapperboard,
-  MapPin,
   Menu,
+  ChartColumn,
+  Megaphone,
   MessagesSquare,
   MonitorSmartphone,
-  PenTool,
   Phone,
-  Sun,
+  Search,
   TrendingUp,
+  UserRound,
+  Video,
   X,
 } from "lucide-react";
 import Link from "next/link";
@@ -28,12 +28,12 @@ import { cn } from "@/lib/utils";
 const icons: Record<IconName, React.ComponentType<{ className?: string; strokeWidth?: number }>> = {
   MessagesSquare,
   TrendingUp,
-  PenTool,
+  UserRound,
   MonitorSmartphone,
-  MapPin,
-  Clapperboard,
-  Camera,
-  Sun,
+  Search,
+  Megaphone,
+  Video,
+  ChartColumn,
 };
 
 const navLinkClass =

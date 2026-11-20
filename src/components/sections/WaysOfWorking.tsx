@@ -7,23 +7,23 @@ import { ButtonLink } from "@/components/ui/Button";
 const commitments = [
   {
     number: "01",
-    title: "Direct access to the work",
-    body: "You speak to the people planning and making the work, not a relay of account layers. Decisions are written down so nothing depends on memory.",
+    title: "Your goals come first",
+    body: "We start by understanding your business, your customers and what success looks like for you. Every idea we bring is tied back to that goal.",
   },
   {
     number: "02",
-    title: "A strategy you can repeat",
-    body: "One page that states who it is for, what it promises and how success is measured. Something your team can actually use.",
+    title: "One team, one point of contact",
+    body: "Strategy, content, ads and production sit under one roof. You speak to one person who knows your brand inside out.",
   },
   {
     number: "03",
-    title: "Creative built to be used",
-    body: "We design systems, templates and rules, not one-off artefacts. The hundredth asset should be as easy to produce as the first.",
+    title: "Content made for each platform",
+    body: "Reels, posts, ads and websites are made for where they will be seen, so your brand looks right everywhere.",
   },
   {
     number: "04",
-    title: "Reporting without theatre",
-    body: "Fewer charts, more decisions. Every review names what changed, what we learned and what happens next.",
+    title: "Clear monthly reporting",
+    body: "Simple reports that show what worked, what did not and what we will do next. No jargon, no vanity numbers.",
   },
 ];
 
@@ -36,12 +36,12 @@ export function WaysOfWorking() {
             <div className="lg:sticky lg:top-28">
               <SectionLabel index="03">How we work</SectionLabel>
               <h2 {...reveal("rise")} className="display mt-5 text-[clamp(2rem,3.8vw,3.1rem)]">
-                Fewer promises. Clearer{" "}
-                <span className="serif-accent text-coral">work</span>.
+                Clear plans.{" "}
+                <span className="serif-accent text-coral">Honest</span> work.
               </h2>
               <p {...reveal("up")} className="mt-6 max-w-md text-[0.95rem] leading-relaxed text-ink/65">
-                We keep the scope and the team visible. The people who plan the work stay close to
-                the work, and decisions are written down so nothing depends on memory.
+                Every project starts with your goals, not a template. You always know what we are
+                doing, why we are doing it and what comes next.
               </p>
 
               <Visual
@@ -55,7 +55,7 @@ export function WaysOfWorking() {
                 <ButtonLink href="/about" variant="dark" size="sm" arrow>
                   More about us
                 </ButtonLink>
-                <ButtonLink href="#enquiry" variant="outline" size="sm">
+                <ButtonLink href="#contact" variant="outline" size="sm">
                   Ask us anything
                 </ButtonLink>
               </div>
@@ -86,7 +86,7 @@ export function WaysOfWorking() {
               <span className="h-1 w-1 rounded-full bg-coral" />
               <span>Scope agreed in writing</span>
               <span className="h-1 w-1 rounded-full bg-coral" />
-              <span>Based in Bengaluru</span>
+              <span>Based in India</span>
             </div>
           </div>
         </div>

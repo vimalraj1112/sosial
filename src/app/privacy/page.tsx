@@ -24,8 +24,7 @@ export default function PrivacyPage() {
           body: (
             <p>
               When you send a project enquiry, we collect the details you choose to provide: your
-              name, email address, optional phone number, company, area of interest, budget range
-              and message. We also receive a timestamp and a technical identifier used to prevent
+              name, email address, optional phone number, company, area of interest and message. We also receive a timestamp and a technical identifier used to prevent
               duplicate submissions.
             </p>
           ),

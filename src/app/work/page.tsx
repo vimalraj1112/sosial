@@ -1,13 +1,11 @@
 import type { Metadata } from "next";
-import { projects, workStats } from "@/data/work";
+import { projects } from "@/data/work";
 import { buildMetadata } from "@/lib/seo";
 import { HeroBackdrop } from "@/components/media/HeroBackdrop";
+import { ButtonLink } from "@/components/ui/Button";
 import { PortfolioCta } from "@/components/work/PortfolioCta";
 import { WorkBrowser } from "@/components/work/WorkBrowser";
-import { CountUp } from "@/components/motion/CountUp";
-import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Typewriter, type TypewriterPart } from "@/components/ui/Typewriter";
-import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = buildMetadata({
   title: "Case Studies — Selected concept work",
@@ -17,10 +15,8 @@ export const metadata: Metadata = buildMetadata({
 });
 
 const headline: TypewriterPart[][] = [
-  [
-    { text: "Our " },
-    { text: "Work", className: "serif-accent text-coral-soft" },
-  ],
+  [{ text: "Ideas built to" }],
+  [{ text: "make an impact.", className: "text-[#9C57FD]" }],
 ];
 
 export default function WorkPage() {
@@ -29,47 +25,20 @@ export default function WorkPage() {
       <section className="relative isolate overflow-hidden bg-night text-paper">
         <HeroBackdrop />
 
-        <div className="container-x relative pb-10 pt-10 sm:pb-12 sm:pt-12 lg:pb-12">
-          <SectionLabel index="01" tone="light">
-            Portfolio / Selected work
-          </SectionLabel>
-
-          <div className="mt-6 grid gap-7 lg:grid-cols-12 lg:items-end lg:gap-10">
-            <div className="lg:col-span-8">
-              <h1 className="display text-[clamp(3.9rem,10vw,8.6rem)] leading-[0.84]">
-                <Typewriter lines={headline} speed={45} startDelay={140} trigger="mount" />
-              </h1>
-              <p className="mt-5 max-w-2xl text-[0.98rem] leading-relaxed text-paper/65 sm:text-[1.04rem]">
-                Creative campaigns, digital experiences, and strategic work built to help brands
-                stand out. Filter by discipline, then go deeper into the thinking.
-              </p>
-            </div>
-            <p className="text-[0.66rem] uppercase leading-relaxed tracking-[0.12em] text-paper/35 lg:col-span-4 lg:text-right">
-              Illustrative concepts only.
-              <br className="hidden lg:block" /> No client names, results or endorsements are implied.
-            </p>
-          </div>
-
-          <div className="mt-8 border-y border-paper/15 py-4 sm:py-5">
-            <dl className="grid grid-cols-3 gap-3 sm:gap-7">
-              {workStats.map((stat, index) => (
-                <div
-                  key={stat.label}
-                  data-reveal="blur"
-                  className={cn(
-                    "flex min-w-0 flex-col",
-                    index > 0 && "border-l border-paper/12 pl-3 sm:pl-7",
-                  )}
-                >
-                  <dt className="order-2 mt-1.5 text-[0.53rem] font-semibold uppercase leading-snug tracking-[0.13em] text-paper/40 sm:text-[0.6rem]">
-                    {stat.label}
-                  </dt>
-                  <dd className="order-1 font-display text-[clamp(1.8rem,3.5vw,2.9rem)] font-semibold leading-none tracking-[-0.045em] text-coral-soft">
-                    <CountUp value={stat.value} />
-                  </dd>
-                </div>
-              ))}
-            </dl>
+        <div className="container-x relative flex min-h-[70svh] flex-col items-center justify-center pb-16 pt-20 text-center sm:pt-24 lg:pb-20 lg:pt-28">
+          <h1 className="max-w-6xl font-display text-[clamp(2.3rem,6vw,5rem)] font-bold leading-[1.08] tracking-[-0.04em]">
+            <Typewriter lines={headline} speed={45} startDelay={140} trigger="mount" />
+          </h1>
+          <p className="mt-7 max-w-xl text-[1rem] leading-relaxed text-paper/65 sm:text-[1.1rem]">
+            A selection of campaigns, websites and content that shows how we think, plan and create.
+          </p>
+          <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
+            <ButtonLink href="/contact" variant="primary" size="lg" arrow>
+              Start a conversation
+            </ButtonLink>
+            <ButtonLink href="/services" variant="light" size="lg">
+              Explore Services
+            </ButtonLink>
           </div>
         </div>
       </section>

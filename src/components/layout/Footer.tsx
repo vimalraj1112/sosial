@@ -70,7 +70,10 @@ export function Footer() {
                 <Logo className="h-9" label="" variant="reversed" sizes="138px" />
               </Link>
               <p className="mt-6 max-w-sm font-display text-[1.15rem] font-semibold leading-snug tracking-[-0.025em] text-paper/85 sm:text-[1.3rem]">
-                Marketing, creative and production, working as one.
+                {brand.tagline}
+              </p>
+              <p className="mt-3 max-w-sm text-[0.86rem] leading-relaxed text-paper/55">
+                {brand.positioning}
               </p>
 
               <div className="mt-7 flex flex-wrap items-center gap-2" aria-label="Social profiles">
