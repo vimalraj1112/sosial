@@ -160,26 +160,6 @@ export function WhatWeMake() {
           </ul>
         </div>
       </div>
-
-      <div className="container-x">
-        <div {...reveal("fade")} className="mt-8 flex flex-col gap-3 border-t border-ink/12 pt-6 text-[0.86rem] text-ink/60 sm:flex-row sm:items-center sm:justify-between">
-          <p>
-            Want to see how we post? Follow{" "}
-            <a
-              href="https://www.instagram.com/sosial.solutions/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-semibold text-coral underline underline-offset-4 transition-colors hover:text-violet-deep"
-            >
-              @sosial.solutions
-            </a>
-            .
-          </p>
-          <p className="text-[0.76rem] font-medium uppercase tracking-[0.12em] text-ink/40">
-            {brand.location}
-          </p>
-        </div>
-      </div>
     </section>
   );
 }
