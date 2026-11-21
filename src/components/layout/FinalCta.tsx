@@ -1,6 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import { whatsappHref } from "@/data/brand";
-import { ButtonLink } from "@/components/ui/Button";
+import { ReachButton } from "@/components/ui/ReachButton";
 import { reveal } from "@/components/ui/Reveal";
 import { WhatsAppIcon } from "@/components/brand/WhatsAppIcon";
 
@@ -48,9 +48,12 @@ export function FinalCta() {
         </p>
 
         <div {...reveal("up")} className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <ButtonLink href="/contact" variant="primaryOnDark" size="lg" arrow>
-            Start a conversation
-          </ButtonLink>
+          <ReachButton href="/contact">
+            <span className="inline-flex items-center gap-2">
+              Start a conversation
+              <ArrowUpRight aria-hidden="true" className="h-4 w-4" strokeWidth={2.2} />
+            </span>
+          </ReachButton>
           <a
             href={whatsappHref}
             target="_blank"
