@@ -37,7 +37,7 @@ const icons: Record<IconName, React.ComponentType<{ className?: string; strokeWi
 };
 
 const navLinkClass =
-  "relative inline-flex items-center gap-1.5 px-3.5 py-2 text-[1rem] font-medium tracking-[0.01em] transition-colors after:pointer-events-none after:absolute after:inset-x-3.5 after:bottom-1 after:h-px after:origin-left after:scale-x-0 after:bg-current after:transition-transform after:duration-300 after:ease-[var(--ease-brand)] after:content-[''] hover:after:scale-x-100 focus-visible:after:scale-x-100";
+  "relative inline-flex items-center gap-1.5 px-3 py-2 text-[0.875rem] font-medium tracking-normal transition-colors after:pointer-events-none after:absolute after:inset-x-3 after:bottom-1 after:h-px after:origin-left after:scale-x-0 after:bg-current after:transition-transform after:duration-300 after:ease-[var(--ease-brand)] after:content-[''] hover:after:scale-x-100 focus-visible:after:scale-x-100";
 
 export function Header() {
   const pathname = usePathname();
@@ -157,7 +157,7 @@ export function Header() {
             : "border-ink/10 bg-paper/92 text-ink backdrop-blur-md",
         )}
       >
-        <div className="container-x flex h-[4.75rem] items-center justify-between gap-5 lg:h-[5.25rem]">
+        <div className="container-x flex h-16 items-center justify-between gap-5 lg:h-[4.25rem]">
           <Link
             href="/"
             aria-label="SOSIAL home"
@@ -165,7 +165,7 @@ export function Header() {
             onClick={() => setMobileOpen(false)}
           >
             <Logo
-              className="h-8 lg:h-9"
+              className="h-7"
               label=""
               variant={overHero ? "reversed" : "primary"}
               priority
@@ -295,7 +295,7 @@ export function Header() {
               href={telHref}
               aria-label="Call SOSIAL"
               className={cn(
-                "hidden h-10 w-10 items-center justify-center rounded-full border-2 transition-colors xl:flex",
+                "hidden h-9 w-9 items-center justify-center rounded-full border-2 transition-colors xl:flex",
                 overHero ? "border-paper/30 text-paper hover:border-paper hover:bg-paper hover:text-ink" : "border-ink/20 text-ink hover:border-ink hover:bg-night hover:text-paper",
               )}
             >
@@ -307,7 +307,7 @@ export function Header() {
               rel="noopener noreferrer"
               aria-label="Message SOSIAL on WhatsApp"
               className={cn(
-                "hidden h-10 w-10 items-center justify-center rounded-full border-2 transition-colors xl:flex",
+                "hidden h-9 w-9 items-center justify-center rounded-full border-2 transition-colors xl:flex",
                 overHero ? "border-paper/30 text-paper hover:border-paper hover:bg-paper hover:text-ink" : "border-ink/20 text-ink hover:border-ink hover:bg-night hover:text-paper",
               )}
             >
@@ -316,7 +316,7 @@ export function Header() {
             <Link
               href="/contact"
               className={cn(
-                "hidden h-11 items-center gap-2 rounded-full border-2 border-ink px-5 text-[0.82rem] font-semibold transition-[transform,box-shadow,background-color,color] duration-200 hover:-translate-y-0.5 sm:inline-flex",
+                "hidden h-[2.625rem] items-center gap-2 rounded-full border-2 border-ink px-5 text-[0.875rem] font-semibold transition-[transform,box-shadow,background-color,color] duration-200 hover:-translate-y-0.5 sm:inline-flex",
                 overHero
                   ? "bg-coral text-white shadow-[2px_2px_0_0_var(--color-paper)] hover:bg-paper hover:text-ink hover:shadow-[3px_3px_0_0_var(--color-paper)]"
                   : "bg-coral text-white shadow-[2px_2px_0_0_var(--color-ink)] hover:bg-paper hover:text-ink hover:shadow-[3px_3px_0_0_var(--color-ink)]",
@@ -332,7 +332,7 @@ export function Header() {
               aria-controls="mobile-menu"
               aria-label="Open menu"
               className={cn(
-                "flex h-10 w-10 items-center justify-center rounded-full border-2 transition-colors lg:hidden",
+                "flex h-9 w-9 items-center justify-center rounded-full border-2 transition-colors lg:hidden",
                 overHero ? "border-paper/30 text-paper hover:border-paper" : "border-ink/20 text-ink hover:border-ink",
               )}
             >
@@ -356,9 +356,9 @@ export function Header() {
             data-lenis-prevent
             className="fixed inset-0 z-[70] flex flex-col overflow-y-auto bg-night text-paper lg:hidden"
           >
-            <div className="container-x flex h-[4.75rem] shrink-0 items-center justify-between">
+            <div className="container-x flex h-16 shrink-0 items-center justify-between">
               <Link href="/" aria-label="SOSIAL home" onClick={() => setMobileOpen(false)}>
-                <Logo className="h-8" label="" variant="reversed" priority />
+                <Logo className="h-7" label="" variant="reversed" priority />
               </Link>
               <button
                 type="button"
