@@ -10,6 +10,7 @@ import { SmoothScroll } from "@/components/layout/SmoothScroll";
 import { SplashIntro } from "@/components/layout/SplashIntro";
 import { SiteCursor } from "@/components/ui/SiteCursor";
 import { RevealController } from "@/components/motion/RevealController";
+import { SectionRail } from "@/components/motion/SectionRail";
 
 const bodyFont = Inter({
   subsets: ["latin"],
@@ -23,7 +24,7 @@ const displayFont = Plus_Jakarta_Sans({
   display: "swap",
 });
 
-const defaultTitle = "SOSIAL — Digital marketing, creative and production";
+const defaultTitle = "SOSIAL: Digital marketing, content and video production";
 const defaultDescription =
   "SOSIAL is one creative partner for digital marketing, content and video production. Marketing with clarity. Creative with purpose. Execution you can count on.";
 
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default: defaultTitle,
-    template: "%s | SOSIAL",
+    template: "%s · SOSIAL",
   },
   description: defaultDescription,
   applicationName: "SOSIAL",
@@ -98,7 +99,7 @@ const jsonLd = {
   sameAs: socialProfiles.map((profile) => profile.href).filter((href) => href.startsWith("http") && !href.includes("wa.me")),
   knowsAbout: [
     "Social media marketing",
-    "Paid advertising",
+    "Pay per click advertising",
     "Performance marketing",
     "Personal branding",
     "Website development",
@@ -138,6 +139,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <SiteCursor />
         <RevealController />
+        <SectionRail />
 
         <script
           type="application/ld+json"

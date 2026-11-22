@@ -4,7 +4,7 @@ import { buildMetadata } from "@/lib/seo";
 import { LegalPage } from "@/components/layout/LegalPage";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Terms & Conditions — Interim notice",
+  title: "Terms & Conditions",
   description:
     "An interim terms notice covering the SOSIAL preview site, its illustrative concept portfolio and project enquiries.",
   path: "/terms",

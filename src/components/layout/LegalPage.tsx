@@ -24,7 +24,7 @@ export function LegalPage({ eyebrow, title, intro, updated, sections }: LegalPag
         <HeroBackdrop />
 
         <div className="container-x relative py-14 sm:py-16 lg:py-20">
-          <SectionLabel index="—" tone="light">
+          <SectionLabel tone="light">
             {eyebrow}
           </SectionLabel>
 

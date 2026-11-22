@@ -10,7 +10,7 @@ type PageMeta = {
   noIndex?: boolean;
 };
 
-export const titleTemplate = "%s | SOSIAL";
+export const titleTemplate = "%s · SOSIAL";
 
 export function buildMetadata({
   title,
@@ -30,7 +30,7 @@ export function buildMetadata({
       title,
       description,
       siteName: "SOSIAL",
-      images: [{ url: image, width: 1200, height: 630, alt: `${title} - SOSIAL` }],
+      images: [{ url: image, width: 1200, height: 630, alt: `${title} · SOSIAL` }],
     },
     twitter: {
       card: "summary_large_image",

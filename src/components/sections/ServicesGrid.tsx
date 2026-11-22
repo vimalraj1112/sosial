@@ -14,7 +14,6 @@ import {
 import { services, type IconName } from "@/data/services";
 import { Reveal, reveal } from "@/components/ui/Reveal";
 import { SectionLabel } from "@/components/ui/SectionLabel";
-import { ButtonLink } from "@/components/ui/Button";
 
 const icons: Record<IconName, React.ComponentType<{ className?: string; strokeWidth?: number }>> = {
   MessagesSquare,
@@ -41,15 +40,6 @@ export function ServicesGrid() {
               Everything you need to be{" "}
               <span className="serif-accent text-coral-soft">noticed</span>, and chosen.
             </h2>
-          </div>
-          <div {...reveal("up")} className="max-w-xs">
-            <p className="text-[0.95rem] leading-relaxed text-paper/65">
-              Eight services that work together, so your brand speaks with one clear voice
-              everywhere.
-            </p>
-            <ButtonLink href="/services" variant="light" size="sm" className="mt-5" arrow>
-              All services
-            </ButtonLink>
           </div>
         </div>
 

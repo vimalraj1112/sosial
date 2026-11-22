@@ -300,7 +300,7 @@ export function BookingCalendar() {
           <div className="p-5 sm:p-6">
             <div className="flex items-center justify-between gap-3">
               <p className="font-display text-[1.05rem] font-semibold tracking-[-0.02em]">
-                {activeView ? `${monthNames[activeView.m]} ${activeView.y}` : "\u2014"}
+                {activeView ? `${monthNames[activeView.m]} ${activeView.y}` : "\u00a0"}
               </p>
               <div className="flex items-center gap-1">
                 <button

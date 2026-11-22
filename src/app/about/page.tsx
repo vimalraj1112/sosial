@@ -14,7 +14,7 @@ import { HeroBackdrop } from "@/components/media/HeroBackdrop";
 import { reveal } from "@/components/ui/Reveal";
 
 export const metadata: Metadata = buildMetadata({
-  title: "About — A marketing and creative brand",
+  title: "About us",
   description:
     "Sosial brings digital marketing, branding, websites and visual production together, built around one clear direction from strategy to delivery.",
   path: "/about",

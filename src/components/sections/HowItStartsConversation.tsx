@@ -31,12 +31,22 @@ const client = {
 };
 
 const conversation: Message[] = [
-  { from: "client", text: "Hello, I saw your work on Instagram.", time: "10:02" },
-  { from: "us", text: "Hello Rahul, thank you for reaching out. How can we help?", time: "10:02" },
-  { from: "client", text: "We need social media and a new website for our restaurant.", time: "10:04" },
-  { from: "us", text: "Happy to help. When would you like to launch?", time: "10:05" },
-  { from: "client", text: "In about a month.", time: "10:06" },
-  { from: "us", text: "Perfect. We’ll share a plan with scope, timeline and cost by tomorrow.", time: "10:07" },
+  {
+    from: "client",
+    text: "Hi, I came across your work on Instagram. We’re looking for help with social media marketing.",
+    time: "10:02",
+  },
+  {
+    from: "us",
+    text: "Hey Rahul! Thanks for reaching out. Could you share your business Instagram page and website, if you have one?",
+    time: "10:03",
+  },
+  { from: "client", text: "Sure, I’ll share them here.", time: "10:04" },
+  {
+    from: "us",
+    text: "Perfect! We’ll review your current online presence and share our initial observations and suggestions. After that, we can connect to discuss things further.",
+    time: "10:06",
+  },
 ];
 
 /** Milliseconds per character while the visitor's message is being typed. */

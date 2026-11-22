@@ -1,15 +1,23 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { media } from "@/data/media";
 import { Reveal, reveal } from "@/components/ui/Reveal";
 import { SectionLabel } from "@/components/ui/SectionLabel";
-import { Visual } from "@/components/ui/Visual";
 import { ButtonLink } from "@/components/ui/Button";
 
 const principles = [
-  "Clear direction: we agree what we are making, why it matters and how it will be judged.",
-  "Coordinated work: strategy, content, campaigns and production are connected, not handled in isolation.",
-  "Consistent expression: one message and one standard across every channel and format.",
+  {
+    title: "Dream it. Let’s create it.",
+    body: "From branding and design to content that brings your ideas to life.",
+  },
+  {
+    title: "Get people talking.",
+    body: "Creative campaigns and marketing that help your brand get noticed.",
+  },
+  {
+    title: "All under one roof.",
+    body: "Design, social media, advertising and video production, all working together.",
+  },
 ];
 
 export function IntroSection() {
@@ -21,21 +29,32 @@ export function IntroSection() {
         <div className="mt-8 grid gap-12 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-7">
             <h2 {...reveal("rise")} className="display max-w-2xl text-[clamp(2.1rem,4.4vw,3.6rem)]">
-              One studio for the whole story,{" "}
-              <span className="serif-accent text-coral">all of it connected.</span>
+              Big plans for your brand?{" "}
+              <span className="serif-accent text-coral">Let&rsquo;s make them happen.</span>
             </h2>
             <Reveal>
               <p className="mt-7 max-w-xl text-[1.05rem] leading-relaxed text-ink/70">
-                A studio where strategy, creative and production work as one, from the
-                first brief to the final file.
+                You&rsquo;ve got a vision for your brand. You shouldn&rsquo;t have to find one person
+                for design and another for marketing. Bring it all together with SOSIAL: one
+                creative partner, from the first idea to the final output.
               </p>
             </Reveal>
 
-            <ul className="mt-9 space-y-4 border-t border-ink/12 pt-7">
-              {principles.map((item) => (
-                <li key={item} {...reveal("left")} className="flex gap-3 text-[0.92rem] leading-relaxed text-ink/75">
-                  <span aria-hidden="true" className="mt-[0.6em] h-1.5 w-1.5 shrink-0 rounded-full bg-coral" />
-                  {item}
+            <ul className="mt-9 divide-y divide-ink/10 border-y border-ink/12">
+              {principles.map((item, index) => (
+                <li key={item.title} {...reveal("left")} className="flex gap-4 py-5">
+                  <span
+                    aria-hidden="true"
+                    className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-coral text-[0.66rem] font-bold text-white"
+                  >
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <div>
+                    <p className="font-display text-[1.08rem] font-semibold tracking-[-0.02em] text-ink">
+                      {item.title}
+                    </p>
+                    <p className="mt-1 text-[0.92rem] leading-relaxed text-ink/65">{item.body}</p>
+                  </div>
                 </li>
               ))}
             </ul>
@@ -61,13 +80,16 @@ export function IntroSection() {
           <div className="lg:col-span-5">
             <Reveal variant="right">
               <div className="media-frame relative shadow-hard-sm">
-                <Visual
-                  reveal="mask-up"
-                  src={media.studio.src}
-                  alt={media.studio.alt}
-                  className="aspect-[4/5] w-full"
-                  sizes="(min-width: 1024px) 40vw, 100vw"
-                />
+                <div data-reveal="mask-up" className="relative aspect-[4/5] w-full overflow-hidden">
+                  <Image
+                    src="/assets/images/studio-lights.jpg"
+                    alt="The SOSIAL studio set up for a shoot, with softboxes and studio lights on a white stage"
+                    fill
+                    sizes="(min-width: 1024px) 40vw, 100vw"
+                    className="object-cover object-center"
+                  />
+                  <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-night/45 via-transparent to-transparent" />
+                </div>
                 <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between gap-4 rounded-full border border-paper/25 bg-night/85 px-4 py-2.5 text-paper backdrop-blur-sm">
                   <p className="text-[0.64rem] font-semibold uppercase tracking-[0.12em] text-paper/75">
                     One brand · Two divisions

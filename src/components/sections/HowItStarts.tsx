@@ -5,19 +5,19 @@ import { Conversation } from "@/components/sections/HowItStartsConversation";
 
 const steps = [
   {
-    number: "1",
-    title: "Say hi",
-    body: "WhatsApp or call. One sentence is enough.",
+    number: "01",
+    title: "Say hello",
+    body: "Tell us about your business and what you’re looking for.",
   },
   {
-    number: "2",
-    title: "Get the plan",
-    body: "Ideas, scope and timeline, in writing.",
+    number: "02",
+    title: "We’ll take a look",
+    body: "We’ll review your current online presence and share our initial feedback.",
   },
   {
-    number: "3",
-    title: "Approve and go",
-    body: "We create. You review and refine.",
+    number: "03",
+    title: "Let’s connect",
+    body: "We’ll discuss your requirements, recommendations and the way forward.",
   },
 ] as const;
 
@@ -26,17 +26,17 @@ export function HowItStarts() {
     <section id="how-it-starts" className="scroll-mt-24 bg-paper py-20 sm:py-24 lg:py-28">
       <div className="container-x">
         <div className="max-w-2xl">
-          <p {...reveal("left")} className="eyebrow inline-flex items-center gap-2.5 text-coral">
+          <p {...reveal("left")} data-rail="How it starts" className="eyebrow inline-flex items-center gap-2.5 text-coral">
             <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-coral" />
             How it starts
           </p>
           <h2 {...reveal("rise")} className="display mt-5 text-[clamp(2.1rem,4.4vw,3.6rem)]">
-            A first chat goes <span className="serif-accent text-coral">like this.</span>
+            It all starts with a <span className="serif-accent text-coral">simple hello.</span>
           </h2>
           <Reveal>
             <p className="mt-5 max-w-lg text-[0.98rem] leading-relaxed text-ink/65">
-              No brief document, no pitch deck. One message is enough for us to understand the goal
-              and tell you what happens next.
+              You don&rsquo;t need a detailed brief to get started. Just tell us what you&rsquo;re
+              looking for, and we&rsquo;ll help you figure out the next step.
             </p>
           </Reveal>
         </div>

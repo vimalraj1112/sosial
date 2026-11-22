@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
   }
 
   return buildMetadata({
-    title: `${service.name} — ${service.tagline}`,
+    title: service.name,
     description: service.summary,
     path: `/services/${service.slug}`,
     image: service.image,
@@ -307,7 +307,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
           <div className="container-x relative">
             <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
               <div>
-                <SectionLabel index="—" tone="light">
+                <SectionLabel tone="light">
                   Related concepts
                 </SectionLabel>
                 <h2 {...reveal("rise")} className="display mt-5 max-w-2xl text-[clamp(2rem,4.2vw,3.4rem)]">
@@ -339,7 +339,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
           <div className="container-x">
             <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
               <div>
-                <SectionLabel index="—">Same division</SectionLabel>
+                <SectionLabel>Same division</SectionLabel>
                 <h2 {...reveal("rise")} className="display mt-5 max-w-xl text-[clamp(1.8rem,3.6vw,2.8rem)]">
                   Services that often work{" "}
                   <span className="serif-accent text-coral">together</span>.

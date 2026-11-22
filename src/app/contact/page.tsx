@@ -17,7 +17,7 @@ const nextSteps = [
 ];
 
 export const metadata: Metadata = buildMetadata({
-  title: "Contact — Start a conversation",
+  title: "Contact us",
   description:
     "Tell Sosial what you are trying to change. A short note about the business, the goal and any timing is enough to start a useful conversation.",
   path: "/contact",
@@ -29,7 +29,7 @@ export default function ContactPage() {
       <HeroBackdrop />
 
       <div className="container-x relative py-16 sm:py-20 lg:py-24">
-        <SectionLabel index="—" tone="light">
+        <SectionLabel tone="light">
           Start here
         </SectionLabel>
 

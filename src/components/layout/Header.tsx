@@ -173,7 +173,7 @@ export function Header() {
             />
           </Link>
 
-          <nav aria-label="Primary" className="hidden items-center gap-0.5 lg:flex">
+          <nav aria-label="Primary" className="ml-auto hidden items-center gap-0.5 lg:flex">
             {navigation.map((item) => {
               const active = isActive(item.href);
               if (item.children) {
@@ -290,7 +290,7 @@ export function Header() {
             })}
           </nav>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 lg:ml-3">
             <a
               href={telHref}
               aria-label="Call SOSIAL"
@@ -313,18 +313,6 @@ export function Header() {
             >
               <WhatsAppIcon className="h-[1.05rem] w-[1.05rem]" />
             </a>
-            <Link
-              href="/contact"
-              className={cn(
-                "hidden h-[2.625rem] items-center gap-2 rounded-full border-2 border-ink px-5 text-[0.875rem] font-semibold transition-[transform,box-shadow,background-color,color] duration-200 hover:-translate-y-0.5 sm:inline-flex",
-                overHero
-                  ? "bg-coral text-white shadow-[2px_2px_0_0_var(--color-paper)] hover:bg-paper hover:text-ink hover:shadow-[3px_3px_0_0_var(--color-paper)]"
-                  : "bg-coral text-white shadow-[2px_2px_0_0_var(--color-ink)] hover:bg-paper hover:text-ink hover:shadow-[3px_3px_0_0_var(--color-ink)]",
-              )}
-            >
-              Let&rsquo;s talk
-              <ArrowUpRight aria-hidden="true" className="h-3.5 w-3.5" strokeWidth={2} />
-            </Link>
             <button
               type="button"
               onClick={() => setMobileOpen(true)}

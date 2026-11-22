@@ -54,7 +54,7 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
   }
 
   return buildMetadata({
-    title: `${project.name} — ${categoryLabels[project.category]} concept`,
+    title: `${project.name}, ${categoryLabels[project.category]} concept`,
     description: project.summary,
     path: `/work/${project.slug}`,
   });
@@ -452,7 +452,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         <div className="container-x">
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div>
-              <SectionLabel index="—" tone="light">
+              <SectionLabel tone="light">
                 More concepts
               </SectionLabel>
               <h2 data-reveal="rise" className="display mt-5 max-w-xl text-[clamp(2rem,4.4vw,3.6rem)]">

@@ -238,7 +238,7 @@ export default async function InsightPage({ params }: InsightPageProps) {
         <div className="container-x">
           <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
             <div>
-              <SectionLabel index="—">Keep reading</SectionLabel>
+              <SectionLabel>Keep reading</SectionLabel>
               <h2 data-reveal="rise" className="display mt-5 max-w-xl text-[clamp(1.9rem,3.8vw,3rem)]">
                 More notes from the{" "}
                 <span className="serif-accent text-coral">studio</span>.

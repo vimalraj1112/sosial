@@ -8,8 +8,6 @@ import { HowItStarts } from "@/components/sections/HowItStarts";
 import { WhatWeMake } from "@/components/sections/WhatWeMake";
 import { MidCta } from "@/components/sections/MidCta";
 import { WaysOfWorking } from "@/components/sections/WaysOfWorking";
-import { VideoSection } from "@/components/sections/VideoSection";
-import { SuccessStory } from "@/components/sections/SuccessStory";
 import { AiVerifySection } from "@/components/sections/AiVerifySection";
 import { InsightsSection } from "@/components/sections/InsightsSection";
 import { BookingSection } from "@/components/sections/BookingSection";
@@ -17,7 +15,7 @@ import { FaqSection } from "@/components/sections/FaqSection";
 import { FinalEnquiry } from "@/components/sections/FinalEnquiry";
 
 export const metadata: Metadata = buildMetadata({
-  title: "SOSIAL — Digital marketing, creative and production",
+  title: "SOSIAL: Digital marketing, content and video production",
   description:
     "SOSIAL is one creative partner for digital marketing, content and video production. Marketing with clarity. Creative with purpose. Execution you can count on.",
   path: "/",
@@ -34,8 +32,6 @@ export default function HomePage() {
       <WhatWeMake />
       <MidCta />
       <WaysOfWorking />
-      <VideoSection />
-      <SuccessStory />
       <AiVerifySection />
       <InsightsSection />
       <FaqSection />

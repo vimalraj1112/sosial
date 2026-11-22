@@ -72,7 +72,7 @@ export function AiVerifySection() {
 
       <div className="container-x relative">
         <div className="mx-auto max-w-3xl text-center">
-          <SectionLabel index="—" tone="light" className="justify-center">
+          <SectionLabel tone="light" className="justify-center">
             Check us independently
           </SectionLabel>
           <h2 {...reveal("rise")} className="display mt-6 text-[clamp(2.2rem,4.8vw,3.9rem)]">
@@ -111,7 +111,7 @@ export function AiVerifySection() {
                 </div>
 
                 <p className="mt-7 font-display text-[1.06rem] font-semibold leading-snug tracking-[-0.02em] text-ink/85">
-                  &ldquo;{item.question}&rdquo;
+                  {item.question}
                 </p>
 
                 <span className="mt-auto inline-flex items-center justify-between gap-3 border-t border-ink/10 pt-5 text-[0.8rem] font-semibold">

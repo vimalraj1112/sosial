@@ -8,7 +8,7 @@ import { WorkBrowser } from "@/components/work/WorkBrowser";
 import { Typewriter, type TypewriterPart } from "@/components/ui/Typewriter";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Case Studies — Selected concept work",
+  title: "Our work",
   description:
     "Explore SOSIAL's concept portfolio: brand identities, websites, social systems, performance thinking and search programmes. Every project is an illustrative concept; no client results are claimed.",
   path: "/work",

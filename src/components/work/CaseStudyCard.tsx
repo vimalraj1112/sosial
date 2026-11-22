@@ -19,7 +19,7 @@ export function CaseStudyCard({ project, total, priority = false }: CaseStudyCar
   return (
     <Link
       href={`/work/${project.slug}`}
-      aria-label={`View ${project.name} — ${categoryLabels[project.category]} concept`}
+      aria-label={`View ${project.name}, ${categoryLabels[project.category]} concept`}
       className="group block h-full rounded-[1.25rem] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-coral"
     >
       <article className="flex h-full flex-col">

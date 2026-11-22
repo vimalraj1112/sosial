@@ -113,7 +113,7 @@ export const projects: Project[] = [
       {
         src: "/assets/images/work-northwind-gallery-1.svg",
         alt: "Northwind identity board with violet, ink and soft violet wave marks, wordmark and colour palette",
-        caption: "Identity board — one structural idea carried across every surface.",
+        caption: "Identity board: one structural idea carried across every surface.",
       },
       {
         src: "/assets/images/work-northwind-gallery-2.svg",
@@ -171,7 +171,7 @@ export const projects: Project[] = [
       {
         src: "/assets/images/work-halcyon-gallery-1.svg",
         alt: "Halcyon social feed concept with clinical skincare diagrams, texture imagery and a violet accent",
-        caption: "Feed system — one ingredient, one claim, one proof point.",
+        caption: "Feed system: one ingredient, one claim, one proof point.",
       },
       {
         src: "/assets/images/work-halcyon-gallery-2.svg",
@@ -229,7 +229,7 @@ export const projects: Project[] = [
       {
         src: "/assets/images/work-tessellate-gallery-1.svg",
         alt: "Tessellate website concept shown in a desktop browser with an architectural project grid",
-        caption: "Desktop experience — the work occupies the screen, the interface steps back.",
+        caption: "Desktop experience: the work occupies the screen, the interface steps back.",
       },
       {
         src: "/assets/images/work-tessellate-gallery-2.svg",
@@ -345,7 +345,7 @@ export const projects: Project[] = [
       {
         src: "/assets/images/work-fieldnote-gallery-1.svg",
         alt: "Fieldnote editorial spread with a large serif headline, text columns and a circular artwork",
-        caption: "Editorial spread — measure and pacing treated as the identity.",
+        caption: "Editorial spread: measure and pacing treated as the identity.",
       },
       {
         src: "/assets/images/work-fieldnote-gallery-2.svg",
@@ -403,7 +403,7 @@ export const projects: Project[] = [
       {
         src: "/assets/images/work-kite-gallery-1.svg",
         alt: "Kite consultancy website concept in a dark browser with a clear service-led homepage",
-        caption: "Homepage — the offer explained before the first call.",
+        caption: "Homepage: the offer explained before the first call.",
       },
       {
         src: "/assets/images/work-kite-gallery-2.svg",

@@ -118,7 +118,7 @@ export function WhatWeMake() {
       <div className="container-x">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div className="max-w-2xl">
-            <p {...reveal("left")} className="eyebrow inline-flex items-center gap-2.5 text-coral">
+            <p {...reveal("left")} data-rail="What we make" className="eyebrow inline-flex items-center gap-2.5 text-coral">
               <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-coral" />
               What we make
             </p>

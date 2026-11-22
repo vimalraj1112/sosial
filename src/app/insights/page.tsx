@@ -12,7 +12,7 @@ import { HeroBackdrop } from "@/components/media/HeroBackdrop";
 import { reveal } from "@/components/ui/Reveal";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Insights — Notes on marketing, creative and production",
+  title: "Insights on marketing, content and video",
   description:
     "Practical notes from Sosial on attention, brand, search, performance, content and production. Written for people who have to make the work happen.",
   path: "/insights",
@@ -118,7 +118,7 @@ export default function InsightsPage() {
           <div className="mt-16 border-t border-ink/12 pt-8">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
               <div>
-                <SectionLabel index="—">All notes</SectionLabel>
+                <SectionLabel>All notes</SectionLabel>
                 <h2 {...reveal("rise")} className="display mt-4 text-[clamp(1.8rem,3.6vw,2.8rem)]">
                   More from the studio.
                 </h2>

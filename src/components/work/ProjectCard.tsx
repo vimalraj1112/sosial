@@ -50,7 +50,7 @@ export function ProjectCard({
   return (
     <Link
       href={`/work/${project.slug}`}
-      aria-label={`View ${project.name} — ${categoryLabels[project.category]} concept`}
+      aria-label={`View ${project.name}, ${categoryLabels[project.category]} concept`}
       className={cn(
         "group block h-full rounded-[1.4rem] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-coral",
         className,

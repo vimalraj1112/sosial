@@ -37,10 +37,10 @@ function readStamp(): Stamp {
 }
 
 const PLACEHOLDER: Stamp = {
-  day: "\u2014",
-  date: "\u2014",
-  month: "\u2014",
-  time: "\u2014\u2014:\u2014\u2014",
+  day: "\u00a0",
+  date: "\u00a0",
+  month: "\u00a0",
+  time: "\u00a0",
   iso: "",
 };
 

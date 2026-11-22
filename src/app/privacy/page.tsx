@@ -4,7 +4,7 @@ import { buildMetadata } from "@/lib/seo";
 import { LegalPage } from "@/components/layout/LegalPage";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Privacy Policy — Interim notice",
+  title: "Privacy Policy",
   description:
     "An interim privacy notice explaining what SOSIAL collects through the project enquiry form and how it is used.",
   path: "/privacy",

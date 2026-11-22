@@ -14,7 +14,7 @@ export function BookingSection() {
 
       <div className="container-x relative">
         <div className="mx-auto max-w-3xl text-center">
-          <SectionLabel index="&#8212;" tone="light" className="justify-center">
+          <SectionLabel tone="light" className="justify-center">
             Get in touch
           </SectionLabel>
 
@@ -23,7 +23,7 @@ export function BookingSection() {
           </h2>
 
           <p {...reveal("up")} className="mx-auto mt-6 max-w-xl text-[0.96rem] leading-relaxed text-paper/60 sm:text-[1.02rem]">
-            Book a free {booking.durationLabel} intro call. No pitch, no pressure&mdash;just an honest
+            Book a free {booking.durationLabel} intro call. No pitch, no pressure. Just an honest
             conversation about the business, the goal and what needs to change.
           </p>
         </div>

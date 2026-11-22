@@ -87,7 +87,7 @@ async function deliver(payload: {
         from,
         to: [to],
         reply_to: payload.email,
-        subject: `SOSIAL enquiry: ${payload.name} — ${payload.service}`,
+        subject: `SOSIAL enquiry: ${payload.name} (${payload.service})`,
         text,
       }),
     });
@@ -123,7 +123,7 @@ async function deliver(payload: {
       from: from || `SOSIAL <${smtpUser}>`,
       to: to || brand.enquiryInbox,
       replyTo: payload.email,
-      subject: `SOSIAL enquiry: ${payload.name} — ${payload.service}`,
+      subject: `SOSIAL enquiry: ${payload.name} (${payload.service})`,
       text,
     });
     return "smtp";

@@ -14,8 +14,8 @@ export const media = {
   },
   ogImage: "/assets/brand/og.png",
   studio: {
-    src: "/assets/images/studio.svg",
-    alt: "Illustrative SOSIAL studio composition in cloud and ink tones",
+    src: "/assets/images/studio-lights.jpg",
+    alt: "The SOSIAL studio set up for a shoot, with softboxes and studio lights on a white stage",
   },
   seo: {
     src: "/assets/images/seo-analytics.svg",

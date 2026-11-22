@@ -7,13 +7,22 @@ import { ButtonLink } from "@/components/ui/Button";
 import { RotatingWords } from "@/components/ui/RotatingWords";
 import { EASE } from "@/lib/motion";
 
-/** What earns the attention: one phrase per service, cycled in the headline. */
+/** One service per phrase, cycled in the headline. */
 const phrases = [
-  "standout content.",
-  "performance ads.",
-  "brand films.",
-  "sharp websites.",
-  "personal branding.",
+  "Digital Marketing.",
+  "Strategy.",
+  "Social Media Marketing.",
+  "Branding.",
+  "Personal Branding.",
+  "Website Design.",
+  "Website Development.",
+  "Meta Ads.",
+  "Google Ads.",
+  "Content Creation.",
+  "Creative Design.",
+  "Video Production.",
+  "Video Editing.",
+  "Podcast Production.",
 ];
 
 export function Hero() {
@@ -28,20 +37,23 @@ export function Hero() {
     <section className="relative isolate overflow-hidden border-b border-paper/10 bg-night text-paper">
       <HeroBackdrop />
 
-      <div className="container-x relative flex min-h-[78svh] flex-col items-center justify-center pb-16 pt-20 text-center sm:pt-24 lg:pb-20 lg:pt-28">
+      <div className="container-x relative flex min-h-[72svh] flex-col items-start justify-start pb-16 pt-12 text-left sm:pt-14 lg:pb-20 lg:pt-16">
         <motion.h1
           {...fade(0.1)}
-          className="max-w-6xl font-display text-[clamp(2.3rem,6vw,5rem)] font-bold leading-[1.08] tracking-[-0.04em]"
+          className="max-w-6xl font-display text-[clamp(2rem,6vw,5rem)] font-bold leading-[1.08] tracking-[-0.04em]"
         >
           <span className="sr-only">
-            Attention, earned through standout content, performance ads, brand films, sharp
-            websites and personal branding.
+            Your brand deserves more than just digital marketing, social media, branding, websites,
+            ads, content, video production and podcasts.
           </span>
           <span aria-hidden="true" className="block">
-            Attention, earned
+            Your brand deserves
           </span>
           <span aria-hidden="true" className="block">
-            through <RotatingWords phrases={phrases} className="text-[#9C57FD]" />
+            more than just
+          </span>
+          <span aria-hidden="true" className="block">
+            <RotatingWords phrases={phrases} className="text-[#9C57FD]" />
           </span>
         </motion.h1>
 
@@ -49,10 +61,11 @@ export function Hero() {
           {...fade(0.4)}
           className="mt-7 max-w-xl text-[1rem] leading-relaxed text-paper/65 sm:text-[1.1rem]"
         >
-          Strategy, content and production under one roof, built to turn attention into enquiries.
+          Good ideas need the right strategy and execution. We bring marketing and production
+          together under one roof to help bring those ideas to life.
         </motion.p>
 
-        <motion.div {...fade(0.55)} className="mt-9 flex flex-wrap items-center justify-center gap-3">
+        <motion.div {...fade(0.55)} className="mt-9 flex flex-wrap items-center justify-start gap-3">
           <ButtonLink href="#contact" variant="primary" size="lg" arrow>
             Start a conversation
           </ButtonLink>

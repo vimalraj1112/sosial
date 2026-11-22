@@ -11,7 +11,7 @@ import { reveal } from "@/components/ui/Reveal";
 import { Typewriter } from "@/components/ui/Typewriter";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Testimonials — Client feedback, with permission",
+  title: "Testimonials",
   description:
     "Real client feedback will be published here with written permission. The current cards are layout placeholders, clearly labelled as samples.",
   path: "/testimonials",
@@ -32,7 +32,7 @@ export default function TestimonialsPage() {
 
         <div className="container-x relative py-16 sm:py-20 lg:py-24">
           <div className="flex flex-wrap items-center justify-between gap-4">
-            <SectionLabel index="—" tone="light">
+            <SectionLabel tone="light">
               Testimonials / Client feedback
             </SectionLabel>
             <Badge tone="light">Coming soon</Badge>

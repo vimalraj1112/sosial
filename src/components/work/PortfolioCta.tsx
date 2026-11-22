@@ -38,7 +38,7 @@ export function PortfolioCta({
       <div className="container-x relative py-20 sm:py-24 lg:py-32">
         <div className="grid gap-10 lg:grid-cols-12 lg:items-end lg:gap-16">
           <div className="lg:col-span-8">
-            <SectionLabel index="—" tone="light">
+            <SectionLabel tone="light">
               {eyebrow}
             </SectionLabel>
             <h2 data-reveal="rise" className="display mt-6 max-w-4xl text-[clamp(2.5rem,6vw,5.4rem)] leading-[0.92]">

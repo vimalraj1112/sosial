@@ -77,7 +77,7 @@ export const navigation: NavItem[] = [
         description: "Strategy, content and community",
       },
       {
-        label: "Paid Advertising",
+        label: "Pay Per Click",
         href: "/services/performance-marketing",
         description: "Meta, Google and PPC campaigns",
       },
@@ -121,7 +121,7 @@ export const navigation: NavItem[] = [
 export const footerLinks = {
   services: [
     { label: "Social Media Marketing", href: "/services/social-media" },
-    { label: "Paid Advertising", href: "/services/performance-marketing" },
+    { label: "Pay Per Click", href: "/services/performance-marketing" },
     { label: "Personal Branding", href: "/services/branding" },
     { label: "Website Development", href: "/services/web-design" },
     { label: "Video Production & Editing", href: "/services/video-production" },

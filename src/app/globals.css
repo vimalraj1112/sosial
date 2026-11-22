@@ -385,11 +385,6 @@
   }
 }
 
-/* While the Book now arm is reaching for the pointer, its hand is the cursor. */
-html[data-reach-active] [data-site-cursor] {
-  opacity: 0 !important;
-}
-
 /* --- Scroll reveal system ------------------------------------------------
    Driven by components/motion/RevealController. Content is hidden only once
    the controller has armed <html>, so without JavaScript nothing is hidden.

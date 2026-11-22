@@ -15,7 +15,7 @@ import { reveal } from "@/components/ui/Reveal";
 import { CountUp } from "@/components/motion/CountUp";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Services — Digital marketing, creative and production",
+  title: "Our services",
   description:
     "Eight services across two divisions: digital marketing and video production. Social media, Google and Meta ads, personal branding, websites, research and video, planned as one.",
   path: "/services",
@@ -47,7 +47,7 @@ export default function ServicesPage() {
         <HeroBackdrop />
 
         <div className="container-x relative py-16 sm:py-20 lg:py-24">
-          <SectionLabel index="—" tone="light">
+          <SectionLabel tone="light">
             Services / Two divisions
           </SectionLabel>
 
@@ -276,7 +276,7 @@ export default function ServicesPage() {
       <section className="bg-paper py-16 sm:py-20">
         <div className="container-x grid gap-8 lg:grid-cols-12 lg:items-center lg:gap-16">
           <div className="lg:col-span-8">
-            <SectionLabel index="—">A combined brief</SectionLabel>
+            <SectionLabel>A combined brief</SectionLabel>
             <h2 {...reveal("rise")} className="display mt-5 max-w-2xl text-[clamp(1.8rem,3.6vw,2.8rem)]">
               Most projects need more than one service.
             </h2>

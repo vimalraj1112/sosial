@@ -12,7 +12,8 @@ const GAP_MS = 380;
 
 /**
  * Types a phrase, holds it, deletes it and moves to the next, forever. The
- * widest phrase is kept invisibly underneath so the headline never reflows.
+ * longest phrase is kept invisibly underneath so the headline never reflows;
+ * long phrases may wrap, and that space is reserved too.
  * Decorative only: the parent heading carries the full text for screen
  * readers. Reduced-motion visitors see the first phrase, still.
  */
@@ -56,7 +57,7 @@ export function RotatingWords({ phrases, className }: { phrases: string[]; class
   const longest = phrases.reduce((a, b) => (b.length > a.length ? b : a), "");
 
   return (
-    <span aria-hidden="true" className="inline-grid max-w-full whitespace-nowrap text-left align-top">
+    <span aria-hidden="true" className="inline-grid max-w-full text-left align-top">
       <span className="invisible [grid-area:1/1]">{longest}</span>
       <span className={cn("[grid-area:1/1]", className)}>
         {text}

@@ -208,7 +208,7 @@ export function WorkPinned({ projects }: WorkPinnedProps) {
                       >
                         <Link
                           href={`/work/${active.slug}`}
-                          aria-label={`View ${active.name} — ${categoryLabels[active.category]} concept`}
+                          aria-label={`View ${active.name}, ${categoryLabels[active.category]} concept`}
                           className="group/image relative block h-full overflow-hidden focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-coral"
                         >
                           <Visual

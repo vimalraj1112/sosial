@@ -122,8 +122,8 @@ export const services: Service[] = [
   },
   {
     slug: "performance-marketing",
-    name: "Paid Advertising & Performance Marketing",
-    shortName: "Paid Advertising",
+    name: "Pay Per Click (PPC) Advertising",
+    shortName: "Pay Per Click",
     tagline: "Paid media with a clear job.",
     summary:
       "Meta, Google and PPC campaigns planned around a defined objective, with the creative, landing page and measurement connected.",
@@ -186,7 +186,7 @@ export const services: Service[] = [
     image: "/assets/images/branding-system.svg",
     imageAlt:
       "Layered violet, ink and cloud wave bands representing a personal brand system",
-    photo: "/assets/images/services/personal-branding.jpg",
+    photo: "/assets/images/services/personal-branding-suit.jpg",
     problem:
       "People buy from people. Founders and professionals are often the best thing about their business, yet their online presence is quiet, inconsistent or says nothing about what they actually stand for.",
     problemPoints: [
@@ -398,7 +398,7 @@ export const services: Service[] = [
     icon: "Video",
     image: "/assets/images/video-frame.svg",
     imageAlt: "Cinematic frame artwork with a violet orbital motif",
-    photo: "/assets/images/services/video-production.jpg",
+    photo: "/assets/images/services/video-production-camera.jpg",
     problem:
       "A beautiful film can still be useless if it was never planned for the channels it needs to run on. Footage shot without a plan, or edited without the platform in mind, ends up unused.",
     problemPoints: [

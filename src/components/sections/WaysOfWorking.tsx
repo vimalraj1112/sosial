@@ -7,23 +7,23 @@ import { ButtonLink } from "@/components/ui/Button";
 const commitments = [
   {
     number: "01",
-    title: "Your goals come first",
-    body: "We start by understanding your business, your customers and what success looks like for you. Every idea we bring is tied back to that goal.",
+    title: "Let’s understand your needs",
+    body: "Tell us what you have in mind. We’ll discuss your goals and what needs to be done.",
   },
   {
     number: "02",
-    title: "One team, one point of contact",
-    body: "Strategy, content, ads and production sit under one roof. You speak to one person who knows your brand inside out.",
+    title: "One person to talk to",
+    body: "You’ll have one point of contact for questions, feedback and project updates.",
   },
   {
     number: "03",
-    title: "Content made for each platform",
-    body: "Reels, posts, ads and websites are made for where they will be seen, so your brand looks right everywhere.",
+    title: "Time to create",
+    body: "We’ll work on your designs, content, campaigns or videos and share them with you for feedback.",
   },
   {
     number: "04",
-    title: "Clear monthly reporting",
-    body: "Simple reports that show what worked, what did not and what we will do next. No jargon, no vanity numbers.",
+    title: "Keep track of progress",
+    body: "We’ll share regular updates and show you what’s working and what can be improved.",
   },
 ];
 
@@ -36,12 +36,12 @@ export function WaysOfWorking() {
             <div className="lg:sticky lg:top-28">
               <SectionLabel index="03">How we work</SectionLabel>
               <h2 {...reveal("rise")} className="display mt-5 text-[clamp(2rem,3.8vw,3.1rem)]">
-                Clear plans.{" "}
-                <span className="serif-accent text-coral">Honest</span> work.
+                No guesswork.{" "}
+                <span className="serif-accent text-coral">You&rsquo;ll know what&rsquo;s happening.</span>
               </h2>
               <p {...reveal("up")} className="mt-6 max-w-md text-[0.95rem] leading-relaxed text-ink/65">
-                Every project starts with your goals, not a template. You always know what we are
-                doing, why we are doing it and what comes next.
+                We keep things simple. We understand what you need, plan the work and keep you
+                involved at every step.
               </p>
 
               <Visual
