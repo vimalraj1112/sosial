@@ -4,7 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Check, Loader2, ArrowUpRight } from "lucide-react";
 import { useEffect, useId, useRef, useState, type ChangeEvent } from "react";
 import { useForm } from "react-hook-form";
-import { brand, enquiryMailHref } from "@/data/brand";
+import { brand, mailHref } from "@/data/brand";
 import { enquirySchema, serviceInterestOptions, type EnquiryValues } from "@/lib/validation";
 import { Field, inputBase, inputOnDark } from "@/components/ui/Field";
 import { cn } from "@/lib/utils";
@@ -93,7 +93,7 @@ export function EnquiryForm({ variant = "full", tone = "dark", className }: Prop
       if (!response.ok || !data?.ok) {
         setFailure(
           data?.error ??
-            `We could not send your enquiry. Please email us directly at ${brand.enquiryInbox}.`,
+            `We could not send your enquiry. Please email us directly at ${brand.email}.`,
         );
         return;
       }
@@ -103,7 +103,7 @@ export function EnquiryForm({ variant = "full", tone = "dark", className }: Prop
       idempotencyKey.current = createKey();
     } catch {
       setFailure(
-        `Your message did not send, most likely a connection issue. Please try again or email ${brand.enquiryInbox}.`,
+        `Your message did not send, most likely a connection issue. Please try again or email ${brand.email}.`,
       );
     }
   };
@@ -127,8 +127,8 @@ export function EnquiryForm({ variant = "full", tone = "dark", className }: Prop
         </h3>
         <p className={cn("max-w-md text-sm leading-relaxed", dark ? "text-paper/60" : "text-ink/65")}>
           {brand.responsePromise} If it is urgent, write to{" "}
-          <a href={enquiryMailHref} className="underline underline-offset-4">
-            {brand.enquiryInbox}
+          <a href={mailHref} className="underline underline-offset-4">
+            {brand.email}
           </a>
           .
         </p>
@@ -278,7 +278,7 @@ export function EnquiryForm({ variant = "full", tone = "dark", className }: Prop
           type="submit"
           disabled={isSubmitting}
           className={cn(
-            "group inline-flex h-12 items-center justify-center gap-2 rounded-full border-2 px-6 text-[0.86rem] font-semibold text-white transition-[transform,box-shadow,background-color] duration-200 hover:-translate-y-0.5 hover:bg-violet-deep hover:text-white active:translate-x-0.5 active:translate-y-0.5 active:shadow-none disabled:pointer-events-none disabled:opacity-60 disabled:shadow-none",
+            "group inline-flex h-12 items-center justify-center gap-2 rounded-full border-2 px-6 text-[0.86rem] font-semibold text-white transition-[transform,box-shadow,background-color] duration-200 hover:-translate-y-0.5 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none disabled:pointer-events-none disabled:opacity-60 disabled:shadow-none",
             dark
               ? "border-paper/30 bg-coral shadow-[3px_3px_0_0_var(--color-paper)] hover:shadow-[4px_4px_0_0_var(--color-paper)]"
               : "border-ink bg-coral shadow-hard-xs hover:shadow-hard-sm",

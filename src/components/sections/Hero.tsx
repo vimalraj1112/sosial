@@ -69,8 +69,8 @@ export function Hero() {
           <ButtonLink href="#contact" variant="primary" size="lg" arrow>
             Start a conversation
           </ButtonLink>
-          <ButtonLink href="/work" variant="light" size="lg">
-            See our work
+          <ButtonLink href="/services" variant="light" size="lg">
+            Explore our services
           </ButtonLink>
         </motion.div>
 

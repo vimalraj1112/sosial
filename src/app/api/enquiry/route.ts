@@ -228,7 +228,7 @@ export async function POST(request: Request) {
       return NextResponse.json(
         {
           ok: false,
-          error: `Email delivery is not configured yet. Please write to ${brand.enquiryInbox} and we will reply directly.`,
+          error: `Email delivery is not configured yet. Please write to ${brand.email} and we will reply directly.`,
           code: "not-configured",
         },
         { status: 503 },
@@ -243,7 +243,7 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         ok: false,
-        error: `We could not deliver your enquiry. Please email ${brand.enquiryInbox} and we will pick it up there.`,
+        error: `We could not deliver your enquiry. Please email ${brand.email} and we will pick it up there.`,
         code: "delivery-failed",
       },
       { status: 502 },

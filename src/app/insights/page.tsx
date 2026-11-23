@@ -14,7 +14,7 @@ import { reveal } from "@/components/ui/Reveal";
 export const metadata: Metadata = buildMetadata({
   title: "Insights on marketing, content and video",
   description:
-    "Practical notes from Sosial on attention, brand, search, performance, content and production. Written for people who have to make the work happen.",
+    "Practical marketing notes from SOSIAL on social media, advertising, branding, websites, video and measuring what works.",
   path: "/insights",
 });
 
@@ -37,7 +37,7 @@ export default function InsightsPage() {
             <Typewriter lines={headline} speed={45} startDelay={140} trigger="mount" />
           </h1>
           <p className="mt-7 max-w-xl text-[1rem] leading-relaxed text-paper/65 sm:text-[1.1rem]">
-            Simple, useful notes on social media, ads, branding, SEO and video, written for business owners and marketing teams.
+            Simple, practical notes on social media, ads, branding, websites and video, written for business owners and marketing teams.
           </p>
           <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
             <ButtonLink href="/contact" variant="primary" size="lg" arrow>
@@ -124,7 +124,7 @@ export default function InsightsPage() {
                 </h2>
               </div>
               <p {...reveal("up")} className="max-w-xs text-[0.82rem] leading-relaxed text-ink/50">
-                No newsletter, no content treadmill. Just the notes we would send to a client.
+                Practical tips you can use straight away, from the work we do every day.
               </p>
             </div>
 
@@ -137,7 +137,7 @@ export default function InsightsPage() {
 
           <div {...reveal("up")} className="mt-12 flex flex-col gap-5 border-t border-ink/12 pt-6 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-[0.8rem] leading-relaxed text-ink/50">
-              Have a question the notes do not answer? Ask it directly.
+              Have a question these notes do not answer? Ask us directly.
             </p>
             <ButtonLink href="/contact" variant="outline" size="sm" arrow>
               Ask a Question

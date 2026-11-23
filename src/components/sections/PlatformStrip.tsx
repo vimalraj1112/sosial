@@ -83,7 +83,9 @@ export function PlatformStrip() {
   return (
     <section className="border-b border-ink/10 bg-paper" aria-label="Tools we work with">
       <div className="container-x grid gap-4 py-7 md:grid-cols-[13rem_1fr] md:items-center md:gap-8">
-        <SectionLabel className="shrink-0 whitespace-nowrap">Tools we work with</SectionLabel>
+        <SectionLabel className="shrink-0 whitespace-nowrap" rail={false}>
+          Tools we work with
+        </SectionLabel>
         <div data-reveal="fade" className="min-w-0">
           <ul className="sr-only">
             {tools.map((tool) => (

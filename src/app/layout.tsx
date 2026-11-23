@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import { Archivo, Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "lenis/dist/lenis.css";
 import "./globals.css";
 import { brand, siteUrl, socialProfiles } from "@/data/brand";
@@ -15,6 +15,14 @@ import { SectionRail } from "@/components/motion/SectionRail";
 const bodyFont = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
+});
+
+/** Wide display face used only by the pinned section titles (SectionRail). */
+const railFont = Archivo({
+  subsets: ["latin"],
+  variable: "--font-archivo",
+  axes: ["wdth"],
   display: "swap",
 });
 
@@ -114,7 +122,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
-      className={`${bodyFont.variable} ${displayFont.variable}`}
+      className={`${bodyFont.variable} ${displayFont.variable} ${railFont.variable}`}
       data-scroll-behavior="smooth"
     >
       <body className="grain min-h-screen bg-paper text-ink antialiased">

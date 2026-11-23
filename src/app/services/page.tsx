@@ -65,8 +65,8 @@ export default function ServicesPage() {
                 <ButtonLink href="/contact" variant="primaryOnDark" arrow>
                   Start a conversation
                 </ButtonLink>
-                <ButtonLink href="/work" variant="light">
-                  See our work
+                <ButtonLink href="/insights" variant="light">
+                  Read our insights
                 </ButtonLink>
               </div>
 

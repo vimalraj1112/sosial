@@ -17,8 +17,8 @@ export const media = {
     src: "/assets/images/studio-lights.jpg",
     alt: "The SOSIAL studio set up for a shoot, with softboxes and studio lights on a white stage",
   },
-  seo: {
-    src: "/assets/images/seo-analytics.svg",
+  searchAds: {
+    src: "/assets/images/search-ads.svg",
     alt: "Illustrative analytics dashboard with campaign performance charts",
   },
   contact: {

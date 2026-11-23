@@ -4,14 +4,12 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight, Check } from "lucide-react";
 import { siteUrl } from "@/data/brand";
 import { divisions, serviceBySlug, services } from "@/data/services";
-import { projectBySlug } from "@/data/work";
 import { buildMetadata } from "@/lib/seo";
 import { Accordion } from "@/components/ui/Accordion";
 import { ButtonLink } from "@/components/ui/Button";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Visual } from "@/components/ui/Visual";
 import { HeroBackdrop } from "@/components/media/HeroBackdrop";
-import { ProjectCard } from "@/components/work/ProjectCard";
 import { reveal } from "@/components/ui/Reveal";
 import { ServiceIcon } from "@/components/services/ServiceIcon";
 import { Typewriter } from "@/components/ui/Typewriter";
@@ -52,9 +50,6 @@ export default async function ServicePage({ params }: ServicePageProps) {
   if (!service) notFound();
 
   const division = divisions.find((item) => item.id === service.division);
-  const relatedProjects = service.relatedWork
-    .map((projectSlug) => projectBySlug(projectSlug))
-    .filter((project): project is NonNullable<typeof project> => Boolean(project));
   const otherServices = services
     .filter((item) => item.slug !== service.slug && item.division === service.division)
     .slice(0, 3);
@@ -131,8 +126,8 @@ export default async function ServicePage({ params }: ServicePageProps) {
                 <ButtonLink href="/contact" variant="primaryOnDark" arrow>
                   Discuss This Service
                 </ButtonLink>
-                <ButtonLink href="/work" variant="light">
-                  See the Work
+                <ButtonLink href="/services" variant="light">
+                  All services
                 </ButtonLink>
               </div>
             </div>
@@ -300,39 +295,6 @@ export default async function ServicePage({ params }: ServicePageProps) {
           </div>
         </div>
       </section>
-
-      {relatedProjects.length > 0 ? (
-        <section className="relative overflow-hidden bg-night py-20 text-paper sm:py-24">
-          <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-grid-light opacity-20" />
-          <div className="container-x relative">
-            <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-              <div>
-                <SectionLabel tone="light">
-                  Related concepts
-                </SectionLabel>
-                <h2 {...reveal("rise")} className="display mt-5 max-w-2xl text-[clamp(2rem,4.2vw,3.4rem)]">
-                  How this thinking shows up in the{" "}
-                  <span className="serif-accent text-coral-soft">work</span>.
-                </h2>
-              </div>
-              <div {...reveal("right")}>
-                <ButtonLink href="/work" variant="light" size="sm" arrow>
-                  View All Work
-                </ButtonLink>
-              </div>
-            </div>
-
-            <div className="mt-9 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {relatedProjects.map((project) => (
-                <ProjectCard key={project.slug} project={project} total={relatedProjects.length} />
-              ))}
-            </div>
-            <p {...reveal("fade")} className="mt-5 text-[0.7rem] uppercase tracking-[0.12em] text-paper/35">
-              Illustrative concepts only. No client names or performance results are claimed.
-            </p>
-          </div>
-        </section>
-      ) : null}
 
       {otherServices.length > 0 ? (
         <section className="bg-paper py-20 sm:py-24">

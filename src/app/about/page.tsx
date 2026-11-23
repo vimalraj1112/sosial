@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowUpRight, Check } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { divisions, services } from "@/data/services";
 import { processSteps } from "@/data/faqs";
 import { media } from "@/data/media";
@@ -16,7 +16,7 @@ import { reveal } from "@/components/ui/Reveal";
 export const metadata: Metadata = buildMetadata({
   title: "About us",
   description:
-    "Sosial brings digital marketing, branding, websites and visual production together, built around one clear direction from strategy to delivery.",
+    "SOSIAL is a digital marketing and video production brand in India: one creative partner for digital marketing, content and video production.",
   path: "/about",
 });
 
@@ -28,26 +28,50 @@ const headline: TypewriterPart[][] = [
 const beliefs = [
   {
     title: "Clarity",
-    body: "Communicate objectives, scope, creative direction and expectations clearly. A written brief and scope come before work starts.",
+    body: "Clear goals, clear scope and clear communication. You always know what we are doing and why.",
   },
   {
     title: "Craft",
-    body: "Approach strategy, creative development, production and delivery with care and attention to detail. Proof every piece before it leaves the studio.",
+    body: "Care and attention to detail in every design, video and campaign, from the first idea to the final file.",
   },
   {
     title: "Consistency",
-    body: "Maintain a coherent identity, message and standard of execution across channels and deliverables. The work should look and sound like the same brand.",
+    body: "One message and one standard across every channel, so your brand looks and sounds like itself everywhere.",
   },
   {
     title: "Accountability",
-    body: "Communicate honestly, follow the agreed scope and timelines, and evaluate work against appropriate objectives. Say only what we can support.",
+    body: "We follow the agreed scope and timelines, report honestly and only promise what we can deliver.",
   },
 ];
 
-const expectations = [
-  "Access to the people who can make decisions",
-  "A willingness to share what is actually happening",
-  "A realistic view of timing, budget and internal capacity",
+const clients = [
+  "Startups and entrepreneurs",
+  "Small and medium-sized businesses",
+  "Established companies",
+  "Consultants, professionals and personal brands",
+  "Educational institutions",
+  "Healthcare and wellness businesses",
+  "Hospitality and lifestyle brands",
+  "Retail and e-commerce businesses",
+];
+
+const promises = [
+  {
+    title: "Quality over quantity",
+    body: "We would rather do fewer things well than fill your calendar with content that does not move the business.",
+  },
+  {
+    title: "Honest from day one",
+    body: "We never make up results, reviews or credentials. If something is not the right fit, we will tell you.",
+  },
+  {
+    title: "Your brief comes first",
+    body: "Your approved brief and brand guidelines guide the work. We will not change direction without talking to you.",
+  },
+  {
+    title: "In it for the long term",
+    body: "We care about building lasting relationships, not one-off projects. Your growth is how we measure our work.",
+  },
 ];
 
 export default function AboutPage() {
@@ -77,32 +101,32 @@ export default function AboutPage() {
 
       <section className="bg-paper py-20 sm:py-24 lg:py-28">
         <div className="container-x">
-          <SectionLabel index="01">The belief</SectionLabel>
+          <SectionLabel index="01">Who we are</SectionLabel>
           <div className="mt-8 grid gap-10 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-7">
               <h2 {...reveal("rise")} className="display max-w-3xl text-[clamp(2.2rem,4.8vw,4.1rem)]">
-                Attention is earned, not{" "}
-                <span className="serif-accent text-coral">bought</span>.
+                One creative partner for your{" "}
+                <span className="serif-accent text-coral">whole brand</span>.
               </h2>
               <p {...reveal("up")} className="mt-7 max-w-2xl text-[1.02rem] leading-relaxed text-ink/70">
-                Good marketing comes from clarity, consistency and a genuine understanding of people.
-                A brand does not become memorable because it is louder. It becomes memorable because
-                it says something specific, looks like itself and keeps showing up with a reason.
+                SOSIAL is a digital marketing and video production brand based in India. We bring
+                digital marketing, creative content and video production together to help businesses
+                build their presence, communicate their value and connect with their audiences.
               </p>
               <p {...reveal("up")} className="mt-4 max-w-2xl text-[1.02rem] leading-relaxed text-ink/70">
-                That is why we do not separate the message from the channel, the campaign from the
-                content, or the brand from the production. The more connected the work is, the less
-                it has to shout.
+                We work as your creative and marketing partner, not as a freelancer and not as a
+                traditional agency. One team plans the strategy, creates the content and delivers the
+                work, so everything fits together.
               </p>
               <div {...reveal("up")} className="mt-8 flex flex-wrap gap-3">
-                <ButtonLink href="/work" variant="outline" arrow>
-                  See the Work
+                <ButtonLink href="/services" variant="outline" arrow>
+                  Explore Services
                 </ButtonLink>
                 <Link
                   href="/insights"
                   className="group inline-flex items-center gap-2 px-1 py-3 text-[0.82rem] font-medium text-ink/65 transition-colors hover:text-coral"
                 >
-                  Read our thinking
+                  Read our insights
                   <ArrowUpRight
                     aria-hidden="true"
                     className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
@@ -114,7 +138,7 @@ export default function AboutPage() {
 
             <div className="lg:col-span-5">
               <p {...reveal("fade")} className="mb-3 text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-ink/40">
-                Four values, applied daily
+                Our values
               </p>
               <div className="grid gap-3">
                 {beliefs.map((belief, index) => (
@@ -148,15 +172,15 @@ export default function AboutPage() {
         <div className="container-x">
           <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
             <div>
-              <SectionLabel index="02">Two divisions</SectionLabel>
+              <SectionLabel index="02">What we do</SectionLabel>
               <h2 {...reveal("rise")} className="display mt-5 max-w-2xl text-[clamp(2rem,4.2vw,3.4rem)]">
-                One direction, two{" "}
-                <span className="serif-accent text-coral">disciplines</span>.
+                Two divisions,{" "}
+                <span className="serif-accent text-coral">one team</span>.
               </h2>
             </div>
             <p {...reveal("up")} className="max-w-sm text-[0.9rem] leading-relaxed text-ink/60">
-              Strategy and production sit under the same roof, so the idea survives the shoot, the
-              build and the campaign.
+              Digital marketing and video production work side by side, so your strategy, content
+              and campaigns all point in the same direction.
             </p>
           </div>
 
@@ -186,7 +210,7 @@ export default function AboutPage() {
                       <li key={service.slug}>
                         <Link
                           href={`/services/${service.slug}`}
-                          className="inline-flex rounded-full border border-ink/20 bg-paper px-3 py-1.5 text-[0.66rem] font-medium text-ink/65 transition-colors hover:border-ink hover:text-ink"
+                          className="inline-flex rounded-full border border-ink/20 bg-paper px-3 py-1.5 text-[0.66rem] font-medium text-ink/65 transition-colors"
                         >
                           {service.shortName}
                         </Link>
@@ -263,20 +287,19 @@ export default function AboutPage() {
       <section className="border-t border-ink/10 bg-paper-deep py-20 sm:py-24">
         <div className="container-x grid gap-10 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-6">
-            <SectionLabel index="04">The working relationship</SectionLabel>
+            <SectionLabel index="04">Who we work with</SectionLabel>
             <h2 {...reveal("rise")} className="display mt-5 max-w-xl text-[clamp(1.9rem,3.8vw,3rem)]">
-              Good work needs a{" "}
-              <span className="serif-accent text-coral">good brief</span>.
+              Built for businesses of{" "}
+              <span className="serif-accent text-coral">every size</span>.
             </h2>
             <p {...reveal("up")} className="mt-5 max-w-lg text-[0.95rem] leading-relaxed text-ink/65">
-              We do not need a finished brief to start, but we do need an honest view of the business.
-              The best outcomes come from clients who are close to the work and clear about what they
-              can decide.
+              We are India-first and work with clients across different industries and locations.
+              Every plan is built around your business, your audience and your goals.
             </p>
-            <ul className="mt-7 space-y-3">
-              {expectations.map((item) => (
+            <ul className="mt-7 grid gap-x-6 gap-y-3 sm:grid-cols-2">
+              {clients.map((item) => (
                 <li key={item} {...reveal("left")} className="flex gap-3 text-[0.9rem] leading-relaxed text-ink/70">
-                  <Check aria-hidden="true" className="mt-1 h-4 w-4 shrink-0 text-coral" strokeWidth={2} />
+                  <span aria-hidden="true" className="mt-[0.6em] h-1.5 w-1.5 shrink-0 rounded-full bg-coral" />
                   {item}
                 </li>
               ))}
@@ -293,7 +316,7 @@ export default function AboutPage() {
                   <Link
                     key={service.slug}
                     href={`/services/${service.slug}`}
-                    className="inline-flex rounded-full border border-ink/20 bg-paper px-3 py-1.5 text-[0.7rem] font-medium text-ink/65 transition-colors hover:border-ink hover:text-ink"
+                    className="inline-flex rounded-full border border-ink/20 bg-paper px-3 py-1.5 text-[0.7rem] font-medium text-ink/65 transition-colors"
                   >
                     {service.shortName}
                   </Link>
@@ -316,6 +339,40 @@ export default function AboutPage() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-paper py-20 sm:py-24 lg:py-28">
+        <div className="container-x">
+          <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+            <div>
+              <SectionLabel index="05">What you can expect</SectionLabel>
+              <h2 {...reveal("rise")} className="display mt-5 max-w-2xl text-[clamp(2rem,4.2vw,3.4rem)]">
+                How we work{" "}
+                <span className="serif-accent text-coral">with you</span>.
+              </h2>
+            </div>
+            <p {...reveal("up")} className="max-w-sm text-[0.9rem] leading-relaxed text-ink/60">
+              We are not just about creating content or running ads. We help businesses communicate
+              better, build stronger brands and grow through the right mix of strategy, creativity,
+              technology and execution.
+            </p>
+          </div>
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {promises.map((item, index) => (
+              <div
+                key={item.title}
+                {...reveal("up")}
+                className="rounded-card border-2 border-ink bg-card p-6 shadow-hard-xs"
+              >
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-coral text-[0.64rem] font-bold text-white">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <h3 className="mt-5 font-display text-[1.12rem] font-semibold tracking-[-0.02em]">{item.title}</h3>
+                <p className="mt-2 text-[0.86rem] leading-relaxed text-ink/60">{item.body}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

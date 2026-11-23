@@ -51,8 +51,6 @@ export function Header() {
 
   const onHome = pathname === "/";
   const onDarkPage =
-    pathname === "/work" ||
-    pathname.startsWith("/work/") ||
     pathname === "/contact";
   const hasDarkHero =
     pathname === "/about" ||
@@ -228,9 +226,9 @@ export function Header() {
                                   key={service.slug}
                                   href={`/services/${service.slug}`}
                                   onClick={() => setServicesOpen(false)}
-                                  className="group flex items-start gap-3 rounded-xl p-3 transition-colors hover:bg-night/[0.05]"
+                                  className="group flex items-start gap-3 rounded-xl p-3 transition-colors/[0.05]"
                                 >
-                                  <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-ink/15 bg-paper text-ink/70 transition-colors group-hover:border-ink group-hover:bg-coral group-hover:text-white">
+                                  <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-ink/15 bg-paper text-ink/70 transition-colors">
                                     <Icon className="h-4 w-4" strokeWidth={1.6} />
                                   </span>
                                   <span className="min-w-0">
@@ -296,7 +294,7 @@ export function Header() {
               aria-label="Call SOSIAL"
               className={cn(
                 "hidden h-9 w-9 items-center justify-center rounded-full border-2 transition-colors xl:flex",
-                overHero ? "border-paper/30 text-paper hover:border-paper hover:bg-paper hover:text-ink" : "border-ink/20 text-ink hover:border-ink hover:bg-night hover:text-paper",
+                overHero ? "border-paper/30 text-paper" : "border-ink/20 text-ink",
               )}
             >
               <Phone aria-hidden="true" className="h-4 w-4" strokeWidth={1.8} />
@@ -308,7 +306,7 @@ export function Header() {
               aria-label="Message SOSIAL on WhatsApp"
               className={cn(
                 "hidden h-9 w-9 items-center justify-center rounded-full border-2 transition-colors xl:flex",
-                overHero ? "border-paper/30 text-paper hover:border-paper hover:bg-paper hover:text-ink" : "border-ink/20 text-ink hover:border-ink hover:bg-night hover:text-paper",
+                overHero ? "border-paper/30 text-paper" : "border-ink/20 text-ink",
               )}
             >
               <WhatsAppIcon className="h-[1.05rem] w-[1.05rem]" />
@@ -353,7 +351,7 @@ export function Header() {
                 onClick={() => setMobileOpen(false)}
                 aria-label="Close menu"
                 autoFocus
-                className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-paper/30 text-paper transition-colors hover:border-paper"
+                className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-paper/30 text-paper transition-colors"
               >
                 <X className="h-5 w-5" strokeWidth={1.6} />
               </button>
@@ -416,7 +414,7 @@ export function Header() {
                 <div className="grid grid-cols-2 gap-3">
                   <a
                     href={telHref}
-                    className="flex h-12 items-center justify-center gap-2 rounded-full border-2 border-paper/25 text-[0.82rem] font-medium text-paper/85 transition-colors hover:border-paper"
+                    className="flex h-12 items-center justify-center gap-2 rounded-full border-2 border-paper/25 text-[0.82rem] font-medium text-paper/85 transition-colors"
                   >
                     <Phone aria-hidden="true" className="h-4 w-4" strokeWidth={1.8} />
                     Call
@@ -425,7 +423,7 @@ export function Header() {
                     href={whatsappHref}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex h-12 items-center justify-center gap-2 rounded-full border-2 border-paper/25 text-[0.82rem] font-medium text-paper/85 transition-colors hover:border-paper"
+                    className="flex h-12 items-center justify-center gap-2 rounded-full border-2 border-paper/25 text-[0.82rem] font-medium text-paper/85 transition-colors"
                   >
                     <WhatsAppIcon className="h-4 w-4" />
                     WhatsApp

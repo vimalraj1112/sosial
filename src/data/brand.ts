@@ -12,7 +12,7 @@ export const brand = {
     "SOSIAL is one creative partner for digital marketing, content and video production, helping businesses build their presence, communicate their value and connect with their audiences.",
   email: "sosial.solutions@gmail.com",
   /** Inbox that receives website enquiries and booking requests. */
-  enquiryInbox: "sosialproductionsofficial@gmail.com",
+  enquiryInbox: "sosial.solutions@gmail.com",
   phoneLabel: "+91 91104 80590",
   phoneHref: "+919110480590",
   whatsappNumber: "919482861084",
@@ -113,7 +113,6 @@ export const navigation: NavItem[] = [
       },
     ],
   },
-  { label: "Work", href: "/work" },
   { label: "Insights", href: "/insights" },
   { label: "Contact", href: "/contact" },
 ];
@@ -129,7 +128,6 @@ export const footerLinks = {
   ],
   company: [
     { label: "About Sosial", href: "/about" },
-    { label: "Our Work", href: "/work" },
     { label: "Services", href: "/services" },
     { label: "Insights", href: "/insights" },
     { label: "Contact", href: "/contact" },

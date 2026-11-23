@@ -6,6 +6,7 @@ export function SectionLabel({
   tone = "dark",
   className,
   reveal = true,
+  rail = true,
 }: {
   /** Section number, e.g. "01". Leave out for a plain label. */
   index?: string;
@@ -14,11 +15,13 @@ export function SectionLabel({
   className?: string;
   /** Eyebrow labels slide in on scroll unless switched off. */
   reveal?: boolean;
+  /** Show this section in the pinned section titles (SectionRail). */
+  rail?: boolean;
 }) {
   return (
     <div
       data-reveal={reveal ? "left" : undefined}
-      data-rail={typeof children === "string" ? children : undefined}
+      data-rail={rail && typeof children === "string" ? children : undefined}
       className={cn(
         "flex items-center gap-3",
         tone === "light" ? "text-paper/65" : "text-ink/60",

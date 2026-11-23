@@ -208,7 +208,7 @@ export default async function InsightPage({ params }: InsightPageProps) {
           </aside>
 
           <div className="min-w-0 lg:col-span-8">
-            <article className="prose-sosial max-w-3xl">
+            <article data-reveal="up" className="prose-sosial max-w-3xl">
               {article.content.map((block, index) => (
                 <ArticleBlockView key={`${block.type}-${index}`} block={block} />
               ))}

@@ -55,7 +55,7 @@ export function FinalCta() {
             href={whatsappHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex h-[3.75rem] items-center justify-center gap-2 rounded-full border-2 border-paper/30 px-7 text-[0.94rem] font-semibold text-paper transition-[transform,background-color,color,border-color] duration-200 hover:-translate-y-0.5 hover:border-paper hover:bg-paper hover:text-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-coral"
+            className="group inline-flex h-[3.75rem] items-center justify-center gap-2 rounded-full border-2 border-paper/30 px-7 text-[0.94rem] font-semibold text-paper transition-[transform,background-color,color,border-color] duration-200 hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-coral"
           >
             <WhatsAppIcon className="h-4 w-4" />
             Chat on WhatsApp

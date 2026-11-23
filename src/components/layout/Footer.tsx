@@ -86,7 +86,7 @@ export function Footer() {
                         ? { target: "_blank", rel: "noopener noreferrer" }
                         : {})}
                       aria-label={profile.icon === "email" ? `Email SOSIAL at ${brand.email}` : `SOSIAL on ${profile.label}`}
-                      className="flex h-10 w-10 items-center justify-center rounded-full border border-paper/25 text-paper/75 transition-colors hover:border-coral hover:bg-coral hover:text-white"
+                      className="flex h-10 w-10 items-center justify-center rounded-full border border-paper/25 text-paper/75 transition-colors"
                     >
                       <SocialGlyph name={profile.icon} className="h-4 w-4" />
                     </a>

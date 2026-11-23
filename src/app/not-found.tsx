@@ -11,7 +11,6 @@ export const metadata: Metadata = {
 };
 
 const suggestions = [
-  { label: "Selected work", href: "/work" },
   { label: "Services", href: "/services" },
   { label: "Insights", href: "/insights" },
   { label: "Contact", href: "/contact" },

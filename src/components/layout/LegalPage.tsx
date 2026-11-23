@@ -3,6 +3,7 @@ import { HeroBackdrop } from "@/components/media/HeroBackdrop";
 import { ButtonLink } from "@/components/ui/Button";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Typewriter } from "@/components/ui/Typewriter";
+import { reveal } from "@/components/ui/Reveal";
 
 type LegalSection = {
   heading: string;
@@ -32,13 +33,15 @@ export function LegalPage({ eyebrow, title, intro, updated, sections }: LegalPag
             <h1 className="display text-[clamp(2.5rem,5vw,4.2rem)]">
               <Typewriter lines={[[{ text: title }]]} speed={45} startDelay={140} trigger="mount" />
             </h1>
-            <p className="mt-5 max-w-3xl text-[0.95rem] leading-relaxed text-paper/65">{intro}</p>
-            <p className="mt-6 text-[0.68rem] font-semibold uppercase tracking-[0.13em] text-paper/35">
+            <p {...reveal("up")} className="mt-5 max-w-3xl text-[0.95rem] leading-relaxed text-paper/65">{intro}</p>
+            <p {...reveal("fade")} className="mt-6 text-[0.68rem] font-semibold uppercase tracking-[0.13em] text-paper/35">
               Last updated: {updated}
             </p>
-            <ButtonLink href="/contact" variant="primaryOnDark" size="sm" className="mt-7" arrow>
-              Ask a question
-            </ButtonLink>
+            <div {...reveal("up")}>
+              <ButtonLink href="/contact" variant="primaryOnDark" size="sm" className="mt-7" arrow>
+                Ask a question
+              </ButtonLink>
+            </div>
           </div>
         </div>
       </section>
@@ -49,7 +52,7 @@ export function LegalPage({ eyebrow, title, intro, updated, sections }: LegalPag
             <div className="rounded-card border-2 border-ink bg-card p-6 shadow-hard-sm sm:p-8">
               <div className="space-y-8">
                 {sections.map((section) => (
-                  <div key={section.heading}>
+                  <div key={section.heading} {...reveal("up")}>
                     <h2 className="font-display text-[1.12rem] font-semibold tracking-[-0.02em]">
                       {section.heading}
                     </h2>
@@ -60,7 +63,7 @@ export function LegalPage({ eyebrow, title, intro, updated, sections }: LegalPag
                 ))}
               </div>
             </div>
-            <p className="mt-5 text-[0.74rem] leading-relaxed text-ink/45">
+            <p {...reveal("fade")} className="mt-5 text-[0.74rem] leading-relaxed text-ink/45">
               This is an interim notice, not a substitute for a complete legal policy. The full
               document will be published when it has been reviewed by the client.
             </p>

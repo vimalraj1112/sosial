@@ -9,7 +9,7 @@ export type Article = {
   slug: string;
   title: string;
   excerpt: string;
-  category: "Strategy" | "SEO" | "Performance" | "Branding" | "Video" | "Analytics";
+  category: "Social Media" | "Advertising" | "Branding" | "Video" | "Websites" | "Analytics";
   date: string;
   readingTime: string;
   image: string;
@@ -21,306 +21,274 @@ export type Article = {
 
 export const articles: Article[] = [
   {
-    slug: "attention-audit",
-    title: "The attention audit: what to fix before you spend more on media",
+    slug: "social-media-plan-that-lasts",
+    title: "A social media plan you can actually keep up with",
     excerpt:
-      "If acquisition is getting more expensive, the answer is not always a bigger budget. Start by auditing where attention is actually being lost.",
-    category: "Strategy",
-    date: "2026-09-18",
-    readingTime: "6 min read",
+      "Posting every day is not a strategy. A few clear content pillars and a realistic calendar will do more for your brand than chasing every trend.",
+    category: "Social Media",
+    date: "2026-10-28",
+    readingTime: "5 min read",
     image: "/assets/images/insight-strategy.svg",
     imageAlt: "Geometric grid artwork in cloud, ink, violet and soft violet",
-    author: "SOSIAL Studio",
+    author: "SOSIAL",
     featured: true,
     content: [
       {
         type: "p",
-        text: "When performance dips, the fastest response is usually to increase spend or add a channel. Both can work, but both treat a symptom. Attention is lost in specific places, and those places are usually cheaper to fix than the cost of buying more of it.",
+        text: "Most businesses do not struggle with ideas. They struggle with consistency. A burst of posts in the first week, then silence for a month, then another burst. The audience notices, and so do the platforms.",
       },
       {
         type: "p",
-        text: "An attention audit is a structured look at the journey between discovering a brand and acting on it. It is not a creative review and it is not a media audit. It asks a simpler question: at which point do people stop caring, and why?",
+        text: "A good social media plan is not about posting more. It is about knowing why each post exists and making sure you can keep going.",
       },
-      { type: "h2", text: "Start with the first three seconds" },
+      { type: "h2", text: "Start with the goal, not the platform" },
       {
         type: "p",
-        text: "Most paid attention is decided before your message is fully delivered. A viewer needs a reason to stay, and that reason has to be visible immediately: a specific problem, a surprising image, a clear claim. If the opening frame could belong to any competitor, it is doing no work.",
+        text: "Before choosing Instagram, LinkedIn or YouTube, decide what you want social media to do for the business. Build awareness? Earn trust? Bring in enquiries? The answer changes what you post and where you post it.",
       },
+      { type: "h2", text: "Pick four or five content pillars" },
       {
         type: "p",
-        text: "Review your best-performing and worst-performing creative side by side. Forget the production budget and look at the first frame, the first line and the first promise. The pattern is usually obvious once the noise is removed.",
-      },
-      { type: "h2", text: "Then the landing experience" },
-      {
-        type: "p",
-        text: "A strong ad buys you a few seconds of goodwill. A mismatched landing page spends it immediately. The most common failures are not aesthetic: they are continuity failures. The page repeats the category rather than the promise, or hides the next step below three screens of brand storytelling.",
+        text: "Content pillars are the few themes your brand talks about again and again. They keep your feed focused and make planning much easier. For most businesses, a mix like this works well:",
       },
       {
         type: "ul",
         items: [
-          "Does the page headline echo the promise that earned the click?",
-          "Is the primary action visible without scrolling on a phone?",
-          "Is the offer specific enough to evaluate, or deliberately vague?",
-          "Does the page load fast enough to keep someone who is only half-interested?",
+          "Helpful tips your customers can use straight away",
+          "What you offer and how it works",
+          "Behind the scenes: your people, process and work",
+          "Proof of quality: finished work and project highlights",
+          "A clear next step for people who are ready to talk",
         ],
       },
-      { type: "h2", text: "Check the offer, not just the funnel" },
+      { type: "h2", text: "Not every post should sell" },
       {
         type: "p",
-        text: "Sometimes the cheapest fix is the least popular one: the offer is not compelling. No amount of optimisation will make a weak incentive strong. Ask what a customer gives up to say yes, and whether the value is obvious to someone who has never heard of you.",
+        text: "If every post is an offer, people stop paying attention. Balance useful, interesting and conversion-focused content. The selling posts work better when the rest of your feed has already built trust.",
       },
-      {
-        type: "quote",
-        text: "Attention is not a budget line. It is the sum of every small decision between curiosity and action.",
-      },
-      { type: "h2", text: "Measure the cost of confusion" },
+      { type: "h2", text: "Plan a month, review every month" },
       {
         type: "p",
-        text: "Look for signals we tend to ignore: high time on page with low conversion, repeated visits that never progress, common questions in sales calls that the site should answer. These are places where attention exists but is being wasted, and they are usually more profitable to fix than a new channel.",
-      },
-      { type: "h2", text: "A simple starting point" },
-      {
-        type: "p",
-        text: "Pick your three highest-traffic entry points. For each one, write down the promise that brought the visitor there, the next action you want, and the single biggest obstacle. Fix the obstacle before increasing spend. It is unglamorous, measurable and usually compounds.",
+        text: "A simple monthly calendar with the date, platform, pillar, format and caption is enough. At the end of the month, look at what was saved, shared and acted on, then adjust the next one. Small, steady improvements beat starting over.",
       },
     ],
   },
   {
-    slug: "seo-is-a-product-problem",
-    title: "SEO is a product problem, not a content problem",
+    slug: "google-ads-or-meta-ads",
+    title: "Google Ads or Meta Ads: which one fits your goal?",
     excerpt:
-      "Publishing more articles will not fix a site that is hard to crawl, slow to load and structured around internal departments instead of customer questions.",
-    category: "SEO",
-    date: "2026-08-27",
-    readingTime: "5 min read",
-    image: "/assets/images/insight-seo.svg",
-    imageAlt: "Abstract analytics dashboard illustration on a dark background",
-    author: "SOSIAL Studio",
-    content: [
-      {
-        type: "p",
-        text: "Organic growth gets framed as a content discipline: publish consistently, target keywords, build links. That framing hides the fact that most search problems are product problems. The site architecture, page speed, template quality and internal linking decide whether good content can perform at all.",
-      },
-      { type: "h2", text: "Architecture is the strategy" },
-      {
-        type: "p",
-        text: "If a page cannot be reached in a few clicks from a relevant page, it is competing with a handicap. Internal links are not a technical detail; they are how you tell a search engine which pages matter and how topics relate. A clean topic structure will outperform a long list of disconnected posts every time.",
-      },
-      { type: "h2", text: "Speed is a content decision" },
-      {
-        type: "p",
-        text: "Heavy templates, unoptimised images and third-party scripts are often introduced by marketing rather than engineering. Every new embed and tag is a tax on the reading experience. Agree a performance budget early and treat it like a brand guideline.",
-      },
-      { type: "h2", text: "Write for one page, not one keyword" },
-      {
-        type: "p",
-        text: "Search engines increasingly reward pages that fully answer an intent. That means fewer, better pages that cover a topic properly, with clear sections, useful examples and a reason to trust the author. Ten thin posts targeting variants of the same phrase are usually one good page waiting to be written.",
-      },
-      {
-        type: "ul",
-        items: [
-          "One page, one clear job in the customer journey",
-          "Headings that follow the questions people actually ask",
-          "Specific examples and evidence instead of generic advice",
-          "A visible next step for the reader who is ready",
-        ],
-      },
-      { type: "h2", text: "Make maintenance part of the plan" },
-      {
-        type: "p",
-        text: "Content decays. Products change, links break, competitors publish better answers. A quarterly review of your highest-value pages is often more valuable than another new article. Update, consolidate or retire. Treat the library as a product with a roadmap.",
-      },
-    ],
-  },
-  {
-    slug: "creative-testing-system",
-    title: "Creative testing is a system, not a lucky ad",
-    excerpt:
-      "Most creative testing produces noise because it changes too many variables at once. A simple structure turns it into something you can learn from.",
-    category: "Performance",
-    date: "2026-08-04",
-    readingTime: "6 min read",
-    image: "/assets/images/insight-creative.svg",
-    imageAlt: "Violet, ink and soft-violet wave bands on a cloud background",
-    author: "SOSIAL Studio",
-    content: [
-      {
-        type: "p",
-        text: "Paid social rewards volume of ideas, but volume without structure produces expensive randomness. The teams that improve consistently are not the ones with the most variants. They are the ones who know what they are testing and why.",
-      },
-      { type: "h2", text: "Test one argument at a time" },
-      {
-        type: "p",
-        text: "A common mistake is to change the hook, the format, the music and the call to action in one new ad, then declare the winner. If it performs, you do not know which decision mattered. Build tests around a single variable, starting with the argument rather than the execution.",
-      },
-      {
-        type: "ul",
-        items: [
-          "Which problem does the audience feel most urgently?",
-          "Which proof point is most believable?",
-          "Which objection needs to be removed first?",
-          "Which moment of the product is most persuasive?",
-        ],
-      },
-      { type: "h2", text: "Separate concepts from production" },
-      {
-        type: "p",
-        text: "A concept can be tested cheaply. Once an angle wins, invest in production quality. Doing it the other way around means paying for polish on ideas the market never wanted.",
-      },
-      { type: "h2", text: "Give a test time to mean something" },
-      {
-        type: "p",
-        text: "Platform dashboards encourage premature conclusions. Decide the sample size and the metric before launch, then wait for enough data to answer the question. Stopping as soon as a variant leads on one day is how teams end up scaling noise.",
-      },
-      {
-        type: "quote",
-        text: "The goal is not to find a winning ad. It is to build a repeatable understanding of what your market responds to.",
-      },
-      { type: "h2", text: "Write down what you learned" },
-      {
-        type: "p",
-        text: "Keep a simple log: hypothesis, variant, result, decision, next test. It becomes the most valuable document in the account, and it survives staff changes. Six months of disciplined notes will outperform any dashboard.",
-      },
-    ],
-  },
-  {
-    slug: "one-clear-idea",
-    title: "Your brand does not need more touchpoints. It needs one clear idea.",
-    excerpt:
-      "Consistency is not repetition for its own sake. It is the discipline of expressing the same sharp idea across every surface.",
-    category: "Branding",
-    date: "2026-07-15",
-    readingTime: "4 min read",
-    image: "/assets/images/insight-brand.svg",
-    imageAlt: "Dark editorial artwork with a large circle and a violet accent",
-    author: "SOSIAL Studio",
-    content: [
-      {
-        type: "p",
-        text: "Brand guidelines often spend pages on logo clear space and almost none on what the brand actually means. The result is a consistent-looking company with an inconsistent argument. People recognise the colours but cannot repeat the promise.",
-      },
-      { type: "h2", text: "A useful idea is repeatable" },
-      {
-        type: "p",
-        text: "The test of a positioning idea is whether an employee can explain it in a sentence and apply it to a decision they have not been briefed on. If it requires a slide deck to defend, it is too complicated to function.",
-      },
-      { type: "h2", text: "Design is how the idea behaves" },
-      {
-        type: "p",
-        text: "Type, colour and layout are not decoration; they are the tone of voice made visible. A restrained interface supports a claim of clarity. A dense, loud identity supports urgency. The system should make the idea obvious before anyone reads the copy.",
-      },
-      { type: "h2", text: "Cut the touchpoints that dilute" },
-      {
-        type: "p",
-        text: "More channels rarely create more meaning. A brand present in twelve places with a slightly different story in each is weaker than one present in four places with a recognisable point of view. Choose the surfaces where your audience actually spends time, and do them properly.",
-      },
-      {
-        type: "ul",
-        items: [
-          "One sentence that states what you believe about your category",
-          "Three proof points that make the claim credible",
-          "A visual system that expresses the claim without words",
-          "A rule for saying no to work that does not fit",
-        ],
-      },
-      { type: "h2", text: "Consistency is a maintenance job" },
-      {
-        type: "p",
-        text: "A brand does not stay consistent because it was designed well. It stays consistent because templates, approvals and examples make the right choice the easy one. Build for the person producing the hundredth asset, not the first.",
-      },
-    ],
-  },
-  {
-    slug: "first-frame-strategy",
-    title: "Short-form video: the first frame is the strategy",
-    excerpt:
-      "You have roughly one second to earn the next five. Here is how to design for that reality without sacrificing the story.",
-    category: "Video",
-    date: "2026-06-23",
-    readingTime: "5 min read",
-    image: "/assets/images/insight-video.svg",
-    imageAlt: "Dark orbital artwork with a violet dashed ring",
-    author: "SOSIAL Studio",
-    content: [
-      {
-        type: "p",
-        text: "Short-form video is not television compressed. It is a different medium with a different contract: the viewer owes you nothing, and the platform is designed to replace you. The opening frame has to do narrative work immediately.",
-      },
-      { type: "h2", text: "Open on the tension, not the logo" },
-      {
-        type: "p",
-        text: "Brand films often start with an establishing shot and a logo. Feed video cannot afford that. Start on the problem, the result or the surprising detail. The brand can arrive once attention has been earned.",
-      },
-      { type: "h2", text: "Design for sound off and captions on" },
-      {
-        type: "p",
-        text: "Assume silence. Text should carry the argument, with visuals supporting rather than duplicating it. Captions are not accessibility theatre; they are a design element that keeps the story readable at speed.",
-      },
-      { type: "h2", text: "Shoot for the edit you will actually need" },
-      {
-        type: "p",
-        text: "Plan the cutdowns before the shoot: vertical hero, fifteen-second product proof, six-second hook. Coverage decisions on set should be driven by those edits. One well-planned shoot can produce a month of assets; one unplanned shoot produces a film nobody can use.",
-      },
-      {
-        type: "ul",
-        items: [
-          "A hook that works with the sound off",
-          "One idea per video, not three",
-          "Movement or a visual change every few seconds",
-          "A clear next action, spoken and shown",
-        ],
-      },
-      { type: "h2", text: "Measure where people leave" },
-      {
-        type: "p",
-        text: "Retention curves are the most honest creative feedback available. If viewers drop at the same second across multiple videos, the problem is structural, not a one-off. Fix the pattern, then test the details.",
-      },
-    ],
-  },
-  {
-    slug: "reporting-that-changes-decisions",
-    title: "Reporting that changes decisions (and the metrics that don't)",
-    excerpt:
-      "A report is not a record of activity. It is an argument for what to do next. Most dashboards are built for the wrong job.",
-    category: "Analytics",
-    date: "2026-05-30",
+      "Both can bring in customers, but they work in very different ways. Here is a simple way to decide where your first ad budget should go.",
+    category: "Advertising",
+    date: "2026-10-14",
     readingTime: "5 min read",
     image: "/assets/images/insight-measurement.svg",
-    imageAlt: "Radar-style illustration with connected data points",
-    author: "SOSIAL Studio",
+    imageAlt: "Abstract measurement artwork in violet and ink",
+    author: "SOSIAL",
     content: [
       {
         type: "p",
-        text: "Most marketing reports are activity logs with a chart on top. They show what happened, rarely why, and almost never what should change. A useful report answers three questions: what did we expect, what happened, and what are we doing about it?",
+        text: "One of the most common questions we hear is whether a business should advertise on Google or on Facebook and Instagram. The honest answer is that it depends on how your customers look for you.",
       },
-      { type: "h2", text: "Start with the decision" },
+      { type: "h2", text: "Google Ads: reach people who are already searching" },
       {
         type: "p",
-        text: "Before choosing metrics, decide which decisions the report should support. Budget reallocation, creative direction, channel investment, pricing and offer design all require different evidence. A single dashboard for everything serves no decision well.",
+        text: "Google Ads shows your business to people who are actively looking for what you offer. Someone searching for a service near them already has a need. Your job is to show up with a clear answer and an easy next step.",
       },
-      { type: "h2", text: "Separate health from growth" },
       {
         type: "p",
-        text: "Some metrics tell you the system is working: conversion rate, repeat purchase, qualified pipeline. Others tell you it is growing: reach, new users, share of demand. Both matter, but conflating them creates confusing reports and bad decisions.",
+        text: "It usually works well for services people search for when they need them, and for businesses with a clear, specific offer.",
       },
-      { type: "h2", text: "Beware metrics that only go up" },
+      { type: "h2", text: "Meta Ads: get noticed by people who are not searching yet" },
       {
         type: "p",
-        text: "Impressions, followers and time on site can rise while the business stands still. If a metric cannot fall in a way that would change your behaviour, it is probably decoration. Keep it in the appendix, not the summary.",
+        text: "Meta Ads runs on Facebook and Instagram. People are scrolling, not searching, so your ad has to earn attention first. Strong creative matters more here, and you can reach people based on their interests and behaviour.",
+      },
+      {
+        type: "p",
+        text: "It usually works well for building awareness, launching something new, and products or services people do not know they want yet.",
+      },
+      { type: "h2", text: "A simple way to decide" },
+      {
+        type: "ul",
+        items: [
+          "If people already search for what you sell, start with Google Ads",
+          "If you need to create interest or show your product, start with Meta Ads",
+          "If you have the budget for both, they often work best together",
+        ],
+      },
+      { type: "h2", text: "Whatever you choose, track the right thing" },
+      {
+        type: "p",
+        text: "Clicks and likes are easy to count, but they are not the goal. Set up tracking before you spend, and judge your ads on enquiries, cost per lead and the customers they actually bring in.",
+      },
+    ],
+  },
+  {
+    slug: "personal-branding-for-founders",
+    title: "Personal branding for founders: where to start",
+    excerpt:
+      "People buy from people. If you are the face of your business, a clear personal brand can open doors your company page cannot.",
+    category: "Branding",
+    date: "2026-09-30",
+    readingTime: "4 min read",
+    image: "/assets/images/insight-brand.svg",
+    imageAlt: "Layered brand artwork in violet and cloud",
+    author: "SOSIAL",
+    content: [
+      {
+        type: "p",
+        text: "Founders, doctors, consultants and coaches are often the best thing about their business. Yet their online presence is quiet, out of date or says very little about what they actually do.",
+      },
+      { type: "h2", text: "Decide what you want to be known for" },
+      {
+        type: "p",
+        text: "Pick one or two topics you know well and genuinely care about. Trying to talk about everything makes you forgettable. Being clear about your area of expertise makes you easy to recommend.",
+      },
+      { type: "h2", text: "Fix the basics first" },
+      {
+        type: "ul",
+        items: [
+          "A clear profile photo and a bio that says what you do and who you help",
+          "The same name, look and message across LinkedIn, Instagram and your website",
+          "A few good posts pinned so new visitors understand you quickly",
+        ],
+      },
+      { type: "h2", text: "Share what you know" },
+      {
+        type: "p",
+        text: "You do not need to be loud. Share lessons from your work, answer the questions your clients ask, and show the thinking behind your decisions. Useful beats polished.",
+      },
+      { type: "h2", text: "Show up regularly" },
+      {
+        type: "p",
+        text: "One thoughtful post a week, every week, builds more trust than ten posts in one month. Choose formats you can keep up with, whether that is writing, photos or short videos.",
+      },
+    ],
+  },
+  {
+    slug: "reels-that-hold-attention",
+    title: "Reels that hold attention: get the first three seconds right",
+    excerpt:
+      "On short-form video, people decide almost instantly whether to keep watching. Here is how to plan Reels and Shorts that earn the next few seconds.",
+    category: "Video",
+    date: "2026-09-16",
+    readingTime: "4 min read",
+    image: "/assets/images/insight-video.svg",
+    imageAlt: "Abstract video frame artwork in violet and ink",
+    author: "SOSIAL",
+    content: [
+      {
+        type: "p",
+        text: "Short-form video is one of the best ways to get a brand noticed. It is also the easiest place to be ignored. The difference is usually decided in the first few seconds.",
+      },
+      { type: "h2", text: "Lead with the hook" },
+      {
+        type: "p",
+        text: "Open with the most interesting part: a question, a bold visual, a surprising result or a problem your audience recognises. Save the logo and the introduction for later, or leave them out.",
+      },
+      { type: "h2", text: "Plan the shot before you press record" },
+      {
+        type: "ul",
+        items: [
+          "Know the one message the video needs to get across",
+          "Write a simple scene list: what we see, what we hear, what text appears",
+          "Shoot vertical first, with space for captions",
+          "Keep the pace moving: cut anything that does not add to the story",
+        ],
+      },
+      { type: "h2", text: "Design for sound off" },
+      {
+        type: "p",
+        text: "Many people watch without sound. Clear captions and on-screen text make sure your message still lands, and they help viewers follow along even with the sound on.",
+      },
+      { type: "h2", text: "End with one clear action" },
+      {
+        type: "p",
+        text: "Tell people what to do next: follow, visit the website, send a message. One clear action works better than three competing ones.",
+      },
+    ],
+  },
+  {
+    slug: "website-that-brings-enquiries",
+    title: "What your business website needs before it looks good",
+    excerpt:
+      "A beautiful website that does not bring in enquiries is just an expensive brochure. Get these basics right first, then make it look great.",
+    category: "Websites",
+    date: "2026-09-02",
+    readingTime: "5 min read",
+    image: "/assets/images/insight-creative.svg",
+    imageAlt: "Creative layout artwork in cloud and violet",
+    author: "SOSIAL",
+    content: [
+      {
+        type: "p",
+        text: "Your website is often the first serious look someone takes at your business. It needs to answer their questions quickly and make it easy to get in touch. Design matters, but it should support those jobs, not replace them.",
+      },
+      { type: "h2", text: "Say what you do in one sentence" },
+      {
+        type: "p",
+        text: "Within a few seconds of landing, a visitor should know what you offer, who it is for and why they should care. If they have to scroll to find out, many will leave first.",
+      },
+      { type: "h2", text: "Make the next step obvious" },
+      {
+        type: "ul",
+        items: [
+          "One main action per page, such as a call, a WhatsApp message or an enquiry form",
+          "Contact details that are easy to find on every page",
+          "Short forms that only ask for what you really need",
+        ],
+      },
+      { type: "h2", text: "Build it for phones first" },
+      {
+        type: "p",
+        text: "Most visitors will see your site on a phone. Text should be easy to read, buttons easy to tap and pages quick to load, even on a slow connection.",
+      },
+      { type: "h2", text: "Show real proof" },
+      {
+        type: "p",
+        text: "Real photos of your work, your team and your space build far more trust than stock images. Approved client feedback and finished projects do the same.",
+      },
+    ],
+  },
+  {
+    slug: "marketing-numbers-that-matter",
+    title: "Measuring marketing: the numbers that actually matter",
+    excerpt:
+      "Likes and followers feel good, but they do not pay the bills. Here is how to tell whether your marketing is really working.",
+    category: "Analytics",
+    date: "2026-08-19",
+    readingTime: "5 min read",
+    image: "/assets/images/insight-measurement.svg",
+    imageAlt: "Abstract measurement artwork in violet and ink",
+    author: "SOSIAL",
+    content: [
+      {
+        type: "p",
+        text: "It is easy to judge marketing by the numbers that are easiest to see. A post with lots of likes feels like a win. But likes, views and followers only tell part of the story.",
+      },
+      { type: "h2", text: "Know which stage you are measuring" },
+      {
+        type: "p",
+        text: "Marketing moves people through stages: noticing you, engaging with you, considering you, contacting you and finally buying. Each stage needs its own measure.",
       },
       {
         type: "ul",
         items: [
-          "One page: what changed, why we think so, what we will do",
-          "Each channel judged against the job it was given",
-          "A clear owner for every recommended action",
-          "A short list of questions the data cannot yet answer",
+          "Awareness: reach, impressions and video watch time",
+          "Interest: engagement rate, profile visits and website traffic",
+          "Action: click-through rate, enquiries and conversion rate",
+          "Value: cost per lead, customer acquisition cost and revenue",
         ],
       },
-      { type: "h2", text: "Make uncertainty explicit" },
+      { type: "h2", text: "Pick a few numbers and watch them closely" },
       {
         type: "p",
-        text: "Attribution is imperfect and every model is an approximation. Saying so builds trust and improves decisions. The most useful sentence in a report is often: we do not know yet, and here is the test that will tell us.",
+        text: "You do not need a dashboard with fifty charts. Choose the few numbers that match your goal, track them every month, and look at how they change over time rather than day to day.",
+      },
+      { type: "h2", text: "Turn numbers into decisions" },
+      {
+        type: "p",
+        text: "A good report ends with clear next steps: what to keep doing, what to change and what to stop. If a number does not change any decision, it probably does not need to be in the report.",
       },
     ],
   },

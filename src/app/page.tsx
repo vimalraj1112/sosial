@@ -9,7 +9,6 @@ import { WhatWeMake } from "@/components/sections/WhatWeMake";
 import { MidCta } from "@/components/sections/MidCta";
 import { WaysOfWorking } from "@/components/sections/WaysOfWorking";
 import { AiVerifySection } from "@/components/sections/AiVerifySection";
-import { InsightsSection } from "@/components/sections/InsightsSection";
 import { BookingSection } from "@/components/sections/BookingSection";
 import { FaqSection } from "@/components/sections/FaqSection";
 import { FinalEnquiry } from "@/components/sections/FinalEnquiry";
@@ -33,7 +32,6 @@ export default function HomePage() {
       <MidCta />
       <WaysOfWorking />
       <AiVerifySection />
-      <InsightsSection />
       <FaqSection />
       <BookingSection />
       <FinalEnquiry />

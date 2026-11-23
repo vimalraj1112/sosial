@@ -211,7 +211,7 @@ export function BookingCalendar() {
 
       if (!response.ok || !data?.ok) {
         setFailure(
-          data?.error ?? `We could not send your request. Please email ${brand.enquiryInbox} and we will book it there.`,
+          data?.error ?? `We could not send your request. Please email ${brand.email} and we will book it there.`,
         );
         return;
       }
@@ -221,7 +221,7 @@ export function BookingCalendar() {
       idempotencyKey.current = createKey();
     } catch {
       setFailure(
-        `Your request did not send, most likely a connection issue. Please try again or email ${brand.enquiryInbox}.`,
+        `Your request did not send, most likely a connection issue. Please try again or email ${brand.email}.`,
       );
     }
   };
@@ -308,7 +308,7 @@ export function BookingCalendar() {
                   onClick={() => shiftMonth(-1)}
                   disabled={!canGoPrev}
                   aria-label="Previous month"
-                  className="flex h-8 w-8 items-center justify-center rounded-full border border-paper/15 text-paper/60 transition-colors hover:border-paper/40 hover:text-paper disabled:pointer-events-none disabled:opacity-25"
+                  className="flex h-8 w-8 items-center justify-center rounded-full border border-paper/15 text-paper/60 transition-colors disabled:pointer-events-none disabled:opacity-25"
                 >
                   <ArrowLeft aria-hidden="true" className="h-3.5 w-3.5" strokeWidth={2} />
                 </button>
@@ -317,7 +317,7 @@ export function BookingCalendar() {
                   onClick={() => shiftMonth(1)}
                   disabled={!canGoNext}
                   aria-label="Next month"
-                  className="flex h-8 w-8 items-center justify-center rounded-full border border-paper/15 text-paper/60 transition-colors hover:border-paper/40 hover:text-paper disabled:pointer-events-none disabled:opacity-25"
+                  className="flex h-8 w-8 items-center justify-center rounded-full border border-paper/15 text-paper/60 transition-colors disabled:pointer-events-none disabled:opacity-25"
                 >
                   <ArrowRight aria-hidden="true" className="h-3.5 w-3.5" strokeWidth={2} />
                 </button>
@@ -581,7 +581,7 @@ export function BookingCalendar() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="group inline-flex h-12 items-center justify-center gap-2 rounded-full border-2 border-paper/30 bg-coral px-6 text-[0.86rem] font-semibold text-white transition-[transform,background-color,box-shadow] duration-200 hover:-translate-y-0.5 hover:bg-violet-deep disabled:pointer-events-none disabled:opacity-60"
+                className="group inline-flex h-12 items-center justify-center gap-2 rounded-full border-2 border-paper/30 bg-coral px-6 text-[0.86rem] font-semibold text-white transition-[transform,background-color,box-shadow] duration-200 hover:-translate-y-0.5 disabled:pointer-events-none disabled:opacity-60"
               >
                 {isSubmitting ? (
                   <>

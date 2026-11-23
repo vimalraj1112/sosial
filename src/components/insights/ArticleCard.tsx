@@ -45,7 +45,7 @@ export function ArticleCard({
         </p>
         <div className="mt-auto flex items-center justify-between gap-3 pt-5 text-[0.7rem] font-medium text-ink/40">
           <time dateTime={article.date}>{formatDate(article.date)}</time>
-          <span className="flex h-8 w-8 items-center justify-center rounded-full border border-ink/15 transition-colors group-hover:border-ink group-hover:bg-night group-hover:text-paper">
+          <span className="flex h-8 w-8 items-center justify-center rounded-full border border-ink/15 transition-colors">
             <ArrowUpRight aria-hidden="true" className="h-3.5 w-3.5" strokeWidth={2} />
           </span>
         </div>

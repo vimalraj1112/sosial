@@ -11,16 +11,16 @@ const base =
 
 const variants: Record<Variant, string> = {
   primary:
-    "border-ink bg-coral text-white shadow-hard-sm hover:-translate-x-0.5 hover:-translate-y-0.5 hover:bg-violet-deep hover:text-white hover:shadow-hard active:translate-x-0.5 active:translate-y-0.5 active:shadow-none",
+    "border-ink bg-coral text-white shadow-hard-sm hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-hard active:translate-x-0.5 active:translate-y-0.5 active:shadow-none",
   primaryOnDark:
-    "border-ink bg-coral text-white shadow-[3px_3px_0_0_var(--color-paper)] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:bg-paper hover:text-ink hover:shadow-[5px_5px_0_0_var(--color-paper)] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none",
+    "border-ink bg-coral text-white shadow-[3px_3px_0_0_var(--color-paper)] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[5px_5px_0_0_var(--color-paper)] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none",
   outline:
-    "border-ink bg-transparent text-ink shadow-hard-xs hover:-translate-x-0.5 hover:-translate-y-0.5 hover:bg-night hover:text-paper hover:shadow-hard-sm active:translate-x-0.5 active:translate-y-0.5 active:shadow-none",
+    "border-ink bg-transparent text-ink shadow-hard-xs hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-hard-sm active:translate-x-0.5 active:translate-y-0.5 active:shadow-none",
   light:
-    "border-ink bg-paper text-ink shadow-[3px_3px_0_0_var(--color-coral)] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:bg-coral hover:text-white hover:shadow-[5px_5px_0_0_var(--color-coral)] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none",
+    "border-ink bg-paper text-ink shadow-[3px_3px_0_0_var(--color-coral)] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[5px_5px_0_0_var(--color-coral)] active:translate-x-0.5 active:translate-y-0.5 active:shadow-none",
   dark:
-    "border-ink bg-night text-paper shadow-hard-sm hover:-translate-x-0.5 hover:-translate-y-0.5 hover:bg-coral hover:text-white hover:shadow-hard active:translate-x-0.5 active:translate-y-0.5 active:shadow-none",
-  ghost: "border-transparent bg-transparent text-ink shadow-none hover:text-coral",
+    "border-ink bg-night text-paper shadow-hard-sm hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-hard active:translate-x-0.5 active:translate-y-0.5 active:shadow-none",
+  ghost: "border-transparent bg-transparent text-ink shadow-none",
 };
 
 const sizes: Record<Size, string> = {

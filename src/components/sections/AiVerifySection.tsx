@@ -116,7 +116,7 @@ export function AiVerifySection() {
 
                 <span className="mt-auto inline-flex items-center justify-between gap-3 border-t border-ink/10 pt-5 text-[0.8rem] font-semibold">
                   Ask {item.name}
-                  <span className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-ink/15 transition-colors duration-200 group-hover:border-ink group-hover:bg-night group-hover:text-paper">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-ink/15 transition-colors duration-200">
                     <ArrowUpRight
                       aria-hidden="true"
                       className="h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"

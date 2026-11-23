@@ -311,7 +311,7 @@ export function SplashIntro() {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.5 }}
               className={cn(
-                "group inline-flex items-center gap-2 rounded-full border-2 border-paper/40 px-4 py-2 text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-paper/80 transition-colors hover:border-paper hover:bg-paper hover:text-ink",
+                "group inline-flex items-center gap-2 rounded-full border-2 border-paper/40 px-4 py-2 text-[0.66rem] font-semibold uppercase tracking-[0.14em] text-paper/80 transition-colors",
               )}
             >
               Skip intro

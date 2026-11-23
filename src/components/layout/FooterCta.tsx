@@ -12,7 +12,7 @@ import { FinalCta } from "@/components/layout/FinalCta";
 export function FooterCta() {
   const pathname = usePathname();
 
-  if (pathname === "/contact" || pathname === "/work" || pathname.startsWith("/work/")) {
+  if (pathname === "/contact") {
     return null;
   }
 
