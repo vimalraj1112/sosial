@@ -43,14 +43,14 @@ export function HowItStarts() {
 
         <div className="mt-10 grid gap-5 lg:mt-14 lg:grid-cols-12 lg:items-center lg:gap-8">
           {/* Example conversation */}
-          <Reveal className="lg:col-span-7" variant="left">
+          <Reveal className="min-w-0 lg:col-span-7" variant="left">
             <div className="overflow-hidden rounded-card border-2 border-ink bg-card shadow-hard-sm">
               <Conversation />
             </div>
           </Reveal>
 
           {/* What happens next */}
-          <div className="lg:col-span-5">
+          <div className="min-w-0 lg:col-span-5">
             <Reveal variant="fade">
               <p className="text-[0.6rem] font-semibold uppercase tracking-[0.16em] text-ink/45">
                 What happens next

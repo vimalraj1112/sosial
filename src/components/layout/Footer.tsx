@@ -191,6 +191,17 @@ export function Footer() {
             <p>
               &copy; {year} {brand.legalName}. All rights reserved.
             </p>
+            <p>
+              Designed and Developed by{" "}
+              <a
+                href="https://vjtech.netlify.app/"
+                target="_blank"
+                rel="noopener"
+                className="font-medium text-paper/70 underline underline-offset-4 transition-colors hover:text-coral-soft"
+              >
+                Vimal Raj
+              </a>
+            </p>
             <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
               {footerLinks.legal.map((link) => (
                 <Link key={link.href} href={link.href} className="transition-colors hover:text-coral-soft">

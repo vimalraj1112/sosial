@@ -13,6 +13,8 @@ const DEPART = 1;
 const ARRIVE = 0.24;
 /** Passed sections kept above the current title; the oldest fades out as the next arrives. */
 const MAX_PAST = 2;
+/** Sections listed at the bottom right; the next one fades in as one leaves. */
+const MAX_UPCOMING = 3;
 /** Size of the letters while they travel up the edge, relative to the large title. */
 const EDGE_SCALE = 0.62;
 /** Corner radius of the track, in px: letters turn smoothly around the corners. */
@@ -102,18 +104,20 @@ export function SectionRail() {
   const [tones, setTones] = useState({ top: true, bottom: true });
 
   const nextRef = useRef<HTMLLIElement>(null);
+  const listRef = useRef<HTMLUListElement>(null);
   const ghostRef = useRef<HTMLDivElement>(null);
   const currentRef = useRef<HTMLParagraphElement>(null);
   const flyRef = useRef<HTMLDivElement>(null);
   const stackRef = useRef<HTMLDivElement>(null);
   const oldestRef = useRef<HTMLParagraphElement>(null);
   const railRef = useRef<HTMLDivElement>(null);
-  const geometry = useRef<{ from: Box[]; to: Box[]; shrink: number; edgeX: number; line: number }>({
+  const geometry = useRef<{ from: Box[]; to: Box[]; shrink: number; edgeX: number; line: number; listLine: number }>({
     from: [],
     to: [],
     shrink: 1,
     edgeX: 0,
     line: 0,
+    listLine: 0,
   });
 
   // Desktop with motion allowed only: the rail needs the empty right edge.
@@ -152,6 +156,12 @@ export function SectionRail() {
   useLayoutEffect(() => {
     if (!enabled) return;
     const measure = () => {
+      // Measure the list without its scroll-driven shift; the shift is added per frame.
+      const list = listRef.current;
+      const saved = list?.style.transform ?? "";
+      if (list) list.style.transform = "none";
+      const items = list ? [...list.children] as HTMLElement[] : [];
+      const listLine = items.length > 1 ? items[1].offsetTop - items[0].offsetTop : 0;
       const listRight = nextRef.current?.getBoundingClientRect().right ?? window.innerWidth - 48;
       const big = currentRef.current ? parseFloat(getComputedStyle(currentRef.current).fontSize) : 1;
       const small = ghostRef.current?.querySelector<HTMLElement>("[data-small]");
@@ -162,7 +172,9 @@ export function SectionRail() {
         shrink: smallSize / big,
         line: small ? small.getBoundingClientRect().height : 0,
         edgeX: Math.min(listRight + 30, window.innerWidth - 22),
+        listLine,
       };
+      if (list) list.style.transform = saved;
     };
     measure();
     window.addEventListener("resize", measure);
@@ -195,10 +207,19 @@ export function SectionRail() {
       const t = span > 0 ? clamp((departAt - top) / span, 0, 1) : top <= vh * ARRIVE ? 1 : 0;
       const moving = t > 0 && t < 1;
 
-      const { from, to, shrink, edgeX, line } = geometry.current;
+      const { from, to, shrink, edgeX, line, listLine } = geometry.current;
+      // With more sections to come than are listed, the list rests one line low
+      // (the extra line hidden below) and slides up as the next title leaves.
+      const hasExtra = entries.length - (nowActive + 1) > MAX_UPCOMING;
+      const listShift = hasExtra ? listLine * (1 - t) : 0;
+      if (listRef.current) listRef.current.style.transform = listShift ? `translateY(${listShift.toFixed(1)}px)` : "";
       const k = clamp(t * 1.4, 0, 1);
       // Hidden on the opening screen; fades in as the first title starts to move.
-      if (railRef.current) railRef.current.style.opacity = nowActive >= 0 ? "1" : t.toFixed(3);
+      // ...and fades out again once the last section has scrolled away, so it
+      // never sits over the closing call to action or the footer.
+      const lastBottom = entries[entries.length - 1].section.getBoundingClientRect().bottom;
+      const fadeOut = clamp((lastBottom - vh * 0.15) / (vh * 0.25), 0, 1);
+      if (railRef.current) railRef.current.style.opacity = ((nowActive >= 0 ? 1 : t) * fadeOut).toFixed(3);
       // A full stack slides up one line while its oldest title fades away.
       const full = nowActive - MAX_PAST >= 0;
       if (stackRef.current) stackRef.current.style.transform = full ? `translateY(${(-line * k).toFixed(1)}px)` : "";
@@ -215,7 +236,7 @@ export function SectionRail() {
           const start = from[i];
           const end = to[i];
           if (!start || !end) return null;
-          const s = { x: start.x + start.w / 2, y: start.y + start.h / 2 };
+          const s = { x: start.x + start.w / 2, y: start.y + start.h / 2 + listShift };
           const e = { x: end.x + end.w / 2, y: end.y + end.h / 2 };
           return { s, e, total: onTrack(s, edgeX, e, 0).total };
         });
@@ -246,6 +267,9 @@ export function SectionRail() {
       railRef.current?.querySelectorAll<HTMLElement>("ul li").forEach((li) => {
         li.style.opacity = moving && li === nextRef.current ? "0" : "";
       });
+      // The extra line fades in from below as the list slides up.
+      const extra = hasExtra ? (listRef.current?.lastElementChild as HTMLElement | null) : null;
+      if (extra) extra.style.opacity = t.toFixed(3);
       // The current title shrinks in place (top edge fixed) into the stack.
       if (currentRef.current) {
         // The 4px gap above the large title (mt-1) closes as it becomes a small line.
@@ -294,7 +318,7 @@ export function SectionRail() {
   // Like FilmCraft, nothing is dropped: every passed section stays listed above
   // the current title and every section still to come stays listed below.
   const past = entries.slice(Math.max(0, active - MAX_PAST), Math.max(0, active));
-  const upcoming = entries.slice(active + 1);
+  const upcoming = entries.slice(active + 1, active + 2 + MAX_UPCOMING);
   const ghostPast = entries.slice(Math.max(0, active + 1 - MAX_PAST), Math.max(0, active + 1));
   const edge = "right-[max(3rem,calc((100vw-1360px)/2+3rem))]";
   const smallLine = "text-[0.95rem] leading-[1.15]";
@@ -345,6 +369,7 @@ export function SectionRail() {
 
       {/* Bottom right: the sections still to come. */}
       <ul
+        ref={listRef}
         className={cn(
           "absolute bottom-7 flex flex-col items-end gap-0.5 text-right text-[1.05rem] leading-[1.15] transition-colors duration-500",
           edge,

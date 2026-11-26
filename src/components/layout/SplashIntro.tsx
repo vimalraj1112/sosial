@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { intro } from "@/data/brand";
 import { markIntroComplete, markIntroPlaying } from "@/lib/intro-state";
@@ -31,10 +32,12 @@ function lockScroll(lock: boolean) {
  * - Mounts client-side only, so server-rendered HTML is never blocked.
  * - Skips on click, Escape, Enter or Space.
  * - Always exits on its own (hard fallback), even if an animation fails.
- * - Replays on every full page refresh; the footer can also replay it.
+ * - Plays on every page load. A refresh lands on the home page at the top;
+ *   opening a shared link keeps that page. The footer can also replay it.
  */
 export function SplashIntro() {
   const reduced = useReducedMotion();
+  const router = useRouter();
   const [phase, setPhase] = useState<Phase>("done");
   const [step, setStep] = useState(0);
   const skipRef = useRef<HTMLButtonElement | null>(null);
@@ -112,6 +115,19 @@ export function SplashIntro() {
       }
     } catch {
       // The intro still works if history is unavailable.
+    }
+
+    // A refresh always starts over: the intro plays and the visitor lands on the
+    // home page at the top. Opening a shared link (not a refresh) keeps that page.
+    try {
+      const nav = performance.getEntriesByType("navigation")[0] as PerformanceNavigationTiming | undefined;
+      if (nav?.type === "reload") {
+        window.history.scrollRestoration = "manual";
+        if (window.location.pathname !== "/") router.replace("/", { scroll: false });
+        window.scrollTo(0, 0);
+      }
+    } catch {
+      // Older browsers: the intro still plays, the page just stays where it is.
     }
 
     // The intro is a mount-only spectacle; starting it from the effect keeps

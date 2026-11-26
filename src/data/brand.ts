@@ -21,8 +21,16 @@ export const brand = {
   responsePromise: "We aim to reply with a clear next step.",
 } as const;
 
+/**
+ * The live address used for canonical links, the sitemap and Google. Order:
+ * an explicit NEXT_PUBLIC_SITE_URL, then the production domain Vercel reports
+ * (the custom domain once one is connected, otherwise the .vercel.app one).
+ */
 export const siteUrl = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://sosial.solutions"
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : "https://sosial.solutions")
 ).replace(/\/$/, "");
 
 export const whatsappHref = `https://wa.me/${brand.whatsappNumber}?text=${encodeURIComponent(
